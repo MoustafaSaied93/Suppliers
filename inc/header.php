@@ -240,6 +240,10 @@ if(isset($_SESSION ['id']))
 		                <a href="#"><span class="title">الوظائف</span></a>
 		            
 		            </li>
+					<li>
+		                <a href="#"><span class="title">السياسات</span></a>
+		            
+		            </li>
 		            <li class="last">
 		                <a href="contact.php"><span class="title">اتصل بنا</span></a>
 		            </li>

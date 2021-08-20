@@ -9376,12 +9376,14 @@ a.btn.btn_error{
 }
 .terms_condition_grid .grids h4{
   margin-bottom: 25px;
+  text-align: right;
 }
 .terms_condition_grid .grids p{
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #484848;
   line-height: 1.714;
+  text-align: justify;
 }
 .terms_condition_widget{
   background-color: #ffffff;
@@ -9393,13 +9395,15 @@ a.btn.btn_error{
 }
 .terms_condition_widget .title{
   margin-bottom: 20px;
+  text-align: right;
 }
 .terms_condition_widget ul{
   margin-bottom: 0;
+  text-align: right;
 }
 .terms_condition_widget ul li a{
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #484848;
   line-height: 2.857;
   -webkit-transition: all 0.3s ease;
