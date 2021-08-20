@@ -35,30 +35,30 @@
 							<div class="row">
 				                <div class="col-md-6">
 				                    <div class="form-group">
-										<input id="form_name" name="form_name" class="form-control" required="required" type="text" placeholder="اسمك الكريم">
+										<input id="Name" name="form_name" class="form-control" required="required" type="text" placeholder="الاسم">
 									</div>
 				                </div>
 				                <div class="col-md-6">
 				                    <div class="form-group">
-				                    	<input id="form_email" name="form_email" class="form-control required email" required="required" type="email" placeholder="البريد الالكتروني">
+				                    	<input id="Emails" name="form_email" class="form-control required email" required="required" type="email" placeholder="البريد الالكتروني">
 				                    </div>
 				                </div>
 				                <div class="col-md-6">
 				                    <div class="form-group">
-				                    	<input id="form_phone" name="form_phone" class="form-control required phone" required="required" type="phone" placeholder="الجوال">
+				                    	<input id="Mobile" name="form_phone" class="form-control required phone" required="required" type="phone" placeholder="الجوال">
 				                    </div>
 				                </div>
 				                <div class="col-md-6">
 				                    <div class="form-group">
-					                    <input id="form_subject" name="form_subject" class="form-control required" required="required" type="text" placeholder="الموضوع">
+					                    <input id="Subject" name="form_subject" class="form-control required" required="required" type="text" placeholder="الموضوع">
 									</div>
 				                </div>
 				                <div class="col-sm-12">
 		                            <div class="form-group">
-		                                <textarea id="form_message" name="form_message" class="form-control required" rows="8" required="required" placeholder=" رسالتك"></textarea>
+		                                <textarea id="Message" name="form_message" class="form-control required" rows="8" required="required" placeholder=" رسالتك"></textarea>
 		                            </div>
 				                    <div class="form-group mb0">
-					                    <button type="button" class="btn btn-lg btn-thm">ارسال الرسال</button>
+					                    <button type="button" onclick="SendClientMessage()" class="btn btn-lg btn-thm">ارسال الرسال</button>
 				                    </div>
 				                </div>
 			                </div>
@@ -104,4 +104,4 @@
 
 
 
-<?php include "inc/footar.php" ?>
+                <?php include "inc/footar.php" ?>
