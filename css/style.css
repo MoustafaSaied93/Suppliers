@@ -6165,12 +6165,11 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   box-shadow: 0px 0px 50px 0px rgba(19, 19, 28, 0.12);
   color: #ffffff;
   font-size: 16px;
-  font-family: "rb";
+  font-family: "Nunito";
   font-weight: bold;
   height: 50px;
   line-height: 1.2;
   width: 170px;
-
 }
 .View_All {
   position: absolute;
@@ -7504,7 +7503,6 @@ font-family: rb;
   margin-bottom: 0;
   padding-left: 0;
   padding-top: 0;
-  font-family: rb;
 }
 /*== About Page About Content ==*/
 .about_content p.large {
@@ -7515,7 +7513,6 @@ font-family: rb;
   margin-bottom: 45px;
   font-family: rb;
 text-align: justify;
-
 }
 .about_content p{
   font-size: 14px;
@@ -9395,7 +9392,7 @@ a.btn.btn_error{
   position: relative;
 }
 .terms_condition_widget .title{
-  margin-bottom: 20px; text-align: right;
+  margin-bottom: 20px;
 }
 .terms_condition_widget ul{
   margin-bottom: 0;

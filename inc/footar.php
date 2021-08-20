@@ -112,5 +112,377 @@
 <script type="text/javascript" src="js/timepicker.js"></script>
 <!-- Custom script for all pages --> 
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/toastr.min.js"></script>
 </body>
 </html>
+
+
+
+<script>
+
+$('#Signin').on('click', function(event){
+  
+
+var formData = new FormData();
+event.preventDefault();
+
+
+ 
+var Email=$("#Email").val();
+
+var password=$("#passwords").val();
+
+
+
+var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+
+
+ if(Email=="")
+{
+	toastr.error("enter your email"); 
+ $("#Email").focus();
+ return false;
+}
+
+else if(!regex.test(Email)){  
+toastr.error("enter valid email");  
+$("#Email").focus();
+
+return false;
+
+}
+
+else if(password=="")
+{
+ $("#passwords").focus();
+ toastr.error("enter your password"); 
+ return false;
+}
+var page="Login";
+
+formData.append("password", password);
+formData.append("Email", Email);
+formData.append("page", page);
+
+$.ajax({
+url:"login.php",
+method:"POST",
+data: formData,
+processData: false,
+contentType: false,
+success:function(data){ 
+
+if(data==202) 
+{
+toastr.error("Email or password is not correct");
+$("#Email").focus();
+ return false;      
+}
+
+
+else if(data==201) 
+{
+toastr.error("your account blocked or an error occur");
+$("#Email").focus();
+ return false;      
+}
+
+
+
+
+else if(data==203)
+{
+
+window.location = "index.php";
+
+
+
+
+}
+
+else if(data==204)
+{
+
+window.location = "../sapplier/Admin/index.php";
+
+
+}
+
+
+}  
+ 
+
+
+});
+});
+
+
+
+
+
+
+//signout function
+
+
+$('#Signout').on('click', function(event){
+
+
+var formData = new FormData();
+event.preventDefault();
+
+
+var UserName=$("#UserName").val();
+var Email=$("#Emails").val();
+
+var password=$("#passwordss").val();
+
+var Mobile=$("#Mobile").val();
+
+var Address=$("#Address").val();
+
+var page="registercustomer";
+var UserType="2";
+
+var  RegisterDate = new Date();
+
+
+var newregister=(RegisterDate.getFullYear()+'/'+(RegisterDate.getMonth()+1)+'/'+RegisterDate.getDate());
+
+
+
+var regex1 = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+
+
+ if(UserName=="")
+{
+	toastr.error("enter Name"); 
+ $("#UserName").focus();
+ return false;
+}
+
+else if(Email=="")
+{
+	toastr.error("enter your email"); 
+ $("#Emails").focus();
+ return false;
+}
+
+else if(!regex1.test(Email)){  
+toastr.error("enter valid email");  
+$("#Emails").focus();
+
+return false;
+
+}
+
+else if(password=="")
+{
+ $("#passwords").focus();
+ toastr.error("enter your password"); 
+ return false;
+}
+
+
+else if(password.length <8)
+{
+ $("#passwords").focus();
+ toastr.error(" password must be more than 8 character"); 
+ return false;
+}
+
+
+else if(Mobile=="")
+{
+ $("#Mobile").focus();
+ toastr.error("enter your mobile"); 
+ return false;
+}
+
+
+else if(Mobile.length <10)
+{
+ $("#Mobile").focus();
+ toastr.error(" Mobile must be more than 10 numbers"); 
+ return false;
+}
+
+
+else if(Address=="")
+{
+ $("#Address").focus();
+ toastr.error("enter your Address"); 
+ return false;
+}
+
+
+
+
+
+formData.append("password", password);
+formData.append("UserName", UserName);
+formData.append("Email", Email);
+formData.append("Mobile", Mobile);
+formData.append("Address", Address);
+formData.append("UserType",UserType );
+formData.append("RegisterDate",newregister );
+formData.append("page", page);
+
+$.ajax({
+url:"Register.php",
+method:"POST",
+data: formData,
+processData: false,
+contentType: false,
+success:function(data){ 
+
+if(data==200) 
+{
+toastr.error("email already exist");
+$("#Emails").focus();
+ return false;      
+}
+
+
+else if(data==201) 
+{
+toastr.error("mobile already exist");
+$("#Mobile").focus();
+ return false;      
+}
+
+
+else 
+{
+	toastr.success("your account create successfully");
+	setTimeout(function(){
+	 window.location.href = 'index.php';
+   }, 5000);
+
+}
+
+}  
+ 
+
+
+});
+});
+
+
+
+function SendClientMessage()
+
+{
+	
+ var formData = new FormData();
+ event.preventDefault();
+
+var Name=$("#Name").val();
+var Email=$("#Emails").val();
+
+
+var Mobile=$("#Mobile").val();
+
+var Subject=$("#Subject").val();
+
+var Message=$("#Message").val();
+
+var page="SendClientMessage";
+
+var  RegisterDate = new Date();
+
+
+var newregister=(RegisterDate.getFullYear()+'/'+(RegisterDate.getMonth()+1)+'/'+RegisterDate.getDate());
+
+
+
+var regex1 = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+
+
+ if(Name=="")
+{
+	
+ $("#Name").focus();
+ return false;
+}
+
+else if(Email=="")
+{
+	
+ $("#Emails").focus();
+ return false;
+}
+
+else if(!regex1.test(Email)){  
+toastr.error("برجاء ادخال بريد الكترونى صحيح");  
+$("#Emails").focus();
+
+return false;
+
+}
+
+
+else if(Mobile=="")
+{
+ $("#Mobile").focus();
+ 
+ return false;
+}
+
+
+else if(Mobile.length <10)
+{
+ $("#Mobile").focus();
+ toastr.error("رقم الهاتف يجب ان يكون اكبر من 10 حروف"); 
+ return false;
+}
+
+
+else if(Message=="")
+{
+ $("#Message").focus();
+ 
+ return false;
+}
+
+
+formData.append("Name", Name);
+formData.append("Email", Email);
+formData.append("Mobile", Mobile);
+formData.append("Subject", Subject);
+formData.append("Message",Message );
+formData.append("SendDate",newregister );
+formData.append("page", page);
+
+$.ajax({
+
+url:"../Suppliers/sharefunction/Register.php",
+method:"POST",
+data: formData,
+processData: false,
+contentType: false,
+success:function(data){ 
+
+
+toastr.success("تم ارسال رسالتك بنجاح");
+
+$("#Name").val("");
+$("#Emails").val("");
+
+
+$("#Mobile").val("");
+
+$("#Subject").val("");
+
+$("#Message").val("");
+
+ 
+ 
+}
+
+});
+
+
+}
+
+
+ </script>
