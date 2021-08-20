@@ -1,4 +1,108 @@
+
+<?php
+session_start();
+
+if(isset($_SESSION ['id']))
+{
+
+	if($_SESSION['UserType']==1)
+
+	{
+
+	$link='	<li class="list-inline-item list_s float-left">
+					<a href="Logout.php" class="btn flaticon-log-out"> <span class="dn-lg">تسجيل الخروج</span></a>
+
+	              </li>
+					
+	                <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/Admin/Vendorindex.php"><span class=""></span><span class="dn-lg"> المتجر </span></a></li>
+	                <li class="list-inline-item list_s float-left">
+	                	<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
+					
+	             </li>';
+
+	}
+
+
+	else if($_SESSION['UserType']==2)
+	{
+
+		$link='	<li class="list-inline-item list_s float-left">
+					<a href="Logout.php" class="btn flaticon-log-out"> <span class="dn-lg">تسجيل الخروج</span></a>
+
+	              </li>
+					
+	                
+	                <li class="list-inline-item list_s float-left">
+					<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
+					
+	             </li>';
+
+
+
+	}
+
+
+	else if($_SESSION['UserType']==3)
+
+	{
+
+		$link='	<li class="list-inline-item list_s float-left">
+					<a href="Logout.php" class="btn flaticon-log-out"> <span class="dn-lg">تسجيل الخروج</span></a>
+
+	              </li>
+					
+	                <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/Admin/index.php"><span class=""></span><span class="dn-lg"> لوحة التحكم </span></a></li>
+	                <li class="list-inline-item list_s float-left">
+	                	<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
+					
+	             </li>';
+
+
+
+
+	}
+
+
+
+
+		}
+
+
+		else
+		{
+	
+			$link='	<li class="list-inline-item list_s float-left">
+						
+	
+					  </li>
+						
+						<li class="list-inline-item add_listing home2 style10 float-left"><a href="#"><span class="flaticon-tick"></span><span class="dn-lg"> بوابة الموردين </span></a></li>
+						<li class="list-inline-item list_s float-left">
+							<a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">تسجيل الدخول</span></a>
+						
+					 </li>';
+	
+	
+	
+				}
+	
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
+
 <html dir="rtl" lang="en">
 <head>
 <meta charset="utf-8">
@@ -139,10 +243,10 @@
 		            <li class="last">
 		                <a href="contact.php"><span class="title">اتصل بنا</span></a>
 		            </li>
-	                <li class="list-inline-item add_listing home2 style10 float-left"><a href="#"><span class="flaticon-tick"></span><span class="dn-lg"> بوابة الموردين </span></a></li>
-	                <li class="list-inline-item list_s float-left">
-	                	<a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">تسجيل الدخول</span></a>
-	                </li>
+					
+					
+	               <?php echo $link  ?>
+					
 		        </ul>
 		    </nav>
 		</div>

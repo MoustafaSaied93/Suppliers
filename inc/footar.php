@@ -203,7 +203,7 @@ window.location = "index.php";
 else if(data==204)
 {
 
-window.location = "../sapplier/Admin/index.php";
+window.location = "../Suppliers/Admin/index.php";
 
 
 }
