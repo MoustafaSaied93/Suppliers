@@ -13092,6 +13092,7 @@ a.btn.btn_error{
 }
 .text-thm {
   color: #ff5a5f !important;
+  font-family: rb;
 }
 .hvr-text-thm:hover {
   color: #ff5a5f !important;
@@ -14664,7 +14665,8 @@ a.btn.btn_error{
 section {
   padding: 60px 0;
   position: relative;
-  text-align: left;}
+  text-align: left;
+  font-family: rb;}
 .main-title {
   position: relative;
   margin-bottom: 50px;
