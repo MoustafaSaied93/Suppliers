@@ -4,7 +4,7 @@
 
 
 session_start();
-include('config.php');
+include('../config.php');
 
 $pages=$_POST['page'];
 

@@ -178,7 +178,7 @@
 								<div class="login_form">
 									<form action="#">
 										<div class="heading">
-											<h4>Login</h4>
+											<h4>تسجيل الدخول</h4>
 										</div>
 										<div class="row mt25">
 											<div class="col-lg-12">
@@ -190,24 +190,24 @@
 										</div>
 										<hr>
 										<div class="input-group mb-2 mr-sm-2">
-										    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="User Name Or Email">
+										    <input type="text" class="form-control" id="Email" placeholder="البريد الالكترونى">
 										    <div class="input-group-prepend">
-										    	<div class="input-group-text"><i class="flaticon-user"></i></div>
+										    <!--	<div class="input-group-text"><i class="flaticon-user"></i></div> -->
 										    </div>
 										</div>
 										<div class="input-group form-group">
-									    	<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+									    	<input type="password" class="form-control" id="passwords" placeholder="كلمة المرور">
 										    <div class="input-group-prepend">
-										    	<div class="input-group-text"><i class="flaticon-password"></i></div>
+										    <!--	<div class="input-group-text"><i class="flaticon-password"></i></div> -->
 										    </div>
 										</div>
 										<div class="form-group custom-control custom-checkbox">
 											<input type="checkbox" class="custom-control-input" id="exampleCheck1">
 											<label class="custom-control-label" for="exampleCheck1">تذكرني</label>
-											<a class="btn-fpswd float-right" href="#">Lost your password?</a>
+											<a class="btn-fpswd float-right" href="#">هل نسيت كلمة المرور</a>
 										</div>
-										<button type="submit" class="btn btn-log btn-block btn-thm">دخول </button>
-										<p class="text-center">ليس لديك حساب? <a class="text-thm" href="#">تسجيل</a></p>
+										<button type="submit" id="Signin" class="btn btn-log btn-block btn-thm">تسجيل الدخول </button>
+
 									</form>
 								</div>
 					  		</div>
@@ -234,36 +234,41 @@
 										</div>
 										<hr>
 										<div class="form-group input-group">
-										    <input type="text" class="form-control" id="exampleInputName" placeholder="اسم المستخدم">
+										    <input type="text" class="form-control" id="UserName" placeholder="اسم المستخدم">
 										    <div class="input-group-prepend">
-										    	<div class="input-group-text"><i class="flaticon-user"></i></div>
+										     <!--	<div class="input-group-text"><i class="flaticon-user"></i></div> -->
 										    </div>
 										</div>
 										<div class="form-group input-group">
-										    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="البريد الالكترونى">
+										    <input type="email" class="form-control" id="Emails" placeholder="البريد الالكترونى">
 										    <div class="input-group-prepend">
-										    	<div class="input-group-text"><i class="fa fa-envelope-o"></i></div>
+										     <!--	<div class="input-group-text"><i class="fa fa-envelope-o"></i></div> -->
 										    </div>
 										</div>
 										<div class="form-group input-group">
-										    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="كلمة المرور">
+										    <input type="password" class="form-control" id="passwordss" placeholder="كلمة المرور">
 										    <div class="input-group-prepend">
-										    	<div class="input-group-text"><i class="flaticon-password"></i></div>
+										    <!--	<div class="input-group-text"><i class="flaticon-password"></i></div> -->
 										    </div>
 										</div>
 										<div class="form-group input-group">
-										    <input type="number" class="form-control" id="exampleInputPassword3" placeholder="رقم الهاتف">
-										    <div class="input-group-prepend">
-										    	<div class="input-group-text"><i class="flaticon-telphone"></i></div>
-										    </div>
+										    <input type="number" class="form-control" id="Mobile" placeholder="رقم الهاتف">
+										    
+										</div>
+
+										<div class="form-group input-group">
+										    <input type="text" class="form-control" id="Address" placeholder="العنوان">
+
+				
+										    
 										</div>
 										
 										<div class="form-group custom-control custom-checkbox">
 											<input type="checkbox" class="custom-control-input" id="exampleCheck2">
-											<label class="custom-control-label" for="exampleCheck2">I have read and accept the Terms and Privacy Policy?</label>
+											<label class="custom-control-label" for="exampleCheck2">هل انت موافق على شروط وسياسة الخصوصية ؟</label>
 										</div>
-										<button type="submit" class="btn btn-log btn-block btn-thm">انشاء الحساب</button>
-										<p class="text-center">انت بالفعل لديك حساب ؟ <a class="text-thm" href="#">تسجيل الدخول</a></p>
+										<button type="submit" id="Signout" class="btn btn-log btn-block btn-thm">انشاء الحساب</button>
+										
 									</form>
 								</div>
 					  		</div>

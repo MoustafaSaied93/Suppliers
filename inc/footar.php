@@ -139,13 +139,13 @@ var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
  if(Email=="")
 {
-	toastr.error("enter your email"); 
+
  $("#Email").focus();
  return false;
 }
 
 else if(!regex.test(Email)){  
-toastr.error("enter valid email");  
+toastr.error("ادخل بريد الكترونى صحيح");  
 $("#Email").focus();
 
 return false;
@@ -155,7 +155,7 @@ return false;
 else if(password=="")
 {
  $("#passwords").focus();
- toastr.error("enter your password"); 
+
  return false;
 }
 var page="Login";
@@ -165,7 +165,7 @@ formData.append("Email", Email);
 formData.append("page", page);
 
 $.ajax({
-url:"login.php",
+url:"../Suppliers/sharefunction/login.php",
 method:"POST",
 data: formData,
 processData: false,
@@ -174,7 +174,7 @@ success:function(data){
 
 if(data==202) 
 {
-toastr.error("Email or password is not correct");
+toastr.error("يوجد خطا فى البريد الالكترونى او كلمة المرور");
 $("#Email").focus();
  return false;      
 }
@@ -182,7 +182,7 @@ $("#Email").focus();
 
 else if(data==201) 
 {
-toastr.error("your account blocked or an error occur");
+toastr.error("عذرا يوجد مشكلة ما فى حسابك ");
 $("#Email").focus();
  return false;      
 }
@@ -255,20 +255,20 @@ var regex1 = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
  if(UserName=="")
 {
-	toastr.error("enter Name"); 
+	
  $("#UserName").focus();
  return false;
 }
 
 else if(Email=="")
 {
-	toastr.error("enter your email"); 
+	
  $("#Emails").focus();
  return false;
 }
 
 else if(!regex1.test(Email)){  
-toastr.error("enter valid email");  
+toastr.error("ادخل بريد الكترونى صحيح");  
 $("#Emails").focus();
 
 return false;
@@ -277,16 +277,16 @@ return false;
 
 else if(password=="")
 {
- $("#passwords").focus();
- toastr.error("enter your password"); 
+ $("#passwordss").focus();
+
  return false;
 }
 
 
 else if(password.length <8)
 {
- $("#passwords").focus();
- toastr.error(" password must be more than 8 character"); 
+ $("#passwordss").focus();
+ toastr.error(" كلمة المرور يجب ان تكون اكبر من 8 حروف"); 
  return false;
 }
 
@@ -294,7 +294,7 @@ else if(password.length <8)
 else if(Mobile=="")
 {
  $("#Mobile").focus();
- toastr.error("enter your mobile"); 
+
  return false;
 }
 
@@ -302,17 +302,10 @@ else if(Mobile=="")
 else if(Mobile.length <10)
 {
  $("#Mobile").focus();
- toastr.error(" Mobile must be more than 10 numbers"); 
+ toastr.error(" رقم الهاتف يجب ان يكون اكبر من عشر ارقام"); 
  return false;
 }
 
-
-else if(Address=="")
-{
- $("#Address").focus();
- toastr.error("enter your Address"); 
- return false;
-}
 
 
 
@@ -328,7 +321,7 @@ formData.append("RegisterDate",newregister );
 formData.append("page", page);
 
 $.ajax({
-url:"Register.php",
+url:"../Suppliers/sharefunction/Register.php",
 method:"POST",
 data: formData,
 processData: false,
@@ -337,7 +330,7 @@ success:function(data){
 
 if(data==200) 
 {
-toastr.error("email already exist");
+toastr.error("البريد الالكترونى مستخدم من قبل ");
 $("#Emails").focus();
  return false;      
 }
@@ -345,7 +338,7 @@ $("#Emails").focus();
 
 else if(data==201) 
 {
-toastr.error("mobile already exist");
+toastr.error("رقم الهاتف مستخدم من قبل");
 $("#Mobile").focus();
  return false;      
 }
@@ -353,7 +346,7 @@ $("#Mobile").focus();
 
 else 
 {
-	toastr.success("your account create successfully");
+	toastr.success("تم انشاء حسابك بنجاح");
 	setTimeout(function(){
 	 window.location.href = 'index.php';
    }, 5000);
