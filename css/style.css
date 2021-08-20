@@ -15538,7 +15538,7 @@ canvas {
   border-radius: 3px;
   background-color: #ff5a5f;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #fefefe;
   height: 25px;
   left: 10px;
@@ -15553,14 +15553,14 @@ canvas {
   position: relative;
 }
 .shop_grid .details h4.item-tile{
-  font-family: "Nunito";
+  font-family: "rb";
   color: #484848;
   font-weight: bold;
   line-height: 1.444;
   margin-bottom: 15px;
 }
 .shop_grid .details h4.item-tile .price{
-  font-family: "Nunito";
+  font-family: "rb";
   color: #ff5a5f;
   font-weight: bold;
   float: right;
@@ -15572,7 +15572,7 @@ canvas {
   -o-box-shadow:0px 1px 4px 0px rgba(255, 90, 95, 0.3);
   box-shadow:0px 1px 4px 0px rgba(255, 90, 95, 0.3);
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: "rb";
   font-weight: bold;
   line-height: 1.2;
   height: 45px;
