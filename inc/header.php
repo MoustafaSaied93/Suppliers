@@ -241,7 +241,7 @@ if(isset($_SESSION ['id']))
 		            
 		            </li>
 					<li>
-		                <a href="#"><span class="title">السياسات</span></a>
+		                <a href="policies.php"><span class="title">السياسات</span></a>
 		            
 		            </li>
 		            <li class="last">
