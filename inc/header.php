@@ -14,7 +14,7 @@ if(isset($_SESSION ['id']))
 
 	              </li>
 					
-	 <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/Admin/Vendorindex.php"><span class=""></span><span class="dn-lg"> المتجر </span></a></li>
+	 <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/admin/Vendorindex.php"><span class=""></span><span class="dn-lg"> المتجر </span></a></li>
 	<li class="list-inline-item list_s float-left">
 	<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
 					
@@ -51,7 +51,7 @@ if(isset($_SESSION ['id']))
 
 	              </li>
 					
-	                <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/Admin/index.php"><span class=""></span><span class="dn-lg"> لوحة التحكم </span></a></li>
+	                <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/admin/index.php"><span class=""></span><span class="dn-lg"> لوحة التحكم </span></a></li>
 	                <li class="list-inline-item list_s float-left">
 	                	<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
 					
