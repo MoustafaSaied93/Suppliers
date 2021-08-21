@@ -41,36 +41,39 @@
 										<ul class="h1ads_1st_list mb0">
 											<li class="list-inline-item">
 											    <div class="form-group">
-											    	<input type="text" class="form-control" id="exampleInputName1" placeholder="Enter keyword...">
+											    	<input type="text" class="form-control" id="exampleInputName1" placeholder="كلمات البحث">
 											    </div>
 											</li>
 											<li class="list-inline-item">
 												<div class="search_option_two">
 													<div class="candidate_revew_select">
 														<select class="selectpicker w100 show-tick">
-															<option>Property Type</option>
-															<option>Apartment</option>
-															<option>Bungalow</option>
-															<option>Condo</option>
-															<option>House</option>
-															<option>Land</option>
-															<option>Single Family</option>
+															<option>المنطقة</option>
+															<option>الرياض</option>
+															<option>الرياض</option>
+															<option>الرياض</option>
+															<option>الرياض</option>
+															<option>الرياض</option>
+															<option>الرياض</option>
+															<option>الرياض</option>
+															<option>الرياض</option>
+															<option>الرياض</option>
+													
 														</select>
 													</div>
 												</div>
 											</li>
-											<li class="list-inline-item">
-											    <div class="form-group">
-											    	<input type="text" class="form-control" id="exampleInputEmail" placeholder="Location">
-											    	<label for="exampleInputEmail"><span class="flaticon-maps-and-flags"></span></label>
-											    </div>
-											</li>
+											
 											<li class="list-inline-item">
 												<div class="small_dropdown2 home4">
 												    <div id="prncgs" class="btn dd_btn">
 												    	<span>Price</span>
 												    	<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
 												    </div>
+
+
+
+
 												  	<div class="dd_content2">
 													    <div class="pricing_acontent">
 													    	<span id="slider-range-value1"></span>
@@ -279,6 +282,7 @@
 													</div>
 												</div>
 											</li>
+											
 											<li class="list-inline-item">
 												<div class="search_option_button">
 												    <button type="submit" class="btn btn-thm3">بحث</button>
@@ -331,6 +335,10 @@
 												  	</div>
 												</div>
 											</li>
+
+
+
+											
 											<li class="custome_fields_520 list-inline-item">
 												<div class="navbered">
 												  	<div class="mega-dropdown home4">
@@ -1083,153 +1091,6 @@
 	</section>
 
 	
-
-	<!-- Property Cities -->
-	<section id="property-city" class="property-city pb30">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<div class="main-title text-center">
-						<h2>ابحث عن موردين في هذه المدن</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-6 col-lg-4 col-xl-4">
-					<div class="properti_city style2">
-						<div class="thumb"><img class="img-fluid w100" src="images/property/pc12.jpg" alt="pc12.jpg"></div>
-						<div class="details">
-							<h4>Miami</h4>
-							<p>24 Properties</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-4">
-					<div class="properti_city style2">
-						<div class="thumb"><img class="img-fluid w100" src="images/property/pc13.jpg" alt="pc13.jpg"></div>
-						<div class="details">
-							<h4>Los Angeles</h4>
-							<p>18 Properties</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-4">
-					<div class="properti_city style2">
-						<div class="thumb"><img class="img-fluid w100" src="images/property/pc14.jpg" alt="pc14.jpg"></div>
-						<div class="details">
-							<h4>New York</h4>
-							<p>96 Properties</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-4">
-					<div class="properti_city style2">
-						<div class="thumb"><img class="img-fluid w100" src="images/property/pc15.jpg" alt="pc15.jpg"></div>
-						<div class="details">
-							<h4>Florida</h4>
-							<p>33 Properties</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-4">
-					<div class="properti_city style2">
-						<div class="thumb"><img class="img-fluid w100" src="images/property/pc16.jpg" alt="pc16.jpg"></div>
-						<div class="details">
-							<h4>Orlando</h4>
-							<p>15 Properties</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-4">
-					<div class="properti_city style2">
-						<div class="thumb"><img class="img-fluid w100" src="images/property/pc17.jpg" alt="pc17.jpg"></div>
-						<div class="details">
-							<h4>Atlanta</h4>
-							<p>77 Properties</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Our Blog -->
-	<section class="our-blog bgc-f7 pb30">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<div class="main-title text-center">
-						<h2>مقالات ونصائح</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-4 col-xl-4">
-					<div class="for_blog feat_property">
-						<div class="thumb">
-							<img class="img-whp" src="images/blog/bh1.jpg" alt="bh1.jpg">
-						</div>
-						<div class="details">
-							<div class="tc_content">
-								<p class="text-thm">Business</p>
-								<h4>Biggest Home in the Hollywood Hills Sells for an Equally</h4>
-							</div>
-							<div class="fp_footer">
-								<ul class="fp_meta float-left mb0">
-									<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-									<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-								</ul>
-								<a class="fp_pdate float-right" href="#">7 August 2019</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-4">
-					<div class="for_blog feat_property">
-						<div class="thumb">
-							<img class="img-whp" src="images/blog/bh2.jpg" alt="bh2.jpg">
-						</div>
-						<div class="details">
-							<div class="tc_content">
-								<p class="text-thm">Business</p>
-								<h4>Bedroom Colors You’ll Never <br> Regret</h4>
-							</div>
-							<div class="fp_footer">
-								<ul class="fp_meta float-left mb0">
-									<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-									<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-								</ul>
-								<a class="fp_pdate float-right" href="#">7 August 2019</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-4">
-					<div class="for_blog feat_property">
-						<div class="thumb">
-							<img class="img-whp" src="images/blog/bh3.jpg" alt="bh3.jpg">
-						</div>
-						<div class="details">
-							<div class="tc_content">
-								<p class="text-thm">Business</p>
-								<h4>The 5 Biggest Mistakes Veteran and Military</h4>
-							</div>
-							<div class="fp_footer">
-								<ul class="fp_meta float-left mb0">
-									<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-									<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-								</ul>
-								<a class="fp_pdate float-right" href="#">7 August 2019</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 
 
 
