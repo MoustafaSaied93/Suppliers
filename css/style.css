@@ -4484,7 +4484,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 .feat_property.home8 ul.tag li a,
 .feat_property.list ul.tag li a{
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #fefefe;
   line-height: 1.2;
 }
@@ -4581,7 +4581,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 }
 .feat_property.list .dtls_headr a.fp_price{
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #484848;
   font-weight: bold;
   line-height: 1.2;
@@ -4758,7 +4758,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 }
 .feat_property .details .fp_footer .fp_meta li a {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #777777;
   line-height: 1.2;
 }
@@ -4770,7 +4770,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 }
 .feat_property .details .fp_footer .fp_pdate{
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #777777;
   line-height: 1.2;
   margin-top: 12px;
@@ -4864,6 +4864,8 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 .feat_property.agent .details .fp_footer .fp_pdate,
 .feat_property.agency .details .fp_footer .fp_pdate{
   margin-top: 6px;
+  font-family: rb;
+
 }
 .feat_property.agency .thumb{
   background-color: #ffffff;
@@ -11437,6 +11439,7 @@ a.btn.btn_error{
 .grid_list_search_result .left_area p{
   margin-bottom: 0;
   margin-top: 20px;
+  text-align: right;
 }
 .grid_list_search_result .right_area ul{
   margin-bottom: 0;
@@ -11725,7 +11728,7 @@ a.btn.btn_error{
   border: 1px solid rgb(235, 235, 235);
   border-radius: 8px;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #484848;
   line-height: 1.2;
   height: 52px;
@@ -11768,10 +11771,11 @@ a.btn.btn_error{
   border-radius: 8px;
   color: #484848;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   height: 52px;
   line-height: 42px;
   padding-left: 20px;
+
 }
 .sasw_list .search_option_two{
   margin-bottom: 20px;
@@ -14615,6 +14619,7 @@ a.btn.btn_error{
 }
 .curp{
   cursor: pointer;
+ 
 }
 /*== BackGround Images ==*/
 .bg-img2 {
