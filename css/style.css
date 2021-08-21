@@ -5961,8 +5961,9 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 }
 .why_chose_us .details p{
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   line-height: 1.714;
+  text-align: justify;
 }
 .why_chose_us.style2{
   border: 1px solid #ebebeb;

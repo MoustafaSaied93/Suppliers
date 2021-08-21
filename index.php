@@ -124,8 +124,8 @@
 					<a href="#feature-property">
 				    	<div class="mouse_scroll">
 			        		<div class="icon">
-					    		<h4>Scroll Down</h4>
-					    		<p>to discover more</p>
+					    		<h4>حرك الفأرة لأسفل</h4>
+					    		<p>لاكتشاف المزيد</p>
 			        		</div>
 			        		<div class="thumb">
 			        			<img src="images/resource/mouse.png" alt="mouse.png">

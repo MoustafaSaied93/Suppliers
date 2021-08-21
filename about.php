@@ -28,8 +28,8 @@
 	<section class="about-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<div class="main-title text-center">
+				<div class="col-lg-12 ">
+					<div class="main-title text-left">
 						<h2 class="mt0">منصة تجار الرقمية </h2>
 					</div>
 				</div>
@@ -80,7 +80,7 @@
 				<div class="col-lg-6 offset-lg-3">
 					<div class="main-title text-center">
 						<h2>لماذا منصة تجار؟</h2>
-						<p>We provide full service at every step.</p>
+						<p>نحن نقدم خدمة كاملة مميزة .</p>
 					</div>
 				</div>
 			</div>
@@ -92,7 +92,7 @@
 						</div>
 						<div class="details">
 							<h4>القيم</h4>
-							<p>Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+							<p>نعتز بالتزامنا بمبادئ المجتمع وأخلاقيات العمل. نبذل جهودنا لتحقيق أعلى مقاييس التميز. نلتزم بعمل الإجراءات الصحيحة وفقاً للأسباب والمتطلبات.  نحرص على تشجيع الاستكشاف وتوسيع آفاق المعرفة. ​نعمل معاً لتحقيق أهدافنا المشتركة. </p>
 						</div>
 					</div>
 				</div>
@@ -103,7 +103,7 @@
 						</div>
 						<div class="details">
 							<h4>موثق من قبل الالف</h4>
-							<p>Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+							<p>نعتز بالتزامنا بمبادئ المجتمع وأخلاقيات العمل. نبذل جهودنا لتحقيق أعلى مقاييس التميز. نلتزم بعمل الإجراءات الصحيحة وفقاً للأسباب والمتطلبات.  نحرص على تشجيع الاستكشاف وتوسيع آفاق المعرفة. ​نعمل معاً لتحقيق أهدافنا المشتركة. </p>
 						</div>
 					</div>
 				</div>
@@ -114,7 +114,7 @@
 						</div>
 						<div class="details">
 							<h4>سهولة التعامل </h4>
-							<p>Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+							<p>نعتز بالتزامنا بمبادئ المجتمع وأخلاقيات العمل. نبذل جهودنا لتحقيق أعلى مقاييس التميز. نلتزم بعمل الإجراءات الصحيحة وفقاً للأسباب والمتطلبات.  نحرص على تشجيع الاستكشاف وتوسيع آفاق المعرفة. ​نعمل معاً لتحقيق أهدافنا المشتركة. </p>
 						</div>
 					</div>
 				</div>
@@ -129,7 +129,7 @@
 				<div class="col-lg-6 offset-lg-3">
 					<div class="main-title text-center">
 						<h2>فريق العمل</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p>فريق عمل منصة تجار الرقمية</p>
 					</div>
 				</div>
 			</div>
@@ -160,7 +160,7 @@
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/2.jpg" alt="2.jpg">
+									<img class="img-fluid" src="images/team/1.jpg" alt="2.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -181,7 +181,7 @@
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/3.jpg" alt="3.jpg">
+									<img class="img-fluid" src="images/team/1.jpg" alt="3.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -194,15 +194,15 @@
 									</div>
 								</div>
 								<div class="details">
-									<h4>Mariusz Ciesla</h4>
-									<p>Broker</p>
+									<h4>مصطفي</h4>
+									<p>خدمات العملاء</p>
 								</div>
 							</div>
 						</div>
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/4.jpg" alt="4.jpg">
+									<img class="img-fluid" src="images/team/1.jpg" alt="4.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -215,93 +215,15 @@
 									</div>
 								</div>
 								<div class="details">
-									<h4>Helene Powers</h4>
-									<p>Broker</p>
+									<h4>خالد</h4>
+									<p>مسوق الكتروني</p>
 								</div>
 							</div>
 						</div>
-						<div class="item">
-							<div class="team_member">
-								<div class="thumb">
-									<img class="img-fluid" src="images/team/1.jpg" alt="1.jpg">
-									<div class="overylay">
-										<ul class="social_icon">
-											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="details">
-									<h4>Jennifer Barton</h4>
-									<p>Broker</p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="team_member">
-								<div class="thumb">
-									<img class="img-fluid" src="images/team/2.jpg" alt="2.jpg">
-									<div class="overylay">
-										<ul class="social_icon">
-											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="details">
-									<h4>Kathleen Myers</h4>
-									<p>Agent</p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="team_member">
-								<div class="thumb">
-									<img class="img-fluid" src="images/team/3.jpg" alt="3.jpg">
-									<div class="overylay">
-										<ul class="social_icon">
-											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="details">
-									<h4>Mariusz Ciesla</h4>
-									<p>Broker</p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="team_member">
-								<div class="thumb">
-									<img class="img-fluid" src="images/team/4.jpg" alt="4.jpg">
-									<div class="overylay">
-										<ul class="social_icon">
-											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-											<li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="details">
-									<h4>Helene Powers</h4>
-									<p>Broker</p>
-								</div>
+						
+							
+								
+						
 							</div>
 						</div>
 					</div>

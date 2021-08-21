@@ -42,12 +42,7 @@
 										    	<label for="exampleInputEmail"><span class="flaticon-magnifying-glass"></span></label>
 										    </div>
 										</li>
-										<li class="search_area">
-										    <div class="form-group">
-										    	<input type="text" class="form-control" id="exampleInputEmail" placeholder="الموقع">
-										    	<label for="exampleInputEmail"><span class="flaticon-maps-and-flags"></span></label>
-										    </div>
-										</li>
+
 										<li>
 											<div class="search_option_two">
 												<div class="candidate_revew_select">
@@ -60,24 +55,7 @@
 											</div>
 										</li>
 										
-										<li>
-											<div class="small_dropdown2">
-											    <div id="prncgs" class="btn dd_btn">
-											    	<span>السعر</span>
-											    	<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
-											    </div>
-											  	<div class="dd_content2">
-												    <div class="pricing_acontent">
-												    	<span id="slider-range-value1"></span>
-														<span class="mt0" id="slider-range-value2"></span>
-													    <div id="slider"></div>
-														<!-- <input type="text" class="amount" placeholder="$52,239"> 
-														<input type="text" class="amount2" placeholder="$985,14">
-														<div class="slider-range"></div> -->
-												    </div>
-											  	</div>
-											</div>
-										</li>
+						
 										
 										
 									
@@ -136,6 +114,22 @@
 										<div class="search_option_two">
 											<div class="candidate_revew_select">
 												<select class="selectpicker w100 show-tick">
+												<option>المنطقة</option>
+															<option>المنطقة الوسطي</option>
+															<option>المنطقة الشرقية </option>
+															<option>المنطقة الغربية </option>
+															<option>المنطقة الشمالية</option>
+															<option>المنطقة الجنوبية</option>
+												
+												</select>
+											</div>
+										</div>
+									</li>
+									
+									<li>
+										<div class="search_option_two">
+											<div class="candidate_revew_select">
+												<select class="selectpicker w100 show-tick">
 													<option>الاقسام</option>
 													<option>قطع الغيار</option>
 													<option>قطع الغيار</option>
@@ -144,30 +138,6 @@
 											</div>
 										</div>
 									</li>
-									<li class="search_area">
-									    <div class="form-group">
-									    	<input type="text" class="form-control" id="exampleInputEmail" placeholder="الموقع">
-									    	<label for="exampleInputEmail"><span class="flaticon-maps-and-flags"></span></label>
-									    </div>
-									</li>
-								
-				
-									<li>
-										<div class="small_dropdown2">
-										    <div id="prncgs2" class="btn dd_btn">
-										    	<span>السعر</span>
-										    	<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
-										    </div>
-										  	<div class="dd_content2">
-											    <div class="pricing_acontent">
-													<input type="text" class="amount" placeholder="1000 ريال"> 
-													<input type="text" class="amount2" placeholder="100,000 ريال">
-													<div class="slider-range"></div>
-											    </div>
-										  	</div>
-										</div>
-									</li>
-									
 								
 									<li>
 										<div class="search_option_button">
