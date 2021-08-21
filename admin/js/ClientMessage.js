@@ -10,7 +10,7 @@ $(document).ready(function() {
         setTimeout(function(){
     
           $.ajax({
-         url:"../GetClientNotify.php",
+         url:"../sharefunction/GetClientNotify.php",
           method:"GET",
           cache:false,
           success:function(data){
@@ -20,7 +20,7 @@ $(document).ready(function() {
     }
     });
     
-      },70);
+      },1000);
     
     
     }
@@ -38,7 +38,7 @@ function MessageClientInfo(ID)
 var page="SystemClientMessage";
 
 $.ajax({
-url:"../fetchdata.php",
+url:"../sharefunction/fetchdata.php",
 method:"POST",
 data: {id:ID,page:page},
 cache:false,
@@ -69,7 +69,7 @@ function DeleteMessages(id){
     var $button = $(this);
     $.ajax({
     type: "POST",
-    url: "../DeleteFunction.php",
+    url: "../sharefunction/DeleteFunction.php",
     data:{ID:ID,page:page},
     success: function (result) {                                    
     toastr.error("تم الحذف بنجاح");

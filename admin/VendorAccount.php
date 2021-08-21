@@ -83,7 +83,7 @@ $query = mysqli_query($conn, "SELECT * FROM accounts WHERE UserType=1");
            }
            if($row['UserPhoto']!="")
            {
-             $photo='<td> <div class="avatar xl"> <img src="../' .$row['UserPhoto'].'"  class="circle"></div></td>';
+             $photo='<td> <div class="avatar xl"> <img src="../images/user/' .$row['UserPhoto'].'"  class="circle"></div></td>';
            }
            else
            {

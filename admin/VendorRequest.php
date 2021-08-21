@@ -66,7 +66,7 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='0'and Refused=
 
            else if($row['CompProfile']!="")
            {
-             $photo='<td> <img src="../' .$row['CompProfile'].'" height="30" width="50"></td>';
+             $photo='<td> <img src="../images/user/'.$row["CompProfile"].' " height="30" width="50"></td>';
            }
 
 

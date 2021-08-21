@@ -73,7 +73,7 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='0'and Refused=
 
            else if($row['CompProfile']!="")
            {
-             $photo='<td> <img src="../' .$row['CompProfile'].'" height="30" width="50"></td>';
+             $photo='<td> <img src="../images/user/' .$row['CompProfile'].'" height="30" width="50"></td>';
            }
 
 
@@ -97,7 +97,7 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='0'and Refused=
       <td>
       <a href="VendorProductDetails.php?id=<?php echo $row['product_id']; ?>" class="btn btn-info">
                             تفاصيل</a>
-      <button type="button" data-toggle="modal" data-target="#EditProduct" onclick="EditProduct(<?php echo $row['product_id'];?>)" class="btn btn-primary"> تعديل</button>
+      <button type="button" data-toggle="modal" data-target="#AddProduct" onclick="EditProduct(<?php echo $row['product_id'];?>)" class="btn btn-primary"> تعديل</button>
       <button type="button" data-toggle="modal" data-target="#DeleteConfirmations" onclick="DeleteProducts(<?php echo $row['product_id']; ?>)" class="btn btn-danger"> حذف المنتج</button>
       </td>
      </tr>

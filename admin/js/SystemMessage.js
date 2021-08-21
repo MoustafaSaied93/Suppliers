@@ -10,7 +10,7 @@ function loadDoc() {
     setInterval(function(){
   
         $.ajax({
-       url:"../GetNotify.php",
+       url:"../sharefunction/GetNotify.php",
         method:"GET",
         cache:false,
         success:function(data){
@@ -45,7 +45,7 @@ function loadDoc() {
   var page="SystemMessage";
   
   $.ajax({
-  url:"../fetchdata.php",
+  url:"../sharefunction/fetchdata.php",
   method:"POST",
   data: {id:ID,page:page},
   cache:false,
@@ -76,7 +76,7 @@ function loadDoc() {
     var $button = $(this);
     $.ajax({
     type: "POST",
-    url: "../DeleteFunction.php",
+    url: "../sharefunction/DeleteFunction.php",
     data:{ID:ID,page:page},
     success: function (result) {                                    
     toastr.error("تم الحذف بنجاح");

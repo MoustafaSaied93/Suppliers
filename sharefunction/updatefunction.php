@@ -1,6 +1,6 @@
 <?php 
 
-include_once("config.php");
+include_once("../config.php");
 
 $Page=$_POST['Page'];
 
@@ -109,9 +109,9 @@ $array = array($img,$img2,$img3,$img4,$img5);
 
 foreach($array as $value) {
 
-   $image_dir= 'images/user/'.$value ;
+ 
 
-
+   $image_dir = '../images/products/'.$value;
 
    if (!file_exists($image_dir)) {
 
@@ -127,7 +127,7 @@ foreach($array as $value) {
 }
 
 
-$pdffile_dir='Files/'.$fileToUpload;
+$pdffile_dir='../Files/'.$fileToUpload;
 
 
 
@@ -181,7 +181,7 @@ else if($oper=='file')
 
  $fileToUpload= $_FILES['fileToUpload']['name'];
    
-   $pdffile_dir='Files/'.$fileToUpload;
+   $pdffile_dir='../Files/'.$fileToUpload;
 
 
 
@@ -213,7 +213,7 @@ else if($oper=='image')
 {
 
    $profilecomp=$_FILES['profilecomp']['name'];      
-   $image_dir6 = 'images/user/'.$profilecomp ;
+   $image_dir6 = '../images/user/'.$profilecomp ;
 
 
  
@@ -248,14 +248,14 @@ else if($oper=='image')
 {
 
    $profilecomp=$_FILES['profilecomp']['name'];      
-   $image_dir6 = 'images/user/'.$profilecomp ;
+   $image_dir6 = '../images/user/'.$profilecomp ;
 
 
 
 
    $fileToUpload= $_FILES['fileToUpload']['name'];
    
-   $pdffile_dir='Files/'.$fileToUpload;
+   $pdffile_dir='../Files/'.$fileToUpload;
  
 
 

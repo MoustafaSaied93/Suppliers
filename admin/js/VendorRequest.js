@@ -1,3 +1,43 @@
+
+
+  $(document).ready(function () {
+
+
+
+   function loadDoc() {
+ 
+
+       setInterval(function(){
+     
+           $.ajax({
+          url:"../sharefunction/GetOrderNotify.php",
+           method:"GET",
+           cache:false,
+           success:function(data){
+     
+          $("#counter3").html(data);
+     
+     }
+     });
+     
+       },1000);
+     
+     
+      }
+     
+      loadDoc();
+
+
+ });
+
+
+
+
+
+
+
+
+
 function AcceptProduct(id,UserID){
 
    window.var1=id;
@@ -18,7 +58,7 @@ var ConfirmAccept= function () {
      type: "POST",
      cache: false,
      async: true,
-    url: "../updatefunction.php",
+    url: "../sharefunction/updatefunction.php",
     data:{ID:ID,UserID:UserID,Page:Page},
    success: function (result) {
      $("#AcceptConfirmation").modal("hide");
@@ -68,7 +108,7 @@ var ConfirmRefuse= function () {
      type: "POST",
      cache: false,
      async: true,
-    url: "../updatefunction.php",
+    url: "../sharefunction/updatefunction.php",
     data:{ID:ID,UserID:UserID,Message:Message,Page:Page},
    success: function (result) {
      $("#RefusedConfirmation").modal("hide");

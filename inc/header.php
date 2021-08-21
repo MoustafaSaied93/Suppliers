@@ -14,11 +14,11 @@ if(isset($_SESSION ['id']))
 
 	              </li>
 					
-	                <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/Admin/Vendorindex.php"><span class=""></span><span class="dn-lg"> المتجر </span></a></li>
-	                <li class="list-inline-item list_s float-left">
-	                	<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
+	 <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/Admin/Vendorindex.php"><span class=""></span><span class="dn-lg"> المتجر </span></a></li>
+	<li class="list-inline-item list_s float-left">
+	<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
 					
-	             </li>';
+	</li>';
 
 	}
 
@@ -32,8 +32,8 @@ if(isset($_SESSION ['id']))
 	              </li>
 					
 	                
-	                <li class="list-inline-item list_s float-left">
-					<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
+	         <li class="list-inline-item list_s float-left">
+			<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
 					
 	             </li>';
 
@@ -177,62 +177,98 @@ if(isset($_SESSION ['id']))
 		                <!-- Level Two-->
 	                	<ul>
 		                    <li>
-		                        <a href="#">Listing Grid</a>
+		                        <a href="#">المعدات الصناعية</a>
 		                        <!-- Level Three-->
 		                        <ul>
-		                            <li><a href="page-listing-grid-v1.html">Grid v1</a></li>
-		                            <li><a href="page-listing-grid-v2.html">Grid v2</a></li>
-		                            <li><a href="page-listing-grid-v3.html">Grid v3</a></li>
-		                            <li><a href="page-listing-grid-v4.html">Grid v4</a></li>
-		                            <li><a href="page-listing-grid-v5.html">Grid v5</a></li>
-		                            <li><a href="page-listing-full-width-grid.html">Grid Fullwidth</a></li>
+		                            <li><a href="page-listing-grid-v1.html">معدات ثابتة</a></li>
+		                            <li><a href="page-listing-grid-v2.html">معدات متحركة</a></li>
+		                            
+		                           
 		                        </ul>
 		                    </li>
 		                    <li>
-		                        <a href="#">Listing List</a>
+		                        <a href="#">الادوات الصناعية</a>
 		                        <!-- Level Three-->
 		                        <ul>
-		                            <li><a href="page-listing-list.html">List V1</a></li>
+		                            <li><a href="page-listing-list.html">ادوات  هيدروليكية</a></li>
+
+									<li><a href="page-listing-list.html">الأدوات اليدوية الصناعية</a></li>
+
+									<li><a href="page-listing-list.html">ادوات واجهزة القياس</a></li>
+
+									<li><a href="page-listing-list.html">ادوات تشغيل المحركات الكهربية</a></li>
+
+									<li><a href="page-listing-list.html">الادوات الهوائية</a></li>
+
+
+
 		                        </ul>
 		                    </li>
 		                    <li>
-		                        <a href="#">Listing Style</a>
+		                        <a href="#">قطع الغيار</a>
+		                        <!-- Level Three-->
+		                       
+		                    </li>
+		                    <li>
+		                        <a href="#">مشتقات الزيوت والشحوم</a>
 		                        <!-- Level Three-->
 		                        <ul>
-		                            <li><a href="page-listing-parallax.html">Parallax Style</a></li>
-		                            <li><a href="page-listing-slider.html">Slider Style</a></li>
-		                            <li><a href="page-listing-map.html">Map Header</a></li>
+		                            <li><a href="page-listing-half-map-v1.html">مشتقات الزيوت</a></li>
+		                            <li><a href="page-listing-half-map-v2.html">مشتقات الشحوم</a></li>
+		                           
 		                        </ul>
 		                    </li>
 		                    <li>
-		                        <a href="#">Listing Half</a>
+		                        <a href="#">معدات وادوات السلامة</a>
 		                        <!-- Level Three-->
 		                        <ul>
-		                            <li><a href="page-listing-half-map-v1.html">Map V1</a></li>
-		                            <li><a href="page-listing-half-map-v2.html">Map V2</a></li>
-		                            <li><a href="page-listing-half-map-v3.html">Map V3</a></li>
-		                            <li><a href="page-listing-half-map-v4.html">Map V4</a></li>
+		                            <li><a href="page-listing-agent-v1.html">ادوات السلامة</a></li>
+		                            <li><a href="page-listing-agent-v2.html">معدات السلامة</a></li>
+		                            
 		                        </ul>
 		                    </li>
 		                    <li>
-		                        <a href="#">Agent View</a>
+		                        <a href="#">معدات ونظم الاغلاق الهوائية 
+                              </a>
 		                        <!-- Level Three-->
 		                        <ul>
-		                            <li><a href="page-listing-agent-v1.html">Agent V1</a></li>
-		                            <li><a href="page-listing-agent-v2.html">Agent V2</a></li>
-		                            <li><a href="page-listing-agent-v3.html">Agent Details</a></li>
+		                            <li><a href="page-listing-agencies-v1.html">معدات نظم الاغلاق الهوائية
+                                      </a></li>
+		                            <li><a href="page-listing-agencies-v2.html">ادوات نظم الاغلاق الهوائية</a></li>
+		                            
 		                        </ul>
 		                    </li>
-		                    <li>
-		                        <a href="#">Agencies View</a>
-		                        <!-- Level Three-->
+
+
+							<li>
+		                        
+						<a href="#">معدات وادوات كهربائية
+	                      </a>   
+						<!-- Level Three-->
+
 		                        <ul>
-		                            <li><a href="page-listing-agencies-v1.html">Agencies V1</a></li>
-		                            <li><a href="page-listing-agencies-v2.html">Agencies V2</a></li>
-		                            <li><a href="page-listing-agencies-v3.html">Agencies Details</a></li>
+		                            <li><a href="page-listing-agencies-v1.html">معدات كهربائية
+                                      </a></li>
+		                            <li><a href="page-listing-agencies-v2.html">ادوات كهربائية</a></li>
+		                            
 		                        </ul>
 		                    </li>
-                            <li><a href="page-add-new-property.html">Create Listing</a></li>
+
+
+							<li>
+		                        
+						<a href="#">معدات وادوات نظم التحليل الصناعية
+	                      </a>   
+						<!-- Level Three-->
+
+		                        <ul>
+		                            <li><a href="page-listing-agencies-v1.html">معدات نظم التحليل
+                                      </a></li>
+		                            <li><a href="page-listing-agencies-v2.html">ادوات نظم التحليل</a></li>
+		                            
+		                        </ul>
+		                    </li>
+                            
 	                	</ul>
 		            </li>
 		            <li>
@@ -241,10 +277,7 @@ if(isset($_SESSION ['id']))
 		                    </li>
                   
 		            
-		            <li>
-		                <a href="#"><span class="title">الوظائف</span></a>
-		            
-		            </li>
+		           
 					<li>
 		                <a href="policies.php"><span class="title">السياسات</span></a>
 		            
