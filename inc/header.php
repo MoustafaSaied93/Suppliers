@@ -14,11 +14,11 @@ if(isset($_SESSION ['id']))
 
 	              </li>
 					
-	                <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/Admin/Vendorindex.php"><span class=""></span><span class="dn-lg"> المتجر </span></a></li>
-	                <li class="list-inline-item list_s float-left">
-	                	<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
+	 <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/Admin/Vendorindex.php"><span class=""></span><span class="dn-lg"> المتجر </span></a></li>
+	<li class="list-inline-item list_s float-left">
+	<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
 					
-	             </li>';
+	</li>';
 
 	}
 
@@ -32,8 +32,8 @@ if(isset($_SESSION ['id']))
 	              </li>
 					
 	                
-	                <li class="list-inline-item list_s float-left">
-					<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
+	         <li class="list-inline-item list_s float-left">
+			<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
 					
 	             </li>';
 
@@ -277,10 +277,7 @@ if(isset($_SESSION ['id']))
 		                    </li>
                   
 		            
-		            <li>
-		                <a href="#"><span class="title">الوظائف</span></a>
-		            
-		            </li>
+		           
 					<li>
 		                <a href="policies.php"><span class="title">السياسات</span></a>
 		            
