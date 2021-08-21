@@ -17,7 +17,7 @@ function NotActive(id){
          type: "GET",
          cache: false,
          async: true,
-        url: "../UpdateStatus.php",
+        url: "../sharefunction/UpdateStatus.php",
         data:{ID:ID},
        success: function (result) {
          $("#NotActiveConfirmation").modal("hide");
@@ -46,7 +46,7 @@ function Active(id){
          type: "GET",
          cache: false,
          async: true,
-        url: "../UpdateActiveStatus.php",
+        url: "../sharefunction/UpdateActiveStatus.php",
         data:{ID:ID},
        success: function (result) {
          $("#ActiveConfirmation").modal("hide");
@@ -82,7 +82,7 @@ function Active(id){
          type: "POST",
          cache: false,
          async: true,
-        url: "../DeleteFunction.php",
+        url: "../sharefunction/DeleteFunction.php",
         data:{ID:ID,page:page},
        success: function (result) {
 

@@ -114,7 +114,7 @@ echo'
                                                        
  <label><h6>بروفايل الشركة</h6></label>
                                                        
-  <img src="../' .$row['CompProfile'].'" style="margin:10px" height="200" width="200" id="imagePreviewccc" />
+  <img src="../images/user/'.$row["CompProfile"].' " style="margin:10px" height="200" width="200" id="imagePreviewccc" />
                                                        
   </div>
                                                        

@@ -347,6 +347,7 @@ if(!isset ($_SESSION ['id']))
 
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="uiElementsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="counter" id="counter2">0</span>
                             <i class="icon-image nav-icon"></i>
                             ادارة المنتجات
                         </a>
@@ -435,6 +436,7 @@ if(!isset ($_SESSION ['id']))
                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="counter" id="counter3">0</span>
                                 <i class="icon-shopping-cart nav-icon"></i>
                                 ادارة الطلبات
                             </a>

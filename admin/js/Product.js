@@ -1,5 +1,30 @@
 
    $(document).ready(function () {
+
+
+
+    function loadDoc() {
+  
+
+        setInterval(function(){
+      
+            $.ajax({
+           url:"../sharefunction/GetProductNotify.php",
+            method:"GET",
+            cache:false,
+            success:function(data){
+      
+           $("#counter2").html(data);
+      
+      }
+      });
+      
+        },1000);
+      
+      
+       }
+      
+       loadDoc();
     //    
 
     $('#imagePreviews').click(function () {
@@ -60,7 +85,7 @@
 
             
         $.ajax({
-            url:"../dropdownlist.php",
+            url:"../sharefunction/dropdownlist.php",
             method:"POST",
             cache:false,
 	       data:{Catid:Catid},
@@ -87,7 +112,7 @@
             $("#manifac").hide();
 
             $.ajax({
-                url:"../dropdownlist.php",
+                url:"../sharefunction/dropdownlist.php",
                 method:"POST",
                 cache:false,
                data:{Catid:Catid},
@@ -127,7 +152,7 @@
         }
 
            $.ajax({
-            url:"../dropdownlist.php",
+            url:"../sharefunction/dropdownlist.php",
             method:"POST",
             cache:false,
 	       data:{AddCatid:Catid,CatTypeID:CatTypeID},
@@ -172,7 +197,7 @@
         }
 
            $.ajax({
-            url:"../dropdownlist.php",
+            url:"../sharefunction/dropdownlist.php",
             method:"POST",
             cache:false,
 	       data:{AddCatid:Catid,CatTypeID:CatTypeID},
@@ -489,7 +514,7 @@ formData.append("fileToUpload", fileToUpload);
 
 
 $.ajax({
-    url: '../AddProduct.php',
+    url: '../sharefunction/AddProduct.php',
     data: formData,
     contentType: false,
     processData: false,
@@ -497,7 +522,7 @@ $.ajax({
     success:function(data){
 
 
-        $("#AddProduct").modal("hide");
+     $("#AddProduct").modal("hide");
  
         toastr.success("العملية تمت بنجاح وسوف يتم مراجعه البيانات من قبل ادارة النظام ");
         window.setTimeout(function () { location.reload() }, 2000)
@@ -541,35 +566,7 @@ $.ajax({
 
 
 
-       function DeleteProducts(id){
-        window.var1=id;
-    
-    
-     }
-
-
-
-     var ConfirmDeleting= function () {
-
-        
-        var ID = window.var1;
-        var page="Product";
-         var $button = $(this);
-          $.ajax({
-           type: "POST",
-           cache: false,
-           async: true,
-          url: "../DeleteFunction.php",
-          data:{ID:ID,page:page},
-         success: function (result) {
-           $("#DeleteConfirmations").modal("hide");
-           toastr.error("تم عملية الحذف بنجاح");
-              window.setTimeout(function () { location.reload() }, 3000)
-           }
-    
-           });
-        }
-
+      
 
 
  function EditProduct(ID)
@@ -605,7 +602,7 @@ $.ajax({
   var page="Products";
 
   $.ajax({
-    url:"../fetchdata.php",
+    url:"../sharefunction/fetchdata.php",
     method:"POST",
     data: {id:ID,page:page},
     dataType: "json", 
@@ -637,7 +634,7 @@ $.ajax({
     $("#Services").val(data.Services);
    
 
-    $("#imagePreviewc").attr('src',' ../'+data.CompProfile);
+    $("#imagePreviewc").attr('src',' ../images/user/'+data.CompProfile);
 
 
 }
@@ -1212,7 +1209,7 @@ if(fileToUpload===undefined)
 
     
    $.ajax({
-    url: '../updatefunction.php',
+    url: '../sharefunction/updatefunction.php',
     data: formData,
     contentType: false,
     processData: false,
@@ -1232,6 +1229,39 @@ if(fileToUpload===undefined)
 });
 
 
+function DeleteProducts(id){
+    window.delete=id;
+
+    
+
+
+ }
+
+
+
+ var ConfirmDeleting= function () {
+
+    
+    var ID = window.delete;
+    var page="Product";
+     var $button = $(this);
+      $.ajax({
+       type: "POST",
+       cache: false,
+       async: true,
+      url: "../sharefunction/DeleteFunction.php",
+      data:{ID:ID,page:page},
+     success: function (result) {
+       $("#DeleteConfirmations").modal("hide");
+       toastr.error("تم عملية الحذف بنجاح");
+          window.setTimeout(function () { location.reload() }, 3000)
+       }
+
+       });
+    }
+
+
+
 
 
 
@@ -1243,7 +1273,7 @@ if(fileToUpload===undefined)
         
         
   $.ajax({
-    url:"../dropdownlist.php",
+    url:"../sharefunction/dropdownlist.php",
     method:"POST",
     cache:false,
    data:{Catsid:Catid,CatTypeID:CatTypeID},
@@ -1278,7 +1308,7 @@ function GetSubCategory(Catid,CatTypeID,CatSubid)
    
 
     $.ajax({
-        url:"../dropdownlist.php",
+        url:"../sharefunction/dropdownlist.php",
         method:"POST",
         cache:false,
        data:{Catidss:Catid,CatTypesID:CatTypeID,CatSubid:CatSubid},

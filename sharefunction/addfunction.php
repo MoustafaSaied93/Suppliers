@@ -1,6 +1,6 @@
 <?php  
 
-include_once("config.php");
+include_once("../config.php");
 session_start();
 
 $pages=$_POST['page'];
@@ -70,8 +70,8 @@ if($pages=="Signup")
 
    //img
   $image_name=$_FILES['img']['name'];      
-  $image_dir = 'images/user/'.$image_name ;
-  $image_db = 'images/user/' .$image_name ;
+  $image_dir = '../images/user/'.$image_name ;
+  $image_db = '../images/user/' .$image_name ;
 
 
 

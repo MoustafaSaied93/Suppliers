@@ -1,6 +1,6 @@
 <?php
 
-include_once("config.php");
+include_once("../config.php");
 
 $Page=$_POST['page'];
 
@@ -40,28 +40,59 @@ else if($Page=="Product")
 
 $ID=$_POST['ID'];
 
-$query= mysqli_query($conn,"DELETE FROM product WHERE product_id  ='$ID'");
 
-
-
-$pdffile_dir='Files/561B-data (1).pdf';
-
- unlink($pdffile_dir);
-
-
-
-//$query2= mysqli_query($conn,"SELECT * FROM product WHERE product_id  ='$ID'");
+$query1= mysqli_query($conn,"SELECT * FROM product WHERE product_id  ='$ID'");
 
 
 
 
 
+while($row = mysqli_fetch_array($query1))
+ {
+
+    $CATID=$row["cat_id"];
+
+    $Compimg=$row["CompProfile"];
 
 
+    $upladF=$row["AttachFile"];
+
+    $image_name1=$row["image1"];
+    $image_name2=$row["image2"];
+    $image_name3=$row["image3"];
+    $image_name4=$row["image4"];
+    $image_name5=$row["image5"];
 
 
+    $image_dir6 = '../images/user/'.$Compimg;
 
 
+    $pdffile_dir='../Files/'.$upladF.'';
+
+    $image_dir1 = '../images/products/'.$image_name1 ;
+
+    $image_dir2 = '../images/products/'.$image_name2 ;
+
+    $image_dir3 = '../images/products/'.$image_name3 ;
+
+    $image_dir4 = '../images/products/'.$image_name4 ;
+
+    $image_dir5 = '../images/products/'.$image_name5 ;
+
+
+    unlink($pdffile_dir);
+    //unlink($image_dir6);
+   // unlink($image_dir1);
+   // unlink($image_dir2);
+    //unlink($image_dir3);
+    //unlink($image_dir4);
+    //unlink($image_dir5);
+
+
+ }
+
+
+ $query2= mysqli_query($conn,"DELETE FROM product WHERE product_id  ='$ID'");
 
 
 
