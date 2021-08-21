@@ -105,12 +105,17 @@ if(isset($_SESSION ['id']))
 
 <html dir="rtl" lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="advanced custom search, agency, agent, business, clean, corporate, directory, google maps, homes, idx agent, listing properties, membership packages, property, real broker, real estate, real estate agent, real estate agency, realtor">
-<meta name="description" content="FindHouse - Real Estate HTML Template">
-<meta name="CreativeLayers" content="ATFN">
+
+
+<!-- Basic Page Needs--> 
+<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta name="keywords" content="منصة تجار الرقمية,تجار,منصة الجبيل,قطع غيار,صيانة تجار,قطع الغيار الجبيل تجار,تجار تجار قطع الغيار  بالرياض,موردين قطع الغيار  ,تجار للبيع في حي النخيل بالرياض,تجار تجار بالرياض,قطع الغيار تجار بالرياض,قطع منصة تجار لقطع الغيار,تجار لقطع الغيار بالجبيل,تجار للبيع بالرياض,تجار قطع غير في الرياض,مضخات قطع غيار في الجبيل, منصة تجار منصة تجار الرقمية منصة تجار الرقمية منصة تجار الرقمية, منصة تجار الرقمية, سكنية بالرياض, منصة تجار الرقمية الرياض"> 
+	<meta name="author" content=" منصة تجار الرقمية منصة تجار الرقمية, منصة تجار الرقمية, منصة تجار الرقمية منصة تجار الرقمية منصة تجار الرقمية, منصة تجار الرقمية, منصة تجار الرقمية, منصة تجار منصة تجار الرقمية منصة تجار الرقمية, منصة تجار الرقمية, منصة تجار الرقمية "> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="CreativeLayers" content="ATFN"> 
+	<!-- Primary Meta Tags -->
+
 <!-- css file --> 
 <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
 <link rel="stylesheet" href="css/style.css">
