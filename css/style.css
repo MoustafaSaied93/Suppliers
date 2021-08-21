@@ -2326,11 +2326,14 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .home_adv_srch_opt.home4 .nav-pills li.nav-item a.nav-link{
   border-radius: 25px;
+  font-family: rb;
 }
 .home_adv_srch_opt.home4 .home1_adsrchfrm{
   border-radius: 45px;
   height: 90px;
   padding: 20px;
+  text-align: center;
+  font-family: rb;
 }
 .home_adv_srch_opt.home4 .home1_adsrchfrm:before{
   border-radius: 60px;
