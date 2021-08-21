@@ -2,7 +2,6 @@
 
 <?php include "inc/header.php" ?>
 
-!-- Listing Single Property -->
 	<section class="listing-title-area p0">
 		<div class="container-fluid">
 			<div class="row">
@@ -40,14 +39,14 @@
 							<div class="listing_single_description">
 								<div class="lsd_list">
 									<ul class="mb0">
-										<li class="list-inline-item"><a href="#">Apartment</a></li>
-										<li class="list-inline-item"><a href="#">Beds: 4</a></li>
-										<li class="list-inline-item"><a href="#">Baths: 2</a></li>
-										<li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+										<li class="list-inline-item"><a href="#">قطع الغيار</a></li>
+										<li class="list-inline-item"><a href="#">قطع الغيار</a></li>
+										<li class="list-inline-item"><a href="#">قطع الغيار</a></li>
+										<li class="list-inline-item"><a href="#">رقم القطعة : 34545</a></li>
 									</ul>
 								</div>
-								<h4 class="mb30">Description</h4>
-						    	<p class="mb25">Evans Tower very high demand corner junior one bedroom plus a large balcony boasting full open NYC views. You need to see the views to believe them. Mint condition with new hardwood floors. Lots of closets plus washer and dryer.</p>
+								<h4 class="mb30">وصف المنتج</h4>
+						    	<p class="mb25">نسعى في الشركة السعودية لوساطة التجار والموردين إلى الارتقاء بمستوى جودة خدماتنا وبناء علاقات عمل وثيقة ومستدامة مع شركائنا تؤمن لنا النمو والتوسع؛ لذلك، تدشن الشركة بوابة الموردين الإلكترونية (تجار)، وهي منصة إلكترونية موحدة تعمل على تسهيل إجراءات المبيعات والمشتريات ومخصصة للتواصل بين الموردين والعملاء وإدارة المشتريات والعقود في الشركة. نحن نعمل في الشركة السعودية (تجار)على تحقيق مستهدفاتنا الاستراتيجية وطموحات وطننا الغالي، والوصول بخدماتنا إلى مستويات متقدمة توافق تطلعات موردينا الكرام، كما ونعمل جاهدين لربط وانتقاء الموردين المتميزين لنعمل سويًا لتحقيق المصالح المشتركة التي تصب أولًا وآخرًا في خدمة المملكة وتحقيق رؤية قيادتنا الرشيدة وتأكيد ريادة الشركة في قطاع التجارة الالكترونية. </p>
 						    	<p class="gpara second_para white_goverlay mt10 mb10">Fully furnished. Elegantly appointed condominium unit situated on premier location. PS6. The wide entry hall leads to a large living room with dining area. This expansive 2 bedroom and 2 renovated marble bathroom apartment has great windows. Despite the interior views, the apartments Southern and Eastern exposures allow for lovely natural light to fill every room. The master suite is surrounded by handcrafted milkwork and features incredible walk-in closet and storage space.</p>
 								<div class="collapse" id="collapseExample">
 								  	<div class="card card-body">
@@ -57,7 +56,7 @@
 								</div>
 								<p class="overlay_close">
 									<a class="text-thm fz14" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-								   	 Show More <span class="flaticon-download-1 fz12"></span>
+								   	 المزيد <span class="flaticon-download-1 fz12"></span>
 								  	</a>
 								</p>
 							</div>
@@ -66,44 +65,44 @@
 							<div class="additional_details">
 								<div class="row">
 									<div class="col-lg-12">
-										<h4 class="mb15">Property Details</h4>
+										<h4 class="mb15">تفاصيل المنتج </h4>
 									</div>
 									<div class="col-md-6 col-lg-6 col-xl-4">
 										<ul class="list-inline-item">
-											<li><p>Property ID :</p></li>
-											<li><p>Price :</p></li>
-											<li><p>Property Size :</p></li>
-											<li><p>Year Built :</p></li>
+											<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
 										</ul>
 										<ul class="list-inline-item">
-											<li><p><span>HZ27</span></p></li>
-											<li><p><span>$130,000</span></p></li>
-											<li><p><span>1560 Sq Ft</span></p></li>
-											<li><p><span>2016-01-09</span></p></li>
-										</ul>
-									</div>
-									<div class="col-md-6 col-lg-6 col-xl-4">
-										<ul class="list-inline-item">
-											<li><p>Bedrooms :</p></li>
-											<li><p>Bathrooms :</p></li>
-											<li><p>Garage :</p></li>
-											<li><p>Garage Size :</p></li>
-										</ul>
-										<ul class="list-inline-item">
-											<li><p><span>8</span></p></li>
-											<li><p><span>4</span></p></li>
-											<li><p><span>2</span></p></li>
-											<li><p><span>200 SqFt</span></p></li>
+											<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
 										</ul>
 									</div>
 									<div class="col-md-6 col-lg-6 col-xl-4">
 										<ul class="list-inline-item">
-											<li><p>Property Type :</p></li>
-											<li><p>Property Status :</p></li>
+										<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
 										</ul>
 										<ul class="list-inline-item">
-											<li><p><span>Apartment</span></p></li>
-											<li><p><span>For Sale</span></p></li>
+										<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
+										</ul>
+									</div>
+									<div class="col-md-6 col-lg-6 col-xl-4">
+										<ul class="list-inline-item">
+										<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
+										</ul>
+										<ul class="list-inline-item">
+										<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
 										</ul>
 									</div>
 								</div>
@@ -113,30 +112,30 @@
 							<div class="additional_details">
 								<div class="row">
 									<div class="col-lg-12">
-										<h4 class="mb15">Additional details</h4>
+										<h4 class="mb15">المقاسات</h4>
 									</div>
 									<div class="col-md-6 col-lg-6">
 										<ul class="list-inline-item">
-											<li><p>Deposit :</p></li>
-											<li><p>Pool Size :</p></li>
-											<li><p>Additional Rooms :</p></li>
+										<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
 										</ul>
 										<ul class="list-inline-item">
-											<li><p><span>20%</span></p></li>
-											<li><p><span>300 Sqft</span></p></li>
-											<li><p><span>Guest Bath</span></p></li>
+										<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
 										</ul>
 									</div>
 									<div class="col-md-6 col-lg-6">
 										<ul class="list-inline-item">
-											<li><p>Last remodel year :</p></li>
-											<li><p>Amenities :</p></li>
-											<li><p>Equipment :</p></li>
+										<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
+											<li><p>رقم القطعة :</p></li>
 										</ul>
 										<ul class="list-inline-item">
-											<li><p><span>1987</span></p></li>
-											<li><p><span>Clubhouse</span></p></li>
-											<li><p><span>Grill - Gas</span></p></li>
+										<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
+											<li><p><span>34534534534</span></p></li>
 										</ul>
 									</div>
 								</div>
@@ -144,18 +143,18 @@
 						</div>
 						<div class="col-lg-12">
 							<div class="property_attachment_area">
-								<h4 class="mb30">Property Attachments</h4>
+								<h4 class="mb30">المستندات</h4>
 								<div class="iba_container style2">
 									<div class="icon_box_area style2">
 										<div class="score"><span class="flaticon-document text-thm fz30"></span></div>
 										<div class="details">
-											<h5><span class="flaticon-download text-thm pr10"></span> Demo Word Document</h5>
+											<h5><span class="flaticon-download text-thm pr10"></span> موصافات المنتج </h5>
 										</div>
 									</div>
 									<div class="icon_box_area style2">
 										<div class="score"><span class="flaticon-pdf text-thm fz30"></span></div>
 										<div class="details">
-											<h5><span class="flaticon-download text-thm pr10"></span> Demo pdf Document</h5>
+											<h5><span class="flaticon-download text-thm pr10"></span> شهادات</h5>
 										</div>
 									</div>
 								</div>
@@ -165,33 +164,33 @@
 							<div class="application_statics mt30">
 								<div class="row">
 									<div class="col-lg-12">
-										<h4 class="mb10">Features</h4>
+										<h4 class="mb10">امتيازات</h4>
 									</div>
 									<div class="col-sm-6 col-md-6 col-lg-4">
 										<ul class="order_list list-inline-item">
-											<li><a href="#"><span class="flaticon-tick"></span>Air Conditioning</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>Barbeque</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>Dryer</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>Gym</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>Laundry</a></li>
+											<li><a href="#"><span class="flaticon-tick"></span>ضمان</a></li>
+											<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+											<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+											<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+											<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
 										</ul>
 									</div>
 									<div class="col-sm-6 col-md-6 col-lg-4">
 										<ul class="order_list list-inline-item">
-											<li><a href="#"><span class="flaticon-tick"></span>Lawn</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>Microwave</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>Outdoor Shower</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>Refrigerator</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>Sauna</a></li>
+										<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+										<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+										<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+										<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+										<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
 										</ul>
 									</div>
 									<div class="col-sm-6 col-md-6 col-lg-4">
 										<ul class="order_list list-inline-item">
-											<li><a href="#"><span class="flaticon-tick"></span>Swimming Pool</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>TV Cable</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>Washer</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>WiFi</a></li>
-											<li><a href="#"><span class="flaticon-tick"></span>Window Coverings</a></li>
+										<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+										<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+										<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+										<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
+										<li><a href="#"><span class="flaticon-tick"></span>صيانة</a></li>
 										</ul>
 									</div>
 								</div>

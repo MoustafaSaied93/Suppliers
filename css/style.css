@@ -5570,7 +5570,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 .lsd_list li a{
   color: #484848;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: rgb(72, 72, 72);
   line-height: 1.2;
 }
@@ -5582,6 +5582,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   border: 1px solid rgb(235, 235, 235);
   border-radius: 8px 8px 0 0;
   padding: 30px;  
+  text-align: justify;
 }
 .listing_single_description.style2{
   border-radius: 0;
@@ -5626,10 +5627,12 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   border: 1px solid rgb(235, 235, 235);
   padding: 30px;
   position: relative;  
+  text-align: right;
+  font-family: rb;
 }
 .additional_details ul li p{
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: rgb(72, 72, 72);
   line-height: 2.857;
   margin-bottom: 0;
@@ -5651,6 +5654,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   border-radius: 8px;
   padding: 30px;
   position: relative;
+  text-align: right;
 }
 .iba_container{
   display: -webkit-flex;
@@ -5683,7 +5687,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 }
 .icon_box_area .details h5{
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: rgb(72, 72, 72);
   font-weight: bold;
   line-height: 1.5;
@@ -12263,6 +12267,7 @@ a.btn.btn_error{
   box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
   padding: 30px;
   position: relative;
+  text-align: right;
 }
 .application_statics h4{
   font-family: "Nunito";
