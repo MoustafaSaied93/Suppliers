@@ -40,12 +40,12 @@
 				                </div>
 				                <div class="col-md-6">
 				                    <div class="form-group">
-				                    	<input id="Emails" name="form_email" class="form-control required email" required="required" type="email" placeholder="البريد الالكتروني">
+				                    	<input id="CEmail" name="form_email" class="form-control required email" required="required" type="email" placeholder="البريد الالكتروني">
 				                    </div>
 				                </div>
 				                <div class="col-md-6">
 				                    <div class="form-group">
-				                    	<input id="Mobile" name="form_phone" class="form-control required phone" required="required" type="phone" placeholder="الجوال">
+				                    	<input id="CMobile" name="form_phone" class="form-control required phone" required="required" type="phone" placeholder="الجوال">
 				                    </div>
 				                </div>
 				                <div class="col-md-6">

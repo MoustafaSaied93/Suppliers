@@ -1,4 +1,16 @@
-<?php include "inc/header.php" ?>
+<?php include "inc/header.php";
+
+include_once("config.php");
+
+$query1= mysqli_query($conn,"SELECT p.*, c.*,a.*
+FROM product p INNER JOIN
+	 categories c
+	 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID WHERE p.cat_id!='9'  AND p.Accept='1'
+ORDER BY p.product_id  DESC LIMIT 8");
+
+
+
+?>
 
 	<!-- 4th Home Slider -->
 	<div class="home-four" dir="ltr">
@@ -106,6 +118,8 @@
 						<li class="list-inline-item"><div class="icon"><span class="flaticon-house-2"></span><p> الصيانة</p></div></li>
 						<li class="list-inline-item"><div class="icon"><span class="flaticon-building"></span><p>التركيب</p></div></li>
 						<li class="list-inline-item"><div class="icon"><span class="flaticon-building"></span><p>التركيب</p></div></li>
+						
+						
 					
 					</ul>
 				</div>
@@ -145,10 +159,17 @@
 				</div>
 				<div class="col-lg-12">
 					<div class="feature_property_slider">
+					<?php
+
+                while($row = mysqli_fetch_array($query1))
+                      {
+                      echo'
+
+
 						<div class="item">
 							<div class="feat_property">
 								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+									<img class="img-whp" src="images/products/'.$row['image1'].'">
 									<div class="thmb_cntnt">
 										<ul class="tag mb0">
 											<li class="list-inline-item"><a href="#">للبيع</a></li>
@@ -158,17 +179,17 @@
 											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
 											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
 										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
+										<a class="fp_price" href="#">'.$row['Price'].'<small> ريال</small></a>
 									</div>
 								</div>
 								<div class="details">
 									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
+										<p class="text-thm">'.$row['cat_name'].'</p>
+										<h4>'.$row['Product_Name'].'</h4>
+										<p><span class="flaticon-placeholder"></span> السعودية-'.$row['City'].'</p>
 										<ul class="prop_details mb0"style="text-align: right;">
 										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
+											<li class="list-inline-item" ><a href="#">رقم القطعة: '.$row['PartNumber'].' </a></li>
 										</ul>
 									</div>
 									<div class="fp_footer">
@@ -176,466 +197,17 @@
 											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
 											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
 										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
+										<div class="fp_pdate float-right"> منذ:ساعة</div>
 									</div>
 								</div>
 							</div>
 						</div>
 
+						 ';
 
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
+	                     }
 
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="item">
-							<div class="feat_property">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">مباع</a></li>
-										</ul>
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">13,000<small>/الف ريال</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">قطع غيار</p>
-										<h4>قطع غيار المضخات</h4>
-										<p><span class="flaticon-placeholder"></span> السعودية - الدمام</p>
-										<ul class="prop_details mb0"style="text-align: right;">
-										
-											<li class="list-inline-item" ><a href="#">رقم القطعة: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#"> شركة تجارية</a></li>
-										</ul>
-										<div class="fp_pdate float-right">منذ : 4 سنوات</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
+						 ?>
 
 					</div>
 				</div>

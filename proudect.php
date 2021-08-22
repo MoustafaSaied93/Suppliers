@@ -1,4 +1,11 @@
-<?php include "inc/header.php" ?>
+<?php include "inc/header.php";
+
+include_once("config.php");
+
+$id = $_GET['id'];
+
+
+?>
 
 
 
@@ -10,9 +17,9 @@
 					<div class="breadcrumb_content">
 						<ol class="breadcrumb">
 						    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
-						    <li class="breadcrumb-item active" aria-current="page">تواصل معانا</li>
+						    <li class="breadcrumb-item active" aria-current="page">المنتجات</li>
 						</ol>
-						<h4 class="breadcrumb_title">تواصل معانا</h4>
+						<h4 class="breadcrumb_title">قائمة المنتجات</h4>
 					</div>
 				</div>
 			</div>
@@ -78,9 +85,9 @@
 					<div class="breadcrumb_content style2 mb0-991">
 						<ol class="breadcrumb">
 						    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
-						    <li class="breadcrumb-item active text-thm" aria-current="page">قائمة المنتجات</li>
+						    <li class="breadcrumb-item active text-thm" aria-current="page">المعدات الصناعية</li>
 						</ol>
-						<h2 class="breadcrumb_title"style = "  text-align: right; ">الاقسام</h2>
+						
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -131,8 +138,11 @@
 											<div class="candidate_revew_select">
 												<select class="selectpicker w100 show-tick">
 													<option>الاقسام</option>
-													<option>قطع الغيار</option>
-													<option>قطع الغيار</option>
+													<option>المضخات الصناعية</option>
+													<option>صناديق التروس</option>
+													<option>انابيب صناعية</option>
+													<option>خزانات صناعية</option>
+													<option>المواتير الصناعية</option>
 												
 												</select>
 											</div>
@@ -209,7 +219,7 @@
 						<div class="grid_list_search_result" stlye = "  text-align: right;">
 							<div class="col-sm-12 col-md-4 col-lg-4 col-xl-5" >
 								<div class="left_area tac-xsd">
-									<p>عدد الاقسام : 7</p>
+									<p>عدد الاقسام : 5</p>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-8 col-lg-8 col-xl-7">
@@ -224,13 +234,102 @@
 					</div>
 					<div class="row">
 
+					<?php 
+
+               if($id==1)
+            {
+
+  	         $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+			   FROM product p INNER JOIN
+					categories c
+					ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='8' AND p.Accept='1'
+	       ");
+
+            }
+
+            else if($id==2)
+
+             {
+            $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+			FROM product p INNER JOIN
+				 categories c
+				 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='10' AND p.Accept='1'
+            ");
+
+             }
+
+            else if($id==3)
+
+             {
+              $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+			  FROM product p INNER JOIN
+				   categories c
+				   ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='11' AND p.Accept='1'
+               ");
+              }
 
 
+             else if($id==4)
 
+             {
+             $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+			 FROM product p INNER JOIN
+				  categories c
+				  ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='12' AND p.Accept='1'
+             ");
+
+           }
+
+          else if($id==5)
+
+          {
+           $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+		   FROM product p INNER JOIN
+				categories c
+				ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='13' AND p.Accept='1'
+           ");
+           }
+
+
+            else if($id==6)
+
+            {
+              $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+			  FROM product p INNER JOIN
+				   categories c
+				   ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='15' AND p.Accept='1'
+            ");
+            }
+
+          else if($id==7)
+
+            {
+            $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+			FROM product p INNER JOIN
+				 categories c
+				 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='14' AND p.Accept='1'
+           ");
+
+           }
+
+           else if($id==8)
+
+           {
+           $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+		   FROM product p INNER JOIN
+				categories c
+				ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='16' AND p.Accept='1'
+           ");
+
+           }
+
+              while($row=mysqli_fetch_array($query2))
+			  {
+                   echo'
 						<div class="col-lg-12">
 							<div class="feat_property list">
 								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+									<img class="img-whp" src="images/products/'.$row['image1'].'">
 									<div class="thmb_cntnt">
 										<ul class="icon mb0">
 											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
@@ -245,12 +344,16 @@
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#">قسم : قطع الغيار</a>
+											<a class="fp_price" href="#">الصنف :'.$row['cat_name'].'</a>
 											
 										</div>
-										<p class="text-thm">عدد القطع :40,000</p>
-										<p><span class="flaticon-user"></span> عدد الموردين : 2000</p>
-										<p><span class="flaticon-user"></span> عدد المبيعات : 2000</p>
+										<p class="text-thm">اسم المنتج : '.$row['Product_Name'].'</p>
+
+										<p class="text-thm"> السعر : '.$row['Price'].'  ريال</p>
+
+										<p class="text-thm"> رقم القطعة : '.$row['PartNumber'].'</p>
+
+										<p class="text-thm"><span class="flaticon-placeholder"></span> المدينة : '.$row['City'].'</p>
 
 										<ul class="prop_details mb0">
 										</ul>
@@ -264,180 +367,16 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div>';
+
+			  }
 
 
 
+						?>
 
-						<div class="col-lg-12">
-							<div class="feat_property list">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<div class="dtls_headr">
-											<ul class="tag">
-												
-												<li class="list-inline-item"><a href="#">متوفر</a></li>
-											</ul>
-											<a class="fp_price" href="#">قسم : قطع الغيار</a>
-											
-										</div>
-										<p class="text-thm">عدد القطع :40,000</p>
-										<p><span class="flaticon-user"></span> عدد الموردين : 2000</p>
-										<p><span class="flaticon-user"></span> عدد المبيعات : 2000</p>
-
-										<ul class="prop_details mb0">
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">تجار</a></li>
-										</ul>
-										<div class="fp_pdate float-right"> اخر تحديت : 5 دقيقة </div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="col-lg-12">
-							<div class="feat_property list">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<div class="dtls_headr">
-											<ul class="tag">
 										
-												<li class="list-inline-item"><a href="#">متوفر</a></li>
-											</ul>
-											<a class="fp_price" href="#">قسم : قطع الغيار</a>
-											
-										</div>
-										<p class="text-thm">عدد القطع :40,000</p>
-										<p><span class="flaticon-user"></span> عدد الموردين : 2000</p>
-										<p><span class="flaticon-user"></span> عدد المبيعات : 2000</p>
-
-										<ul class="prop_details mb0">
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">تجار</a></li>
-										</ul>
-										<div class="fp_pdate float-right"> اخر تحديت : 5 دقيقة </div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="col-lg-12">
-							<div class="feat_property list">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<div class="dtls_headr">
-											<ul class="tag">
-										
-												<li class="list-inline-item"><a href="#">متوفر</a></li>
-											</ul>
-											<a class="fp_price" href="#">قسم : قطع الغيار</a>
-											
-										</div>
-										<p class="text-thm">عدد القطع :40,000</p>
-										<p><span class="flaticon-user"></span> عدد الموردين : 2000</p>
-										<p><span class="flaticon-user"></span> عدد المبيعات : 2000</p>
-
-										<ul class="prop_details mb0">
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">تجار</a></li>
-										</ul>
-										<div class="fp_pdate float-right"> اخر تحديت : 5 دقيقة </div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="col-lg-12">
-							<div class="feat_property list">
-								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-									<div class="thmb_cntnt">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<div class="dtls_headr">
-											<ul class="tag">
-											
-												<li class="list-inline-item"><a href="#">متوفر</a></li>
-											</ul>
-											<a class="fp_price" href="#">قسم : قطع الغيار</a>
-											
-										</div>
-										<p class="text-thm">عدد القطع :40,000</p>
-										<p><span class="flaticon-user"></span> عدد الموردين : 2000</p>
-										<p><span class="flaticon-user"></span> عدد المبيعات : 2000</p>
-
-										<ul class="prop_details mb0">
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">تجار</a></li>
-										</ul>
-										<div class="fp_pdate float-right"> اخر تحديت : 5 دقيقة </div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-					
-						
-					
-					
-						
-						
+								
 					
 						<div class="col-lg-12 mt20">
 							<div class="mbp_pagination">
@@ -445,13 +384,14 @@
 								    <li class="page-item disabled">
 								    	<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
 								    </li>
-								    <li class="page-item"><a class="page-link" href="#">1</a></li>
-								    <li class="page-item active" aria-current="page">
-								    	<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+								    <li class="page-item active" aria-current="page"><a class="page-link" href="#"> <span class="sr-only">(current)</span> 1</a>
+							     	</li>
+								    <li class="page-item" >
+								    	<a class="page-link" href="#">2 </a>
 								    </li>
 								    <li class="page-item"><a class="page-link" href="#">3</a></li>
 								    <li class="page-item"><a class="page-link" href="#">...</a></li>
-								    <li class="page-item"><a class="page-link" href="#">29</a></li>
+								    <li class="page-item"><a class="page-link" href="#">30</a></li>
 								    <li class="page-item">
 								    	<a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
 								    </li>

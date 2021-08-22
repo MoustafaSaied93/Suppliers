@@ -14,7 +14,7 @@ if(isset($_SESSION ['id']))
 
 	              </li>
 					
-	 <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/Admin/Vendorindex.php"><span class=""></span><span class="dn-lg"> المتجر </span></a></li>
+	 <li class="list-inline-item add_listing home2 style10 float-left"><a href="admin/Vendorindex.php"><span class=""></span><span class="dn-lg"> المتجر </span></a></li>
 	<li class="list-inline-item list_s float-left">
 	<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
 					
@@ -51,7 +51,7 @@ if(isset($_SESSION ['id']))
 
 	              </li>
 					
-	                <li class="list-inline-item add_listing home2 style10 float-left"><a href="../Suppliers/Admin/index.php"><span class=""></span><span class="dn-lg"> لوحة التحكم </span></a></li>
+	                <li class="list-inline-item add_listing home2 style10 float-left"><a href="admin/index.php"><span class=""></span><span class="dn-lg"> لوحة التحكم </span></a></li>
 	                <li class="list-inline-item list_s float-left">
 	                	<a href="#" class="btn flaticon-user""> <span class="dn-lg">مرحبا '.$_SESSION['UserName'].'</span></a>
 					
@@ -173,102 +173,20 @@ if(isset($_SESSION ['id']))
 		        
 		            </li>
 		            <li>
-		                <a href="proudect.php"><span class="title">المنتجات</span></a>
-		                <!-- Level Two-->
+		                <a href="#"><span class="title">المنتجات</span></a>
+		               
 	                	<ul>
-		                    <li>
-		                        <a href="#">المعدات الصناعية</a>
-		                        <!-- Level Three-->
-		                        <ul>
-		                            <li><a href="page-listing-grid-v1.html">معدات ثابتة</a></li>
-		                            <li><a href="page-listing-grid-v2.html">معدات متحركة</a></li>
-		                            
-		                           
-		                        </ul>
-		                    </li>
-		                    <li>
-		                        <a href="#">الادوات الصناعية</a>
-		                        <!-- Level Three-->
-		                        <ul>
-		                            <li><a href="page-listing-list.html">ادوات  هيدروليكية</a></li>
-
-									<li><a href="page-listing-list.html">الأدوات اليدوية الصناعية</a></li>
-
-									<li><a href="page-listing-list.html">ادوات واجهزة القياس</a></li>
-
-									<li><a href="page-listing-list.html">ادوات تشغيل المحركات الكهربية</a></li>
-
-									<li><a href="page-listing-list.html">الادوات الهوائية</a></li>
-
-
-
-		                        </ul>
-		                    </li>
-		                    <li>
-		                        <a href="#">قطع الغيار</a>
-		                        <!-- Level Three-->
-		                       
-		                    </li>
-		                    <li>
-		                        <a href="#">مشتقات الزيوت والشحوم</a>
-		                        <!-- Level Three-->
-		                        <ul>
-		                            <li><a href="page-listing-half-map-v1.html">مشتقات الزيوت</a></li>
-		                            <li><a href="page-listing-half-map-v2.html">مشتقات الشحوم</a></li>
-		                           
-		                        </ul>
-		                    </li>
-		                    <li>
-		                        <a href="#">معدات وادوات السلامة</a>
-		                        <!-- Level Three-->
-		                        <ul>
-		                            <li><a href="page-listing-agent-v1.html">ادوات السلامة</a></li>
-		                            <li><a href="page-listing-agent-v2.html">معدات السلامة</a></li>
-		                            
-		                        </ul>
-		                    </li>
-		                    <li>
-		                        <a href="#">معدات ونظم الاغلاق الهوائية 
-                              </a>
-		                        <!-- Level Three-->
-		                        <ul>
-		                            <li><a href="page-listing-agencies-v1.html">معدات نظم الاغلاق الهوائية
-                                      </a></li>
-		                            <li><a href="page-listing-agencies-v2.html">ادوات نظم الاغلاق الهوائية</a></li>
-		                            
-		                        </ul>
-		                    </li>
-
-
-							<li>
-		                        
-						<a href="#">معدات وادوات كهربائية
-	                      </a>   
-						<!-- Level Three-->
-
-		                        <ul>
-		                            <li><a href="page-listing-agencies-v1.html">معدات كهربائية
-                                      </a></li>
-		                            <li><a href="page-listing-agencies-v2.html">ادوات كهربائية</a></li>
-		                            
-		                        </ul>
-		                    </li>
-
-
-							<li>
-		                        
-						<a href="#">معدات وادوات نظم التحليل الصناعية
-	                      </a>   
-						<!-- Level Three-->
-
-		                        <ul>
-		                            <li><a href="page-listing-agencies-v1.html">معدات نظم التحليل
-                                      </a></li>
-		                            <li><a href="page-listing-agencies-v2.html">ادوات نظم التحليل</a></li>
-		                            
-		                        </ul>
-		                    </li>
-                            
+		                    <li><a href="proudect.php?id=<?php echo 1 ?>">المعدات الصناعية</a> </li>
+		                       	                       
+		                    <li> <a href="proudect.php?id=<?php echo 2 ?>">الادوات الصناعية</a>  </li>
+							<li> <a href="proudect.php?id=<?php echo 3 ?>">قطع الغيار</a>  </li>
+							<li> <a href="proudect.php?id=<?php echo 4 ?>">مشتقات الزيوت والشحوم</a>  </li>
+							<li> <a href="proudect.php?id=<?php echo 5 ?>">معدات وادوات السلامة</a>  </li>
+							<li> <a href="proudect.php?id=<?php echo 7 ?>">معدات ونظم الاغلاق الهوائية </a>  </li>
+							<li> <a href="proudect.php?id=<?php echo 6 ?>">معدات وادوات كهربائية</a>  </li>
+							<li> <a href="proudect.php?id=<?php echo 8 ?>">معدات وادوات نظم التحليل الصناعية</a>  </li>   
+		                    		                   		                      
+							  		                                                   
 	                	</ul>
 		            </li>
 		            <li>
