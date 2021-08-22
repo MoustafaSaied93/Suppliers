@@ -20,7 +20,7 @@ if($pages=="Product")
 
   $RegisterDate = $_POST['RegisterDate'];
   $Product_Warranty = $_POST['Product_Warranty'];
-
+  $Price = $_POST['Price'];
 
   $Part_Number = $_POST['Part_Number'];
   //measure 
@@ -103,9 +103,9 @@ if($pages=="Product")
     {
 
       $sql="INSERT INTO product(cat_id,CatTypeID,SubCatID,UserID,Product_Name,Descrip,Accept,Refused,PartNumber,Size, Stocks,Industry_Country,CompanyName,AttachFile,image1,image2,image3, image4, image5,CompProfile,Services,SubCategoryType,
-      Measurement_type,Lengths,Diameter,Out_Side_Diameter,Width,wieght,Hieght,Motorpower,Voltage,RegisterDate,Product_Warranty) 
+      Measurement_type,Lengths,Diameter,Out_Side_Diameter,Width,wieght,Hieght,Motorpower,Voltage,RegisterDate,Product_Warranty,Price) 
     VALUES ('$cat_id','$CatTypeID','$SubCatID','$UserID','$Product_Name','$Description','0','0','$Part_Number','$Size',' $Stock','$Industry_Country','$CompanyName','$fileToUpload','$image_name','$image_name2','$image_name3','$image_name4','$image_name5','$profilecomp','$Services','$SubCatTypeID',
-       '$Measurement_type','$Length','$Diameter','$Out_Side_Diameter','$Width','$wieght','$Hieght','$Motorpower','$Voltage','$RegisterDate','$Product_Warranty')";
+       '$Measurement_type','$Length','$Diameter','$Out_Side_Diameter','$Width','$wieght','$Hieght','$Motorpower','$Voltage','$RegisterDate','$Product_Warranty','$Price')";
                                                
   $query=  mysqli_query($conn,$sql); 
 

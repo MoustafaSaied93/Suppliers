@@ -165,7 +165,7 @@ formData.append("Email", Email);
 formData.append("page", page);
 
 $.ajax({
-url:"../Suppliers/sharefunction/login.php",
+url:"sharefunction/login.php",
 method:"POST",
 data: formData,
 processData: false,
@@ -203,7 +203,7 @@ window.location = "index.php";
 else if(data==204)
 {
 
-window.location = "../Suppliers/Admin/index.php";
+window.location = "admin/index.php";
 
 
 }
@@ -321,7 +321,7 @@ formData.append("RegisterDate",newregister );
 formData.append("page", page);
 
 $.ajax({
-url:"../Suppliers/sharefunction/Register.php",
+url:"sharefunction/Register.php",
 method:"POST",
 data: formData,
 processData: false,
@@ -448,7 +448,7 @@ formData.append("page", page);
 
 $.ajax({
 
-url:"../Suppliers/sharefunction/Register.php",
+url:"sharefunction/Register.php",
 method:"POST",
 data: formData,
 processData: false,

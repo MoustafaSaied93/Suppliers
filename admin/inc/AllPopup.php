@@ -170,6 +170,10 @@
    </div>
 
 
+   <div class="form-group">
+    <label><h6>سعر المنتج</h6></label>                                                    
+  <input type="number" class = "form-control" name="Price" id="Price"  placeholder="ادخل السعر">                                                     
+   </div>
 
    <div class="form-group">
     <label><h6>رقم القطعة او الموديل</h6></label>                                                    

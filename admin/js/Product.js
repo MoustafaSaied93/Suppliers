@@ -368,6 +368,10 @@ var Part_Number=$("#Part_Number").val();
 var description=$("#Description").val();
 var Product_Warranty=$("#Product_Warranty").val();
 
+var Price=$("#Price").val();
+
+
+
 var  RegisterDate = new Date();
 
 var newregister=(RegisterDate.getFullYear()+'/'+(RegisterDate.getMonth()+1)+'/'+RegisterDate.getDate());
@@ -502,6 +506,9 @@ formData.append("Voltage",  Voltage);
 formData.append("Services",  Services);
 formData.append("RegisterDate", newregister);
 formData.append("Product_Warranty", Product_Warranty);
+
+formData.append("Price", Price);
+
 formData.append("img", img);
 formData.append("img2", img2);
 formData.append("img3", img3);
