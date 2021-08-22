@@ -665,7 +665,7 @@
 							<div class="testimonial_post">
 								<div class="details">
 									<div class="icon text-thm"><span class="fa fa-quote-left"></span></div>
-									<p>العمل في منصة تجار مربح  التعامل مرن خدمة عملاء محترمة خدمات مجانية عمل فوق المحترم</p>
+									<p style = "text-align: right;">العمل في منصة تجار مربح  التعامل مرن خدمة عملاء محترمة خدمات مجانية عمل فوق المحترم</p>
 								</div>
 								<div class="thumb">
 									<img src="images/testimonial/1.jpg" alt="1.jpg">
@@ -677,7 +677,7 @@
 							<div class="testimonial_post">
 								<div class="details">
 									<div class="icon text-thm"><span class="fa fa-quote-left"></span></div>
-									<p>العمل في منصة تجار مربح  التعامل مرن خدمة عملاء محترمة خدمات مجانية عمل فوق المحترم</p>
+									<p style = "text-align: right;">العمل في منصة تجار مربح  التعامل مرن خدمة عملاء محترمة خدمات مجانية عمل فوق المحترم</p>
 								</div>
 								<div class="thumb">
 									<img src="images/testimonial/2.jpg" alt="2.jpg">
@@ -685,101 +685,14 @@
 								</div>
 							</div>
 						</div>
-						<div class="item">
-							<div class="testimonial_post">
-								<div class="details">
-									<div class="icon text-thm"><span class="fa fa-quote-left"></span></div>
-									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-								</div>
-								<div class="thumb">
-									<img src="images/testimonial/1.jpg" alt="1.jpg">
-									<h4 class="title">Augusta Silva <br><small class="text-thm">Sales Manager</small></h4>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimonial_post">
-								<div class="details">
-									<div class="icon text-thm"><span class="fa fa-quote-left"></span></div>
-									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-								</div>
-								<div class="thumb">
-									<img src="images/testimonial/2.jpg" alt="2.jpg">
-									<h4 class="title">Helene Powers <br><small class="text-thm">Sales Manager</small></h4>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimonial_post">
-								<div class="details">
-									<div class="icon text-thm"><span class="fa fa-quote-left"></span></div>
-									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-								</div>
-								<div class="thumb">
-									<img src="images/testimonial/1.jpg" alt="1.jpg">
-									<h4 class="title">Augusta Silva <br><small class="text-thm">Sales Manager</small></h4>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimonial_post">
-								<div class="details">
-									<div class="icon text-thm"><span class="fa fa-quote-left"></span></div>
-									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-								</div>
-								<div class="thumb">
-									<img src="images/testimonial/2.jpg" alt="2.jpg">
-									<h4 class="title">Helene Powers <br><small class="text-thm">Sales Manager</small></h4>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimonial_post">
-								<div class="details">
-									<div class="icon text-thm"><span class="fa fa-quote-left"></span></div>
-									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-								</div>
-								<div class="thumb">
-									<img src="images/testimonial/1.jpg" alt="1.jpg">
-									<h4 class="title">Augusta Silva <br><small class="text-thm">Sales Manager</small></h4>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimonial_post">
-								<div class="details">
-									<div class="icon text-thm"><span class="fa fa-quote-left"></span></div>
-									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-								</div>
-								<div class="thumb">
-									<img src="images/testimonial/2.jpg" alt="2.jpg">
-									<h4 class="title">Helene Powers <br><small class="text-thm">Sales Manager</small></h4>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimonial_post">
-								<div class="details">
-									<div class="icon text-thm"><span class="fa fa-quote-left"></span></div>
-									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-								</div>
-								<div class="thumb">
-									<img src="images/testimonial/1.jpg" alt="1.jpg">
-									<h4 class="title">Augusta Silva <br><small class="text-thm">Sales Manager</small></h4>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimonial_post">
-								<div class="details">
-									<div class="icon text-thm"><span class="fa fa-quote-left"></span></div>
-									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-								</div>
-								<div class="thumb">
-									<img src="images/testimonial/2.jpg" alt="2.jpg">
-									<h4 class="title">Helene Powers <br><small class="text-thm">Sales Manager</small></h4>
-								</div>
-							</div>
+						
+						
+					
+					
+					
+					
+					
+					
 						</div>
 					</div>
 				</div>
