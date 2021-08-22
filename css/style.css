@@ -13104,9 +13104,18 @@ a.btn.btn_error{
   line-height: 1.2;
 }
 /*== Color Area ==*/
-
+/*
 .img-whp {
   width: 100% !important;
+}
+
+
+
+*/
+
+.img-whp {
+   width:  100px;
+    height:200px;
 }
 .text-thm {
   color: #ff5a5f !important;
