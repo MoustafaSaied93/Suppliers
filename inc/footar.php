@@ -12,11 +12,11 @@
 					<div class="footer_qlink_widget">
 						<h4>روابط سريعة</h4>
 						<ul class="list-unstyled">
-							<li><a href="#">عن تجار</a></li>
+							<li><a href="about.php">عن تجار</a></li>
 							<li><a href="#">اسئلة شائعة</a></li>
-							<li><a href="#"> السياسات</a></li>
-							<li><a href="#">أخبار عالمية</a></li>
-							<li><a href="#">اتصل بنا</a></li>
+							<li><a href="policies.php"> السياسات</a></li>
+							
+							<li><a href="contact.php">اتصل بنا</a></li>
 							
 						</ul>
 					</div>
@@ -72,12 +72,12 @@
 				<div class="col-lg-6 col-xl-6">
 					<div class="footer_menu_widget">
 						<ul>
-							<li class="list-inline-item"><a href="#">الريئسية</a></li>
-							<li class="list-inline-item"><a href="#">عن تجار</a></li>
-							<li class="list-inline-item"><a href="#">المنتجات</a></li>
+							<li class="list-inline-item"><a href="index.php">الريئسية</a></li>
+							<li class="list-inline-item"><a href="about.php">عن تجار</a></li>
+						
 							<li class="list-inline-item"><a href="#">الخدمات</a></li>
 							<li class="list-inline-item"><a href="#">بوابة الموردين</a></li>
-							<li class="list-inline-item"><a href="#">اتصل بنا</a></li>
+							<li class="list-inline-item"><a href="contact.php">اتصل بنا</a></li>
 						</ul>
 					</div>
 				</div>
@@ -370,10 +370,10 @@ function SendClientMessage()
  event.preventDefault();
 
 var Name=$("#Name").val();
-var Email=$("#Emails").val();
+var Email=$("#CEmail").val();
 
 
-var Mobile=$("#Mobile").val();
+var Mobile=$("#CMobile").val();
 
 var Subject=$("#Subject").val();
 
@@ -401,13 +401,13 @@ var regex1 = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 else if(Email=="")
 {
 	
- $("#Emails").focus();
+ $("#CEmail").focus();
  return false;
 }
 
 else if(!regex1.test(Email)){  
 toastr.error("برجاء ادخال بريد الكترونى صحيح");  
-$("#Emails").focus();
+$("#CEmail").focus();
 
 return false;
 
@@ -416,7 +416,7 @@ return false;
 
 else if(Mobile=="")
 {
- $("#Mobile").focus();
+ $("#CMobile").focus();
  
  return false;
 }
@@ -424,7 +424,7 @@ else if(Mobile=="")
 
 else if(Mobile.length <10)
 {
- $("#Mobile").focus();
+ $("#CMobile").focus();
  toastr.error("رقم الهاتف يجب ان يكون اكبر من 10 حروف"); 
  return false;
 }
@@ -459,10 +459,10 @@ success:function(data){
 toastr.success("تم ارسال رسالتك بنجاح");
 
 $("#Name").val("");
-$("#Emails").val("");
+$("#CEmail").val("");
 
 
-$("#Mobile").val("");
+$("#CMobile").val("");
 
 $("#Subject").val("");
 
