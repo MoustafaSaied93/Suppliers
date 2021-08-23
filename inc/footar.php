@@ -120,6 +120,190 @@
 
 <script>
 
+$('#searchdep').on('click', function(event){
+  
+
+  var formData = new FormData();
+  event.preventDefault();
+  
+  
+   
+  var dropsearch=$("#dropsearch").val();
+  
+    
+ if(dropsearch==1)
+
+ {
+	$("#industrial-equipment").show();
+	$("#industrial-tool").hide();
+	$("#sparepart").hide();
+	$("#oilandgrace").hide();
+	$("#safetytool").hide();
+	$("#instrumenttool").hide();
+	$("#electrictool").hide();
+	$("#industrial-tool").hide();
+	$("#analyzertool").hide();
+
+
+
+ }
+
+ else if(dropsearch==2)
+
+{
+   $("#industrial-equipment").hide();
+   $("#industrial-tool").show();
+   $("#sparepart").hide();
+   $("#oilandgrace").hide();
+   $("#safetytool").hide();
+   $("#instrumenttool").hide();
+   $("#electrictool").hide();
+   $("#analyzertool").hide();
+
+
+
+}
+
+
+
+else if(dropsearch==3)
+
+{
+   $("#industrial-equipment").hide();
+   $("#industrial-tool").hide();
+   $("#sparepart").show();
+   $("#oilandgrace").hide();
+   $("#safetytool").hide();
+   $("#instrumenttool").hide();
+   $("#electrictool").hide();
+   $("#analyzertool").hide();
+
+
+
+}
+
+else if(dropsearch==4)
+
+{
+   $("#industrial-equipment").hide();
+   $("#industrial-tool").hide();
+   $("#sparepart").hide();
+   $("#oilandgrace").show();
+   $("#safetytool").hide();
+   $("#instrumenttool").hide();
+   $("#electrictool").hide();
+   $("#analyzertool").hide();
+
+
+
+}
+
+
+else if(dropsearch==5)
+
+{
+   $("#industrial-equipment").hide();
+   $("#industrial-tool").hide();
+   $("#sparepart").hide();
+   $("#oilandgrace").hide();
+   $("#safetytool").show();
+   $("#instrumenttool").hide();
+   $("#electrictool").hide();
+   $("#analyzertool").hide();
+
+
+
+}
+
+else if(dropsearch==6)
+
+{
+   $("#industrial-equipment").hide();
+   $("#industrial-tool").hide();
+   $("#sparepart").hide();
+   $("#oilandgrace").hide();
+   $("#safetytool").hide();
+   $("#instrumenttool").show();
+   $("#electrictool").hide();
+   $("#analyzertool").hide();
+
+
+}
+
+else if(dropsearch==7)
+
+{
+   $("#industrial-equipment").hide();
+   $("#industrial-tool").hide();
+   $("#sparepart").hide();
+   $("#oilandgrace").hide();
+   $("#safetytool").hide();
+   $("#instrumenttool").hide();
+   $("#electrictool").show();
+   $("#analyzertool").hide();
+
+
+}
+
+else if(dropsearch==8)
+
+{
+   $("#industrial-equipment").hide();
+   $("#industrial-tool").hide();
+   $("#sparepart").hide();
+   $("#oilandgrace").hide();
+   $("#safetytool").hide();
+   $("#instrumenttool").hide();
+   $("#electrictool").hide();
+   $("#analyzertool").show();
+
+
+}
+
+ else if(dropsearch==0)
+
+ {
+	$("#industrial-equipment").show();
+	$("#industrial-tool").show();
+	$("#sparepart").show();
+	$("#oilandgrace").show();
+	$("#safetytool").show();
+	$("#instrumenttool").show();
+	$("#electrictool").show();
+	$("#industrial-tool").show();
+	$("#analyzertool").show();
+
+
+
+ }
+
+
+  
+  
+ 
+  
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $('#Signin').on('click', function(event){
   
 

@@ -117,32 +117,22 @@ include_once("config.php");
 									    </div>
 								
 									</li>
-									<li>
-										<div class="search_option_two">
-											<div class="candidate_revew_select">
-												<select class="selectpicker w100 show-tick">
-												<option>المنطقة</option>
-															<option>المنطقة الوسطي</option>
-															<option>المنطقة الشرقية </option>
-															<option>المنطقة الغربية </option>
-															<option>المنطقة الشمالية</option>
-															<option>المنطقة الجنوبية</option>
-												
-												</select>
-											</div>
-										</div>
-									</li>
+								
 									
 									<li>
 										<div class="search_option_two">
 											<div class="candidate_revew_select">
-												<select class="selectpicker w100 show-tick">
-													<option>الاقسام</option>
-													<option>المضخات الصناعية</option>
-													<option>صناديق التروس</option>
-													<option>انابيب صناعية</option>
-													<option>خزانات صناعية</option>
-													<option>المواتير الصناعية</option>
+												<select class="selectpicker w100 show-tick" id="dropsearch">
+													<option value="0" >الاقسام</option>
+													<option value="1">المعدات الصناعية</option>
+													<option value="2">الادوات الصناعية</option>
+													<option value="3">قطع الغيار</option>
+													<option value="4">مشتقات الزيوت والشحوم </option>
+													<option value="5">معدات وادوات السلامة</option>
+													<option value="6">معدات ونظم الاغلاق </option>
+													<option value="7">معدات وادوات كهربائية </option>
+
+													<option value="8">معدات وادوات نظم التحليل </option>
 												
 												</select>
 											</div>
@@ -151,7 +141,7 @@ include_once("config.php");
 								
 									<li>
 										<div class="search_option_button">
-										    <button type="submit" class="btn btn-block btn-thm">بحث</button>
+										    <button type="submit" id="searchdep" class="btn btn-block btn-thm">بحث</button>
 										</div>
 									</li>
 								</ul>
@@ -170,7 +160,7 @@ include_once("config.php");
 													<li class="list-inline-item"><a href="#">للبيع</a></li>
 												</ul>
 												
-												<h4 class="posr color-white">قطع الغيار</h4>
+												<h4 class="posr color-white">المعدات الصناعية</h4>
 											</div>
 										</div>
 									</div>
@@ -186,7 +176,7 @@ include_once("config.php");
 													<li class="list-inline-item"><a href="#">للبيع</a></li>
 												</ul>
 											
-												<h4 class="posr color-white">قطع الغيار</h4>
+												<h4 class="posr color-white">الادوات الصناعية</h4>
 											</div>
 										</div>
 									</div>
@@ -206,12 +196,91 @@ include_once("config.php");
 										</div>
 									</div>
 								</div>
+
+								<div class="item">
+									<div class="feat_property home7">
+										<div class="thumb">
+											<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+											<div class="thmb_cntnt">
+												<ul class="tag mb0">
+													<li class="list-inline-item"><a href="#">متوفر</a></li>
+													<li class="list-inline-item"><a href="#">للبيع</a></li>
+												</ul>
+												
+												<h4 class="posr color-white">مشتقات الزيوت والشحوم</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="item">
+									<div class="feat_property home7">
+										<div class="thumb">
+											<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+											<div class="thmb_cntnt">
+												<ul class="tag mb0">
+													<li class="list-inline-item"><a href="#">متوفر</a></li>
+													<li class="list-inline-item"><a href="#">للبيع</a></li>
+												</ul>
+												
+												<h4 class="posr color-white">معدات وادوات السلامة</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="item">
+									<div class="feat_property home7">
+										<div class="thumb">
+											<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+											<div class="thmb_cntnt">
+												<ul class="tag mb0">
+													<li class="list-inline-item"><a href="#">متوفر</a></li>
+													<li class="list-inline-item"><a href="#">للبيع</a></li>
+												</ul>
+												
+												<h4 class="posr color-white">معدات ونظم الاغلاق الهوائية</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="item">
+									<div class="feat_property home7">
+										<div class="thumb">
+											<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+											<div class="thmb_cntnt">
+												<ul class="tag mb0">
+													<li class="list-inline-item"><a href="#">متوفر</a></li>
+													<li class="list-inline-item"><a href="#">للبيع</a></li>
+												</ul>
+												
+												<h4 class="posr color-white">معدات وادوات كهربائية</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="item">
+									<div class="feat_property home7">
+										<div class="thumb">
+											<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+											<div class="thmb_cntnt">
+												<ul class="tag mb0">
+													<li class="list-inline-item"><a href="#">متوفر</a></li>
+													<li class="list-inline-item"><a href="#">للبيع</a></li>
+												</ul>
+												
+												<h4 class="posr color-white">معدات وادوات نظم التحليل الصناعية</h4>
+											</div>
+										</div>
+									</div>
+								</div>
 					
 							</div>
 						</div>
-						<div class="terms_condition_widget">
-							
-						</div>
+						
 					</div>
 				</div>
 				<div class="col-md-12 col-lg-8">
@@ -234,7 +303,7 @@ include_once("config.php");
 					</div>
 					<div class="row">
        
-						<div class="col-lg-12">
+						<div class="col-lg-12" id="industrial-equipment">
 							<div class="feat_property list">
 								<div class="thumb">
 									<img class="img-whp" src="images/property/fp1.jpg">
@@ -257,8 +326,8 @@ include_once("config.php");
 										</div>
 									
 
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
                                        
 
 										<ul class="prop_details mb0">
@@ -277,7 +346,7 @@ include_once("config.php");
 
 
 
-						<div class="col-lg-12">
+						<div class="col-lg-12" id="industrial-tool">
 							<div class="feat_property list">
 								<div class="thumb">
 									<img class="img-whp" src="images/property/fp1.jpg">
@@ -295,13 +364,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											<a class="fp_price" href="#"> القسم :الادوات الصناعية</a>
 											
 										</div>
 									
 
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
                                        
 
 										<ul class="prop_details mb0">
@@ -320,7 +389,7 @@ include_once("config.php");
 
 
 
-						<div class="col-lg-12">
+						<div class="col-lg-12" id="sparepart">
 							<div class="feat_property list">
 								<div class="thumb">
 									<img class="img-whp" src="images/property/fp1.jpg">
@@ -338,13 +407,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											<a class="fp_price" href="#"> القسم :قطع الغيار</a>
 											
 										</div>
 									
 
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
                                        
 
 										<ul class="prop_details mb0">
@@ -363,7 +432,7 @@ include_once("config.php");
 
 
 
-						<div class="col-lg-12">
+						<div class="col-lg-12" id="oilandgrace">
 							<div class="feat_property list">
 								<div class="thumb">
 									<img class="img-whp" src="images/property/fp1.jpg">
@@ -381,13 +450,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											<a class="fp_price" href="#"> القسم :مشتقات الزيوت والشحوم</a>
 											
 										</div>
 									
 
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
                                        
 
 										<ul class="prop_details mb0">
@@ -406,7 +475,7 @@ include_once("config.php");
 
 
 
-						<div class="col-lg-12">
+						<div class="col-lg-12" id="safetytool">
 							<div class="feat_property list">
 								<div class="thumb">
 									<img class="img-whp" src="images/property/fp1.jpg">
@@ -424,13 +493,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											<a class="fp_price" href="#"> القسم :معدات وادوات السلامة</a>
 											
 										</div>
 									
 
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
+                                        <p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
                                        
 
 										<ul class="prop_details mb0">
@@ -449,7 +518,7 @@ include_once("config.php");
 
 
 
-						<div class="col-lg-12">
+						<div class="col-lg-12" id="instrumenttool">
 							<div class="feat_property list">
 								<div class="thumb">
 									<img class="img-whp" src="images/property/fp1.jpg">
@@ -467,13 +536,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											<a class="fp_price" href="#"> القسم :معدات ونظم الاغلاق</a>
 											
 										</div>
 									
 
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
+                                       <p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
                                        
 
 										<ul class="prop_details mb0">
@@ -491,7 +560,8 @@ include_once("config.php");
 						</div>
 
 
-						<div class="col-lg-12">
+
+						<div class="col-lg-12" id="electrictool">
 							<div class="feat_property list">
 								<div class="thumb">
 									<img class="img-whp" src="images/property/fp1.jpg">
@@ -509,13 +579,55 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											<a class="fp_price" href="#"> القسم :معدات وادوات كهربائية</a>
 											
 										</div>
 									
 
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
+                                        <p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
+                                       
+
+										<ul class="prop_details mb0">
+										</ul>
+									</div>
+									<div class="fp_footer">
+										<ul class="fp_meta float-left mb0">
+											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
+											<li class="list-inline-item"><a href="#">تجار</a></li>
+										</ul>
+										<div class="fp_pdate float-right"> اخر تحديث: منذ يومين </div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-lg-12" id="analyzertool">
+							<div class="feat_property list">
+								<div class="thumb">
+									<img class="img-whp" src="images/property/fp1.jpg">
+									<div class="thmb_cntnt">
+										<ul class="icon mb0">
+											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="details">
+									<div class="tc_content">
+										<div class="dtls_headr">
+											<ul class="tag">
+									
+												<li class="list-inline-item"><a href="#">متوفر</a></li>
+											</ul>
+											<a class="fp_price" href="#"> القسم :معدات وادوات نظم التحليل</a>
+											
+										</div>
+									
+
+										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
+                                         <p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
                                        
 
 										<ul class="prop_details mb0">
