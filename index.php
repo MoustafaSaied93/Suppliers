@@ -55,7 +55,7 @@ ORDER BY p.product_id  DESC LIMIT 8");
 										<form action="searchproducts.php" method="GET">
 											<li class="list-inline-item">
 											    <div class="form-group">
-											    	<input type="text" class="form-control" required  name="Searchproduct" value=""
+											    	<input type="text" class="form-control" require="require"  name="Searchproduct" value=""
 													placeholder="ابحث عن منتجك هنا."
 													>
 											    </div>
@@ -174,7 +174,7 @@ ORDER BY p.product_id  DESC LIMIT 8");
 						<div class="item">
 							<div class="feat_property">
 								<div class="thumb">
-									<img class="img-whp" src=images/property/fp1.jpg>
+									<img class="img-whp" src="images/property/fp1.jpg">
 									<div class="thmb_cntnt">
 										<ul class="tag mb0">
 											<li class="list-inline-item"><a href="#">للبيع</a></li>
