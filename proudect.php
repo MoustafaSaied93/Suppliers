@@ -2,7 +2,7 @@
 
 include_once("config.php");
 
-$id = $_GET['id'];
+
 
 
 ?>
@@ -17,9 +17,9 @@ $id = $_GET['id'];
 					<div class="breadcrumb_content">
 						<ol class="breadcrumb">
 						    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
-						    <li class="breadcrumb-item active" aria-current="page">المنتجات</li>
+						    <li class="breadcrumb-item active" aria-current="page">الاقسام </li>
 						</ol>
-						<h4 class="breadcrumb_title">قائمة المنتجات</h4>
+						<h4 class="breadcrumb_title">قائمة الاقسام</h4>
 					</div>
 				</div>
 			</div>
@@ -85,7 +85,7 @@ $id = $_GET['id'];
 					<div class="breadcrumb_content style2 mb0-991">
 						<ol class="breadcrumb">
 						    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
-						    <li class="breadcrumb-item active text-thm" aria-current="page">المعدات الصناعية</li>
+						    <li class="breadcrumb-item active text-thm" aria-current="page">اقسام المنتجات</li>
 						</ol>
 						
 					</div>
@@ -158,7 +158,7 @@ $id = $_GET['id'];
 							</div>
 						</div>
 						<div class="terms_condition_widget">
-							<h4 class="title">قسم : قطع الغيار</h4>
+							<h4 class="title">اقسام المنتجات</h4>
 							<div class="sidebar_feature_property_slider">
 								<div class="item">
 									<div class="feat_property home7">
@@ -169,7 +169,7 @@ $id = $_GET['id'];
 													<li class="list-inline-item"><a href="#">متوفر</a></li>
 													<li class="list-inline-item"><a href="#">للبيع</a></li>
 												</ul>
-												<a class="fp_price" href="#">10,000<small>ريال</small></a>
+												
 												<h4 class="posr color-white">قطع الغيار</h4>
 											</div>
 										</div>
@@ -185,7 +185,7 @@ $id = $_GET['id'];
 													<li class="list-inline-item"><a href="#">متوفر</a></li>
 													<li class="list-inline-item"><a href="#">للبيع</a></li>
 												</ul>
-												<a class="fp_price" href="#">10,000<small>ريال</small></a>
+											
 												<h4 class="posr color-white">قطع الغيار</h4>
 											</div>
 										</div>
@@ -200,7 +200,7 @@ $id = $_GET['id'];
 													<li class="list-inline-item"><a href="#">متوفر</a></li>
 													<li class="list-inline-item"><a href="#">للبيع</a></li>
 												</ul>
-												<a class="fp_price" href="#">10,000<small>ريال</small></a>
+												
 												<h4 class="posr color-white">قطع الغيار</h4>
 											</div>
 										</div>
@@ -219,7 +219,7 @@ $id = $_GET['id'];
 						<div class="grid_list_search_result" stlye = "  text-align: right;">
 							<div class="col-sm-12 col-md-4 col-lg-4 col-xl-5" >
 								<div class="left_area tac-xsd">
-									<p>عدد الاقسام : 5</p>
+									<p>عدد الاقسام :  8</p>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-8 col-lg-8 col-xl-7">
@@ -233,103 +233,11 @@ $id = $_GET['id'];
 						</div>
 					</div>
 					<div class="row">
-
-					<?php 
-
-               if($id==1)
-            {
-
-  	         $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
-			   FROM product p INNER JOIN
-					categories c
-					ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='8' AND p.Accept='1'
-	       ");
-
-            }
-
-            else if($id==2)
-
-             {
-            $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
-			FROM product p INNER JOIN
-				 categories c
-				 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='10' AND p.Accept='1'
-            ");
-
-             }
-
-            else if($id==3)
-
-             {
-              $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
-			  FROM product p INNER JOIN
-				   categories c
-				   ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='11' AND p.Accept='1'
-               ");
-              }
-
-
-             else if($id==4)
-
-             {
-             $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
-			 FROM product p INNER JOIN
-				  categories c
-				  ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='12' AND p.Accept='1'
-             ");
-
-           }
-
-          else if($id==5)
-
-          {
-           $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
-		   FROM product p INNER JOIN
-				categories c
-				ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='13' AND p.Accept='1'
-           ");
-           }
-
-
-            else if($id==6)
-
-            {
-              $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
-			  FROM product p INNER JOIN
-				   categories c
-				   ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='15' AND p.Accept='1'
-            ");
-            }
-
-          else if($id==7)
-
-            {
-            $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
-			FROM product p INNER JOIN
-				 categories c
-				 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='14' AND p.Accept='1'
-           ");
-
-           }
-
-           else if($id==8)
-
-           {
-           $query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
-		   FROM product p INNER JOIN
-				categories c
-				ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='16' AND p.Accept='1'
-           ");
-
-           }
-
-              while($row=mysqli_fetch_array($query2))
-			  {
-                   echo'
+       
 						<div class="col-lg-12">
 							<div class="feat_property list">
 								<div class="thumb">
-									<img class="img-whp" src="images/products/'.$row['image1'].'">
+									<img class="img-whp" src="images/property/fp1.jpg">
 									<div class="thmb_cntnt">
 										<ul class="icon mb0">
 											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
@@ -344,16 +252,14 @@ $id = $_GET['id'];
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#">الصنف :'.$row['cat_name'].'</a>
+											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
 											
 										</div>
-										<p class="text-thm">اسم المنتج : '.$row['Product_Name'].'</p>
+									
 
-										<p class="text-thm"> السعر : '.$row['Price'].'  ريال</p>
-
-										<p class="text-thm"> رقم القطعة : '.$row['PartNumber'].'</p>
-
-										<p class="text-thm"><span class="flaticon-placeholder"></span> المدينة : '.$row['City'].'</p>
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+                                       
 
 										<ul class="prop_details mb0">
 										</ul>
@@ -363,17 +269,270 @@ $id = $_GET['id'];
 											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
 											<li class="list-inline-item"><a href="#">تجار</a></li>
 										</ul>
-										<div class="fp_pdate float-right"> اخر تحديت : 5 دقيقة </div>
+										<div class="fp_pdate float-right"> اخر تحديث: منذ يومين </div>
 									</div>
 								</div>
 							</div>
-						</div>';
-
-			  }
+						</div>
 
 
 
-						?>
+						<div class="col-lg-12">
+							<div class="feat_property list">
+								<div class="thumb">
+									<img class="img-whp" src="images/property/fp1.jpg">
+									<div class="thmb_cntnt">
+										<ul class="icon mb0">
+											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="details">
+									<div class="tc_content">
+										<div class="dtls_headr">
+											<ul class="tag">
+									
+												<li class="list-inline-item"><a href="#">متوفر</a></li>
+											</ul>
+											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											
+										</div>
+									
+
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+                                       
+
+										<ul class="prop_details mb0">
+										</ul>
+									</div>
+									<div class="fp_footer">
+										<ul class="fp_meta float-left mb0">
+											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
+											<li class="list-inline-item"><a href="#">تجار</a></li>
+										</ul>
+										<div class="fp_pdate float-right"> اخر تحديث: منذ يومين </div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="col-lg-12">
+							<div class="feat_property list">
+								<div class="thumb">
+									<img class="img-whp" src="images/property/fp1.jpg">
+									<div class="thmb_cntnt">
+										<ul class="icon mb0">
+											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="details">
+									<div class="tc_content">
+										<div class="dtls_headr">
+											<ul class="tag">
+									
+												<li class="list-inline-item"><a href="#">متوفر</a></li>
+											</ul>
+											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											
+										</div>
+									
+
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+                                       
+
+										<ul class="prop_details mb0">
+										</ul>
+									</div>
+									<div class="fp_footer">
+										<ul class="fp_meta float-left mb0">
+											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
+											<li class="list-inline-item"><a href="#">تجار</a></li>
+										</ul>
+										<div class="fp_pdate float-right"> اخر تحديث: منذ يومين </div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="col-lg-12">
+							<div class="feat_property list">
+								<div class="thumb">
+									<img class="img-whp" src="images/property/fp1.jpg">
+									<div class="thmb_cntnt">
+										<ul class="icon mb0">
+											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="details">
+									<div class="tc_content">
+										<div class="dtls_headr">
+											<ul class="tag">
+									
+												<li class="list-inline-item"><a href="#">متوفر</a></li>
+											</ul>
+											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											
+										</div>
+									
+
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+                                       
+
+										<ul class="prop_details mb0">
+										</ul>
+									</div>
+									<div class="fp_footer">
+										<ul class="fp_meta float-left mb0">
+											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
+											<li class="list-inline-item"><a href="#">تجار</a></li>
+										</ul>
+										<div class="fp_pdate float-right"> اخر تحديث: منذ يومين </div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="col-lg-12">
+							<div class="feat_property list">
+								<div class="thumb">
+									<img class="img-whp" src="images/property/fp1.jpg">
+									<div class="thmb_cntnt">
+										<ul class="icon mb0">
+											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="details">
+									<div class="tc_content">
+										<div class="dtls_headr">
+											<ul class="tag">
+									
+												<li class="list-inline-item"><a href="#">متوفر</a></li>
+											</ul>
+											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											
+										</div>
+									
+
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+                                       
+
+										<ul class="prop_details mb0">
+										</ul>
+									</div>
+									<div class="fp_footer">
+										<ul class="fp_meta float-left mb0">
+											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
+											<li class="list-inline-item"><a href="#">تجار</a></li>
+										</ul>
+										<div class="fp_pdate float-right"> اخر تحديث: منذ يومين </div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="col-lg-12">
+							<div class="feat_property list">
+								<div class="thumb">
+									<img class="img-whp" src="images/property/fp1.jpg">
+									<div class="thmb_cntnt">
+										<ul class="icon mb0">
+											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="details">
+									<div class="tc_content">
+										<div class="dtls_headr">
+											<ul class="tag">
+									
+												<li class="list-inline-item"><a href="#">متوفر</a></li>
+											</ul>
+											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											
+										</div>
+									
+
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+                                       
+
+										<ul class="prop_details mb0">
+										</ul>
+									</div>
+									<div class="fp_footer">
+										<ul class="fp_meta float-left mb0">
+											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
+											<li class="list-inline-item"><a href="#">تجار</a></li>
+										</ul>
+										<div class="fp_pdate float-right"> اخر تحديث: منذ يومين </div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-lg-12">
+							<div class="feat_property list">
+								<div class="thumb">
+									<img class="img-whp" src="images/property/fp1.jpg">
+									<div class="thmb_cntnt">
+										<ul class="icon mb0">
+											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="details">
+									<div class="tc_content">
+										<div class="dtls_headr">
+											<ul class="tag">
+									
+												<li class="list-inline-item"><a href="#">متوفر</a></li>
+											</ul>
+											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											
+										</div>
+									
+
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد الموردين : 3</p>
+										<p class="text-thm"><span class="flaticon-placeholder"></span> عدد المنتجات : 10</p>
+                                       
+
+										<ul class="prop_details mb0">
+										</ul>
+									</div>
+									<div class="fp_footer">
+										<ul class="fp_meta float-left mb0">
+											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
+											<li class="list-inline-item"><a href="#">تجار</a></li>
+										</ul>
+										<div class="fp_pdate float-right"> اخر تحديث: منذ يومين </div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+			 
 
 										
 								
@@ -403,8 +562,5 @@ $id = $_GET['id'];
 			</div>
 		</div>
 	</section>
-
-
-
 
 <?php include "inc/footar.php" ?>

@@ -173,7 +173,7 @@ if(isset($_SESSION ['id']))
 		        
 		            </li>
 		            <li>
-		                <a href="#"><span class="title">المنتجات</span></a>
+		                <a href="proudect.php"><span class="title">المنتجات</span></a>
 		               
 	                	<ul>
 		                    <li><a href="proudect.php?id=<?php echo 1 ?>">المعدات الصناعية</a> </li>
