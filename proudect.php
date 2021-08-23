@@ -219,7 +219,7 @@ $id = $_GET['id'];
 						<div class="grid_list_search_result" stlye = "  text-align: right;">
 							<div class="col-sm-12 col-md-4 col-lg-4 col-xl-5" >
 								<div class="left_area tac-xsd">
-									<p>عدد الاقسام : 5</p>
+									<p>عدد الاصناف: 5</p>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-8 col-lg-8 col-xl-7">
@@ -344,7 +344,7 @@ $id = $_GET['id'];
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#">الصنف :'.$row['cat_name'].'</a>
+											<a class="fp_price" href="#"> القسم :'.$row['cat_name'].'</a>
 											
 										</div>
 										<p class="text-thm">اسم المنتج : '.$row['Product_Name'].'</p>
