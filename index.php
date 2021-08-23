@@ -52,9 +52,12 @@ ORDER BY p.product_id  DESC LIMIT 8");
 								<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 									<div class="home1-advnc-search home4">
 										<ul class="h1ads_1st_list mb0">
+										<form action="searchproducts.php" method="GET">
 											<li class="list-inline-item">
 											    <div class="form-group">
-											    	<input type="text" class="form-control" id="exampleInputName1" placeholder="كلمات البحث">
+											    	<input type="text" class="form-control" required  name="Searchproduct" value=""
+													placeholder="ابحث عن منتجك هنا."
+													>
 											    </div>
 											</li>
 
@@ -91,16 +94,16 @@ ORDER BY p.product_id  DESC LIMIT 8");
 												  	</div>
 												</div>
 											</li>
-										
-
-
-											
+																				
 										
 										      	<li class="list-inline-item">
+												
 												<div class="search_option_button">
-												    <button type="submit" class="btn btn-thm3">بحث</button>
+												    <button type="submit" name ="search" value="" class="btn btn-thm3">بحث</button>
 												</div>
+                                             
 											</li>
+                                        </form>
 										</ul>
 									</div>
 								</div>
@@ -150,6 +153,8 @@ ORDER BY p.product_id  DESC LIMIT 8");
 			</div>
 		</div>
 		<div class="container ovh"§>
+
+		
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3">
 					<div class="main-title text-center mb40">
