@@ -8,10 +8,10 @@
 				<div class="col-xl-6">
 					<div class="breadcrumb_content">
 						<ol class="breadcrumb">
-						    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
-						    <li class="breadcrumb-item active" aria-current="page">قسم : .....</li>
+						    <li class="breadcrumb-item"><a href="#"style="text-align: right;">الرئيسية</a></li>
+						    <li class="breadcrumb-item active" aria-current="page" style="text-align: right;">قسم : .....</li>
 						</ol>
-						<h4 class="breadcrumb_title">قسم : قطع الغيار</h4>
+						<h4 class="breadcrumb_title" style="text-align: right;">قسم : قطع الغيار</h4>
 					</div>
 				</div>
 			</div>
