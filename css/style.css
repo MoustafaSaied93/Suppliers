@@ -4583,7 +4583,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   display: inline-flex;
 }
 .feat_property.list .dtls_headr a.fp_price{
-  font-size: 22px;
+  font-size: 19px;
   font-family: "rb";
   color: #484848;
   font-weight: bold;
@@ -13119,6 +13119,9 @@ a.btn.btn_error{
   height: 40vh;
   width: auto;
 }
+
+
+
 
 .text-thm {
   color: #ff5a5f !important;
