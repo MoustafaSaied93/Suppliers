@@ -324,9 +324,7 @@
 							<div class="feat_property home7 style4">
 								<div class="thumb">
 									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-										</div>
+									
 										<div class="item">
 											<img class="img-whp" src="images/property/fp2.jpg" alt="fp2.jpg">
 										</div>
@@ -371,9 +369,7 @@
 							<div class="feat_property home7 style4">
 								<div class="thumb">
 									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="images/property/fp2.jpg" alt="fp2.jpg">
-										</div>
+									
 										<div class="item">
 											<img class="img-whp" src="images/property/fp3.jpg" alt="fp3.jpg">
 										</div>
@@ -418,9 +414,7 @@
 							<div class="feat_property home7 style4">
 								<div class="thumb">
 									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="images/property/fp3.jpg" alt="fp3.jpg">
-										</div>
+									
 										<div class="item">
 											<img class="img-whp" src="images/property/fp4.jpg" alt="fp4.jpg">
 										</div>

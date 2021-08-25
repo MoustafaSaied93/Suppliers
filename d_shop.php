@@ -13,10 +13,10 @@
 				<div class="col-xl-6">
 					<div class="breadcrumb_content style2">
 						<ol class="breadcrumb">
-						    <li class="breadcrumb-item"><a href="#">Home</a></li>
+						    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
 						    <li class="breadcrumb-item active text-thm" aria-current="page">Shop List</li>
 						</ol>
-						<h4 class="breadcrumb_title">Shop Sıngle</h4>
+						<h4 class="breadcrumb_title">المنتج</h4>
 					</div>
 				</div>
 			</div>
@@ -65,9 +65,9 @@
 							<div class="sps_content">
 								<div class="content">
 									<div class="shop_single_product_details">
-										<h4 class="title">Hoodie</h4>
+										<h4 class="title">اسم المنتج</h4>
 										<div class="sspd_price mb25">$13,000</div>
-										<p class="mb20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet urna ac leo lacinia, posuere bibendum diam finibus. Suspendisse eu </p>
+										<p class="mb20">تفاصيل المنتج </p>
 										<ul class="cart_btns ui_kit_button mb20">
 											<li class="list-inline-item"><input placeholder="5" type="number"></li>
 											<li class="list-inline-item"><button type="button" class="btn"><span class="flaticon-shopping-bag pr5 fz20"></span> Add To Cart</button></li>
