@@ -174,7 +174,7 @@ ORDER BY p.product_id  DESC LIMIT 8");
 						<div class="item">
 							<div class="feat_property">
 								<div class="thumb">
-									<img class="img-whp" src="images/property/fp1.jpg">
+									<img class="img-whp" src="images/products/'.$row['image1'].'">
 									<div class="thmb_cntnt">
 										<ul class="tag mb0">
 											<li class="list-inline-item"><a href="#">للبيع</a></li>

@@ -272,7 +272,7 @@ include_once("config.php");
 													<li class="list-inline-item"><a href="#">للبيع</a></li>
 												</ul>
 												
-												<h4 class="posr color-white">معدات وادوات نظم التحليل الصناعية</h4>
+												<h4 class="posr color-white">معدات وادوات نظم التحليل</h4>
 											</div>
 										</div>
 									</div>
