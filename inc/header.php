@@ -176,15 +176,15 @@ if(isset($_SESSION ['id']))
 		                <a href="proudect.php"><span class="title">المنتجات</span></a>
 		               
 	                	<ul>
-		                    <li><a href="proudect.php?id=<?php echo 1 ?>">المعدات الصناعية</a> </li>
+		                    <li><a href="shop.php?id=<?php echo 1 ?>">المعدات الصناعية</a> </li>
 		                       	                       
-		                    <li> <a href="proudect.php?id=<?php echo 2 ?>">الادوات الصناعية</a>  </li>
-							<li> <a href="proudect.php?id=<?php echo 3 ?>">قطع الغيار</a>  </li>
-							<li> <a href="proudect.php?id=<?php echo 4 ?>">مشتقات الزيوت والشحوم</a>  </li>
-							<li> <a href="proudect.php?id=<?php echo 5 ?>">معدات وادوات السلامة</a>  </li>
-							<li> <a href="proudect.php?id=<?php echo 7 ?>">معدات ونظم الاغلاق الهوائية </a>  </li>
-							<li> <a href="proudect.php?id=<?php echo 6 ?>">معدات وادوات كهربائية</a>  </li>
-							<li> <a href="proudect.php?id=<?php echo 8 ?>">معدات وادوات نظم التحليل الصناعية</a>  </li>   
+		                    <li> <a href="shop.php?id=<?php echo 2 ?>">الادوات الصناعية</a>  </li>
+							<li> <a href="shop.php?id=<?php echo 3 ?>">قطع الغيار</a>  </li>
+							<li> <a href="shop.php?id=<?php echo 4 ?>">مشتقات الزيوت والشحوم</a>  </li>
+							<li> <a href="shop.php?id=<?php echo 5 ?>">معدات وادوات السلامة</a>  </li>
+							<li> <a href="shop.php?id=<?php echo 7 ?>">معدات ونظم الاغلاق الهوائية </a>  </li>
+							<li> <a href="shop.php?id=<?php echo 6 ?>">معدات وادوات كهربائية</a>  </li>
+							<li> <a href="shop.php?id=<?php echo 8 ?>">معدات وادوات نظم التحليل الصناعية</a>  </li>   
 		                    		                   		                      
 							  		                                                   
 	                	</ul>
