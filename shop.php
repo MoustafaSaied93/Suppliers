@@ -288,9 +288,10 @@
 						    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
 						    <li class="breadcrumb-item active text-thm" aria-current="page" style="text-align: right;">قائمة المنتجات </li>
 						</ol>
-						<h2 class="breadcrumb_title">عرض جميع المنتجات</h2>
+						<h2 class="breadcrumb_title" style="text-align: right;">عرض جميع المنتجات</h2>
 					</div>
 				</div>
+<!--
 				<div class="col-md-4 col-lg-6">
 					<div class="sidebar_switch text-left">
 						<div id="main2">
@@ -299,6 +300,10 @@
 					</div>
 				</div>
 			</div>
+
+			-->
+
+
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="row">
@@ -311,6 +316,8 @@
 						
 						</div>
 					</div>
+
+					
 					<div class="row">
 
 						<div class="col-md-6 col-lg-4">
