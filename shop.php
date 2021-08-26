@@ -1,4 +1,119 @@
-<?php include "inc/header.php" ?>
+<?php
+
+include "inc/header.php";
+
+include_once("config.php");
+
+$id = $_GET['id'];
+
+
+
+if($id==1)
+{
+
+	$query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+	FROM product p INNER JOIN
+		 categories c
+		 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='8' AND p.Accept='1'
+	");
+
+
+$count = mysqli_num_rows($query2);
+
+
+
+}
+
+else if($id==2)
+
+{
+$query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+FROM product p INNER JOIN
+	 categories c
+	 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='10' AND p.Accept='1'
+");
+
+$count = mysqli_num_rows($query2);
+
+
+}
+
+else if($id==3)
+
+{
+$query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+FROM product p INNER JOIN
+	 categories c
+	 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID  where p.cat_id='11' AND p.Accept='1'
+");
+$count = mysqli_num_rows($query2);
+
+}
+
+
+else if($id==4)
+
+  {
+$query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+FROM product p INNER JOIN
+	 categories c
+	 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='12' AND p.Accept='1'
+   ");
+
+$count = mysqli_num_rows($query2);
+
+
+}
+
+else if($id==5)
+
+{
+$query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+FROM product p INNER JOIN
+	 categories c
+	 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='13' AND p.Accept='1'
+ ");
+ $count = mysqli_num_rows($query2);
+}
+
+
+else if($id==6)
+
+{
+$query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+FROM product p INNER JOIN
+	 categories c
+	 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='15' AND p.Accept='1'
+");
+$count = mysqli_num_rows($query2);
+}
+
+else if($id==7)
+
+{
+$query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+FROM product p INNER JOIN
+	 categories c
+	 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='14' AND p.Accept='1'
+");
+
+$count = mysqli_num_rows($query2);
+
+}
+
+else if($id==8)
+
+{
+$query2= mysqli_query($conn,"SELECT p.*, c.*,a.*
+FROM product p INNER JOIN
+	 categories c
+	 ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.cat_id='16' AND p.Accept='1'
+");
+
+
+ }
+ $count = mysqli_num_rows($query2);
+?>
 
 
 <!-- Inner Page Breadcrumb -->
@@ -9,9 +124,106 @@
 					<div class="breadcrumb_content">
 						<ol class="breadcrumb">
 						    <li class="breadcrumb-item"><a href="#"style="text-align: right;">الرئيسية</a></li>
-						    <li class="breadcrumb-item active" aria-current="page" style="text-align: right;">قسم : .....</li>
-						</ol>
-						<h4 class="breadcrumb_title" style="text-align: right;">قسم : قطع الغيار</h4>
+							<?php
+							if($id=="1")
+							{
+								echo'  <li class="breadcrumb-item active" aria-current="page" style="text-align: right;">قسم : المعدات الصناعية</li>
+								</ol>
+						      
+								
+								';
+							}
+
+							else if($id=="2")
+							{
+
+								echo'  <li class="breadcrumb-item active" aria-current="page" style="text-align: right;">قسم : الادوات لصناعية</li>
+								</ol>
+						      
+								
+								';
+
+
+							}
+
+
+							else if($id=="3")
+							{
+
+								echo'  <li class="breadcrumb-item active" aria-current="page" style="text-align: right;">قسم : قطع الغيار</li>
+								</ol>
+						      
+								
+								';
+
+
+							}
+
+
+							else if($id=="4")
+							{
+
+								echo'  <li class="breadcrumb-item active" aria-current="page" style="text-align: right;">قسم : مشتقات الزيوت والشحوم</li>
+								</ol>
+						      
+								
+								';
+
+
+							}
+
+
+							else if($id=="5")
+							{ 
+
+								echo'  <li class="breadcrumb-item active" aria-current="page" style="text-align: right;">قسم : معدات وادوات السلامة</li>
+								</ol>
+						      
+								
+								';
+
+
+							}
+
+
+							else if($id=="6")
+							{ 
+
+								echo'  <li class="breadcrumb-item active" aria-current="page" style="text-align: right;">قسم :معدات وادوات كهربائية</li>
+								</ol>
+						      
+								
+								';
+
+
+							}
+
+							else if($id=="7")
+							{ 
+
+								echo'  <li class="breadcrumb-item active" aria-current="page" style="text-align: right;">قسم :معدات ونظم الاغلاق الهوائية</li>
+								</ol>
+						      
+								
+								';
+
+
+							}
+
+							else if($id=="8")
+							{ 
+
+								echo'  <li class="breadcrumb-item active" aria-current="page" style="text-align: right;">قسم :معدات وادوات نظم التحليل الصناعى</li>
+								</ol>
+						      
+								
+								';
+
+
+							}
+
+						
+						?>
 					</div>
 				</div>
 			</div>
@@ -286,7 +498,63 @@
 					<div class="breadcrumb_content style2">
 						<ol class="breadcrumb">
 						    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
-						    <li class="breadcrumb-item active text-thm" aria-current="page" style="text-align: right;">قائمة المنتجات </li>
+							<?php
+							if($id=="1")
+							{
+								echo' <li class="breadcrumb-item active text-thm" aria-current="page" style="text-align: right;">المعدات الصناعية </li>';
+							}
+
+							else if($id=="2")
+							{
+								echo' <li class="breadcrumb-item active text-thm" aria-current="page" style="text-align: right;">الادوات الصناعية </li>';
+
+
+							}
+
+							else if($id=="3")
+							{
+								echo' <li class="breadcrumb-item active text-thm" aria-current="page" style="text-align: right;">قطع الغيار </li>';
+
+
+							}
+
+
+							else if($id=="4")
+							{
+								echo' <li class="breadcrumb-item active text-thm" aria-current="page" style="text-align: right;">مشتقات الزيوت والشحوم </li>';
+
+
+							}
+
+							else if($id=="5")
+							{
+								echo' <li class="breadcrumb-item active text-thm" aria-current="page" style="text-align: right;">معدات وادوات السلامة </li>';
+
+
+							}
+
+							else if($id=="6")
+							{
+								echo' <li class="breadcrumb-item active text-thm" aria-current="page" style="text-align: right;">معدات وادوات كهربائية </li>';
+
+
+							}
+
+							else if($id=="7")
+							{
+								echo' <li class="breadcrumb-item active text-thm" aria-current="page" style="text-align: right;">معدات وادوات نظم الاغلاق الهوائية </li>';
+
+
+							}
+
+							else if($id=="8")
+							{
+								echo' <li class="breadcrumb-item active text-thm" aria-current="page" style="text-align: right;">معدات وادوات نظم التحليل الصناعى </li>';
+
+
+							}
+						   
+							?>
 						</ol>
 						<h2 class="breadcrumb_title" style="text-align: right;">عرض جميع المنتجات</h2>
 					</div>
@@ -310,7 +578,9 @@
 						<div class="grid_list_search_result style2">
 							<div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
 								<div class="left_area">
-									<p>44,000 الف منتج </p>
+									
+
+									<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : <?php echo $count ?> منتج</p>
 								</div>
 							</div>
 						
@@ -320,50 +590,10 @@
 					
 					<div class="row">
 
-						<div class="col-md-6 col-lg-4">
-							<div class="feat_property home7 style4">
-								<div class="thumb">
-									<div class="fp_single_item_slider">
-									
-										<div class="item">
-											<img class="img-whp" src="images/property/fp2.jpg" alt="fp2.jpg">
-										</div>
-									</div>
-									<div class="thmb_cntnt style2">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Rent</a></li>
-											<li class="list-inline-item"><a href="#">Featured</a></li>
-										</ul>
-									</div>
-									<div class="thmb_cntnt style3">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">Apartment</p>
-										<h4>Renovated Apartment</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
-									</div>
-								</div>
-							</div>
-						</div>
+                    <?php
+					  while($row = mysqli_fetch_array($query2))
+					  {
+					 echo'
 
 						<div class="col-md-6 col-lg-4">
 							<div class="feat_property home7 style4">
@@ -371,13 +601,13 @@
 									<div class="fp_single_item_slider">
 									
 										<div class="item">
-											<img class="img-whp" src="images/property/fp3.jpg" alt="fp3.jpg">
+											<img class="img-whp" src="images/products/'.$row['image1'].'" alt="">
 										</div>
 									</div>
 									<div class="thmb_cntnt style2">
 										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Rent</a></li>
-											<li class="list-inline-item dn"></li>
+											
+											<li class="list-inline-item"><a href="#">متوفر</a></li>
 										</ul>
 									</div>
 									<div class="thmb_cntnt style3">
@@ -385,83 +615,36 @@
 											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
 											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
 										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
+										<a class="fp_price" href="#">'.$row['Price'].'<small> ريال</small></a>
+										
 									</div>
 								</div>
 								<div class="details">
 									<div class="tc_content">
-										<p class="text-thm">Villa</p>
-										<h4>Gorgeous Villa Bay View</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
+										<p class="text-thm">'.$row['Product_Name'].'</p>
+										
+										<p><span class="flaticon-placeholder"></span> السعودية-'.$row['City'].'</p>
+										<ul class="prop_details mb0"style="text-align: right;">
+										
+											<li class="list-inline-item" ><a href="#">رقم القطعة: '.$row['PartNumber'].' </a></li>
 										</ul>
 									</div>
 									<div class="fp_footer">
 										<ul class="fp_meta float-left mb0">
 											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+											<li class="list-inline-item"><a href="#">تجار</a></li>
 										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
+										<div class="fp_pdate float-right"> منذ:يومين</div>
 									</div>
 								</div>
 							</div>
 						</div>
+						';
+					  }
 
-						<div class="col-md-6 col-lg-4">
-							<div class="feat_property home7 style4">
-								<div class="thumb">
-									<div class="fp_single_item_slider">
-									
-										<div class="item">
-											<img class="img-whp" src="images/property/fp4.jpg" alt="fp4.jpg">
-										</div>
-									</div>
-									<div class="thmb_cntnt style2">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Sale</a></li>
-											<li class="list-inline-item dn"></li>
-										</ul>
-									</div>
-									<div class="thmb_cntnt style3">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">Single Family Home</p>
-										<h4>Luxury Family Home</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						
-					
-						
-					
-						
-					
-						
+
+
+						?>						
 					
 					
 						<div class="col-lg-12 mt20">
@@ -470,9 +653,11 @@
 								    <li class="page-item disabled">
 								    	<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
 								    </li>
-								    <li class="page-item"><a class="page-link" href="#">1</a></li>
-								    <li class="page-item active" aria-current="page">
-								    	<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+								    <li class="page-item active">
+										<a class="page-link" aria-current="page" href="#">1 <span class="sr-only">(current)</span></a>
+								</li>
+								    <li class="page-item " >
+								    	<a class="page-link" href="#">2 </a>
 								    </li>
 								    <li class="page-item"><a class="page-link" href="#">3</a></li>
 								    <li class="page-item"><a class="page-link" href="#">...</a></li>

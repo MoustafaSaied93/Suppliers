@@ -3,6 +3,66 @@
 include_once("config.php");
 
 
+$query1= mysqli_query($conn,"SELECT * from product  where cat_id='8' AND Accept='1'
+	");
+
+
+$count1 = mysqli_num_rows($query1);
+
+
+$query2= mysqli_query($conn,"SELECT * from product  where cat_id='10' AND Accept='1'
+	");
+
+
+$count2 = mysqli_num_rows($query2);
+
+
+$query3= mysqli_query($conn,"SELECT * from product  where cat_id='11' AND Accept='1'
+	");
+
+
+$count3 = mysqli_num_rows($query3);
+
+
+$query4= mysqli_query($conn,"SELECT * from product  where cat_id='12' AND Accept='1'
+	");
+
+
+$count4 = mysqli_num_rows($query4);
+
+
+$query5= mysqli_query($conn,"SELECT * from product  where cat_id='13' AND Accept='1'
+	");
+
+
+$count5 = mysqli_num_rows($query5);
+
+
+$query6= mysqli_query($conn,"SELECT * from product  where cat_id='15' AND Accept='1'
+	");
+
+
+$count6 = mysqli_num_rows($query6);
+
+
+$query7= mysqli_query($conn,"SELECT * from product  where cat_id='14' AND Accept='1'
+	");
+
+
+$count7 = mysqli_num_rows($query7);
+
+
+$query8= mysqli_query($conn,"SELECT * from product  where cat_id='16' AND Accept='1'
+	");
+
+
+$count8 = mysqli_num_rows($query8);
+
+
+
+
+
+
 
 
 ?>
@@ -321,13 +381,14 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :المعدات الصناعية</a>
+											<a class="fp_price" href="shop.php?id=<?php echo 1 ?>"> القسم :المعدات الصناعية</a>
 											
 										</div>
 									
 
 										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
+
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : <?php echo $count1 ?></p>
                                        
 
 										<ul class="prop_details mb0">
@@ -364,13 +425,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :الادوات الصناعية</a>
+											<a class="fp_price" href="shop.php?id=<?php echo 2 ?>"> القسم :الادوات الصناعية</a>
 											
 										</div>
 									
 
 										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : <?php echo $count2 ?></p>
                                        
 
 										<ul class="prop_details mb0">
@@ -407,13 +468,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :قطع الغيار</a>
+											<a class="fp_price" href="shop.php?id=<?php echo 3 ?>"> القسم :قطع الغيار</a>
 											
 										</div>
 									
 
 										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : <?php echo $count3 ?></p>
                                        
 
 										<ul class="prop_details mb0">
@@ -450,13 +511,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :مشتقات الزيوت والشحوم</a>
+											<a class="fp_price" href="shop.php?id=<?php echo 4 ?>"> القسم :مشتقات الزيوت والشحوم</a>
 											
 										</div>
 									
 
 										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
-										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : <?php echo $count4 ?></p>
                                        
 
 										<ul class="prop_details mb0">
@@ -493,13 +554,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :معدات وادوات السلامة</a>
+											<a class="fp_price" href="shop.php?id=<?php echo 5 ?>"> القسم :معدات وادوات السلامة</a>
 											
 										</div>
 									
 
 										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
-                                        <p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : <?php echo $count5 ?></p>
                                        
 
 										<ul class="prop_details mb0">
@@ -536,13 +597,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :معدات ونظم الاغلاق</a>
+											<a class="fp_price" href="shop.php?id=<?php echo 7 ?>"> القسم :معدات ونظم الاغلاق</a>
 											
 										</div>
 									
 
 										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
-                                       <p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : <?php echo $count6 ?></p>
                                        
 
 										<ul class="prop_details mb0">
@@ -579,13 +640,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :معدات وادوات كهربائية</a>
+											<a class="fp_price" href="shop.php?id=<?php echo 6 ?>"> القسم :معدات وادوات كهربائية</a>
 											
 										</div>
 									
 
 										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
-                                        <p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
+                                        <p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : <?php echo $count7 ?></p>
                                        
 
 										<ul class="prop_details mb0">
@@ -621,13 +682,13 @@ include_once("config.php");
 									
 												<li class="list-inline-item"><a href="#">متوفر</a></li>
 											</ul>
-											<a class="fp_price" href="#"> القسم :معدات وادوات نظم التحليل</a>
+											<a class="fp_price" href="shop.php?id=<?php echo 8 ?>"> القسم :معدات وادوات نظم التحليل</a>
 											
 										</div>
 									
 
 										<p class="text-thm"><span class="flaticon-user"></span> عدد الموردين : 3</p>
-                                         <p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : 10</p>
+										<p class="text-thm"><span class="flaticon-box"></span> عدد المنتجات : <?php echo $count8 ?></p>
                                        
 
 										<ul class="prop_details mb0">

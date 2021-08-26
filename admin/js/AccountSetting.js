@@ -58,7 +58,7 @@ formData.append("Email", Email);
 formData.append("Page", page);
 
 $.ajax({
-  url:"../updatefunction.php",
+  url:"../sharefunction/updatefunction.php",
   method:"POST",
    data: formData,
   processData: false,

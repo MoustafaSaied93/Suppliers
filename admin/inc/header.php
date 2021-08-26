@@ -206,24 +206,7 @@ if(!isset ($_SESSION ['id']))
                             <div class="header-profile-actions">
                                 <div class="header-user-profile">
                                     <?php
-                                    if($UserPhoto!=null)
-                                    {
-                                        echo'
-                                    <div class="header-user">
-                                        <img src=" ../'.$UserPhoto.'" alt="Admin Template">
-                                    </div>';
-                                    }
-
-                                    else
-                                    {
-
-                                        echo'
-                                        <div class="header-user">
-                                            <img src="../images/user/user-thumb.jpg" alt="Admin Template">
-                                        </div>';
-
-
-                                    }
+                                  
                                     ?>
                                     <h5><?php echo $userName   ?></h5>
 

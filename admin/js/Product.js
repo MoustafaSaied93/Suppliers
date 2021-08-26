@@ -592,11 +592,11 @@ $.ajax({
     $("#SubCatfield").hide();
 
 
- $("#ModalTitle").html("تعديل المنتج");
+     $("#ModalTitle").html("تعديل المنتج");
 
- $("#UpdateProduct").show();
+    $("#UpdateProduct").show();
 
- $("#SaveProduct").hide();
+     $("#SaveProduct").hide();
 
 
 
@@ -707,6 +707,10 @@ else{
     $("#Part_Number").val(data.PartNumber);
 
     $("#Product_Warranty").val(data.Product_Warranty);
+
+    $("#Price").val(data.Price);
+
+
 
     $("#Length").val(data.Lengths);
 
@@ -977,6 +981,8 @@ Measurement_type=$("input[name='Measurement_type']:checked").val();
 var description=$("#Description").val();
 var Product_Warranty=$("#Product_Warranty").val();
 
+var Price=$("#Price").val();
+
 
 
 var  RegisterDate = new Date();
@@ -1026,12 +1032,10 @@ if(fileToUpload===undefined)
 
  { 
 
-    fileToUpload=upfile;
+    fileToUpload="undefined";
 
     
-
-
-
+ 
  }
 
 
@@ -1041,7 +1045,7 @@ if(fileToUpload===undefined)
 
  {
 
-     fileToUpload = document.getElementById("upload").files[0].name;
+     fileToUpload = document.getElementById("upload").files[0];
  }
 
 
@@ -1050,7 +1054,7 @@ if(fileToUpload===undefined)
 
  { 
 
-    img=upimg1;
+    img="undefined";
 
     
 
@@ -1065,7 +1069,7 @@ if(fileToUpload===undefined)
 
  {
 
-    img=document.getElementById('fileUploaderControls1').files[0].name;
+    img=document.getElementById('fileUploaderControls1').files[0];
  }
 
 
@@ -1073,7 +1077,7 @@ if(fileToUpload===undefined)
 
  {
 
-    img2=upimg2;
+    img2="undefined";
 
 
 
@@ -1083,7 +1087,7 @@ if(fileToUpload===undefined)
 
  {
 
-    img2=document.getElementById('fileUploaderControls2').files[0].name;
+    img2=document.getElementById('fileUploaderControls2').files[0];
 
     
 
@@ -1094,7 +1098,7 @@ if(fileToUpload===undefined)
 
  {
 
-    img3=upimg3;
+    img3="undefined";
 
 
 
@@ -1104,7 +1108,7 @@ if(fileToUpload===undefined)
 
  {
 
-    img3=document.getElementById('fileUploaderControls3').files[0].name;
+    img3=document.getElementById('fileUploaderControls3').files[0];
 
     
 
@@ -1116,7 +1120,7 @@ if(fileToUpload===undefined)
 
  {
 
-    img4=upimg4;
+    img4="undefined";
 
 
 
@@ -1126,7 +1130,7 @@ if(fileToUpload===undefined)
 
  {
 
-    img4=document.getElementById('fileUploaderControls4').files[0].name;
+    img4=document.getElementById('fileUploaderControls4').files[0];
 
     
 
@@ -1137,7 +1141,7 @@ if(fileToUpload===undefined)
 
  {
 
-    img5=upimg5;
+    img5="undefined";
 
 
 
@@ -1147,7 +1151,7 @@ if(fileToUpload===undefined)
 
  {
 
-    img5=document.getElementById('fileUploaderControls5').files[0].name;
+    img5=document.getElementById('fileUploaderControls5').files[0];
 
     
 
@@ -1178,6 +1182,7 @@ if(fileToUpload===undefined)
     formData.append("Part_Number", Part_Number);
     formData.append("description", description);
     formData.append("Product_Warranty", Product_Warranty);
+    formData.append("Price", Price);
     formData.append("RegisterDate",  newregister);
 
 
@@ -1222,7 +1227,6 @@ if(fileToUpload===undefined)
     processData: false,
     type: 'POST',
     success:function(data){
-
 
         $("#AddProduct").modal("hide");
  

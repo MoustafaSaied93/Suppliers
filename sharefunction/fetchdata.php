@@ -251,6 +251,8 @@ else if($Page=="Products")
 
   $data["Product_Warranty"] = $row["Product_Warranty"];
 
+  $data["Price"] = $row["Price"];
+
   
 
   $data["Industry_Country"] = $row["Industry_Country"];
