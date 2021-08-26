@@ -976,6 +976,9 @@ header.header-nav.menu_style_home_three.navbar-scrolltofixed .ht_left_widget.hom
 li.has-children a{
   line-height: 51px;
 }
+
+
+#a .img-whp {height: 100%;}
 /*== Menu Style For Home V1 & V2 ==*/
 .menu-style-one nav.transparent,
 .menu-style-one nav.transparent .wrap-core-nav-list, 
@@ -12979,6 +12982,7 @@ a.btn.btn_error{
   font-weight: bold;
   line-height: 1.2;
   margin-bottom: 20px;
+  text-align: right;
 }
 .form_grid p{
   font-size: 14px;
@@ -16038,8 +16042,7 @@ canvas {
   position: relative;
 }
 .single_product_grid .sps_content .content{
-  text-align: left;
-}
+  text-align: right;}
 .single_product_grid .sps_content{
   display: -webkit-flex;
   display: -moz-flex;
@@ -16052,9 +16055,10 @@ canvas {
 }
 .single_product_grid .sps_content .content .shop_single_product_details p{
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #484848;
   line-height: 1.714;
+  text-align: justify;
 }
 .single_product_slider.owl-theme .owl-nav{
   display: none;
@@ -16110,10 +16114,11 @@ canvas {
 .shop_single_product_details h4{
   color: #484848;
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: "rb";
   font-weight: bold;
   line-height: 1.182;
   margin-bottom: 15px;
+  text-align: right;
 }
 .shop_single_product_details .cart_btns input{
   background-color: #efefef;
@@ -16130,10 +16135,11 @@ canvas {
 }
 .shop_single_product_details .sspd_price{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #ff5a5f;
   font-weight: bold;
   line-height: 1.2;
+  text-align: right;
 }
 .shop_single_product_details .cart_btns input:focus{
   outline: none;
@@ -16146,7 +16152,7 @@ canvas {
   box-shadow:0px 1px 4px 0px rgba(255, 90, 95, 0.3);
   border-radius: 8px;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: "rb";
   font-weight: bold;
   line-height: 1.2;
   color: #ffffff;
@@ -16160,8 +16166,8 @@ canvas {
 }
 .shop_single_product_details .sspd_sku li a{
   font-size: 15px;
-  font-family: "Open Sans";
-  color: rgb(126, 126, 126);
+  font-family: "rb";
+    color: rgb(126, 126, 126);
   line-height: 1.6;
 }
 .shop_single_product_details .sspd_social_icon li:first-child{
@@ -16185,7 +16191,7 @@ canvas {
 }
 .product_single_content .mbp_pagination_comments .mbp_first.media .media-body p{
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #484848;
   line-height: 1.857;
   margin-bottom: 0;
@@ -16296,6 +16302,7 @@ ul.total_reivew_view li.avrg_review{
   font-family: "Nunito";
   color: #767676;
   line-height: 2.143;
+
 }
 ul.total_reivew_view li.write_review{
   font-size: 14px;
@@ -16326,7 +16333,7 @@ ul.total_reivew_view .star_list li:last-child a{
 .shop_single_tab_content .nav-tabs .nav-link{
   border: none;
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "rb";
   color: #484848;
   font-weight: bold;
   line-height: 1.2;

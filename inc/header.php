@@ -176,8 +176,7 @@ if(isset($_SESSION ['id']))
 		                <a href="proudect.php"><span class="title">المنتجات</span></a>
 		               
 	                	<ul>
-		                    <li><a href="shop.php?id=<?php echo 1 ?>">المعدات الصناعية</a> </li>
-		                       	                       
+		                    <li><a href="shop.php?id=<?php echo 1 ?>">المعدات الصناعية</a> </li>		                       	                       
 		                    <li> <a href="shop.php?id=<?php echo 2 ?>">الادوات الصناعية</a>  </li>
 							<li> <a href="shop.php?id=<?php echo 3 ?>">قطع الغيار</a>  </li>
 							<li> <a href="shop.php?id=<?php echo 4 ?>">مشتقات الزيوت والشحوم</a>  </li>
