@@ -303,7 +303,7 @@ $city=$row['City'];
 						</div>
 					</div>
 
-                    <br>  <br> <br> <br> <br>
+                    
 
 					<div class="terms_condition_widget" style="hieght:30%">
 						<h4 class="title">مواصفات المنتج</h4>
