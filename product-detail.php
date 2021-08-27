@@ -4,42 +4,7 @@
 
 include_once("config.php");
 
-$id = $_GET['id'];
 
-$result=mysqli_query($conn,"SELECT p.*, c.*, a.*
-     FROM product p INNER JOIN
-     accounts a
-          ON p.UserID = a.UserID INNER JOIN
-          categories c ON p.cat_id = c.cat_id
-
-WHERE p.product_id='$id'");
-
-
-
-
-$row = mysqli_fetch_array($result);
-
-$productname=$row['Product_Name'];
-
-$image1=$row['image1'];
-
-$image2=$row['image2'];
-
-$image3=$row['image3'];
-
-$image4=$row['image4'];
-
-
-$categoryid=$row['cat_id'];
-
-$categoryName=$row['cat_name'];
-
-
-
-$ProductDesc=$row['Descrip'];
-
-
-$city=$row['City'];
 
 
 
