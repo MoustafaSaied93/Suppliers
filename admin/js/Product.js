@@ -1003,21 +1003,12 @@ var Hieght=$("#Hieght").val();
 var Voltage=$("#Voltage").val();
 var Stock=$("#Stock").val();
 var Industry_Country=$("#Industry_Country").val();
-
-
 var upimg1=window.image1;
 var upimg2=window.image2;
 var upimg3=window.image3;
 var upimg4=window.image4;
 var upimg5=window.image5;
-
 var upfile=window.AttachFile;
-
-
-
-
-
-
 var fileToUpload = document.getElementById("upload").files[0];
 var img=document.getElementById('fileUploaderControls1').files[0];
 
@@ -1026,15 +1017,10 @@ var img3=document.getElementById("fileUploaderControls3").files[0];
 var img4=document.getElementById("fileUploaderControls4").files[0];
 var img5=document.getElementById("fileUploaderControls5").files[0];
 
-
-
 if(fileToUpload===undefined)
 
  { 
-
-    fileToUpload="undefined";
-
-    
+    fileToUpload="undefined";  
  
  }
 

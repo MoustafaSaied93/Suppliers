@@ -111,25 +111,106 @@ if($fileToUpload=="undefined")
 
 }
 
-else
+else if($fileToUpload!="undefined")
 {
    $fileToUpload= $_FILES['fileToUpload']['name'];
 
 }
 
 
+if($img=="undefined")
 
-
-
-
-if($fileToUpload=="undefined")  
 {
 
-$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+   $img="undefined";
+
+}
+
+else if($img!="undefined")
+{
+   $img= $_FILES['img']['name'];
+
+}
+
+if($img2=="undefined")
+
+{
+
+   $img2="undefined";
+
+}
+
+else if($img2!="undefined")
+{
+   $img2= $_FILES['img2']['name'];
+
+}
+
+
+if($img3=="undefined")
+
+{
+
+   $img3="undefined";
+
+}
+
+else if($img3!="undefined")
+{
+   $img3= $_FILES['img3']['name'];
+
+}
+
+
+if($img4=="undefined")
+
+{
+
+   $img4="undefined";
+
+}
+
+else if($img4!="undefined")
+{
+   $img4= $_FILES['img4']['name'];
+
+}
+
+
+
+if($img5=="undefined")
+
+{
+
+   $img5="undefined";
+
+}
+
+else if($img5!="undefined")
+{
+   $img5= $_FILES['img5']['name'];
+
+}
+
+
+
+
+
+
+
+
+
+
+
+if($fileToUpload=="undefined" && $img=="undefined" && $img2=="undefined" && $img3=="undefined" && $img4=="undefined" && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
 Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price' WHERE product_id='$product_id'");
 
 
 }
+
 
 
 
@@ -147,12 +228,60 @@ Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Wi
 
 $pdffile_dir='../Files/'.$fileToUpload;
 
+$image_dir = '../images/products/'.$img;
+
+$image_dir2 = '../images/products/'.$img2;
+
+$image_dir3 = '../images/products/'.$img3;
+
+$image_dir4 = '../images/products/'.$img4;
+
+$image_dir5 = '../images/products/'.$img5;
+
+
 if($fileToUpload!="undefined")
 {
 
 
   move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$pdffile_dir);
 }
+
+
+if($img!="undefined")
+{
+
+
+  move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
+}
+
+if($img2!="undefined")
+{
+
+
+  move_uploaded_file($_FILES["img2"]["tmp_name"],$image_dir2);
+}
+
+if($img3!="undefined")
+{
+
+
+  move_uploaded_file($_FILES["img3"]["tmp_name"],$image_dir3);
+}
+
+if($img4!="undefined")
+{
+
+
+  move_uploaded_file($_FILES["img4"]["tmp_name"],$image_dir4);
+}
+
+if($img5!="undefined")
+{
+
+
+  move_uploaded_file($_FILES["img5"]["tmp_name"],$image_dir5);
+}
+
 
 
 
