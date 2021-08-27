@@ -1,6 +1,49 @@
 
 
-<?php include "inc/header.php" ?>
+<?php include "inc/header.php";
+
+include_once("config.php");
+
+$id = $_GET['id'];
+
+$result=mysqli_query($conn,"SELECT p.*, c.*, a.*
+     FROM product p INNER JOIN
+     accounts a
+          ON p.UserID = a.UserID INNER JOIN
+          categories c ON p.cat_id = c.cat_id
+
+WHERE p.product_id='$id'");
+
+
+
+
+$row = mysqli_fetch_array($result);
+
+$productname=$row['Product_Name'];
+
+$image1=$row['image1'];
+
+$image2=$row['image2'];
+
+$image3=$row['image3'];
+
+$image4=$row['image4'];
+
+
+$categoryid=$row['cat_id'];
+
+$categoryName=$row['cat_name'];
+
+
+
+$ProductDesc=$row['Descrip'];
+
+
+$city=$row['City'];
+
+
+
+?>
 
 
 
@@ -14,10 +57,10 @@
 				<div class="col-xl-6">
 					<div class="breadcrumb_content style2">
 						<ol class="breadcrumb">
-						    <li class="breadcrumb-item"><a href="#">Home</a></li>
-						    <li class="breadcrumb-item active text-thm" aria-current="page">التفاصيل</li>
+						    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
+						    <li class="breadcrumb-item active text-thm" aria-current="page">تفاصيل المنتج</li>
 						</ol>
-						<h4 class="breadcrumb_title" style = "text-align: right;">تفاصيل المنتج</h4>
+						
 					</div>
 				</div>
 			</div>
@@ -86,8 +129,10 @@
 							<li class="nav-item">
 							    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">الوصف</a>
 							</li>
+
+                         
 							<li class="nav-item">
-							    <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">المراجعات</a>
+							    <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">تقيمات العملاء</a>
 							</li>
 						</ul>
 						<div class="tab-content" id="myTabContent2">
@@ -103,6 +148,8 @@
 									</div>
 								</div>
 							</div>
+
+
 							<div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
 								<div class="product_single_content">
 									<div class="mbp_pagination_comments">
@@ -189,13 +236,14 @@
 							</div>
 						</div>
 					</div>
+                    <br>
 
                     
 					<div class="row mb30">
-						<div class="col-lg-12">
-							<h4 class="mt25">Related products</h4>
+						<div class="col-lg-12" >
+							<h4 class="main-title text-center mb40">ربما يعجبك ايضا</h4>
 						</div>
-						<div class="col-sm-6 col-lg-6">
+						<div class="col-sm-4 col-lg-4">
 							<div class="shop_grid">
 								<div class="thumb">
 									<img class="img-fluid w100" src="images/shop/1.png" alt="1.png">
@@ -207,7 +255,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-lg-6">
+						<div class="col-sm-4 col-lg-4">
 							<div class="shop_grid">
 								<div class="thumb">
 									<img class="img-fluid w100" src="images/shop/2.png" alt="2.png">
@@ -218,23 +266,32 @@
 								</div>
 							</div>
 						</div>
+
+
+                        <div class="col-sm-4 col-lg-4">
+							<div class="shop_grid">
+								<div class="thumb">
+									<img class="img-fluid w100" src="images/shop/2.png" alt="2.png">
+								</div>
+								<div class="details">
+									<h4 class="item-tile">Beanie <span class="price">$13,000</span></h4>
+									<button class="btn btn-thm add_to_cart">Add to cart</button>
+								</div>
+							</div>
+						</div>
+
+
+                   
 					</div>
 				</div>
 
 
+
+
+
 				<div class="col-lg-4">
-					<div class="sidebar_search_widget">
-						<div class="blog_search_widget">
-							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Search Here" aria-label="Recipient's username" aria-describedby="button-addon2">
-								<div class="input-group-append">
-							    	<button class="btn btn-outline-secondary" type="button" id="button-addon2"><span class="flaticon-magnifying-glass"></span></button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="terms_condition_widget">
-						<h4 class="title">Product Categories</h4>
+                <div class="terms_condition_widget">
+						<h4 class="title">الاستفسار عن المنتج</h4>
 						<div class="widget_list">
 							<ul class="list_details">
 								<li><a href="#"><i class="fa fa-caret-right mr10"></i>Clothing</a></li>
@@ -245,9 +302,50 @@
 							</ul>
 						</div>
 					</div>
+
+                    <br>  <br> <br> <br> <br>
+
+					<div class="terms_condition_widget" style="hieght:30%">
+						<h4 class="title">مواصفات المنتج</h4>
+						<div class="widget_list">
+						
+                            <ul class="sspd_sku mb30">
+							<li><p >رقم القطعة : ٩٨٢٣٥٧٣٤</p></li>
+
+                            <li><p>فترة الضمان :1 سنة </p></li>
+
+                            <li><p> نوع القياس : انش</p></li>
+
+                            <li><p>الطول : 100 </p></li>
+
+                            <li><p> العرض : 20</p></li>
+
+                            <li><p> الحجم : 30 </p></li>
+
+                            <li><p> الارتفاع : 20 انش</p></li>
+
+                            <li><p>الوزن :200 انش</p></li>
+
+                            <li><p>قوة المحرك : 20 وات </p></li>
+
+
+                            <li><p>الجهد الكهربى :30 وات </p></li>
+
+                            <li><p>القطر : 20  </p></li>
+                            <li><p> القطر الخارجى : 20  </p></li>
+
+                            <li><p> مرفق المنتج :  </p></li>
+                            
+							</ul>
+								
+						
+						</div>
+					</div>
 				
 					</div>
 				</div>
+
+                
 			</div>
 		</div>
 	</section>
