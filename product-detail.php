@@ -203,6 +203,113 @@ include_once("config.php");
 					</div>
                     <br>
 
+
+					<div class="shop_single_tab_content mt30">
+
+
+					<div class="col-lg-12">
+							<div class="additional_details">
+								<div class="row">
+									<div class="col-lg-12">
+										<h4 class="mb15">مواصفات المنتج</h4>
+									</div>
+									<div class="col-md-6 col-lg-6 col-xl-4">
+										<ul class="list-inline-item">
+											<li><p>الحجم:</p></li>
+											<li><p>الحجم:</p></li>
+											<li><p>الحجم:</p></li>
+											<li><p>الحجم:</p></li>
+										</ul>
+										<ul class="list-inline-item">
+										<li><p>  30 </p></li>
+										<li><p>  30 </p></li>
+										<li><p>  30 </p></li>
+										<li><p>  30 </p></li>
+										</ul>
+									</div>
+									<div class="col-md-6 col-lg-6 col-xl-4">
+										<ul class="list-inline-item">
+										<li><p>الحجم:</p></li>
+											<li><p>الحجم:</p></li>
+											<li><p>الحجم:</p></li>
+											<li><p>الحجم:</p></li>
+										</ul>
+										<ul class="list-inline-item">
+										<li><p>  30 </p></li>
+										<li><p>  30 </p></li>
+										<li><p>  30 </p></li>
+										<li><p>  30 </p></li>
+										</ul>
+									</div>
+									<div class="col-md-6 col-lg-6 col-xl-4">
+										<ul class="list-inline-item">
+										<li><p>الحجم:</p></li>
+											<li><p>الحجم:</p></li>
+										</ul>
+										<ul class="list-inline-item">
+										<li><p>  30 </p></li>
+										<li><p>  30 </p></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="additional_details">
+								<div class="row">
+									<div class="col-lg-12">
+										<h4 class="mb15">Additional details</h4>
+									</div>
+									<div class="col-md-6 col-lg-6">
+										<ul class="list-inline-item">
+											<li><p>Deposit :</p></li>
+											<li><p>Pool Size :</p></li>
+											<li><p>Additional Rooms :</p></li>
+										</ul>
+										<ul class="list-inline-item">
+											<li><p><span>20%</span></p></li>
+											<li><p><span>300 Sqft</span></p></li>
+											<li><p><span>Guest Bath</span></p></li>
+										</ul>
+									</div>
+									<div class="col-md-6 col-lg-6">
+										<ul class="list-inline-item">
+											<li><p>Last remodel year :</p></li>
+											<li><p>Amenities :</p></li>
+											<li><p>Equipment :</p></li>
+										</ul>
+										<ul class="list-inline-item">
+											<li><p><span>1987</span></p></li>
+											<li><p><span>Clubhouse</span></p></li>
+											<li><p><span>Grill - Gas</span></p></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="property_attachment_area">
+								<h4 class="mb30">مسنمدات المنتج</h4>
+								<div class="iba_container style2">
+									<div class="icon_box_area style2">
+										<div class="score"><span class="flaticon-document text-thm fz30"></span></div>
+										<div class="details">
+											<h5><span class="flaticon-download text-thm pr10"></span> تحميل المستند</h5>
+										</div>
+									</div>
+									<div class="icon_box_area style2">
+										<div class="score"><span class="flaticon-pdf text-thm fz30"></span></div>
+										<div class="details">
+											<h5><span class="flaticon-download text-thm pr10"></span> Demo pdf Document</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+
+
+
                     
 					<div class="row mb30">
 						<div class="col-lg-12" >
@@ -256,61 +363,64 @@ include_once("config.php");
 
 				<div class="col-lg-4">
                 <div class="terms_condition_widget">
-						<h4 class="title">الاستفسار عن المنتج</h4>
+						<h4 class="title">تواصل مع المورد</h4>
 						<div class="widget_list">
-							<ul class="list_details">
-								<li><a href="#"><i class="fa fa-caret-right mr10"></i>Clothing</a></li>
-								<li><a href="#"><i class="fa fa-caret-right mr10"></i>Decor</a></li>
-								<li><a href="#"><i class="fa fa-caret-right mr10"></i>Music</a></li>
-								<li><a href="#"><i class="fa fa-caret-right mr10"></i>Uncategorized</a></li>
-								<li><a href="#"><i class="fa fa-caret-right mr10"></i>House</a></li>
-							</ul>
+					
 						</div>
 					</div>
 
                     
 
-					<div class="terms_condition_widget" style="hieght:30%">
-						<h4 class="title">مواصفات المنتج</h4>
-						<div class="widget_list">
-						
-                            <ul class="sspd_sku mb30">
-							<li><p >رقم القطعة : ٩٨٢٣٥٧٣٤</p></li>
-
-                            <li><p>فترة الضمان :1 سنة </p></li>
-
-                            <li><p> نوع القياس : انش</p></li>
-
-                            <li><p>الطول : 100 </p></li>
-
-                            <li><p> العرض : 20</p></li>
-
-                            <li><p> الحجم : 30 </p></li>
-
-                            <li><p> الارتفاع : 20 انش</p></li>
-
-                            <li><p>الوزن :200 انش</p></li>
-
-                            <li><p>قوة المحرك : 20 وات </p></li>
-
-
-                            <li><p>الجهد الكهربى :30 وات </p></li>
-
-                            <li><p>القطر : 20  </p></li>
-                            <li><p> القطر الخارجى : 20  </p></li>
-
-                            <li><p> مرفق المنتج :  </p></li>
-                            
-							</ul>
+				
+					<div class="col-lg-12 col-xl-12 mt30">
+					<div class="sidebar_listing_list">
+						<div class="sidebar_advanced_search_widget">
+							<div class="sl_creator">
+								<h4 class="mb25">راضي الشمري</h4>
+								<div class="media">
+									<img class="mr-3" src="images/team/lc1.png" alt="lc1.png">
+									<div class="media-body">
+								    	<h5 class="mt-0 mb0">Samul Williams</h5>
+								    	<p class="mb0">(123)456-7890</p>
+								    	<p class="mb0">info@findhouse.com</p>
+								    	<a class="text-thm" href="#">View My Listing</a>
+								  	</div>
+								</div>
+							</div>
+							<ul class="sasw_list mb0">
+								<li class="search_area">
+								    <div class="form-group">
+								    	<input type="text" class="form-control" id="exampleInputName1" placeholder=" الاسم">
+								    </div>
+								</li>
 								
-						
+								<li class="search_area">
+								    <div class="form-group">
+								    	<input type="text" class="form-control" id="exampleInputEmail" placeholder="الموضوع">
+								    </div>
+								</li>
+								<li class="search_area">
+		                            <div class="form-group">
+		                                <textarea id="form_message" name="form_message" class="form-control required" rows="5" required="required" placeholder="رجاء لا تدخل اي معلومات تحميل وسائل اتصال "></textarea>
+		                            </div>
+								</li>
+								<li>
+									<div class="search_option_button">
+									    <button type="submit" class="btn btn-block btn-thm">ارسال</button>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
+
+
 				
+				
+			
 					</div>
 				</div>
 
-                
+        
 			</div>
 		</div>
 	</section>
