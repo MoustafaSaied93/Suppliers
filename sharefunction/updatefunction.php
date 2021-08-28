@@ -330,6 +330,15 @@ Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Wi
 
 }
 
+else if($fileToUpload=="undefined" && $img3=="undefined" && $img2=="undefined" && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image1='$img',image4='$img4' WHERE product_id='$product_id'");
+
+
+}
+
 else if($fileToUpload=="undefined" && $img=="undefined" && $img2=="undefined" && $img5=="undefined" )  
 {
 
@@ -339,11 +348,92 @@ Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Wi
 
 }
 
+else if($fileToUpload=="undefined" && $img=="undefined" && $img2=="undefined" && $img3=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image4='$img4' WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined" && $img=="undefined" && $img2=="undefined" && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image3='$img3' WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined" && $img=="undefined" && $img3=="undefined" && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image2='$img2' WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined" && $img2=="undefined" && $img3=="undefined" && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image1='$img' WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined" && $img=="undefined" && $img2=="undefined" && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image3='$img3' WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined" && $img4=="undefined" && $img2=="undefined" && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image3='$img3',image1='$img' WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined" && $img=="undefined" && $img4=="undefined" && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image3='$img3',image2='$img2' WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined" && $img=="undefined" && $img3=="undefined" && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image4='$img4',image2='$img2' WHERE product_id='$product_id'");
+
+
+}
+
 else if($fileToUpload=="undefined"  && $img4=="undefined" && $img5=="undefined" )  
 {
 
 $query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
 Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image1='$img',image2='$img2',image3='$img3'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined"  && $img3=="undefined" && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image1='$img',image2='$img2',image4='$img4'  WHERE product_id='$product_id'");
 
 
 }
@@ -358,11 +448,74 @@ Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Wi
 
 }
 
+else if($fileToUpload=="undefined" && $img=="undefined" && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image2='$img2',image3='$img3',image5='$img5'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined" && $img=="undefined" && $img2=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image3='$img3',image4='$img4'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined" && $img5=="undefined" && $img2=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image1='$img',image3='$img3',image4='$img4'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined" && $img4=="undefined" && $img2=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image1='$img',image3='$img3',image5='$img5'  WHERE product_id='$product_id'");
+
+
+}
+
 else if( $img3=="undefined" && $img4=="undefined" && $img5=="undefined" )  
 {
 
 $query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
 Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',AttachFile='$fileToUpload',image1='$img', image2='$img2' WHERE product_id='$product_id'");
+
+
+}
+
+else if( $img2=="undefined" && $img4=="undefined" && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',AttachFile='$fileToUpload',image1='$img', image3='$img3' WHERE product_id='$product_id'");
+
+
+}
+
+else if( $img2=="undefined" && $img3=="undefined" && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',AttachFile='$fileToUpload',image1='$img', image5='$img5' WHERE product_id='$product_id'");
+
+
+}
+
+else if( $img2=="undefined" && $img3=="undefined" && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',AttachFile='$fileToUpload',image1='$img', image4='$img4' WHERE product_id='$product_id'");
 
 
 }
@@ -375,6 +528,51 @@ Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Wi
 
 
 }
+
+else if( $img=="undefined" && $img2=="undefined" && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',AttachFile='$fileToUpload',image4='$img4', image3='$img3' WHERE product_id='$product_id'");
+
+
+}
+
+else if( $img=="undefined" && $img2=="undefined" && $img3=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',AttachFile='$fileToUpload',image4='$img4', image5='$img5' WHERE product_id='$product_id'");
+
+
+}
+
+else if( $img=="undefined" && $img2=="undefined" && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',AttachFile='$fileToUpload',image3='$img3', image5='$img5' WHERE product_id='$product_id'");
+
+
+}
+
+else if( $img=="undefined" && $img3=="undefined" && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',AttachFile='$fileToUpload',image4='$img4', image2='$img2' WHERE product_id='$product_id'");
+
+
+}
+
+else if( $img=="undefined" && $img3=="undefined" && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',AttachFile='$fileToUpload',image2='$img2', image5='$img5' WHERE product_id='$product_id'");
+
+
+}
 else if($fileToUpload=="undefined"  && $img5=="undefined" )  
 {
 
@@ -384,11 +582,110 @@ Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Wi
 
 }
 
+else if($fileToUpload=="undefined"  && $img=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image2='$img2',image3='$img3',image4='$img4'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined"  && $img2=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image1='$img',image3='$img3',image4='$img4'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined"  && $img3=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image1='$img',image2='$img2',image4='$img4'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($fileToUpload=="undefined"  && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image1='$img',image2='$img2',image3='$img3'  WHERE product_id='$product_id'");
+
+
+}
+
 else if($img4=="undefined"  && $img5=="undefined" )  
 {
 
 $query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
 Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image1='$img',image2='$img2',image3='$img3',AttachFile='$fileToUpload'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($img3=="undefined"  && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image1='$img',image2='$img2',image4='$img4',AttachFile='$fileToUpload'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($img2=="undefined"  && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image1='$img',image3='$img3',image5='$img5',AttachFile='$fileToUpload'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($img2=="undefined"  && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image1='$img',image3='$img3',image4='$img4',AttachFile='$fileToUpload'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($img=="undefined"  && $img5=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image2='$img2',image3='$img3',image4='$img4',AttachFile='$fileToUpload'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($img=="undefined"  && $img2=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image3='$img3',image4='$img4',AttachFile='$fileToUpload'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($img=="undefined"  && $img3=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image2='$img2',image4='$img4',AttachFile='$fileToUpload'  WHERE product_id='$product_id'");
+
+
+}
+
+else if($img=="undefined"  && $img4=="undefined" )  
+{
+
+$query= mysqli_query($conn,"UPDATE product SET cat_id='$cat_id',CatTypeID='$CatTypeID',SubCatID='$SubCatID',Product_Name='$Product_Name',Descrip='$description',PartNumber='$Part_Number',Size='$Size',Stocks='$Stock',Industry_Country='$Industry_Country' ,SubCategoryType='$SubCatTypeID',Measurement_type='$Measurement_type',
+Lengths='$Length',Diameter='$Diameter',Out_Side_Diameter='$Out_Side_Diameter',Width='$Width',wieght='$wieght',Hieght='$Hieght',Motorpower='$Motorpower',Voltage='$Voltage',RegisterDate='$RegisterDate',Product_Warranty='$Product_Warranty',Price='$Price',image5='$img5',image2='$img2',image3='$img3',AttachFile='$fileToUpload'  WHERE product_id='$product_id'");
 
 
 }
