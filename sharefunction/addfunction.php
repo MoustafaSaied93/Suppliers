@@ -51,8 +51,11 @@ if($pages=="Signup")
    }
    $Country = $_POST['Country'];
    $Currency = $_POST['Currency'];
+
+   $Area = $_POST['Area'];
+
 //bank 
-  $BeneficiaryName = $_POST['BeneficiaryName'];
+  
    $BankName = $_POST['BankName'];
    $BranchName = $_POST['BranchName'];
    $AccountNumber = $_POST['AccountNumber'];
@@ -61,44 +64,38 @@ if($pages=="Signup")
 
    $CommercialRegister = $_POST['CommercialRegister'];
    
-   $TaxRegisternumber = $_POST['TaxRegisternumber'];
    $CommercialExpDate = $_POST['CommercialExpDate'];
+
    $City= $_POST['City'];
    $Address = $_POST['Address'];
    $CompanyName = $_POST['CompanyName'];
    $RegisterDate =$_POST['RegisterDate'];
 
-   //img
-  $image_name=$_FILES['img']['name'];      
-  $image_dir = '../images/user/'.$image_name ;
-  $image_db = '../images/user/' .$image_name ;
-
-
+  
 
   $fileToUpload= $_FILES['fileToUpload']['name'];
   $fileToUpload1= $_FILES['fileToUpload1']['name'];
   $fileToUpload2= $_FILES['fileToUpload2']['name'];
-  $fileToUpload3= $_FILES['fileToUpload3']['name'];
-   
-  $pdffile_dir='Files/'.$fileToUpload;
+    
+  $pdffile_dir='../Files/'.$fileToUpload;
  
   // $imagepath ="C:/xampp/htdocs/RestaurantSystem/images/".$image_name;
        
-    move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
+   
 
     move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$pdffile_dir);
     move_uploaded_file($_FILES["fileToUpload1"]["tmp_name"],$pdffile_dir);
     move_uploaded_file($_FILES["fileToUpload2"]["tmp_name"],$pdffile_dir);
-    move_uploaded_file($_FILES["fileToUpload3"]["tmp_name"],$pdffile_dir);
+    
 
     
 
 
-    $sql2="INSERT INTO accounts (UserName,passwords,Email,Mobile,CommercialRegister,CommercialExpDate,UserPhoto,UserStatus,City,Address,Commercial_File,UserType,CompanyCode,CompanyName,RegisterDate,
-    Country,Currency,BeneficiaryName,BankName,BranchName,AccountNumber,IBANNumber,SwiftCode,TaxRegisternumber,TradeLicense,UploadNationalID,BankUpload )
+    $sql2="INSERT INTO accounts (UserName,passwords,Email,Mobile,CommercialRegister,CommercialExpDate,UserStatus,City,Address,Commercial_File,UserType,CompanyCode,CompanyName,RegisterDate,
+    Country,Currency,BankName,BranchName,AccountNumber,IBANNumber,SwiftCode,TradeLicense,UploadNationalID,Area)
     
-  VALUES ('$UserName','$password','$Email','$Mobile','$CommercialRegister','$CommercialExpDate','$image_name','1','$City','$Address','$pdffile_dir','$usertype','$CompanyCode','$CompanyName','$RegisterDate',
-  '$Country','$Currency','$BeneficiaryName','$BankName','$BranchName','$AccountNumber','$IBANNumber','$SwiftCode','$TaxRegisternumber','$fileToUpload1','$fileToUpload2','$fileToUpload3')";
+  VALUES ('$UserName','$password','$Email','$Mobile','$CommercialRegister','$CommercialExpDate','1','$City','$Address','$pdffile_dir','$usertype','$CompanyCode','$CompanyName','$RegisterDate',
+  '$Country','$Currency','$BankName','$BranchName','$AccountNumber','$IBANNumber','$SwiftCode','$fileToUpload1','$fileToUpload2','$Area')";
                                                
   $query=  mysqli_query($conn,$sql2); 
 

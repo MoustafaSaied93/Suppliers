@@ -272,7 +272,7 @@ input.jsx-1240009043 {
           <label for="password">Password:</label>
           <input type="password" id="passwords" name="user_password" placeholder="Enter your Password">
 
-      <button id="nextstep1">Next step</button>
+          <button id="nextstep1">Next step</button>
 
       </div>
 
@@ -405,11 +405,6 @@ input.jsx-1240009043 {
 
 
           </div>
-
-
-
-
-
 
 
 

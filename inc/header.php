@@ -76,7 +76,7 @@ if(isset($_SESSION ['id']))
 	
 					  </li>
 						
-						<li class="list-inline-item add_listing home2 style10 float-left"><a href="#"><span class="flaticon-tick"></span><span class="dn-lg"> بوابة الموردين </span></a></li>
+						<li class="list-inline-item add_listing home2 style10 float-left"><a href="registervendor.php"><span class="flaticon-tick"></span><span class="dn-lg"> بوابة الموردين </span></a></li>
 						<li class="list-inline-item list_s float-left">
 							<a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">تسجيل الدخول</span></a>
 						

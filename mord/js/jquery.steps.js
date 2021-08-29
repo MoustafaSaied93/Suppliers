@@ -1359,6 +1359,8 @@ $.fn.steps.destroy = function ()
 $.fn.steps.finish = function ()
 {
     finishStep(this, getState(this));
+
+ 
 };
 
 /**
@@ -1926,7 +1928,13 @@ var defaults = $.fn.steps.defaults = {
      * @default function (event, currentIndex) { return true; }
      * @for defaults
      **/
-    onFinishing: function (event, currentIndex) { return true; },
+    onFinishing: function (event, currentIndex) {
+        
+        
+        return true; 
+    
+    
+    },
 
     /**
      * Fires after completion. 
