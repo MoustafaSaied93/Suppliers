@@ -2,13 +2,13 @@
 
 include_once("../config.php");
 
-$Page=$_POST['page'];
+$Page=strip_tags($_POST['page']);
 
 
 if($Page=="Categpry")
 {
 
-$ID=$_POST['ID'];
+$ID= strip_tags($_POST['ID']);
 
 $query= mysqli_query($conn,"DELETE FROM categories WHERE cat_id ='$ID'");
 
@@ -18,7 +18,7 @@ $query= mysqli_query($conn,"DELETE FROM categories WHERE cat_id ='$ID'");
 else if($Page=="SystemMessage")
 {
 
-$ID=$_POST['ID'];
+$ID= strip_tags($_POST['ID']);
 
 $query= mysqli_query($conn,"DELETE FROM notfication WHERE NotID  ='$ID'");
 
@@ -27,9 +27,18 @@ $query= mysqli_query($conn,"DELETE FROM notfication WHERE NotID  ='$ID'");
 else if($Page=="ClientMessage")
 {
 
-$ID=$_POST['ID'];
+$ID= strip_tags($_POST['ID']);
 
 $query= mysqli_query($conn,"DELETE FROM clintmessages WHERE MessageID  ='$ID'");
+
+}
+
+else if($Page=="ExpClientMessage")
+{
+
+$ID= strip_tags($_POST['ID']);
+
+$query= mysqli_query($conn,"DELETE FROM clientexp WHERE ClientExpID ='$ID'");
 
 }
 
@@ -38,7 +47,7 @@ $query= mysqli_query($conn,"DELETE FROM clintmessages WHERE MessageID  ='$ID'");
 else if($Page=="Product")
 {
 
-$ID=$_POST['ID'];
+$ID= strip_tags($_POST['ID']);
 
 
 $query1= mysqli_query($conn,"SELECT * FROM product WHERE product_id  ='$ID'");
@@ -103,7 +112,7 @@ while($row = mysqli_fetch_array($query1))
 else if($Page=="Accounts")
 {
 
-$ID=$_POST['ID'];
+$ID= strip_tags($_POST['ID']);
 
 $query= mysqli_query($conn,"DELETE FROM accounts WHERE UserID  ='$ID'");
 

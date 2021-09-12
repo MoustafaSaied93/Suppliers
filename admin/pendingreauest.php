@@ -35,11 +35,12 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='0'and Refused=
 </div>
 
  
-    <table id="copy-print-csv" class="table custom-table">
+    <table id="copy-print-csv" class="table custom-table" data-page-length='10'>
    
       <thead>
         <tr>
           <th> رقم المنتج </th>
+          <th>كود المنتج </th>
           <th>اسم المنتج</th>
           <th>الصنف</th>
           <th>مرفقات المنتج</th>
@@ -84,7 +85,9 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='0'and Refused=
            ?>
          <tr>
      <td><?php echo $num ?></td>
+     <td><?php echo $row['ProductCode'];?></td>
      <td><?php echo $row['Product_Name'];?></td>
+   
      <td><?php echo $row['cat_name'];?></td>
      <?php echo  $Attach;?>
      
@@ -93,7 +96,7 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='0'and Refused=
       <a href="VendorProductDetails.php?id=<?php echo $row['product_id']; ?>" class="btn btn-info">
                             تفاصيل</a>
                           
-      <button type="button" data-toggle="modal" data-target="#DeleteConfirmations" onclick="DeleteProducts(<?php echo $row['product_id']; ?>)" class="btn btn-danger"> حذف المنتج</button>
+      <button type="button" id="data-image-id" data-toggle="modal" data-target="#DeleteConfirmations" onclick="DeleteProducts(<?php echo $row['product_id']; ?>)" class="btn btn-danger"> حذف المنتج</button>
       </td>
      </tr>
     <?php

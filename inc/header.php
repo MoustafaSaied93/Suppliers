@@ -47,7 +47,7 @@ if(isset($_SESSION ['id']))
 	{
 
 		$link='	<li class="list-inline-item list_s float-left">
-					<a href="Logout.php" class="btn flaticon-log-out"> <span class="dn-lg">تسجيل الخروج</span></a>
+					<a href="admin/AdminLogout.php" class="btn flaticon-log-out"> <span class="dn-lg">تسجيل الخروج</span></a>
 
 	              </li>
 					
@@ -76,7 +76,7 @@ if(isset($_SESSION ['id']))
 	
 					  </li>
 						
-						<li class="list-inline-item add_listing home2 style10 float-left"><a href="registervendor.php"><span class="flaticon-tick"></span><span class="dn-lg"> بوابة الموردين </span></a></li>
+						<li class="list-inline-item add_listing home2 style10 float-left"><a href="registervendor.php" target="_blank"><span class="flaticon-tick"></span><span class="dn-lg"> بوابة الموردين </span></a></li>
 						<li class="list-inline-item list_s float-left">
 							<a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">تسجيل الدخول</span></a>
 						
@@ -241,7 +241,7 @@ if(isset($_SESSION ['id']))
 								<div class="login_form">
 									<form action="#">
 										<div class="heading">
-											<h4>تسجيل الدخول</h4>
+											<h4  >تسجيل الدخول</h4>
 										</div>
 										<div class="row mt25">
 											<div class="col-lg-12">
@@ -278,7 +278,7 @@ if(isset($_SESSION ['id']))
 					  	<div class="row mt25 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 					  		<div class="col-lg-6 col-xl-6">
 					  			<div class="regstr_thumb">
-					  				<img class="img-fluid w100" src="images/resource/regstr.jpg" alt="regstr.jpg">
+					  				<img class="img-fluid w100" src="images/resource/login.jpg" alt="regstr.jpg">
 					  			</div>
 					  		</div>
 					  		<div class="col-lg-6 col-xl-6">
@@ -360,21 +360,75 @@ if(isset($_SESSION ['id']))
 		            <img class="nav_logo_img img-fluid mt20" src="images/header-logo2.png" alt="header-logo2.png">
 		            <span class="mt20">تجار</span>
 				</div>
+
+				<?php
+
+				if (isset($_SESSION['UserType']))
+				{
+				
+				if($_SESSION['UserType']==1 || $_SESSION['UserType']==2)
+
+				{
+					echo'
+
 				<ul class="menu_bar_home2">
-	                <li class="list-inline-item list_s"><a href="page-register.html"><span class="flaticon-user"></span></a></li>
+	                <li class="list-inline-item list_s"><a href="#"><span class=""></span> '.$_SESSION['UserName'].'</a></li>
 					<li class="list-inline-item"><a href="#menu"><span></span></a></li>
-				</ul>
+					
+				</ul>';
+				}
+
+				else
+				{
+
+					echo'
+
+				<ul class="menu_bar_home2">
+	                <li class="list-inline-item list_s"><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><span class="flaticon-user"></span></a></li>
+					<li class="list-inline-item"><a href="#menu"><span></span></a></li>
+					
+				</ul>';
+
+
+				}
+			}
+
+			else
+			{
+
+				echo'
+
+				<ul class="menu_bar_home2">
+	                <li class="list-inline-item list_s"><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><span class="flaticon-user"></span></a></li>
+					<li class="list-inline-item"><a href="#menu"><span></span></a></li>
+					
+				</ul>';
+
+
+			}
+
+				?>
+
+			
 			</div>
 		</div><!-- /.mobile-menu -->
 		<nav id="menu" class="stylehome1">
 			<ul>
+
+			<?php
+			if (isset($_SESSION['UserType']))
+			{
+				if($_SESSION['UserType']==1)
+
+				{
+					echo'
 				
 			
-			<li>
+			          <li>
 		                <a href="index.php"><span class="title">الرئيسية</span></a>
 		                <!-- Level Two-->
 		        
-		            </li>
+		               </li>
 
 					<li>
 		                <a href="about.php"><span class="title">عن تجار</span></a>
@@ -385,14 +439,14 @@ if(isset($_SESSION ['id']))
 		                <a href="proudect.php"><span class="title">المنتجات</span></a>
 		               
 	                	<ul>
-		                    <li><a href="shop.php?id=<?php echo 1 ?>">المعدات الصناعية</a> </li>		                       	                       
-		                    <li> <a href="shop.php?id=<?php echo 2 ?>">الادوات الصناعية</a>  </li>
-							<li> <a href="shop.php?id=<?php echo 3 ?>">قطع الغيار</a>  </li>
-							<li> <a href="shop.php?id=<?php echo 4 ?>">مشتقات الزيوت والشحوم</a>  </li>
-							<li> <a href="shop.php?id=<?php echo 5 ?>">معدات وادوات السلامة</a>  </li>
-							<li> <a href="shop.php?id=<?php echo 7 ?>">معدات ونظم الاغلاق الهوائية </a>  </li>
-							<li> <a href="shop.php?id=<?php echo 6 ?>">معدات وادوات كهربائية</a>  </li>
-							<li> <a href="shop.php?id=<?php echo 8 ?>">معدات وادوات نظم التحليل الصناعية</a>  </li>   
+		                    <li><a href="shop.php?id=1">المعدات الصناعية</a> </li>		                       	                       
+		                    <li> <a href="shop.php?id=2">الادوات الصناعية</a>  </li>
+							<li> <a href="shop.php?id=3">قطع الغيار</a>  </li>
+							<li> <a href="shop.php?id=4">مشتقات الزيوت والشحوم</a>  </li>
+							<li> <a href="shop.php?id=5">معدات وادوات السلامة</a>  </li>
+							<li> <a href="shop.php?id=7">معدات ونظم الاغلاق الهوائية </a>  </li>
+							<li> <a href="shop.php?id=6">معدات وادوات كهربائية</a>  </li>
+							<li> <a href="shop.php?id=8">معدات وادوات نظم التحليل الصناعية</a>  </li>   
 		                    		                   		                      
 							  		                                                   
 	                	</ul>
@@ -411,15 +465,133 @@ if(isset($_SESSION ['id']))
 		            <li class="last">
 		                <a href="contact.php"><span class="title">اتصل بنا</span></a>
 		            </li>
-						
-				
 					
-				
+					<li>
+		                <a href="admin/Vendorindex.php"><span class="title">المتجر</span></a>
+		            
+		            </li>
 			
-				 
-				<li><a href="page-login.html"><span class="flaticon-user"></span> Login</a></li>
-				<li><a href="page-register.html"><span class="flaticon-edit"></span> Register</a></li>
-				<li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="#"><span class="flaticon-plus"></span> Create Listing</a></li>
-			</ul>
+				<li>
+		                <a href="Logout.php"><span class="title">تسجيل الخروح</span></a>
+		            
+		            </li>
+				
+			</ul>';
+				}
+
+				else if($_SESSION['UserType']==2)
+				{
+					echo'
+
+
+					<li>
+					<a href="index.php"><span class="title">الرئيسية</span></a>
+					<!-- Level Two-->
+			
+				   </li>
+
+				<li>
+					<a href="about.php"><span class="title">عن تجار</span></a>
+					<!-- Level Two-->
+			
+				</li>
+				<li>
+					<a href="proudect.php"><span class="title">المنتجات</span></a>
+				   
+					<ul>
+					<li><a href="shop.php?id=1">المعدات الصناعية</a> </li>		                       	                       
+					<li> <a href="shop.php?id=2">الادوات الصناعية</a>  </li>
+					<li> <a href="shop.php?id=3">قطع الغيار</a>  </li>
+					<li> <a href="shop.php?id=4">مشتقات الزيوت والشحوم</a>  </li>
+					<li> <a href="shop.php?id=5">معدات وادوات السلامة</a>  </li>
+					<li> <a href="shop.php?id=7">معدات ونظم الاغلاق الهوائية </a>  </li>
+					<li> <a href="shop.php?id=6">معدات وادوات كهربائية</a>  </li>
+					<li> <a href="shop.php?id=8">معدات وادوات نظم التحليل الصناعية</a>  </li>   
+																			 
+																				 
+				</ul>
+				</li>
+				<li>
+					<a href="#"><span class="title">الخدمات</span></a>
+	
+						</li>
+			  
+				
+			   
+				<li>
+					<a href="policies.php"><span class="title">السياسات</span></a>
+				
+				</li>
+				<li class="last">
+					<a href="contact.php"><span class="title">اتصل بنا</span></a>
+				</li>		
+		
+			<li>
+					<a href="Logout.php"><span class="title">تسجيل خروج</span></a>
+				
+				</li>
+			
+		</ul>';
+
+
+
+				}
+
+			}
+
+				else
+				{ 
+					echo'
+
+					<li>
+					<a href="index.php"><span class="title">الرئيسية</span></a>
+					<!-- Level Two-->
+			
+				   </li>
+
+				<li>
+					<a href="about.php"><span class="title">عن تجار</span></a>
+					<!-- Level Two-->
+			
+				</li>
+				<li>
+					<a href="proudect.php"><span class="title">المنتجات</span></a>
+				   
+					<ul>
+					<li><a href="shop.php?id=1">المعدات الصناعية</a> </li>		                       	                       
+					<li> <a href="shop.php?id=2">الادوات الصناعية</a>  </li>
+					<li> <a href="shop.php?id=3">قطع الغيار</a>  </li>
+					<li> <a href="shop.php?id=4">مشتقات الزيوت والشحوم</a>  </li>
+					<li> <a href="shop.php?id=5">معدات وادوات السلامة</a>  </li>
+					<li> <a href="shop.php?id=7">معدات ونظم الاغلاق الهوائية </a>  </li>
+					<li> <a href="shop.php?id=6">معدات وادوات كهربائية</a>  </li>
+					<li> <a href="shop.php?id=8">معدات وادوات نظم التحليل الصناعية</a>  </li>   
+																			 
+																				 
+				</ul>
+				</li>
+				<li>
+					<a href="#"><span class="title">الخدمات</span></a>
+	
+						</li>
+			  
+				
+			   
+				<li>
+					<a href="policies.php"><span class="title">السياسات</span></a>
+				
+				</li>
+				<li class="last">
+					<a href="contact.php"><span class="title">اتصل بنا</span></a>
+				</li>		
+		
+			<li>
+					<a href="registervendor.php" target="_blank"><span class="title">بوابة الموردين</span></a>
+				
+				</li>
+			
+		</ul>';
+				}
+				?>
 		</nav>
 	</div>

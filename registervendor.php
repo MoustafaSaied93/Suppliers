@@ -496,8 +496,8 @@ display:none;
 		<!-- JQUERY STEP -->
 	
 		<!-- DATE-PICKER -->
-		<script src=mord/vendor/date-picker/js/datepicker.js"></script>
-		<script src="mord/vendor/date-picker/js/datepicker.en.js"></script>
+	
+	
 
 		<script src="mord/js/toastr.min.js"></script>
 
@@ -883,7 +883,7 @@ function UploadComplete(evt) {
 
 	toastr.success("تم انشاء حسابك كمورد معنا فى المنصة وسوف يتم مراجعة بيانتك من قبل المنصة");
 
-	window.location = "index.php";
+	setTimeout("window.location='index.php'",7000);
 
 }
 

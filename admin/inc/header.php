@@ -388,6 +388,15 @@ if(!isset ($_SESSION ['id']))
 
                     </li>
 
+                    <li class="nav-item dropdown">
+                    <a class="nav-link" href="UserExplention.php" id="tablesDropdown">
+                    <span class="counter" id="counter4">0</span>
+                        <i class="icon-message nav-icon"></i>
+                      رسائل العملاء
+                    </a>                        
+
+                </li>
+
 
                     <li class="nav-item dropdown">
                     <a class="nav-link" href="../index.php" id="tablesDropdown">
@@ -545,28 +554,11 @@ if(!isset ($_SESSION ['id']))
                     <!-- Page header start -->
                     <div class="page-header">
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item">Layouts</li>
-                        <li class="breadcrumb-item active">Default Layout</li>
+                        <li class="breadcrumb-item">لوحة التحكم</li>
+                       
                       </ol>
 
-                      <ul class="app-actions">
-                        <li>
-                          <a href="#" id="reportrange">
-                            <span class="range-text"></span>
-                            <i class="icon-chevron-down"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Print">
-                            <i class="icon-print"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download CSV">
-                            <i class="icon-cloud_download"></i>
-                          </a>
-                        </li>
-                      </ul>
+                   
                     </div>
 	              	<div class="content-wrapper">
 

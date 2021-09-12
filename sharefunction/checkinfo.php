@@ -5,7 +5,7 @@ $entity=$_POST['entity'];
 if($entity=="mail"){
 
 
- $Email =   $_POST['Email'];
+ $Email =  strip_tags( $_POST['Email']);
 
 
  $sql=mysqli_query($conn,"SELECT * FROM accounts WHERE Email= '$Email'");

@@ -92,7 +92,7 @@ $query = mysqli_query($conn, "SELECT * FROM accounts WHERE UserType=2");
            else
            {
            $photo='<td> <div class="avatar xl">
-                   <img src="../images/user/user-thumb.jpg" class="circle"> </div> </td>';
+                   <img src="../images/user/user.png" class="circle"> </div> </td>';
            }
            ?>
          <tr>
@@ -235,7 +235,7 @@ echo'
 
 
     echo'
-<table id="copy-print-csv" class="table custom-table">
+<table id="copy-print-csv" class="table custom-table" data-page-length='10'>
       <thead>
         <tr>
           <th>الاسم</th>
@@ -261,7 +261,7 @@ echo'
            else
            {
            $photo='<td> <div class="avatar xl">
-                   <img src="../images/user/user-thumb.jpg" class="circle"> </div> </td>';
+                   <img src="../images/user/user.png" class="circle"> </div> </td>';
            }
            ?>
          <tr>

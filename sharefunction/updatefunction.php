@@ -2,18 +2,18 @@
 
 include_once("../config.php");
 
-$Page=$_POST['Page'];
+$Page= strip_tags($_POST['Page']);
 
 if($Page=="Category")
 {
 
-$CatID=$_POST['CatID'];
-$catname=$_POST['catname'];
-$description=$_POST['description'];
+$CatID= strip_tags($_POST['CatID']);
+$catname= strip_tags($_POST['catname']);
+$description= strip_tags($_POST['description']);
 
-$description=$_POST['description'];
+$description= strip_tags($_POST['description']);
 
-$oper=$_POST['oper'];
+$oper= strip_tags($_POST['oper']);
 
 if($oper=='noimage')
 
@@ -54,53 +54,53 @@ if($Page=="allproduct")
 
 
 
-$product_id=$_POST['product_id'];
-$cat_id=$_POST['cat_id'];
+$product_id= strip_tags($_POST['product_id']);
+$cat_id= strip_tags($_POST['cat_id']);
 
-$CatTypeID=$_POST['CatTypeID'];
+$CatTypeID= strip_tags($_POST['CatTypeID']);
 
-$SubCatID=$_POST['SubCatID'];
+$SubCatID= strip_tags($_POST['SubCatID']);
 
-$SubCatTypeID=$_POST['SubCatTypeID'];
+$SubCatTypeID= strip_tags($_POST['SubCatTypeID']);
 
-$Product_Name=$_POST['Product_Name'];
-$Measurement_type=$_POST['Measurement_type'];
-$Part_Number=$_POST['Part_Number'];
+$Product_Name= strip_tags($_POST['Product_Name']);
+$Measurement_type= strip_tags($_POST['Measurement_type']);
+$Part_Number= strip_tags($_POST['Part_Number']);
 
-$description=$_POST['description'];
+$description= strip_tags($_POST['description']);
 
-$Product_Warranty=$_POST['Product_Warranty'];
+$Product_Warranty= strip_tags($_POST['Product_Warranty']);
 
-$Price=$_POST['Price'];
+$Price= strip_tags($_POST['Price']);
 
-$RegisterDate=$_POST['RegisterDate'];
+$RegisterDate= strip_tags($_POST['RegisterDate']);
 
-$Size=$_POST['Size'];
-$Motorpower=$_POST['Motorpower'];
-$Length=$_POST['Length'];
-$Diameter=$_POST['Diameter'];
-$Out_Side_Diameter=$_POST['Out_Side_Diameter'];
-$Width=$_POST['Width'];
-$wieght=$_POST['wieght'];
+$Size= strip_tags($_POST['Size']);
+$Motorpower= strip_tags($_POST['Motorpower']);
+$Length= strip_tags($_POST['Length']);
+$Diameter= strip_tags($_POST['Diameter']);
+$Out_Side_Diameter= strip_tags($_POST['Out_Side_Diameter']);
+$Width= strip_tags($_POST['Width']);
+$wieght= strip_tags($_POST['wieght']);
 
-$Hieght=$_POST['Hieght'];
-$Voltage=$_POST['Voltage'];
+$Hieght= strip_tags($_POST['Hieght']);
+$Voltage= strip_tags($_POST['Voltage']);
 
-$Stock=$_POST['Stock'];
-
-
-$Industry_Country=$_POST['Industry_Country'];
+$Stock= strip_tags($_POST['Stock']);
 
 
+$Industry_Country= strip_tags($_POST['Industry_Country']);
 
-$img=$_POST['img'];
 
-$img2=$_POST['img2'];
-$img3=$_POST['img3'];
-$img4=$_POST['img4'];
-$img5=$_POST['img5'];
 
-$fileToUpload=$_POST['fileToUpload'];
+$img= strip_tags($_POST['img']);
+
+$img2= strip_tags($_POST['img2']);
+$img3= strip_tags($_POST['img3']);
+$img4= strip_tags($_POST['img4']);
+$img5= strip_tags($_POST['img5']);
+
+$fileToUpload= strip_tags($_POST['fileToUpload']);
 
 
 if($fileToUpload=="undefined")
@@ -791,19 +791,19 @@ else if($Page=="manifac")
 {
 
 
-$product_id=$_POST['product_id'];
+$product_id= strip_tags($_POST['product_id']);
 
-$cat_id=$_POST['cat_id'];
-
-
-$Services=$_POST['Services'];
-
-$RegisterDate=$_POST['RegisterDate'];
+$cat_id= strip_tags($_POST['cat_id']);
 
 
+$Services= strip_tags($_POST['Services']);
+
+$RegisterDate= strip_tags($_POST['RegisterDate']);
 
 
-$oper=$_POST['oper'];
+
+
+$oper= strip_tags($_POST['oper']);
 
 if($oper=='noimage-nofile')
 
@@ -818,7 +818,7 @@ else if($oper=='file')
 
 {
 
- $fileToUpload= $_FILES['fileToUpload']['name'];
+ $fileToUpload= strip_tags( $_FILES['fileToUpload']['name']);
    
    $pdffile_dir='../Files/'.$fileToUpload;
 
@@ -851,7 +851,7 @@ else if($oper=='image')
 
 {
 
-   $profilecomp=$_FILES['profilecomp']['name'];      
+   $profilecomp=strip_tags($_FILES['profilecomp']['name']);      
    $image_dir6 = '../images/user/'.$profilecomp ;
 
 
@@ -886,13 +886,13 @@ else if($oper=='image')
 
 {
 
-   $profilecomp=$_FILES['profilecomp']['name'];      
+   $profilecomp= strip_tags($_FILES['profilecomp']['name']);      
    $image_dir6 = '../images/user/'.$profilecomp ;
 
 
 
 
-   $fileToUpload= $_FILES['fileToUpload']['name'];
+   $fileToUpload=strip_tags ( $_FILES['fileToUpload']['name']);
    
    $pdffile_dir='../Files/'.$fileToUpload;
  
@@ -932,333 +932,14 @@ else if($oper=='image')
 
 
 
-else if($Page=="sliderimages")
-{
 
-$Slider_ImageID=$_POST['Slider_ImageID'];
 
-$Slider_Description=$_POST['Slider_Description'];
-$Slider_Description2=$_POST['SliderDescription2'];
-$Slider_Description3=$_POST['SliderDescription3'];
-
-
-$WebsiteInfo=$_POST['WebsiteInfo'];
-$SiteMobile=$_POST['SiteMobile'];
-
-
-
-$oper=$_POST['oper'];
-
-if($oper=='noimage')
-
-{
-
- $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
- SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile'  where Slider_ImageID='1'");
-}
-
-else if($oper=='image')
-
-{
-$image_name=$_FILES['img']['name'];
-$image_name2=$_FILES['img2']['name'];
-$image_name3=$_FILES['img3']['name'];
-
-
-$image_dir = 'assets/images/'.$image_name ;
-$image_dir2= 'assets/images/'.$image_name2 ;
-
-$image_dir3= 'assets/images/'.$image_name3 ;
-
-   if(file_exists($image_dir2&&$image_dir2 &&$image_dir3))
-   {
-
-       $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-       SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage1='$image_dir',SliderImage2='$image_dir2',SliderImage3='$image_dir3' where Slider_ImageID='$Slider_ImageID'");
-
-   }
-
-  
-
-   else
-
-   {
-
-   	 move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
-      move_uploaded_file($_FILES["img2"]["tmp_name"],$image_dir2);
-
-      move_uploaded_file($_FILES["img3"]["tmp_name"],$image_dir3);
-     
-      $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-      SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage1='$image_dir',SliderImage2='$image_dir2',SliderImage3='$image_dir3' where Slider_ImageID='$Slider_ImageID'");
-
-   }
-
-   
-  }
-
-else if($oper=='image1')
-
-{
-$image_name=$_FILES['img']['name'];
-//$image_name2=$_FILES['img2']['name'];
-
-
-$image_dir = 'assets/images/'.$image_name ;
-//$image_dir2= 'assets/images/'.$image_name2 ;
-
-//$image_dir3= 'assets/images/'.$image_name3 ;
-
-
-   if(file_exists( $image_dir))
-   {
-
-    $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-    SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage1='$image_dir' where Slider_ImageID='$Slider_ImageID'");
-
-   }
-
-  
-
-   else
-
-   {
-      move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
-      
-     
-      $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-    SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage1='$image_dir' where Slider_ImageID='$Slider_ImageID'");
-
-   }
-
-   
-  }
-
-
-  else if($oper=='image2')
-
-{
-$image_name2=$_FILES['img2']['name'];
-
-
-
-$image_dir2 = 'assets/images/'.$image_name2 ;
-
-
-
-
-   if(file_exists($image_dir2))
-   {
-
-    $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-    SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage2='$image_dir2' where Slider_ImageID='$Slider_ImageID'");
-
-   }
-
-  
-
-   else
-
-   {
-
-   	 move_uploaded_file($_FILES["img2"]["tmp_name"],$image_dir2);
-
-     
-   
-      $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-      SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage2='$image_dir2' where Slider_ImageID='$Slider_ImageID'");
-
-   }
-
-  }
-
-
-  else if($oper=='image3')
-
-  {
-  
-  
-  $image_name3=$_FILES['img3']['name'];
-  
-  
-  $image_dir3 = 'assets/images/'.$image_name3 ;
-  
-  
-  
-  
-  
-  
-     if(file_exists($image_dir3))
-     {
-  
-      $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-      SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage3='$image_dir3' where Slider_ImageID='$Slider_ImageID'");
-  
-     }
-  
-    
-  
-     else
-  
-     {
-  
-        move_uploaded_file($_FILES["img3"]["tmp_name"],$image_dir3);
-  
-      
-     
-       
-        $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-      SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage3='$image_dir3' where Slider_ImageID='$Slider_ImageID'");
-  
-     }
-  
-    }
-
-
-    else if($oper=='image1-image2')
-
-    {
-    
-    
-    $image_name=$_FILES['img']['name'];
-
-    $image_name2=$_FILES['img2']['name'];
-    
-    
-    $image_dir = 'assets/images/'.$image_name ;
-
-    $image_dir2 = 'assets/images/'.$image_name2 ;
-    
-    
-    
-    
-    
-    
-       if(file_exists($image_dir&&$image_dir2 ))
-       {
-    
-        $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-        SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage1='$image_dir',SliderImage2='$image_dir2' where Slider_ImageID='$Slider_ImageID'");
-    
-       }
-    
-      
-    
-       else
-    
-       {
-    
-          move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
-
-          move_uploaded_file($_FILES["img2"]["tmp_name"],$image_dir2);      
-          $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-          SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage1='$image_dir',SliderImage2='$image_dir2' where Slider_ImageID='$Slider_ImageID'");
-    
-       }
-    
-      }
-
-
-
-      else if($oper=='image1-image3')
-
-    {
-    
-    
-    $image_name=$_FILES['img']['name'];
-
-    $image_name3=$_FILES['img3']['name'];
-    
-    
-    $image_dir = 'assets/images/'.$image_name ;
-
-    $image_dir3 = 'assets/images/'.$image_name3 ;
-    
-    
-    
-    
-    
-    
-       if(file_exists($image_dir&&$image_dir3 ))
-       {
-    
-        $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-        SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage1='$image_dir',SliderImage3='$image_dir3' where Slider_ImageID='$Slider_ImageID'");
-    
-       }
-    
-      
-    
-       else
-    
-       {
-    
-          move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
-
-          move_uploaded_file($_FILES["img3"]["tmp_name"],$image_dir3);      
-          $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-          SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage1='$image_dir',SliderImage3='$image_dir3' where Slider_ImageID='$Slider_ImageID'");
-    
-       }
-    
-      }
-
-
-
-      else if($oper=='image2-image3')
-
-      {
-      
-      
-      $image_name2=$_FILES['img2']['name'];
-  
-      $image_name3=$_FILES['img3']['name'];
-      
-      
-      $image_dir2 = 'assets/images/'.$image_name2 ;
-  
-      $image_dir3 = 'assets/images/'.$image_name3 ;
-      
-      
-      
-      
-      
-      
-         if(file_exists($image_dir2&&$image_dir3 ))
-         {
-      
-          $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-          SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage2='$image_dir2',SliderImage3='$image_dir3' where Slider_ImageID='$Slider_ImageID'");
-      
-         }
-      
-        
-      
-         else
-      
-         {
-      
-            move_uploaded_file($_FILES["img2"]["tmp_name"],$image_dir2);
-  
-            move_uploaded_file($_FILES["img3"]["tmp_name"],$image_dir3);      
-            $query= mysqli_query($conn,"UPDATE sliderimages  SET Slider_Description='$Slider_Description',SliderDescription2='$Slider_Description2',
-            SliderDescription3='$Slider_Description3',WebsiteInfo='$WebsiteInfo',SiteMobile='$SiteMobile',SliderImage2='$image_dir2',SliderImage3='$image_dir3' where Slider_ImageID='$Slider_ImageID'");
-      
-         }
-      
-        }
-
-
-
-
-
-}
 
 
 else if($Page=="AcceptRequestVendor")
 {
   
-$ProductID=$_POST['ID'];
+$ProductID= strip_tags($_POST['ID']);
 
 $UserID=$_POST['UserID'];
 
@@ -1287,13 +968,13 @@ else if($Page=="AccountUser")
 {
 
   
-$UserID=$_POST['UserID'];
+$UserID= strip_tags($_POST['UserID']);
 
-$UserName =$_POST['UserName'];
+$UserName = strip_tags($_POST['UserName']);
 
-$password=$_POST['password'];
+$password= strip_tags($_POST['password']);
 
-$Email=$_POST['Email'];
+$Email= strip_tags($_POST['Email']);
 
 $sql=mysqli_query($conn,"SELECT * FROM accounts WHERE Email= '$Email' and UserID !=$UserID");
 
@@ -1328,11 +1009,11 @@ else
 else if($Page=="RefusedRequest")
 {
   
-$ProductsID=$_POST['ID'];
+$ProductsID= strip_tags($_POST['ID']);
 
-$UserID=$_POST['UserID'];
+$UserID= strip_tags($_POST['UserID']);
 
-$Message=$_POST['Message'];
+$Message= strip_tags($_POST['Message']);
 
 $query3= mysqli_query($conn,"SELECT * FROM product  where product_id ='$ProductsID'");
 
@@ -1348,26 +1029,6 @@ $ProductName=$row['Product_Name'];
   $query2= mysqli_query($conn,"INSERT INTO Notfication(UserID,Message,ProductName)
   
   VALUES ('$UserID','$Message','$ProductName')");
-  
-
-}
-
-
-else if($Page=="ContactUS")
-{
-  
-$ContactUsID=$_POST['ContactUsID'];
-
-$ContactInfo=$_POST['ContactInfo'];
-$OfficeLocation=$_POST['OfficeLocation'];
-$OfficeMobile=$_POST['OfficeMobile'];
-$OfficeEmail=$_POST['OfficeEmail'];
-$OfficeAppointment=$_POST['OfficeAppointment'];
-$WorkHours=$_POST['WorkHours'];
-
-
-  $query= mysqli_query($conn,"UPDATE contact_us  SET ContactInfo='$ContactInfo',OfficeLocation='$OfficeLocation',OfficeMobile='$OfficeMobile',OfficeEmail='$OfficeEmail',OfficeAppointment='$OfficeAppointment',WorkHours='$WorkHours'  where ContactUsID ='$ContactUsID'");
-
   
 
 }

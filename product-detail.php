@@ -4,6 +4,60 @@
 
 include_once("config.php");
 
+$id = $_GET['id'];
+
+$result=mysqli_query($conn,"SELECT p.*, c.*, a.*
+     FROM product p INNER JOIN
+     accounts a
+          ON p.UserID = a.UserID INNER JOIN
+          categories c ON p.cat_id = c.cat_id
+
+           WHERE p.product_id='$id'");
+
+$row = mysqli_fetch_array($result);
+
+$productname=$row['Product_Name'];
+
+$image1=$row['image1'];
+
+$image2=$row['image2'];
+
+$image3=$row['image3'];
+
+$image4=$row['image4'];
+
+
+$categoryid=$row['cat_id'];
+
+$categoryName=$row['cat_name'];
+
+$Price=$row['Price'];
+
+$PartNumber=$row['PartNumber'];
+
+$UserID=$row['UserID'];
+
+$ProductDesc=$row['Descrip'];
+
+$suppcode=$row['CompanyCode'];
+$city=$row['City'];
+
+
+
+
+
+
+
+$query3= mysqli_query($conn,"SELECT * FROM productreviews WHERE product_id ='$id'
+    
+");
+
+
+
+
+
+
+
 
 
 
@@ -22,7 +76,7 @@ include_once("config.php");
 				<div class="col-xl-6">
 					<div class="breadcrumb_content style2">
 						<ol class="breadcrumb">
-						    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
+						    <li class="breadcrumb-item"><a href="index.php">الرئيسية</a></li>
 						    <li class="breadcrumb-item active text-thm" aria-current="page">تفاصيل المنتج</li>
 						</ol>
 						
@@ -38,9 +92,16 @@ include_once("config.php");
 									<div class="thumb">
 										<div class="single_product">
 											<div class="single_item">
-												<div class="thumb"><img class="img-fluid" src="images/shop/ss1.png" alt="ss1.png"></div>
+												<div class="thumb"><img class="img-fluid" src="images/products/<?php echo $image1 ?>"></div>
 											</div>
-											<a class="product_popup popup-img" href="images/shop/ss1.png"><span class="flaticon-zoom-in"></span></a>
+											<a class="product_popup popup-img" href="images/products/<?php echo $image1 ?>"><span class="flaticon-zoom-in"></span></a>
+
+											
+											<input type="hidden" id="imgshow" value="<?php echo $image1 ?>">
+
+											<input type="hidden" id="imgshow2" value="<?php echo $image2 ?>">
+
+											<input type="hidden" id="imgshow3" value="<?php echo $image1 ?>">
 										</div>
 									</div>
 								</div>
@@ -50,9 +111,9 @@ include_once("config.php");
 									<div class="thumb">
 										<div class="single_product">
 											<div class="single_item">
-												<div class="thumb"><img class="img-fluid" src="images/shop/ss2.png" alt="ss2.png"></div>
+												<div class="thumb"><img class="img-fluid" src="images/products/<?php echo $image1 ?>"></div>
 											</div>
-											<a class="product_popup popup-img" href="images/shop/ss2.png"><span class="flaticon-zoom-in"></span></a>
+											<a class="product_popup popup-img" href="images/products/<?php echo $image1 ?>"><span class="flaticon-zoom-in"></span></a>
 										</div>
 									</div>
 								</div>
@@ -62,9 +123,9 @@ include_once("config.php");
 									<div class="thumb">
 										<div class="single_product">
 											<div class="single_item">
-												<div class="thumb"><img class="img-fluid" src="images/shop/ss3.png" alt="ss3.png"></div>
+												<div class="thumb"><img class="img-fluid" src="images/products/<?php echo $image1 ?>"></div>
 											</div>
-											<a class="product_popup popup-img" href="images/shop/ss3.png"><span class="flaticon-zoom-in"></span></a>
+											<a class="product_popup popup-img" href="images/products/<?php echo $image1 ?>"><span class="flaticon-zoom-in"></span></a>
 										</div>
 									</div>
 								</div>
@@ -74,16 +135,22 @@ include_once("config.php");
 							<div class="sps_content">
 								<div class="content">
 									<div class="shop_single_product_details">
-										<h4 class="title">الاسم </h4>
-										<div class="sspd_price mb25">١٠ الف ريال</div>
-										<p class="mb20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet urna ac leo lacinia, posuere bibendum diam finibus. Suspendisse eu </p>
+										<h4 class="title"><?php echo $productname  ?> </h4>
+										<div class="sspd_price mb25">السعر  : <?php echo $Price  ?>  ريال</div>
+
+										<div class="sspd_price mb25">رقم القطعة : <?php echo $PartNumber  ?> </div>
+
+										<div class="sspd_price mb25">كود المورد : <?php echo $suppcode ?> </div>
+
+										<p><span class="flaticon-placeholder"></span> السعودية -<?php echo $city  ?></p>
+
+										
+							
 										<ul class="cart_btns ui_kit_button mb20">
 											<li class="list-inline-item"><input placeholder="5" type="number"></li>
 											<li class="list-inline-item"><button type="button" class="btn"><span class="flaticon-shopping-bag pr5 fz20"></span> اضافة الي السلة</button></li>
 										</ul>
-										<ul class="sspd_sku mb30">
-											<li><a href="#">رقم القطعة : ٩٨٢٣٥٧٣٤</a></li>
-										</ul>
+										
 									</div>
 								</div>
 							</div>
@@ -92,7 +159,7 @@ include_once("config.php");
 					<div class="shop_single_tab_content mt30">
 						<ul class="nav nav-tabs" id="myTab" role="tablist">
 							<li class="nav-item">
-							    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">الوصف</a>
+							    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">وصف المنتج</a>
 							</li>
 
                          
@@ -106,8 +173,8 @@ include_once("config.php");
 									<div class="mbp_pagination_comments">
 										<div class="mbp_first media">
 											<div class="media-body">
-										    	<p class="mb25">Evans Tower very high demand corner junior one bedroom plus a large balcony boasting full open NYC views. You need to see the views to believe them. Mint condition with new hardwood floors. Lots of closets plus washer and dryer.</p>
-										    	<p class="mt10 mb0">Fully furnished. Elegantly appointed condominium unit situated on premier location. PS6. The wide entry hall leads to a large living room with dining area. This expansive 2 bedroom and 2 renovated marble bathroom apartment has great windows. Despite the interior views, the apartments Southern and Eastern exposures allow for lovely natural light to fill every room. The master suite is surrounded by handcrafted milkwork and features incredible walk-in closet and storage space.</p>
+										    	<p class="mb25"> <?php echo $ProductDesc  ?></p>
+										    	
 											</div>
 										</div>
 									</div>
@@ -116,87 +183,11 @@ include_once("config.php");
 
 
 							<div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-								<div class="product_single_content">
-									<div class="mbp_pagination_comments">
-										<ul class="total_reivew_view">
-											<li class="list-inline-item sub_titles">896 Reviews</li>
-											<li class="list-inline-item">
-												<ul class="star_list">
-													<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-													<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-													<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-													<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-													<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-												</ul>
-											</li>
-											<li class="list-inline-item avrg_review">( 4.5 out of 5 )</li>
-											<li class="list-inline-item write_review">Write a Review</li>
-										</ul>
-										<div class="mbp_first media">
-											<img src="images/testimonial/1.png" class="mr-3" alt="1.png">
-											<div class="media-body">
-										    	<h4 class="sub_title mt-0">Diana Cooper
-													<div class="sspd_review dif">
-														<ul>
-															<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-															<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-															<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-															<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-															<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-															<li class="list-inline-item"></li>
-														</ul>
-													</div>
-										    	</h4>
-										    	<a class="sspd_postdate fz14" href="#">December 28, 2020</a>
-										    	<p class="mt10">Beautiful home, very picturesque and close to everything in jtree! A little warm for a hot weekend, but would love to come back during the cooler seasons!</p>
-											</div>
-										</div>
-										<div class="custom_hr"></div>
-										<div class="mbp_first media">
-											<img src="images/testimonial/2.png" class="mr-3" alt="2.png">
-											<div class="media-body">
-										    	<h4 class="sub_title mt-0">Ali Tufan
-													<div class="sspd_review dif">
-														<ul>
-															<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-															<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-															<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-															<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-															<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-															<li class="list-inline-item"></li>
-														</ul>
-													</div>
-										    	</h4>
-										    	<a class="sspd_postdate fz14" href="#">December 28, 2020</a>
-										    	<p class="mt10">Beautiful home, very picturesque and close to everything in jtree! A little warm for a hot weekend, but would love to come back during the cooler seasons!</p>
-											</div>
-										</div>
-										<div class="custom_hr"></div>
-										<div class="mbp_comment_form style2">
-											<h4>Write a Review</h4>
-											<ul class="sspd_review">
-												<li class="list-inline-item">
-													<ul class="mb0">
-														<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-														<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-														<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-														<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-														<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-													</ul>
-												</li>
-												<li class="list-inline-item review_rating_para">Your Rating & Review</li>
-											</ul>
-											<form class="comments_form">
-												<div class="form-group">
-											    	<input type="text" class="form-control" id="exampleInputName1" aria-describedby="textHelp" placeholder="Review Title">
-												</div>
-												<div class="form-group">
-												    <textarea class="form-control" id="exampleFormControlTextarea1" rows="12" placeholder="Your Review"></textarea>
-												</div>
-												<button type="submit" class="btn btn-thm">Submit Review <span class="flaticon-right-arrow-1"></span></button>
-											</form>
-										</div>
-									</div>
+								<div class="product_single_content" id="reviews">
+								<input type hidden id="p-id" value="<?php echo $id?>" >
+
+								
+									
 								</div>
 							</div>
 						</div>
@@ -215,142 +206,269 @@ include_once("config.php");
 									</div>
 									<div class="col-md-6 col-lg-6 col-xl-4">
 										<ul class="list-inline-item">
-											<li><p>الحجم:</p></li>
-											<li><p>الحجم:</p></li>
-											<li><p>الحجم:</p></li>
-											<li><p>الحجم:</p></li>
+											<?php
+											if($row['PartNumber']!="")
+											{
+												echo'<li><p>رقم القطعة :</p></li>';
+											}
+
+											if($row['Product_Warranty']!="")
+											{
+												echo'<li><p>فترة الضمان :</p></li>';
+											}
+
+											if($row['Measurement_type']!="")
+											{
+												echo'<li><p>نوع القياس :</p></li>';
+											}
+
+											if($row['Lengths']!="")
+											{
+												echo'<li><p>الطول :</p></li>';
+											}
+
+											if($row['Width']!="")
+											{
+												echo'<li><p>العرض :</p></li>';
+											}
+
+											?>
 										</ul>
 										<ul class="list-inline-item">
-										<li><p>  30 </p></li>
-										<li><p>  30 </p></li>
-										<li><p>  30 </p></li>
-										<li><p>  30 </p></li>
+											<?php
+											if($row['PartNumber']!="")
+											{
+												echo'<li><p> '.$row['PartNumber'].'  </p></li>';
+
+											}
+
+											
+											if($row['Product_Warranty']!="")
+											{
+												echo'<li><p> '.$row['Product_Warranty'].' سنة </p></li>';
+
+											}
+
+											if($row['Measurement_type']!="")
+											{
+												echo'<li><p> '.$row['Measurement_type'].' </p></li>';
+
+											}
+
+											if($row['Lengths']!="")
+											{
+												echo'<li><p> '.$row['Lengths'].' </p></li>';
+
+											}
+
+											if($row['Width']!="")
+											{
+												echo'<li><p> '.$row['Width'].' </p></li>';
+
+											}
+									
+										?>
 										</ul>
 									</div>
 									<div class="col-md-6 col-lg-6 col-xl-4">
 										<ul class="list-inline-item">
-										<li><p>الحجم:</p></li>
-											<li><p>الحجم:</p></li>
-											<li><p>الحجم:</p></li>
-											<li><p>الحجم:</p></li>
+											<?php
+											if($row['Diameter']!="")
+											{
+												echo'<li><p>القطر الداخلى :</p></li>';
+
+											}
+
+											if($row['Out_Side_Diameter']!="")
+											{
+												echo'<li><p>القطر الخارجى:</p></li>';
+
+											}
+
+											if($row['wieght']!="")
+											{
+												echo'<li><p> وزن المنتج:</p></li>';
+
+											}
+
+											if($row['Size']!="")
+											{
+												echo'<li><p> الحجم :</p></li>';
+
+											}
+
+											if($row['Hieght']!="")
+											{
+												echo'<li><p> الارتفاع :</p></li>';
+
+											}
+
+											?>
 										</ul>
 										<ul class="list-inline-item">
-										<li><p>  30 </p></li>
-										<li><p>  30 </p></li>
-										<li><p>  30 </p></li>
-										<li><p>  30 </p></li>
+
+										<?php
+										if($row['Diameter']!="")
+										{
+											echo'<li><p> '.$row['Diameter'].' </p></li>';
+
+										}
+
+										if($row['Out_Side_Diameter']!="")
+										{
+											echo'<li><p> '.$row['Out_Side_Diameter'].' </p></li>';
+
+										}
+
+										if($row['wieght']!="")
+										{
+											echo'<li><p> '.$row['wieght'].' </p></li>';
+
+										} 
+
+										if($row['Size']!="")
+										{
+											echo'<li><p> '.$row['Size'].' </p></li>';
+
+										} 
+
+										if($row['Hieght']!="")
+										{
+											echo'<li><p> '.$row['Hieght'].' </p></li>';
+
+										} 
+										
+										?>
 										</ul>
 									</div>
 									<div class="col-md-6 col-lg-6 col-xl-4">
 										<ul class="list-inline-item">
-										<li><p>الحجم:</p></li>
-											<li><p>الحجم:</p></li>
+											<?php
+											if($row['Motorpower']!="")
+											{
+												echo'<li><p> قوة المحرك : </p></li>';
+	
+											} 
+
+											if($row['Voltage']!="")
+											{
+												echo'<li><p> الجهد الكهربى : </p></li>';
+	
+											} 
+										  
+										
+
+											?>
 										</ul>
 										<ul class="list-inline-item">
-										<li><p>  30 </p></li>
-										<li><p>  30 </p></li>
+										<?php
+										if($row['Motorpower']!="")
+										{
+											echo'<li><p>'.$row['Motorpower'].' </p></li>';
+
+										} 
+
+										if($row['Voltage']!="")
+										{
+											echo'<li><p>'.$row['Voltage'].' </p></li>';
+
+										} 
+									
+										
+										?>
 										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-12">
-							<div class="additional_details">
-								<div class="row">
-									<div class="col-lg-12">
-										<h4 class="mb15">Additional details</h4>
-									</div>
-									<div class="col-md-6 col-lg-6">
-										<ul class="list-inline-item">
-											<li><p>Deposit :</p></li>
-											<li><p>Pool Size :</p></li>
-											<li><p>Additional Rooms :</p></li>
-										</ul>
-										<ul class="list-inline-item">
-											<li><p><span>20%</span></p></li>
-											<li><p><span>300 Sqft</span></p></li>
-											<li><p><span>Guest Bath</span></p></li>
-										</ul>
-									</div>
-									<div class="col-md-6 col-lg-6">
-										<ul class="list-inline-item">
-											<li><p>Last remodel year :</p></li>
-											<li><p>Amenities :</p></li>
-											<li><p>Equipment :</p></li>
-										</ul>
-										<ul class="list-inline-item">
-											<li><p><span>1987</span></p></li>
-											<li><p><span>Clubhouse</span></p></li>
-											<li><p><span>Grill - Gas</span></p></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
+					
 						<div class="col-lg-12">
 							<div class="property_attachment_area">
-								<h4 class="mb30">مسنمدات المنتج</h4>
+								<h4 class="mb30">مستندات المنتج</h4>
 								<div class="iba_container style2">
 									<div class="icon_box_area style2">
 										<div class="score"><span class="flaticon-document text-thm fz30"></span></div>
 										<div class="details">
-											<h5><span class="flaticon-download text-thm pr10"></span> تحميل المستند</h5>
+										<a href="Files/<?php echo $row['AttachFile'];?>" download><?php echo $row['AttachFile'];?></a>
 										</div>
 									</div>
-									<div class="icon_box_area style2">
-										<div class="score"><span class="flaticon-pdf text-thm fz30"></span></div>
-										<div class="details">
-											<h5><span class="flaticon-download text-thm pr10"></span> Demo pdf Document</h5>
-										</div>
-									</div>
+									
 								</div>
 							</div>
 						</div>
 						</div>
 
-
+                       <br><br>
 
                     
 					<div class="row mb30">
 						<div class="col-lg-12" >
 							<h4 class="main-title text-center mb40">ربما يعجبك ايضا</h4>
 						</div>
-						<div class="col-sm-4 col-lg-4">
-							<div class="shop_grid">
-								<div class="thumb">
-									<img class="img-fluid w100" src="images/shop/1.png" alt="1.png">
-									<div class="tag">Sale</div>
-								</div>
-								<div class="details">
-									<h4 class="item-tile">Album <span class="price">$13,000</span></h4>
-									<button class="btn btn-thm add_to_cart">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4 col-lg-4">
-							<div class="shop_grid">
-								<div class="thumb">
-									<img class="img-fluid w100" src="images/shop/2.png" alt="2.png">
-								</div>
-								<div class="details">
-									<h4 class="item-tile">Beanie <span class="price">$13,000</span></h4>
-									<button class="btn btn-thm add_to_cart">Add to cart</button>
-								</div>
-							</div>
-						</div>
+
+						<?php
+
+                     $query2= mysqli_query($conn,"SELECT p.*, c.*, a.*
+					 FROM product p INNER JOIN
+					 accounts a
+						  ON p.UserID = a.UserID INNER JOIN
+						  categories c ON p.cat_id = c.cat_id 
+                    where p.cat_id='$categoryid' AND p.product_id!='$id'  AND p.Accept='1'
+					ORDER BY p.product_id  DESC LIMIT 3");
+
+                      while($row = mysqli_fetch_array($query2))
+                    {
+                 	echo'
 
 
-                        <div class="col-sm-4 col-lg-4">
-							<div class="shop_grid">
-								<div class="thumb">
-									<img class="img-fluid w100" src="images/shop/2.png" alt="2.png">
-								</div>
-								<div class="details">
-									<h4 class="item-tile">Beanie <span class="price">$13,000</span></h4>
-									<button class="btn btn-thm add_to_cart">Add to cart</button>
-								</div>
-							</div>
-						</div>
+					 <div class="col-md-6 col-lg-4">
+					 <div class="feat_property home7 style4">
+						 <div class="thumb">
+							 <div class="fp_single_item_slider">
+							 
+								 <div class="item">
+								 <a href="product-detail.php?id='. $row['product_id'].'">
+									 <img class="img-whp" src="images/products/'.$row['image1'].'" alt="">
+								 </a>
+								 </div>
+							 </div>
+							 <div class="thmb_cntnt style2">
+								 <ul class="tag mb0">
+									 
+									 <li class="list-inline-item"><a href="#">متوفر</a></li>
+								 </ul>
+							 </div>
+							 <div class="thmb_cntnt style3">
+							
+								 <a class="fp_price" href="product-detail.php?id='. $row['product_id'].'">'.$row['Price'].'<small> ريال</small></a>
+								 
+							 </div>
+						 </div>
+						 <div class="details">
+							 <div class="tc_content">
+							 <a href="product-detail.php?id='. $row['product_id'].'">	<p class="text-thm">'.$row['Product_Name'].'</p> </a>
+								 
+								 <p><span class="flaticon-placeholder"></span> السعودية-'.$row['City'].'</p>
+								 <ul class="prop_details mb0"style="text-align: right;">
+								 
+									 <li class="list-inline-item" ><a href="#">رقم القطعة: '.$row['PartNumber'].' </a></li>
+								 </ul>
+							 </div>
+							 <div class="fp_footer">
+								 <ul class="fp_meta float-left mb0">
+									 <li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
+									 <li class="list-inline-item"><a href="#">تجار</a></li>
+								 </ul>
+								 <div class="fp_pdate float-right"> منذ: يومين</div>
+							 </div>
+						 </div>
+					 </div>
+				 </div>';
+
+					}
+
+						?>
+					
 
 
                    
@@ -369,44 +487,48 @@ include_once("config.php");
 						</div>
 					</div>
 
-                    
-
-				
+                    			
 					<div class="col-lg-12 col-xl-12 mt30">
 					<div class="sidebar_listing_list">
 						<div class="sidebar_advanced_search_widget">
 							<div class="sl_creator">
-								<h4 class="mb25">راضي الشمري</h4>
+								
 								<div class="media">
-									<img class="mr-3" src="images/team/lc1.png" alt="lc1.png">
+									<img class="mr-3" src="images/products/<?php echo $image1 ?>" width="40%" hieght="40%">
 									<div class="media-body">
-								    	<h5 class="mt-0 mb0">Samul Williams</h5>
-								    	<p class="mb0">(123)456-7890</p>
-								    	<p class="mb0">info@findhouse.com</p>
-								    	<a class="text-thm" href="#">View My Listing</a>
+								    	<h5 class="mt-0 mb0"><?php echo $productname?></h5>
+								    	<p class="mb0" >رقم القطعة :<?php echo $PartNumber?></p>
+								    	<p><span class="flaticon-placeholder"></span>السعودية -<?php echo $city?></p>
+								    	
+										<p class="mb0" href="#">كود المورد :  <?php echo $suppcode?></p>
 								  	</div>
 								</div>
 							</div>
+							
 							<ul class="sasw_list mb0">
 								<li class="search_area">
 								    <div class="form-group">
-								    	<input type="text" class="form-control" id="exampleInputName1" placeholder=" الاسم">
+										<input type hidden id="p-name" value="<?php echo $productname?>" >
+										<input type hidden id="p-number" value="<?php echo $PartNumber?>" >
+										<input type hidden id="p-UserID" value="<?php echo $UserID?>" >
+
+								    	<input type="text" class="form-control" id="c-Name" placeholder=" الاسم">
 								    </div>
 								</li>
 								
 								<li class="search_area">
 								    <div class="form-group">
-								    	<input type="text" class="form-control" id="exampleInputEmail" placeholder="الموضوع">
+								    	<input type="text" class="form-control" id="c-subject" placeholder="الموضوع">
 								    </div>
 								</li>
 								<li class="search_area">
 		                            <div class="form-group">
-		                                <textarea id="form_message" name="form_message" class="form-control required" rows="5" required="required" placeholder="رجاء لا تدخل اي معلومات تحميل وسائل اتصال "></textarea>
+		                                <textarea id="c_message" name="form_message" class="form-control required" rows="5" required="required" placeholder="رجاء لا تدخل اي معلومات تحميل وسائل اتصال "></textarea>
 		                            </div>
 								</li>
 								<li>
 									<div class="search_option_button">
-									    <button type="submit" class="btn btn-block btn-thm">ارسال</button>
+									    <button type="submit" onclick="SendExplantion()" class="btn btn-block btn-thm">ارسال</button>
 									</div>
 								</li>
 							</ul>
@@ -425,9 +547,21 @@ include_once("config.php");
 		</div>
 	</section>
 
-
-
-
-
-
 <?php include "inc/footar.php" ?>
+
+
+
+<script>
+
+$(document).ready(function () {
+
+	newUrl = 'product-detail.php';
+
+history.pushState({}, null, newUrl);
+
+function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+});
+
+</script>

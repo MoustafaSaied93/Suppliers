@@ -10,6 +10,8 @@ ORDER BY p.product_id  DESC LIMIT 8");
 
 
 
+
+
 ?>
 
 	<!-- 4th Home Slider -->
@@ -152,7 +154,7 @@ ORDER BY p.product_id  DESC LIMIT 8");
 				</div>
 			</div>
 		</div>
-		<div class="container ovh"§>
+		<div class="container ovh">
 
 		
 			<div class="row">
@@ -168,8 +170,9 @@ ORDER BY p.product_id  DESC LIMIT 8");
 
                 while($row = mysqli_fetch_array($query1))
                       {
+										 
                       echo'
-
+                          
 
 						<div class="item">
 							<div class="feat_property">
@@ -184,13 +187,17 @@ ORDER BY p.product_id  DESC LIMIT 8");
 											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
 											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
 										</ul>
-										<a class="fp_price" href="product-detail.php?id='.$row['product_id'].'">'.$row['Price'].'<small> ريال</small></a>
+							
+										<a class="fp_price" href=product-detail.php?id='. $row['product_id'].'">'.$row['Price'].'<small> ريال</small></a>
+										
+                                       
+		
 									</div>
 								</div>
 								<div class="details">
 									<div class="tc_content">
-										<p class="text-thm">'.$row['cat_name'].'</p>
-										<h4>'.$row['Product_Name'].'</h4>
+									<a href="product-detail.php?id='. $row['product_id'].'"><p class="text-thm">'.$row['cat_name'].'</p> </a>
+									<a href="product-detail.php?id='. $row['product_id'].'"><h4>'.$row['Product_Name'].'</h4> </a>
 										<p><span class="flaticon-placeholder"></span> السعودية-'.$row['City'].'</p>
 										<ul class="prop_details mb0"style="text-align: right;">
 										
@@ -208,7 +215,17 @@ ORDER BY p.product_id  DESC LIMIT 8");
 							</div>
 						</div>
 
+					
+
+						
+
+
+
+						
+
 						 ';
+
+
 
 	                     }
 

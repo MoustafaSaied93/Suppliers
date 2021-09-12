@@ -30,7 +30,7 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Refused=1");
 
   </div>
   
-    <table id="copy-print-csv" class="table custom-table">
+    <table id="copy-print-csv" class="table custom-table" data-page-length='10'>
    
       <thead>
         <tr>

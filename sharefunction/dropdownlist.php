@@ -31,11 +31,11 @@ if (isset($_POST['city'])) {
 
 
 
-if(isset($_POST['CatTypeID'])){
+if(isset($_GET['CatTypeID'])){
 
-    $Catid=$_POST['AddCatid'];
+    $Catid=$_GET['AddCatid'];
 
-    $CatTypeID=$_POST['CatTypeID'];
+    $CatTypeID=$_GET['CatTypeID'];
 
    
 
@@ -60,13 +60,13 @@ if(isset($_POST['CatTypeID'])){
 
 
 
-if(isset($_POST['CatTypesID'])){
+if(isset($_GET['CatTypesID'])){
 
-    $Catid=$_POST['Catidss'];
+    $Catid=$_GET['Catidss'];
 
-    $CatTypeID=$_POST['CatTypesID'];
+    $CatTypeID=$_GET['CatTypesID'];
 
-   $subcat=$_POST['CatSubid'];
+   $subcat=$_GET['CatSubid'];
 
 
     $query= mysqli_query($conn,"SELECT ct.*, sc.* FROM subcategory sc INNER JOIN
@@ -104,11 +104,11 @@ if(isset($_POST['CatTypesID'])){
 
 
 
-if(isset($_POST['Catsid']))
+if(isset($_GET['Catsid']))
 {
 
-    $Catid=$_POST['Catsid'];
-    $CatTypeID=$_POST['CatTypeID'];
+    $Catid=$_GET['Catsid'];
+    $CatTypeID=$_GET['CatTypeID'];
 
 
     $query= mysqli_query($conn,"SELECT * FROM categorytype WHERE cat_id ='$Catid' and CatTypeName='$CatTypeID'
@@ -131,10 +131,10 @@ if(isset($_POST['Catsid']))
 
 
 
-if(isset($_POST['Catid']))
+if(isset($_GET['Catid']))
 {
 
-    $Catid=$_POST['Catid'];
+    $Catid=$_GET['Catid'];
 
     $query= mysqli_query($conn,"SELECT * FROM categorytype WHERE cat_id ='$Catid'");
     

@@ -171,7 +171,7 @@ include_once("config.php");
                 $query= mysqli_query($conn,"SELECT p.*, c.*,a.*
                 FROM product p INNER JOIN
                      categories c
-                     ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.Product_Name LIKE '%".$SEARCHVAL."%' AND p.Accept='1'");
+                     ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID where p.Product_Name  LIKE '%".$SEARCHVAL."%' || c.cat_name LIKE '%".$SEARCHVAL."%' || p.PartNumber LIKE '%".$SEARCHVAL."%'   AND p.Accept='1'");
 
                 if(mysqli_num_rows($query) >= 1)
                 {
@@ -197,13 +197,13 @@ include_once("config.php");
 											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
 											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
 										</ul>
-										<a class="fp_price" href="#">'.$row['Price'].'<small> ريال</small></a>
+										<a class="fp_price" href="product-detail.php?id='.$row['product_id'].'">'.$row['Price'].'<small> ريال</small></a>
 									</div>
 								</div>
 								<div class="details">
 									<div class="tc_content">
-										<p class="text-thm">'.$row['cat_name'].'</p>
-										<h4>'.$row['Product_Name'].'</h4>
+									<a href="product-detail.php?id='. $row['product_id'].'"><p class="text-thm">'.$row['cat_name'].'</p> </a>
+									<a href="product-detail.php?id='. $row['product_id'].'"><h4>'.$row['Product_Name'].'</h4> </a>
 										<p><span class="flaticon-placeholder"></span> السعودية-'.$row['City'].'</p>
 										<ul class="prop_details mb0"style="text-align: right;">
 										

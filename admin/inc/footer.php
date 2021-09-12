@@ -36,7 +36,10 @@
             ************ Required JavaScript Files *************
         ************* -->
         <!-- Required jQuery first, then Bootstrap Bundle JS -->
+
+       
         <script src="js\jquery.min.js"></script>
+
         <script src="js\bootstrap.bundle.min.js"></script>
         <script src="js\moment.js"></script>
 
@@ -56,6 +59,8 @@
 
         <script src=".\js\SliderImage.js"></script>
         <script src=".\js\Product.js"></script>
+
+        <script src=".\js\AddProduct.js"></script>
         <script src=".\js\VendorRequest.js"></script>
 
         <script src=".\js\RefusedRequest.js"></script>
@@ -63,6 +68,7 @@
         <script src=".\js\AcceptedRequest.js"></script>
 
         <script src=".\js\ClientMessage.js"></script>
+        <script src=".\js\UserExplention.js"></script>
 
         <script src=".\js\SystemMessage.js"></script>
 

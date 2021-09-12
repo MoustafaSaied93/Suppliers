@@ -3,16 +3,16 @@
 include_once("../config.php");
 session_start();
 
-$pages=$_POST['page'];
+$pages= strip_tags($_POST['page']);
 
 if($pages=="Signup")
 {
 
-   $UserName =  $_POST['UserName'];
-   $password = $_POST['password'];
-   $Email =   $_POST['Email'];
-   $Mobile = $_POST['Mobile'];
-   $usertype = $_POST['UserType']; 
+   $UserName = strip_tags( $_POST['UserName']);
+   $password = strip_tags($_POST['password']);
+   $Email =  strip_tags( $_POST['Email']);
+   $Mobile = strip_tags( $_POST['Mobile']);
+   $usertype =strip_tags ( $_POST['UserType']); 
 
    if($usertype=="1")
    {
@@ -49,33 +49,33 @@ if($pages=="Signup")
 
 
    }
-   $Country = $_POST['Country'];
-   $Currency = $_POST['Currency'];
+   $Country = strip_tags ($_POST['Country']);
+   $Currency =  strip_tags ($_POST['Currency']);
 
-   $Area = $_POST['Area'];
+   $Area = strip_tags($_POST['Area']);
 
 //bank 
   
-   $BankName = $_POST['BankName'];
-   $BranchName = $_POST['BranchName'];
-   $AccountNumber = $_POST['AccountNumber'];
-    $IBANNumber = $_POST['IBANNumber'];
-    $SwiftCode = $_POST['SwiftCode'];
+   $BankName = strip_tags($_POST['BankName']);
+   $BranchName = strip_tags( $_POST['BranchName']);
+   $AccountNumber = strip_tags ($_POST['AccountNumber']);
+    $IBANNumber = strip_tags( $_POST['IBANNumber']);
+    $SwiftCode = strip_tags( $_POST['SwiftCode']);
 
-   $CommercialRegister = $_POST['CommercialRegister'];
+   $CommercialRegister = strip_tags ($_POST['CommercialRegister']);
    
-   $CommercialExpDate = $_POST['CommercialExpDate'];
+   $CommercialExpDate = strip_tags( $_POST['CommercialExpDate']);
 
-   $City= $_POST['City'];
-   $Address = $_POST['Address'];
-   $CompanyName = $_POST['CompanyName'];
-   $RegisterDate =$_POST['RegisterDate'];
+   $City=strip_tags( $_POST['City']);
+   $Address = strip_tags ($_POST['Address']);
+   $CompanyName = strip_tags( $_POST['CompanyName']);
+   $RegisterDate = strip_tags($_POST['RegisterDate']);
 
   
 
-  $fileToUpload= $_FILES['fileToUpload']['name'];
-  $fileToUpload1= $_FILES['fileToUpload1']['name'];
-  $fileToUpload2= $_FILES['fileToUpload2']['name'];
+  $fileToUpload= strip_tags( $_FILES['fileToUpload']['name']);
+  $fileToUpload1=strip_tags( $_FILES['fileToUpload1']['name']);
+  $fileToUpload2= strip_tags( $_FILES['fileToUpload2']['name']);
     
   $pdffile_dir='../Files/'.$fileToUpload;
  
@@ -108,48 +108,6 @@ if($pages=="Signup")
 
 }
 
-else if($pages=="sliderimages"){
-
-
-  $Slider_Description = $_POST['Slider_Description'];
-//image 1
-  $image_name=$_FILES['img']['name'];      
-  $image_dir = 'Website/img/'.$image_name ;
-  
-
-
-  //image 2
-  $image_name2=$_FILES['img2']['name'];      
-  $image_dir2 = 'Website/img/'.$image_name2 ;
- 
-
-
-  //image 3
-  $image_name3=$_FILES['img3']['name'];      
-  $image_dir3 = 'Website/img/'.$image_name3 ;
-  
-
-
-  //image 4
-  $image_name4=$_FILES['img4']['name'];      
-  $image_dir4 = 'Website/img/'.$image_name4 ;
-  
-
-
-
-     
-    move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
-    move_uploaded_file($_FILES["img2"]["tmp_name"],$image_dir2);
-    move_uploaded_file($_FILES["img3"]["tmp_name"],$image_dir3);
-    move_uploaded_file($_FILES["img4"]["tmp_name"],$image_dir4);
-
-    $sql="INSERT INTO sliderimages (SliderImage1,SliderImage2,SliderImage3,Slider_Image4,	Slider_Description)
-    
-  VALUES ('$image_dir','$image_dir2','$image_dir3','$image_dir4','$Slider_Description')";
-                                               
-  $query=  mysqli_query($conn,$sql); 
-
-}
 
 
 

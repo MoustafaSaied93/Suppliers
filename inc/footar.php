@@ -93,6 +93,7 @@
 </div>
 <!-- Wrapper End -->
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+
 <script type="text/javascript" src="js/jquery-migrate-3.0.0.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -113,12 +114,25 @@
 <!-- Custom script for all pages --> 
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/toastr.min.js"></script>
+
+<script type="text/javascript" src="js/ProductDetails.js"></script>
+
 </body>
 </html>
 
 
 
 <script>
+
+
+
+
+
+
+
+
+
+
 
 $('#searchdep').on('click', function(event){
   
@@ -277,30 +291,7 @@ else if(dropsearch==8)
 
  }
 
-
-  
-  
- 
-  
-
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -557,6 +548,8 @@ var Name=$("#Name").val();
 var Email=$("#CEmail").val();
 
 
+
+
 var Mobile=$("#CMobile").val();
 
 var Subject=$("#Subject").val();
@@ -660,6 +653,179 @@ $("#Message").val("");
 
 
 }
+//send explantion 
+
+
+function SendExplantion()
+
+{
+	
+	
+ var formData = new FormData();
+ event.preventDefault();
+
+var P_Name=$("#p-name").val();
+
+var P_number=$("#p-number").val();
+
+var UserID=$("#p-UserID").val();
+
+
+var ClientName=$("#c-Name").val();
+var ClientSubject=$("#c-subject").val();
+
+var ClientMessage=$("#c_message").val();
+
+var page="SendClientExplation";
+
+var  RegisterDate = new Date();
+
+
+var newregisterDate=(RegisterDate.getFullYear()+'/'+(RegisterDate.getMonth()+1)+'/'+RegisterDate.getDate());
+
+
+
+
+ if(ClientName=="")
+{
+	
+ $("#c-Name").focus();
+ return false;
+}
+else if(ClientMessage=="")
+{
+ $("#c_message").focus();
+ 
+ return false;
+}
+
+
+formData.append("ClientName", ClientName);
+formData.append("ClientMessage", ClientMessage);
+formData.append("ClientSubject",ClientSubject );
+
+formData.append("P_Name",P_Name );
+formData.append("P_number",P_number );
+formData.append("UserID",UserID );
+
+formData.append("ClientSendDate",newregisterDate);
+formData.append("page", page);
+
+$.ajax({
+
+url:"sharefunction/Register.php",
+method:"POST",
+data: formData,
+processData: false,
+contentType: false,
+success:function(data){ 
+
+
+toastr.success("تم ارسال رسالتك بنجاح");
+
+$("#c-Name").val("");
+
+$("#c-subject").val("");
+
+$("#c_message").val("");
+}
+
+});
+
+
+}
+
+function ReviewProduct()
+
+{	
+ var formData = new FormData();
+ event.preventDefault();
+
+var P_id=$("#p-ids").val();
+
+
+
+var ClientName=$("#exampleInputName1").val();
+
+var ClientMessage=$("#exampleFormControlTextarea1").val();
+
+var page="ReviewProduct";
+
+var  RegisterDate = new Date();
+var newregisterDate=(RegisterDate.getFullYear()+'/'+(RegisterDate.getMonth()+1)+'/'+RegisterDate.getDate());
+
+ if(ClientName=="")
+{
+	
+ $("#exampleInputName1").focus();
+ return false;
+}
+else if(ClientMessage=="")
+{
+ $("#exampleFormControlTextarea1").focus();
+ 
+ return false;
+}
+
+formData.append("P_id", P_id);
+formData.append("ClientName", ClientName);
+formData.append("ClientMessage", ClientMessage);
+formData.append("ClientSendDate",newregisterDate);
+formData.append("page", page);
+
+$.ajax({
+
+url:"sharefunction/Register.php",
+method:"POST",
+data: formData,
+processData: false,
+contentType: false,
+success:function(data){ 
+
+
+$("#exampleInputName1").val("");
+
+$("#exampleFormControlTextarea1").val("");
+
+
+
+
+
+}
+});
+
+loadDoc5(P_id);
+}
+
+
+function loadDoc5(P_id) {
+      
+    
+	  setTimeout(function(){
+  
+		  var productid =P_id;
+		
+		  $.ajax({
+		  url:"sharefunction/ProductReview.php",
+		  method:"POST",
+		  cache:false,
+		  data:{productid:productid},
+		  success:function(data){
+			
+		  
+			 $("#reviews").html(data);
+		  
+		   
+		  
+			 }
+		  
+		  });
+  
+	},1000);
+  
+  
+  }
+
 
 
  </script>

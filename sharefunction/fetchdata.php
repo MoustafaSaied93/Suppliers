@@ -2,13 +2,13 @@
 
 include_once("../config.php");
 
-$Page=$_POST['page'];
+$Page= strip_tags($_POST['page']);
 
 
 if($Page=="Categpry")
 {
 
-$ID=$_POST['id'];
+$ID=strip_tags($_POST['id']);
 
 $query= mysqli_query($conn,"SELECT * FROM categories WHERE cat_id ='$ID'");
 
@@ -25,7 +25,7 @@ $query= mysqli_query($conn,"SELECT * FROM categories WHERE cat_id ='$ID'");
 else if($Page=="AccountUser")
 {
 
-$ID=$_POST['id'];
+$ID=strip_tags($_POST['id']);
 
 $query= mysqli_query($conn,"SELECT * FROM accounts WHERE UserID ='$ID'");
 
@@ -51,7 +51,7 @@ else if($Page=="sliderimages")
 
 {
 
-    $ID=$_POST['id'];
+    $ID=strip_tags($_POST['id']);
 
 $query= mysqli_query($conn,"SELECT * FROM sliderimages WHERE Slider_ImageID ='$ID'");
 
@@ -81,7 +81,7 @@ else if($Page=="ContactUS")
 
 {
 
-    $ID=$_POST['id'];
+    $ID=strip_tags($_POST['id']);
 
 $query= mysqli_query($conn,"SELECT * FROM contact_us WHERE ContactUsID ='$ID'");
 
@@ -106,7 +106,7 @@ $query= mysqli_query($conn,"SELECT * FROM contact_us WHERE ContactUsID ='$ID'");
 if($Page=="SystemMessage")
 {
 
-$ID=$_POST['id'];
+$ID=strip_tags($_POST['id']);
 
 //$userid=$_SESSION ['id']
 
@@ -130,7 +130,7 @@ else if($Page=="SystemClientMessage")
 
 {
 
-    $ID=$_POST['id'];
+    $ID=strip_tags($_POST['id']);
 
 //$userid=$_SESSION ['id']
 
@@ -153,6 +153,34 @@ $query= mysqli_query($conn,"SELECT * FROM clintmessages WHERE MessageID ='$ID'")
 }
 
 
+else if($Page=="ClientMessageexp")
+
+{
+
+    $ID=strip_tags($_POST['id']);
+
+//$userid=$_SESSION ['id']
+
+
+$query= mysqli_query($conn,"SELECT * FROM clientexp WHERE ClientExpID ='$ID'");
+
+ while($row = mysqli_fetch_array($query))
+ {
+  
+  $data["Message"] = $row["Message"];
+
+  $data1=$data["Message"];
+  
+  }
+
+ echo $data1;
+
+
+
+}
+
+
+
 
 
 
@@ -160,7 +188,7 @@ else if($Page=="VendorRequest")
 
 {
 
-    $ID=$_POST['id'];
+    $ID=strip_tags($_POST['id']);
 
 
     $result=mysqli_query($conn,"SELECT p.*, a.*, c.*,ct.*,sc.*
@@ -222,7 +250,7 @@ else if($Page=="Products")
 
 {
 
-    $ID=$_POST['id'];
+    $ID=strip_tags($_POST['id']);
 
 
     $result=mysqli_query($conn,"SELECT p.*, a.*

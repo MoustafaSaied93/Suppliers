@@ -33,7 +33,7 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept=1");
 
 
   
-    <table id="copy-print-csv" class="table custom-table">
+    <table id="copy-print-csv" class="table custom-table" data-page-length='10'>
    
       <thead>
         <tr>

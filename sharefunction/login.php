@@ -6,7 +6,7 @@
 session_start();
 include('../config.php');
 
-$pages=$_POST['page'];
+$pages=strip_tags($_POST['page']);
 
 
 if($pages=="Login")
@@ -14,12 +14,13 @@ if($pages=="Login")
 {
 
 
-  $Email =  $_POST['Email'];
-$pass = $_POST['password'];
+  $Email = strip_tags ($_POST['Email']);
+$pass = strip_tags( $_POST['password']);
 
 
     $sql = mysqli_query ($conn, "SELECT * FROM accounts
-    where  passwords = '$pass' AND Email='$Email'");
+    where  passwords = '$pass' AND Email='$Email'AND UserType!=3");
+
     
 $sql2 = mysqli_query ($conn, "SELECT * FROM accounts
     where  passwords = '$pass' AND Email='$Email' AND UserStatus='1'");
@@ -68,19 +69,83 @@ $sql2 = mysqli_query ($conn, "SELECT * FROM accounts
 
         }
 
-        else if($_SESSION['UserType']==3)
+     //   else if($_SESSION['UserType']==3)
+      //  {
+
+          //  $errorMSG = 204;
+
+          //  echo json_encode($errorMSG);
+
+        
+      //  }
+
+}
+
+}
+
+
+
+else if($pages=="AdminLogin")
+
+{
+
+
+  $Email = strip_tags( $_POST['Email']);
+  $pass =strip_tags( $_POST['password']);
+
+
+    $sql = mysqli_query ($conn, "SELECT * FROM accounts
+    where  passwords = '$pass' AND Email='$Email'AND UserType=3");
+
+    
+$sql2 = mysqli_query ($conn, "SELECT * FROM accounts
+    where  passwords = '$pass' AND Email='$Email' AND UserStatus='1'");
+
+
+
+
+
+
+    if(mysqli_num_rows($sql) != 1){
+
+      $errorMSG = 202;
+
+      echo json_encode($errorMSG);
+
+    }
+
+
+   else  if(mysqli_num_rows($sql2) != 1){
+
+        $errorMSG = 201;
+  
+        echo json_encode($errorMSG);
+  
+      }
+
+    else {
+
+        $user = mysqli_fetch_assoc($sql);
+        $_SESSION ['id'] = $user ['UserID'];
+        $_SESSION['UserName'] = $user['UserName'];
+        $_SESSION['passwords'] = $user['passwords'];
+        $_SESSION['Email'] = $user['Email'];
+        $_SESSION['UserType'] = $user['UserType'];
+
+
+        if($_SESSION['UserType']==3)
         {
+        
+         
 
             $errorMSG = 204;
 
             echo json_encode($errorMSG);
 
-        
+
         }
 
-
-
-
+     
 
 }
 

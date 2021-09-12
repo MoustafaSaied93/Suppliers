@@ -601,7 +601,9 @@ FROM product p INNER JOIN
 									<div class="fp_single_item_slider">
 									
 										<div class="item">
+										<a href="product-detail.php?id='. $row['product_id'].'">
 											<img class="img-whp" src="images/products/'.$row['image1'].'" alt="">
+										</a>
 										</div>
 									</div>
 									<div class="thmb_cntnt style2">
@@ -615,13 +617,13 @@ FROM product p INNER JOIN
 											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
 											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
 										</ul>
-										<a class="fp_price" href="#">'.$row['Price'].'<small> ريال</small></a>
+										<a class="fp_price" href="product-detail.php?id='. $row['product_id'].'">'.$row['Price'].'<small> ريال</small></a>
 										
 									</div>
 								</div>
 								<div class="details">
 									<div class="tc_content">
-										<p class="text-thm">'.$row['Product_Name'].'</p>
+									<a href="product-detail.php?id='. $row['product_id'].'">	<p class="text-thm">'.$row['Product_Name'].'</p> </a>
 										
 										<p><span class="flaticon-placeholder"></span> السعودية-'.$row['City'].'</p>
 										<ul class="prop_details mb0"style="text-align: right;">

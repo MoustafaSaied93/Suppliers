@@ -19,9 +19,8 @@ hieght:30%;
  <fieldset id="SubmitForm">
  <?php
 
-$id = $_GET['id'];
 
-//$id = $_GET['id'];
+$id = $_GET['id'];
 
 $result=mysqli_query($conn,"SELECT p.*, a.*, c.*
      FROM product p INNER JOIN
@@ -131,7 +130,7 @@ echo'
 
       if($row['image1']!="")
       {
-        $img1='<td> <div> <img src="../images/products/' .$row['image1'].'" width="20%"></div></td>';
+        $img1='<td> <div> <img src="../images/products/' .$row['image1'].'" width="40%"></div></td>';
       }
 
       if($row['image1']=="")
@@ -144,7 +143,7 @@ echo'
 
       if($row['image2']!="")
       {
-        $img2='<td> <div> <img src="../images/products/' .$row['image2'].'" width="20%"></div></td>';
+        $img2='<td> <div> <img src="../images/products/' .$row['image2'].'" width="40%"></div></td>';
       }
 
       if($row['image2']=="")
@@ -154,7 +153,7 @@ echo'
 
      if($row['image3']!="")
       {
-        $img3='<td> <div> <img src="../images/products/' .$row['image3'].'" width="20%"></div></td>';
+        $img3='<td> <div> <img src="../images/products/' .$row['image3'].'" width="40%"></div></td>';
       }
 
       if($row['image3']=="")
@@ -165,7 +164,7 @@ echo'
 
      if($row['image4']!="")
       {
-        $img4='<td> <div> <img src="../images/products/' .$row['image4'].'" width="20%"></div></td>';
+        $img4='<td> <div> <img src="../images/products/' .$row['image4'].'" width="40%"></div></td>';
       }
 
       if($row['image4']=="")
@@ -222,8 +221,8 @@ echo'
     <div class="col">
 
     <div class="form-group">
-    <label><h6> نوع الصنف الفرعي </h6></label>
-    <input type="text" class = "form-control"  value="'.$row["SubCategoryType"].'" readonly="readonly">
+    <label><h6> كود المنتج </h6></label>
+    <input type="text" class = "form-control"  value="'.$row["ProductCode"].'" readonly="readonly">
                                                                                                                    
      </div>
 
@@ -460,22 +459,22 @@ echo'
 <label><h6>صور المنتج</h6></label>
 <div class="col">
 
-'.$img1.';
-'.$img2.';
+'.$img1.'
+'.$img2.'
 
 
 
  </div>
     <div class="col">
 
-    '.$img3.';
+    '.$img3.'
 
                                                                                                                      
     </div>
     
 
     <div class="col">
-    '.$img4.';
+    '.$img4.'
     </div>
   </div>
   </div>

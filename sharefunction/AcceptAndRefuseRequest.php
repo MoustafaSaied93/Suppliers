@@ -3,12 +3,12 @@
 include_once("../config.php");
 
 
-$Page=$_POST['Page'];
+$Page= strip_tags($_POST['Page']);
 
  if($Page=="VendorRefusedRequest")
 {
   
-$ProductsID=$_POST['ID'];
+$ProductsID= strip_tags($_POST['ID']);
 
   $query= mysqli_query($conn,"UPDATE `product` SET `Accept` = '0', `Refused` = '1' WHERE `product`.`product_id` = '$ProductsID'");
 
@@ -19,7 +19,7 @@ $ProductsID=$_POST['ID'];
 else if($Page=="VendorAcceptRequest")
 {
   
-$ProductsID=$_POST['ID'];
+$ProductsID = strip_tags($_POST['ID']);
 
   $query= mysqli_query($conn,"UPDATE `product` SET `Accept` = '1', `Refused` = '0' WHERE `product`.`product_id` = '$ProductsID'");
 
@@ -30,7 +30,7 @@ $ProductsID=$_POST['ID'];
 else if($Page=="VendorDeleteRequest")
 {
   
-$ProductsID=$_POST['ID'];
+$ProductsID= strip_tags($_POST['ID']);
 
   $query= mysqli_query($conn,"DELETE FROM product   WHERE `product`.`product_id` = '$ProductsID'");
 

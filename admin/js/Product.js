@@ -12,6 +12,7 @@
            url:"../sharefunction/GetProductNotify.php",
             method:"GET",
             cache:false,
+            assync:false,
             success:function(data){
       
            $("#counter2").html(data);
@@ -86,7 +87,7 @@
             
         $.ajax({
             url:"../sharefunction/dropdownlist.php",
-            method:"POST",
+            method:"GET",
             cache:false,
 	       data:{Catid:Catid},
             success:function(data){
@@ -113,7 +114,7 @@
 
             $.ajax({
                 url:"../sharefunction/dropdownlist.php",
-                method:"POST",
+                method:"GET",
                 cache:false,
                data:{Catid:Catid},
                 success:function(data){
@@ -153,7 +154,7 @@
 
            $.ajax({
             url:"../sharefunction/dropdownlist.php",
-            method:"POST",
+            method:"GET",
             cache:false,
 	       data:{AddCatid:Catid,CatTypeID:CatTypeID},
             success:function(data){
@@ -198,7 +199,7 @@
 
            $.ajax({
             url:"../sharefunction/dropdownlist.php",
-            method:"POST",
+            method:"GET",
             cache:false,
 	       data:{AddCatid:Catid,CatTypeID:CatTypeID},
             success:function(data){
@@ -345,199 +346,7 @@ $("#fileUploaderControlc").change(function () {
 
 
 
-$('#SaveProduct').click(function (event) {
-    event.preventDefault();
-var formData = new FormData();
-var cat_id=$("#cat_id").val();
-var CatTypeID=$("#CatTypeID").val();
-var SubCatID=$("#SubCatID").val();
-var SubCatTypeID=$("#SubCatTypeID").val();
 
-
-if(cat_id!="8")
-
-{
-
-    SubCatID="";
-
-}
-
-
-
-var Part_Number=$("#Part_Number").val();
-var description=$("#Description").val();
-var Product_Warranty=$("#Product_Warranty").val();
-
-var Price=$("#Price").val();
-
-
-
-var  RegisterDate = new Date();
-
-var newregister=(RegisterDate.getFullYear()+'/'+(RegisterDate.getMonth()+1)+'/'+RegisterDate.getDate());
- 
-var Size=$("#Size").val();
-var Motorpower=$("#Motorpower").val();
-var Length=$("#Length").val();
-var Diameter=$("#Diameter").val();
-var Out_Side_Diameter=$("#Out_Side_Diameter").val();
-var Width=$("#Width").val();
-var wieght=$("#wieght").val();
-var Hieght=$("#Hieght").val();
-var Voltage=$("#Voltage").val();
-var Services=$("#Services").val();
-var Stock=$("#Stock").val();
-var Industry_Country=$("#Industry_Country").val();
-
-var img=document.getElementById("fileUploaderControls1").files[0];
-var img2=document.getElementById("fileUploaderControls2").files[0];
-var img3=document.getElementById("fileUploaderControls3").files[0];
-var img4=document.getElementById("fileUploaderControls4").files[0];
-var img5=document.getElementById("fileUploaderControls5").files[0];
-
-var profilecomp=document.getElementById("fileUploaderControlc").files[0];
-
-
-
-
-var vidFileLength = $("#upload")[0].files.length;
-
-if(cat_id === '9') 
-
- {
-    var Product_Name="";
-  var Measurement_type="";
-  
-
-var  CompanyName=$("#CompanyNames").val();
-    
-
-    var vidFileLength2 = $("#uploads")[0].files.length;
-
-    if(Services=="")
-    {
-        $("#Services").focus();
-    
-        return false;
-    }
-
-else if( vidFileLength2=== 0)
-{
-    toastr.error("من فضلك ادخل مرفقا");
-    return false;
-}
-
-else if(profilecomp===undefined)
-{
-    toastr.error("من فضلك ادخل بروفايل الشركة");
-    return false;
-}
-
-var fileToUpload = document.getElementById("uploads").files[0];
-
-
- }
-
- else
- {
-
-     Product_Name=$("#Product_Name").val();
-
-     Measurement_type=$("input[name='Measurement_type']:checked").val();
-
-
-var  CompanyName=$("#CompanyName").val();
-var fileToUpload = document.getElementById("upload").files[0];
-
-
-if(Product_Name=="")
-{
-    $("#Product_Name").focus();
-
-    return false;
-}
-
-else if(img===undefined)
-{
-    toastr.error("من فضلك ادخل صورة");
-    return false;
-}
-
-else 
-if( vidFileLength=== 0)
-{
-    toastr.error("من فضلك ادخل مرفقا");
-    return false;
-}
-
-
-else if(Measurement_type===undefined)
-{
-    Measurement_type="";
-    
-}
-
-
-
- }
-//Measurement_type
-var Page="Product";
-formData.append("page", Page);
-formData.append("cat_id", cat_id);
-formData.append("CatTypeID", CatTypeID);
-formData.append("SubCatID", SubCatID);
-formData.append("SubCatTypeID", SubCatTypeID);
-formData.append("Product_Name", Product_Name);
-formData.append("Description", description);
-formData.append("Part_Number", Part_Number);
-formData.append("Measurement_type", Measurement_type);
-formData.append("Length", Length);
-formData.append("Diameter", Diameter);
-formData.append("Out_Side_Diameter", Out_Side_Diameter);
-formData.append("Width", Width);
-formData.append("wieght", wieght);
-formData.append("Hieght", Hieght);
-formData.append("Size", Size);
-formData.append("Motorpower", Motorpower);
-formData.append("Stock", Stock);
-formData.append("Industry_Country", Industry_Country);
-formData.append("CompanyName",  CompanyName);
-formData.append("Voltage",  Voltage);
-formData.append("Services",  Services);
-formData.append("RegisterDate", newregister);
-formData.append("Product_Warranty", Product_Warranty);
-
-formData.append("Price", Price);
-
-formData.append("img", img);
-formData.append("img2", img2);
-formData.append("img3", img3);
-formData.append("img4", img4);
-formData.append("img5", img5);
-formData.append("profilecomp", profilecomp);
-formData.append("fileToUpload", fileToUpload);
-
-
-
-
-$.ajax({
-    url: '../sharefunction/AddProduct.php',
-    data: formData,
-    contentType: false,
-    processData: false,
-    type: 'POST',
-    success:function(data){
-
-
-     $("#AddProduct").modal("hide");
- 
-        toastr.success("العملية تمت بنجاح وسوف يتم مراجعه البيانات من قبل ادارة النظام ");
-        window.setTimeout(function () { location.reload() }, 2000)
-  
-   
-    }
-    });
-});
 
 
 /*
@@ -1227,8 +1036,6 @@ if(fileToUpload===undefined)
 function DeleteProducts(id){
     window.delete=id;
 
-    
-
 
  }
 
@@ -1236,7 +1043,7 @@ function DeleteProducts(id){
 
  var ConfirmDeleting= function () {
 
-    
+   
     var ID = window.delete;
     var page="Product";
      var $button = $(this);
@@ -1249,12 +1056,12 @@ function DeleteProducts(id){
      success: function (result) {
        $("#DeleteConfirmations").modal("hide");
        toastr.error("تم عملية الحذف بنجاح");
-          window.setTimeout(function () { location.reload() }, 3000)
-       }
 
-       });
-    }
-
+      
+        window.setTimeout(function () { location.reload() }, 1000)
+                    }
+                })
+            }
 
 
 
@@ -1269,7 +1076,7 @@ function DeleteProducts(id){
         
   $.ajax({
     url:"../sharefunction/dropdownlist.php",
-    method:"POST",
+    method:"GET",
     cache:false,
    data:{Catsid:Catid,CatTypeID:CatTypeID},
     success:function(data){
@@ -1304,7 +1111,7 @@ function GetSubCategory(Catid,CatTypeID,CatSubid)
 
     $.ajax({
         url:"../sharefunction/dropdownlist.php",
-        method:"POST",
+        method:"GET",
         cache:false,
        data:{Catidss:Catid,CatTypesID:CatTypeID,CatSubid:CatSubid},
         success:function(data){

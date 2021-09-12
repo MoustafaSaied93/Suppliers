@@ -1074,7 +1074,7 @@ ul.header-tasks li {
   .login-screen .actions {
     margin-bottom: .5rem;
     display: flex;
-    justify-content: flex-end;
+   
     align-items: center; }
     .login-screen .actions a.link {
       color: #2e323c; }

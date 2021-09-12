@@ -3,22 +3,22 @@
 session_start();
 include('../config.php');
 
-$pages=$_POST['page'];
+$pages=strip_tags( $_POST['page']);
 
 if($pages=="registercustomer"){
 
 
-    $UserName =  $_POST['UserName'];
-     $password = $_POST['password'];
-     $Email =   $_POST['Email'];
+    $UserName = strip_tags( $_POST['UserName']);
+     $password =strip_tags( $_POST['password']);
+     $Email =  strip_tags( $_POST['Email']);
   
-     $Mobile = $_POST['Mobile'];
+     $Mobile =strip_tags( $_POST['Mobile']);
   
-     $Address = $_POST['Address'];
+     $Address = strip_tags($_POST['Address']);
   
-     $RegisterDate= $_POST['RegisterDate'];
+     $RegisterDate= strip_tags ($_POST['RegisterDate']);
   
-     $UserType = $_POST['UserType'];
+     $UserType = strip_tags ($_POST['UserType']);
   
      $sql=mysqli_query($conn,"SELECT * FROM accounts WHERE Email= '$Email'");
      $sql2=mysqli_query($conn,"SELECT * FROM accounts WHERE Mobile= '$Mobile'");
@@ -67,16 +67,16 @@ if($pages=="registercustomer"){
 else if($pages=="SendClientMessage"){
 
 
-    $Name =  $_POST['Name'];
-    $Email =   $_POST['Email'];
+    $Name = strip_tags( $_POST['Name']);
+    $Email = strip_tags ($_POST['Email']);
   
-     $Mobile = $_POST['Mobile'];
+     $Mobile =strip_tags( $_POST['Mobile']);
   
-     $Subject = $_POST['Subject'];
+     $Subject =strip_tags( $_POST['Subject']);
 
-     $Message= $_POST['Message'];
+     $Message=strip_tags( $_POST['Message']);
   
-     $SendDate= $_POST['SendDate'];
+     $SendDate= strip_tags ($_POST['SendDate']);
   
     
   
@@ -91,6 +91,67 @@ else if($pages=="SendClientMessage"){
 
 
 }
+
+
+else if($pages=="SendClientExplation"){
+
+
+    $ClientName= strip_tags( $_POST['ClientName']);
+   
+  
+    $ClientSubject = strip_tags($_POST['ClientSubject']);
+
+    $ClientMessage= strip_tags($_POST['ClientMessage']);
+
+     $P_Name=strip_tags( $_POST['P_Name']);
+
+     $P_number=strip_tags( $_POST['P_number']);
+
+     $UserID= strip_tags($_POST['UserID']);
+
+     $ClientSendDate=strip_tags( $_POST['ClientSendDate']);
+  
+    
+  
+    $sql2="INSERT INTO clientexp (ProductName,PartNumber,ClientName,Subject,Message,UserID,SendDate )
+      
+    VALUES ('$P_Name','$P_number','$ClientName','$ClientSubject','$ClientMessage','$UserID','$ClientSendDate')";
+                                                 
+    $query=  mysqli_query($conn,$sql2); 
+  
+  
+  
+
+
+}
+
+
+else if($pages=="ReviewProduct"){
+
+
+    $ClientName= strip_tags( $_POST['ClientName']);
+   
+
+    $ClientMessage= strip_tags($_POST['ClientMessage']);
+
+     $P_id=strip_tags( $_POST['P_id']);
+
+
+     $ClientSendDate= strip_tags( $_POST['ClientSendDate']);
+     
+  
+    $sql2="INSERT INTO productreviews (product_id,C_Name,Description,SendDate )
+      
+    VALUES ('$P_id','$ClientName','$ClientMessage','$ClientSendDate')";
+                                                 
+    $query=  mysqli_query($conn,$sql2); 
+  
+  
+  
+
+
+}
+
 
 
 

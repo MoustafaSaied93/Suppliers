@@ -42,6 +42,7 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='0'and Refused=
       <thead>
         <tr>
           <th> رقم المنتج </th>
+          <th>كود المنتج </th>
           <th>اسم المنتج</th>
           <th>الصنف</th>
           <th>مرفقات المنتج</th>
@@ -89,6 +90,7 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='0'and Refused=
            ?>
          <tr>
      <td><?php echo $num ?></td>
+     <td><?php echo $row['ProductCode'];?></td>
      <td><?php echo $row['Product_Name'];?></td>
      <td><?php echo $row['cat_name'];?></td>
      <?php echo  $Attach;?>

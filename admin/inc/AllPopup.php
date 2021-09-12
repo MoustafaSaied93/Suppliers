@@ -1,4 +1,14 @@
+<?php  
 
+
+if (isset($_SESSION['id']))
+	{
+
+  $UserID = $_SESSION['id'];
+
+  }
+
+?>
 
      <style>
 
@@ -36,11 +46,15 @@
     </div>
   <div class="modal-body">
            
-  <form id="form">
+  <form id="form" enctype="multipart/form-data">
                                                          
   <fieldset id="SubmitForm">
 
   <input type="hidden" id="product_id">
+
+  <input type="hidden" id="UserID" value="<?php $UserID 
+  
+  ?>">
                                                                 
     <div class="form-group">
     <label><h6>الصنف </h6></label>
@@ -295,7 +309,7 @@ $CompanyCode = $Company ['CompanyCode'];
    </div>
 
    <div class="form-group">
-    <label><h6>كود الشركة</h6></label>                                                    
+    <label><h6>كود المورد</h6></label>                                                    
   <input type="text" class = "form-control" name="CompanyCode" value="<?php echo $CompanyCode  ?>" disabled id="CompanyCode"   placeholder="كود الشركة">
                                                                
    </div>
@@ -321,11 +335,11 @@ $CompanyCode = $Company ['CompanyCode'];
 <div class="col-lg-6 pl-lg-1"><img src="../images/NoImage.jpg" alt="" class="img-fluid rounded shadow-sm" id="imagePreviews5"></div>
   </div> 
   <div>
-  <input type="file" name="fileUploaderControls1" id="fileUploaderControls1" style="display:none;">
-  <input type="file" name="fileUploaderControls2" id="fileUploaderControls2" style="display:none;">
-  <input type="file" name="fileUploaderControls3" id="fileUploaderControls3" style="display:none;">
-  <input type="file" name="fileUploaderControls4" id="fileUploaderControls4" style="display:none;">
-  <input type="file" name="fileUploaderControls5" id="fileUploaderControls5" style="display:none;">
+  <input type="file" name="fileUploaderControls1" id="fileUploaderControls1" style="display:none;" accept="image/x-png, image/gif, image/jpeg, image/jpg">
+  <input type="file" name="fileUploaderControls2" id="fileUploaderControls2" style="display:none;" accept="image/x-png, image/gif, image/jpeg, image/jpg">
+  <input type="file" name="fileUploaderControls3" id="fileUploaderControls3" style="display:none;" accept="image/x-png, image/gif, image/jpeg, image/jpg">
+  <input type="file" name="fileUploaderControls4" id="fileUploaderControls4" style="display:none;" accept="image/x-png, image/gif, image/jpeg, image/jpg">
+  <input type="file" name="fileUploaderControls5" id="fileUploaderControls5" style="display:none;" accept="image/x-png, image/gif, image/jpeg, image/jpg">
   
   </div>       
    </div> 
@@ -347,7 +361,7 @@ $CompanyCode = $Company ['CompanyCode'];
 
 
    <div class="form-group">
-    <label><h6>كود الشركة </h6></label>                                                    
+    <label><h6>كود المورد </h6></label>                                                    
   <input type="text" class = "form-control" name="CompanyCodes" value="<?php echo $CompanyCode?>" disabled id="CompanyCodes"  placeholder="ادخل اسم الشركة">
                                                                
    </div>
@@ -369,12 +383,12 @@ $CompanyCode = $Company ['CompanyCode'];
 
    <label><h6>بروفايل الشركة</h6></label>
 
-     <img src="../images/NoImage.jpg" style="margin:10px" height="200" width="200" id="imagePreviewc" />
+     <img src="../images/NoImage.jpg" style="margin:10px" height="200" width="200" id="imagePreviewc"  />
 
      </div>
 
       <div>
-   <input type="file" name="fileUploaderControlc" id="fileUploaderControlc" style="display:none;">
+   <input type="file" name="fileUploaderControlc" id="fileUploaderControlc" style="display:none;" accept="image/x-png, image/gif, image/jpeg, image/jpg">
    </div>
    </div>
    

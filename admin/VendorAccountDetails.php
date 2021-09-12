@@ -33,7 +33,7 @@ while($row = mysqli_fetch_array($result))
            else
            {
            $photo='<td> <div>
-                   <img src="../images/user/user-thumb.jpg" width="20%"> </div> </td>';
+                   <img src="../images/user/user.png" width="20%"> </div> </td>';
            }
 
 
@@ -136,7 +136,7 @@ echo'
       else
       {
       $photo='<td> <div>
-              <img src="../images/user/user-thumb.jpg" width="20%"> </div> </td>';
+              <img src="../images/user/user.png" width="20%"> </div> </td>';
       }
 
       echo '    

@@ -36,11 +36,12 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='1'and Refused=
 
   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#AddProduct"  style="width:70px;"> اضافة</button>
  
-    <table id="copy-print-csv" class="table custom-table">
+    <table id="copy-print-csv" class="table custom-table"  data-page-length='10'>
    
       <thead>
         <tr>
           <th> رقم المنتج </th>
+          <th>كود المنتج</th>
           <th>اسم المنتج</th>
           <th>الصنف</th>
           <th>مرفقات المنتج</th>
@@ -57,7 +58,7 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='1'and Refused=
      $result=mysqli_query($conn,"SELECT p.*, c.*,a.*
      FROM product p INNER JOIN
           categories c
-          ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID   WHERE P.Accept='1' AND P.UserID='$UserID'");
+          ON p.cat_id = c.cat_id  INNER JOIN accounts a  ON p.UserID  = a.UserID   WHERE p.Accept='1' AND p.UserID='$UserID'");
      $num=1;
       while($row=mysqli_fetch_assoc($result))
           {
@@ -82,9 +83,11 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='1'and Refused=
 
                   
            ?>
-         <tr>
+         <tr >
      <td><?php echo $num ?></td>
+     <td><?php echo $row['ProductCode'];?></td>
      <td><?php echo $row['Product_Name'];?></td>
+    
      <td><?php echo $row['cat_name'];?></td>
      <?php echo  $Attach;?>
      
@@ -96,7 +99,7 @@ $query = mysqli_query($conn, "SELECT * FROM product WHERE Accept='1'and Refused=
                             
      
       <button type="button" data-toggle="modal" data-target="#AddProduct" onclick="EditProduct(<?php echo $row['product_id'];?>)" class="btn btn-primary"> تعديل</button>
-      <button type="button" data-toggle="modal" data-target="#DeleteConfirmations" onclick="DeleteProducts(<?php echo $row['product_id']; ?>)" class="btn btn-danger"> حذف المنتج</button>
+      <button type="button" id="data-image-id" data-toggle="modal" data-target="#DeleteConfirmations" onclick="DeleteProducts(<?php echo $row['product_id']; ?>)" class="btn btn-danger"> حذف المنتج</button>
       </td>
      </tr>
     <?php
