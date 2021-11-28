@@ -19,7 +19,7 @@
                             <div class="col-12">
                                 <div class="page-title-box">
                                     
-                                    <h4 class="page-title">جدول المباريات</h4>
+                                    <h4 class="page-title">الاسليدر</h4>
                                 </div>
                             </div>
                         </div>     

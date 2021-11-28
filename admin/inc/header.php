@@ -18,7 +18,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>نادى القادسية</title>
+        <title>almacenter</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Responsive bootstrap 4 admin template" name="description">
         <meta content="Coderthemes" name="author">
@@ -172,23 +172,23 @@
                         <ul class="metismenu" id="side-menu">
 
                         <li>
-                                <a href="teammember.php">
-                                    <i class="mdi mdi-account"></i>
-                                    <span> مجلس الادارة </span>
-                                    
-                                </a>
+                             
                                
                             </li>
                             <li>
                                 <a href="javascript: void(0);">
                                 <i class="fas fa-football-ball"></i>
-                                    <span> فريق كرة القدم </span>
+                                    <span>ادارة الصالة </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
-                                    <li><a href="players.php">اللاعبين</a></li>
-                                    <li><a href="technqalteam.php">الجاز الفنى</a></li>
+                                    <li><a href="players.php">اشتراكات الاعضاء</a></li>
+                                    <li><a href="technqalteam.php">حجوزات الكلاسات</a></li>
+                                    <li><a href="technqalteam.php"> الحسابات</a></li>
+                                    <li><a href="technqalteam.php"> ادارة المدفوعات</a></li>
+                                    <li><a href="technqalteam.php"> ادارة الفواتير</a></li>
+
                                                                     
                                 </ul>
                             </li>
@@ -196,42 +196,20 @@
                             <li>
                                 <a href="javascript: void(0);">
                                 <i class=" fa fa-trophy"></i>
-                                    <span> مسابقة الدورى </span>
+                                    <span> ادارة الموقع </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
-                                    <li><a href="teams.php">فرق الدورى</a></li>
-                                    <li><a href="matches.php">مباريات الدورى</a></li>
-                                    <li><a href="arrangeteam.php">جدول الترتيب </a></li>                               
+                                    <li><a href="teams.php">الاسليدر</a></li>
+                                                                
                                 </ul>
                             </li>
 
 
-                               <li>
-                                <a href="newsclub.php">
-                                    <i class="fas fa-book"></i>
-                                    <span> اخبار النادى </span>                                   
-                                </a>
-                               
-                               </li>
+                            
 
-                               <li>
-                                <a href="vediolink.php">
-                                    <i class="fas fa-video"></i>
-                                   <span> روابط اليوتيوب </span>
-                                    
-                                </a>                              
-                               </li>
-
-
-                               <li>
-                                <a href="clubshampion.php">
-                                    <i class=" fa fa-trophy"></i>
-                                   <span>بطولات النادى </span>
-                                    
-                                </a>                              
-                               </li>                       
+                                          
 
                           
                         </ul>
