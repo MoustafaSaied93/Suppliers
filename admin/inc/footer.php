@@ -1,62 +1,11 @@
-    
-    <div class="modal fade" id="UserSetting">
-                   <div class="modal-dialog">
-
-                   <div class="modal-content">
-          
-                   <div class="modal-header">
-
-                <h3>اعدادات الحساب </h3>
-                  </div>
-                <div class="modal-body" style="padding-left:220px">
-
-                <input type="hidden" id="UserID" value=<?php echo $UserID  ?>  >
-
-
-                 <div class="form-group">
-                 <label><h6>اسم المستخدم</h6></label>                                                    
-               <input type="text"  class = "form-control" value=<?php echo $userName  ?>  id="UserName"  placeholder="ادخل اسم المستخدم">
-                                                               
-                  </div>
-                 
-                 
-
-                 <div class="form-group">
-                 <label><h6>البريد الالكتروني</h6></label>                                                    
-         <input type="email" class = "form-control"  value=<?php echo $Email  ?>  id="Email"  placeholder="ادخل البريد الالكتروني">
-                                                               
-          </div>
-          
-
-          <div class="form-group">
-          <label><h6>كلمة المرور</h6></label>                                                    
-         <input type="password" class = "form-control" value=<?php echo $password  ?>   id="passwords"  placeholder="ادخل كلمة المرور" >
-      
-          </div>
-
-               
-            </div>
-            <div class="modal-footer" style="padding-left:220px">
-
-                <a href="#" class="btn btn-success" id="UpdateProfile">تخديث</a>
-                <a href="#" class="btn btn-danger" data-dismiss="modal" id="r">الغاء</a>
-            </div>
-        </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     
     
     <!-- Footer Start -->
 
 
+    
 
-                <!-- end Footer -->
+     <!-- end Footer -->
 
             </div>
 
@@ -75,15 +24,26 @@
 
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/toastr.min.js"></script>
+        <script src="assets/js/memberteam.js"></script>
 
-        <script src="assets/js/delete.js"></script>
+        <script src="assets/js/techniqalteam.js"></script>
+        
+        <script src="assets/js/team.js"></script>
+
+        <script src="assets/js/players.js"></script>
+
+        <script src="assets/js/matches.js"></script>
+        <script src="assets/js/news.js"></script>
+
+        <script src="assets/js/vedios.js"></script> 
+        
+        <script src="assets/js/champ.js"></script> 
+        <script src="assets/js/arrange.js"></script> 
+        
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
 
-        <!--Morris Chart-->
-        <script src="assets/libs/morris-js/morris.min.js"></script>
-        <script src="assets/libs/raphael/raphael.min.js"></script>
-
+       
         <!-- Dashboard init js-->
         <script src="assets/js/pages/dashboard.init.js"></script>
 
@@ -110,8 +70,19 @@
         <!-- Datatables init -->
         <script src="assets/js/pages/datatables.init.js"></script>
 
+        
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
+        <!-- plugins  datepicker and time-->
+        <script src="assets/libs/moment/moment.min.js"></script>
+        <script src="assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+        <script src="assets/libs/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
+         <!-- Init js-->
+         <script src="assets/js/pages/form-pickers.init.js"></script>
         
     </body>
 </html>

@@ -1,11 +1,16 @@
 <?php 
 
 
-
+ include_once("../service/config.php");
 
 
 
 ?>
+
+
+
+
+
 
 <!DOCTYPE html>
 
@@ -13,7 +18,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>جيم </title>
+        <title>نادى القادسية</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Responsive bootstrap 4 admin template" name="description">
         <meta content="Coderthemes" name="author">
@@ -34,6 +39,13 @@
 
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
         <link href="assets/css/app-rtl.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/dtable.css" rel="stylesheet" type="text/css">
+
+        <link href="assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/libs/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+        <link href="assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css">
 
     </head>
 
@@ -54,7 +66,7 @@
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                            <span class="d-none d-sm-inline-block ml-1 font-weight-medium">ADMIN</span>
+                            <span class="d-none d-sm-inline-block ml-1 font-weight-medium">admin</span>
                             <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
@@ -90,16 +102,7 @@
 
                 <!-- LOGO -->
                 <div class="logo-box">
-                    <?php
-                   
-
-                        echo' <a href="index.php" class="logo text-center logo-dark">';
-                    
-
-                    
-                   
-
-                    ?>
+                    <a href="index.php" class="logo text-center logo-dark">
                         <span class="logo-lg">
                             <img src="assets/images/logo.png" alt="" height="22">
                             <!-- <span class="logo-lg-text-dark">Uplon</span> -->
@@ -167,46 +170,68 @@
                     <div id="sidebar-menu">
 
                         <ul class="metismenu" id="side-menu">
-                        
 
-                  
-                            <li>
-                                <a href="javascript: void(0);">
+                        <li>
+                                <a href="teammember.php">
                                     <i class="mdi mdi-account"></i>
-                                    <span> العملاء </span>
+                                    <span> مجلس الادارة </span>
+                                    
+                                </a>
+                               
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);">
+                                <i class="fas fa-football-ball"></i>
+                                    <span> فريق كرة القدم </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
-                                   
-                                    <li><a href="index.php">رسائل العملاء</a></li>
-                                    <li><a href="index.php">حسابات العملاء</a></li>
-                                   
+                                    <li><a href="players.php">اللاعبين</a></li>
+                                    <li><a href="technqalteam.php">الجاز الفنى</a></li>
+                                                                    
                                 </ul>
                             </li>
 
                             <li>
                                 <a href="javascript: void(0);">
-                                    <i class="icon-layers"></i>
-                                    <span> ادارة الطلبات </span>
+                                <i class=" fa fa-trophy"></i>
+                                    <span> مسابقة الدورى </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
-                                    <li><a href="index.php">طلبات المشتركين</a></li>
-                                    <li><a href="index.php">الطلبات المقبولة</a></li>
-                                    <li><a href="index.php">الطلبات المرفوضة</a></li>
-                                   
+                                    <li><a href="teams.php">فرق الدورى</a></li>
+                                    <li><a href="matches.php">مباريات الدورى</a></li>
+                                    <li><a href="arrangeteam.php">جدول الترتيب </a></li>                               
                                 </ul>
                             </li>
-                            
-
-                         
 
 
-                            
+                               <li>
+                                <a href="newsclub.php">
+                                    <i class="fas fa-book"></i>
+                                    <span> اخبار النادى </span>                                   
+                                </a>
+                               
+                               </li>
 
-                         
+                               <li>
+                                <a href="vediolink.php">
+                                    <i class="fas fa-video"></i>
+                                   <span> روابط اليوتيوب </span>
+                                    
+                                </a>                              
+                               </li>
+
+
+                               <li>
+                                <a href="clubshampion.php">
+                                    <i class=" fa fa-trophy"></i>
+                                   <span>بطولات النادى </span>
+                                    
+                                </a>                              
+                               </li>                       
 
                           
                         </ul>
