@@ -61,7 +61,9 @@
                 <li><a href="contact.php">Contact</a></li>
             </ul>
         </nav>
-        <div id="mobile-menu-wrap"></div>
+        <div id="mobile-menu-wrap">
+            
+        </div>
         <div class="canvas-social">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
