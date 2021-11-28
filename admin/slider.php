@@ -26,7 +26,7 @@
                         <!-- end page title --> 
 
                         <button  class="btn btn-success m-b-15" onclick="deletedata()" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
-                                <i class="fa fa-plus-square" aria-hidden="true"></i> اضافة مباراة
+                                <i class="fa fa-plus-square" aria-hidden="true"></i> اضافة الاسليدر
                             </button>
 
                             <br> <br>
@@ -35,17 +35,12 @@
             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
             <thead class="thead_dark">
                 <tr>
-                <th class="th_text"> رقم المباراة</th>
+                <th class="th_text">العنوان</th>
 
-                    <th class="th_text">الفريق الاول</th>
+                    <th class="th_text">النص </th>
                    
-                    <th class="th_text">الفريق التانى</th>
+                    <th class="th_text">الصورة </th>
 
-                    <th class="th_text">تاريخ المبارة</th>
-
-                    <th class="th_text">اليوم</th>
-
-                    <th class="th_text">الساعة</th>
 
                     <th class="th_text">العمليات</th>
                 </tr>
@@ -65,11 +60,7 @@
 
                     <td><?php echo $row['Second_Team']  ?></td>
 
-                    <td><?php echo $row['MatchDate']  ?></td>
-
-                    <td><?php echo $row['Day']  ?></td>
-
-                    <td><?php echo $row['Hour']  ?></td>
+          
                                        
                     <td>
                     <button type="button" id="data-image-id" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="editmatch(<?php echo $row['Match_ID'];?>)" class="btn btn-primary"> <i class="fa fa-pen"></i> تعديل</button>
@@ -97,110 +88,46 @@
 
          </div> <!-- end content -->
 
-
-<!-- add popup -->
-
-    <div class="body">                   
-                            <!-- larg modal -->
+         <div class="body">                   
+ <!-- larg modal -->
      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="orders_" aria-hidden="true">
          <div class="modal-dialog modal-lg">
          <div class="modal-content">
         <div class="modal-header">
-     <h5 class="modal-title h4" id="orders_">اضافة مبارة </h5>
+     <h5 class="modal-title h4" id="orders_">اضافة الاسليدر</h5>
      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
  <span aria-hidden="true">×</span>
  </button>
     </div>
  <div class="modal-body">               
                                         
- <form >
+  <form>
 
-<div class="table-responsive">
-  <table class="table" id="crud_table">
-   <tr>
-  
-    <th width="25%">  <label><h6>الفريق الاول</h6></label> </th>
+  <div class="form-group">
+    <label for="o1">العنوان </label>
+    <input type="text" class="form-control" id="Team_Name" placeholder="العنوان " maxlength=30>
+  </div>
 
-    <th width="25%">الفريق الثانى</th>
-    <th width="25%">تاريخ المباراة</th>
+  <div class="form-group">
+    <label for="o1">النص  </label>
+    <input type="text" class="form-control" id="Team_Name" placeholder="النص " maxlength=30>
+  </div>
 
-    <th width="25%">ميعاد المباراة</th>
-    
-   </tr>
-   <tr class="MatchName">
-   
-    <td>    
-    <select class="custom-select" id="First_Team">
+<div style="align-content:center">
+  <div class="form-group">
 
-    <?php
+   <label><h6>الصورة </h6></label>
 
-    $firstteam=mysqli_query($conn," SELECT Team_Name FROM teams");
+     <img src="assets/images/NoImage.jpg" style="margin:10px" height="200" width="200" id="imagePreviewteam" />
 
+     </div>
 
-    while( $item = mysqli_fetch_assoc($firstteam))
-    {
+      <div>
+   <input type="file" name="fileUploaderControlteam" id="fileUploaderControlteam" style="display:none;" accept="image/*">
+   </div>
+   </div>
 
-        echo' <option value="'.$item['Team_Name'].'">'.$item['Team_Name'].' </option>';
-        
-    }
-     ?>
-     
-    </select>
-     </td>
-
-    <td>
-
-    <select class="custom-select" id="Second_Team">
-    <?php
-       $firstteam=mysqli_query($conn," SELECT Team_Name FROM teams");
-
-
-    while( $item2 = mysqli_fetch_assoc($firstteam))
-    {
-
-        echo' <option value="'.$item2['Team_Name'].'">'.$item2['Team_Name'].' </option>';
-        
-    }
-     ?>
-
-
-    </select>
-        
-   </td>
-
-    <td> 
-
-    <div class="input-group">
-    <input type="text" class="form-control" id="MatchDate" placeholder="mm/dd/yyyy" data-provide="datepicker" data-date-autoclose="true">
-    <div class="input-group-append">
-  <span class="input-group-text"><i class="icon-calender"></i></span>
-</div> 
- </div><!-- input-group -->
-                                                                   
-    </td>
-
-    <td> 
-    <div class="input-group">
-     <input id="timepicker2" type="text" class="form-control">
-    <div class="input-group-append">
- <span class="input-group-text"><i class="mdi mdi-clock-outline"></i></span>
- </div>
-</div><!-- input-group -->
-</td>
-    
-    
-   </tr>
-  </table>
- 
- 
- <div align="center">
-
-<button type="submit"  class="btn btn-info mb-2" id = "Savematches"><i class="fa fa-plus-square"></i> <span>حفظ</span></button>
-<div id="editbutton" style="display:none">
-
-<button type="submit"   class="btn btn-info mb-2"  id = "editmatches"><i class="fa fa-pen"></i> <span>تعديل</span></button>
-</div>
-</div>
+  <button type="submit" class="btn btn-success mb-2" id = "Saveteam"><i class="fa fa-plus-square"></i> <span>أضافة</span></button>
 
 </form>
 
@@ -208,9 +135,6 @@
      </div>
  </div>
  </div>
-
- </div>
-
 
 
 

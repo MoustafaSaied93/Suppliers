@@ -201,7 +201,8 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
-                                    <li><a href="teams.php">الاسليدر</a></li>
+                                    <li><a href="slider.php">الاسليدر</a></li>
+                                    <li><a href="slider.php"> فصول التدريب</a></li>
                                                                 
                                 </ul>
                             </li>
