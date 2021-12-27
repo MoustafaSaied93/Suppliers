@@ -183,6 +183,7 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
+                                    <li><a href="players.php">المشتركين</a></li>
                                     <li><a href="players.php">اشتراكات الاعضاء</a></li>
                                     <li><a href="technqalteam.php">حجوزات الكلاسات</a></li>
                                     <li><a href="technqalteam.php"> الحسابات</a></li>

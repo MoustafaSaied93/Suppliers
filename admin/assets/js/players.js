@@ -2,71 +2,87 @@
 $(document).ready(function(){
   
 
-  $('#PlayerName').bind('keypress', function(e) {
+  $('#name').bind('keypress', function(e) {
 
-    var PlayerName= $("#PlayerName").val();
+    var name= $("#name").val();
 
     
     var key = e.keyCode;
 
-    if (key === 32&&PlayerName=="")  {
+    if (key === 32&&name=="")  {
         e.preventDefault();
       return false;
     }
 
+
 });
 
-$('#PlayerNamee').bind('keypress', function(e) {
+$('#namee').bind('keypress', function(e) {
 
-  var PlayerNamee= $("#PlayerNamee").val();
+  var namee= $("#namee").val();
 
   
   var key = e.keyCode;
 
-  if (key === 32&&PlayerNamee=="")  {
+  if (key === 32&&namee=="")  {
       e.preventDefault();
     return false;
   }
 
 });
 
+$('#mobile_number').bind('keypress', function(e) {
 
-$('#position').bind('keypress', function(e) {
-
-  var position= $("#position").val();
+  var mobile_number= $("#mobile_number").val();
 
 
   var key = e.keyCode;
 
-  if (key === 32&&position=="")  {
+  if (key === 32&&mobile_number=="")  {
       e.preventDefault();
     return false;
   }
 
+  if (key < 48 || key > 57 ) {
+    e.preventDefault(); 
+     }  
+
+     
+
 });
 
-$('#positione').bind('keypress', function(e) {
 
-  var positione= $("#positione").val();
+$('#mobile_numbere').bind('keypress', function(e) {
+
+  var mobile_numbere= $("#mobile_numbere").val();
 
 
   var key = e.keyCode;
 
-  if (key === 32&&positione=="")  {
+  if (key === 32&&mobile_numbere=="")  {
       e.preventDefault();
     return false;
   }
 
+  if (key < 48 || key > 57 ) {
+    e.preventDefault(); 
+    return false;
+     }  
+
+     
+     
+     
+
 });
 
-$('#number').bind('keypress', function(e) {
+$('#identity_number').bind('keypress', function(e) {
 
-  var number= $("#number").val();
+  var identity_number= $("#identity_number").val();
 
 
   var key = e.keyCode;
 
-  if (key === 32&&number=="")  {
+  if (key === 32&&identity_number=="")  {
       e.preventDefault();
     return false;
   }
@@ -76,74 +92,32 @@ $('#number').bind('keypress', function(e) {
      }   
 
 
+  });
 
 
+  $('#identity_numbere').bind('keypress', function(e) {
 
-});
-
-$('#numbere').bind('keypress', function(e) {
-
-  var numbere= $("#numbere").val();
-
-
-  var key = e.keyCode;
-
-  if (key === 32&&numbere=="")  {
-      e.preventDefault();
-    return false;
-  }
-
-  if (key < 48 || key > 57 ) {
-    e.preventDefault(); 
-     }   
-
-
-
-
-
-});
-
-
-$('#imagePreviewplyer').click(function () {
-
-  $('#fileUploaderControlplayer').click();
-});
-
-
-$('#imagePreviewplyer1').click(function () { 
-
-  $('#fileUploaderControlplayer1').click();
-});
-
-$("#fileUploaderControlplayer").change(function () {
-
-  var file = document.getElementById("fileUploaderControlplayer").files[0];
+    var identity_numbere= $("#identity_numbere").val();
   
-  var readImg = new FileReader();
-  readImg.readAsDataURL(file);
-  readImg.onload = function (e) {
-      $('#imagePreviewplyer').attr('src', e.target.result).fadeIn();
-
-  }
-
-
-})
-
-$("#fileUploaderControlplayer1").change(function () {
-
-  var file = document.getElementById("fileUploaderControlplayer1").files[0];
   
-  var readImg = new FileReader();
-  readImg.readAsDataURL(file);
-  readImg.onload = function (e) {
-      $('#imagePreviewplyer1').attr('src', e.target.result).fadeIn();
+    var key = e.keyCode;
+  
+    if (key === 32&&identity_numbere=="")  {
+        e.preventDefault();
+      return false;
+    }
+  
+    if (key < 48 || key > 57 ) {
+      e.preventDefault(); 
+       } 
 
-  }
-
-
-})
+       
+  
+    });
 
 });
+
+
 
 
 
@@ -154,57 +128,65 @@ $('#Saveplayer').on('click', function(event){
   event.preventDefault();
 
 
-  var PlayerName=$("#PlayerName").val();
+  var name=$("#name").val();
 
-   var position=$("#position").val();
+   var mobile_number=$("#mobile_number").val();
 
-   var number=$("#number").val();
-
-  var img=document.getElementById("fileUploaderControlplayer").files[0];
-
+   var identity_number=$("#identity_number").val();
 
 
   var Page="players";
 
 
-  if(PlayerName=="")
+  if(name=="")
   {
 
-  $('#PlayerName').focus();
+  $('#name').focus();
 
       return false;
   }
 
-  if(position=="")
+  if(mobile_number=="")
   {
 
-  $('#position').focus();
+  $('#mobile_number').focus();
 
       return false;
   }
 
-  if(number=="")
+
+  if(mobile_number.length <10)
   {
 
-  $('#number').focus();
+  $('#mobile_number').focus();
 
       return false;
   }
 
-  else if(img===undefined)
 
+  if(identity_number=="")
   {
 
-  toastr.error("من فضلك اضف مرفقا");
+  $('#identity_number').focus();
 
-   return false;
-
+      return false;
   }
-formData.append("PlayerName", PlayerName);
-formData.append("position", position);
-formData.append("number", number);
 
-formData.append("img", img);
+
+  if(identity_number.length <10)
+  {
+
+  $('#identity_number').focus();
+
+      return false;
+  }
+
+
+
+formData.append("name", name);
+formData.append("mobile_number", mobile_number);
+formData.append("identity_number", identity_number);
+
 
 formData.append("Page", Page);
 
@@ -216,10 +198,38 @@ processData: false,
 contentType: false,
 success:function(data){ 
 
-  toastr.success(" تمت عملية الاضافة بنجاح");
+  if(data==0)
+
+  {
+
+    toastr.error("رقم الجوال مستخدم من قبل");
+
+    return false;
+
+  }
+
+  else if(data==1)
+
+  {
+
+    toastr.error("رقم الهوية مستخدم من قبل");
+
+    return false;
+  }
+
+  else
+  {
+
+    toastr.success(" تمت عملية الاضافة بنجاح");
   $(".bd-example-modal-lg").modal("hide");
 
   RefreshplayersTable();
+
+
+  }
+
+
+  
 
       } 
 });
@@ -241,19 +251,14 @@ function editplayer(ID){
   dataType:"json",
   success:function(data){
 
-  $("#PlayerNamee").val(data.PlayerName);
-  $("#positione").val(data.position);
-  $("#numbere").val(data.number);
+  $("#namee").val(data.name);
+  $("#mobile_numbere").val(data.mobile_number);
+  $("#identity_numbere").val(data.identity_number);
 
-  $("#imagePreviewplyer1").attr('src', 'assets/images/players/'+ data.image);
-  
   }
   });
 
 }
-
-
-
 $('#editplayer').on('click', function(event){
 
     
@@ -262,60 +267,64 @@ $('#editplayer').on('click', function(event){
   
       var PlayerID   = window.ID;
 
+      var name=$("#namee").val();
 
-      var PlayerName=$("#PlayerNamee").val();
-
-      var position=$("#positione").val();
+      var mobile_number=$("#mobile_numbere").val();
    
-      var number=$("#numbere").val();
-   
-     var img=document.getElementById("fileUploaderControlplayer1").files[0];
+      var identity_number=$("#identity_numbere").val();
    
    
      var Page="players";
    
    
-     if(PlayerName=="")
+     if(name=="")
      {
    
-     $('#PlayerNamee').focus();
+     $('#namee').focus();
    
          return false;
      }
    
-     if(position=="")
+     if(mobile_number=="")
      {
    
-     $('#positione').focus();
-   
-         return false;
-     }
-   
-     if(number=="")
-     {
-   
-     $('#numbere').focus();
+     $('#mobile_numbere').focus();
    
          return false;
      }
 
+     if(mobile_number.length<10)
+     {
+   
+     $('#mobile_numbere').focus();
+   
+         return false;
+     }
 
-       if(img===undefined)
-  {
 
-          var Page="player-img";
+   
+     if(identity_number=="")
+     {
+   
+     $('#identity_numbere').focus();
+   
+         return false;
+     }
 
+     if(identity_number.length <10)
+     {
+   
+     $('#identity_numbere').focus();
+   
+         return false;
+     }
 
-          formData.append("PlayerID", PlayerID);
-          formData.append("PlayerName", PlayerName);
-          formData.append("position", position);
-         formData.append("number", number);        
-         
-         formData.append("Page", Page); 
-         
-         formData.append("img", img);
+       formData.append("PlayerID", PlayerID);
+       formData.append("name", name);
+      formData.append("mobile_number", mobile_number);
+      formData.append("identity_number", identity_number);        
 
-      }
+      formData.append("Page", Page);   
   
   $.ajax({
     url:"../service/updatefunction.php",
@@ -379,12 +388,9 @@ $('#editplayer').on('click', function(event){
 
         $( "#datatable" ).load( "players.php #datatable" );
 
-        $("#PlayerName").val("");
-        $("#position").val("");
-        $("#number").val("");
-        $("#imagePreviewplyer").attr('src', 'assets/images/NoImage.jpg');
-
-        document.getElementById("fileUploaderControlplayer").value = null;
+        $("#name").val("");
+        $("#mobile_number").val("");
+        $("#identity_number").val("");
   
     
     }

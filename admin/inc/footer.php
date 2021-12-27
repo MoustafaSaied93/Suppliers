@@ -32,13 +32,6 @@
 
         <script src="assets/js/players.js"></script>
 
-        <script src="assets/js/matches.js"></script>
-        <script src="assets/js/news.js"></script>
-
-        <script src="assets/js/vedios.js"></script> 
-        
-        <script src="assets/js/champ.js"></script> 
-        <script src="assets/js/arrange.js"></script> 
         
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>

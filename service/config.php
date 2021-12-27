@@ -3,7 +3,7 @@
 $host='localhost';
 $username='root';
 $password='';
-$DB_name='r';
+$DB_name='qasydb';
 
 $conn=mysqli_connect($host,$username,$password,$DB_name);
 

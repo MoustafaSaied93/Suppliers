@@ -146,29 +146,22 @@ $query= mysqli_query($conn,"SELECT * FROM club_shampion WHERE club_shampion_id='
 
  echo json_encode($data) ;
 }
-
-
-
 else if($Page=="players")
 {
 
 $ID=strip_tags($_POST['id']);
 
-$query= mysqli_query($conn,"SELECT * FROM players WHERE PlayerID='$ID'");
+$query= mysqli_query($conn,"SELECT * FROM members_subscribtions WHERE memberid ='$ID'");
 
 $row=mysqli_fetch_assoc($query);
  
-  $data["PlayerName"] = $row["PlayerName"];
-  $data["position"] = $row["position"];
-  $data["number"] = $row["number"];
-  $data["image"] = $row["image"];
+  $data["name"] = $row["name"];
+  $data["identity_number"] = $row["identity_number"];
+  $data["mobile_number"] = $row["mobile_number"];
+
  echo json_encode($data) ;
+ 
 }
-
-
-
-
-
 
 else if($Page=="news")
 {

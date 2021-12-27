@@ -104,37 +104,6 @@ $up_file=$_FILES['img']['name'];
 
 
 
-
-
-
-// update teams
-
-
-else if($Page=="teams-img")
-{
-
-  
-$team_id= strip_tags($_POST['team_id']);
-
-$Team_Name = strip_tags($_POST['Team_Name']);
-
-$team_edit = strip_tags($_POST['team_edit']);
-
-$up_file=$_FILES['img']['name'];
-    
-    $image_dir = '../admin/assets/images/logo/'.$up_file ;
-    
-   //$imagepath ="C:/xampp/htdocs/RestaurantSystem/images/".$image_name;
-
-    move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
-
-
-  $query= mysqli_query($conn,"UPDATE teams   SET  Team_Name='$Team_Name',Team_Logo='$up_file'  where Team_ID ='$team_id'");
-
-  $query= mysqli_query($conn,"UPDATE arrangment_team   SET  team_name='$Team_Name'  where team_name ='$team_edit'");
-
-}
-
 else if($Page=="team-nomage")
 {
 
@@ -224,17 +193,19 @@ $timepicker2 = strip_tags($_POST['timepicker2']);
 
 }
 
-else if($Page=="vedio")
+else if($Page=="players")
 {
 
   
-$linkID= strip_tags($_POST['linkID']);
+$PlayerID= strip_tags($_POST['PlayerID']);
 
-$Vedio_Titlee = strip_tags($_POST['Vedio_Titlee']);
-$Vedio_Linke = strip_tags($_POST['Vedio_Linke']);
+$name = strip_tags($_POST['name']);
+$mobile_number = strip_tags($_POST['mobile_number']);
 
-  $query= mysqli_query($conn,"UPDATE vedios   SET  Vedio_Title='$Vedio_Titlee',Vedio_Link='$Vedio_Linke'
-   where VedioID ='$linkID'");
+$identity_number = strip_tags($_POST['identity_number']);
+
+  $query= mysqli_query($conn,"UPDATE members_subscribtions   SET  name='$name',mobile_number='$mobile_number',identity_number='$identity_number'
+   where memberid ='$PlayerID'");
 
 }
 

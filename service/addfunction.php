@@ -122,25 +122,55 @@ else if($pages=="techniqal"){
 else if($pages=="players"){
 
 
-  $PlayerName =  $_POST['PlayerName'];
+  $name =  $_POST['name'];
 
-  $position =  $_POST['position'];
+  $mobile_number =  $_POST['mobile_number'];
 
-  $number =  $_POST['number'];
+  $identity_number =  $_POST['identity_number'];
 
-  $image =  $_FILES['img']['name'];
-  
 
-    $sql1="INSERT INTO players (PlayerName,position,number,image)
+  $query2=mysqli_query($conn,"SELECT mobile_number FROM members_subscribtions WHERE mobile_number='$mobile_number' ");
+
+  $query3=mysqli_query($conn,"SELECT identity_number FROM members_subscribtions WHERE identity_number='$identity_number' ");
+
+    $CHECKVAL=mysqli_num_rows($query2);
+
+    $CHECKVAL2=mysqli_num_rows($query3);
+
+    if($CHECKVAL>=1)
+
+    {
+       $message=0;
+
+        echo $message;
+    }
+
+   else if($CHECKVAL2>=1)
+
+    {
+       $message=1;
+
+        echo $message;
+    }
+
+
+    else
+    {
+
+      $sql1="INSERT INTO members_subscribtions (name,identity_number,mobile_number)
     
-   VALUES ('$PlayerName','$position','$number','$image')";
-                                                
-   $query1=  mysqli_query($conn,$sql1); 
+      VALUES ('$name','$identity_number','$mobile_number')";
+                                                   
+      $query1=  mysqli_query($conn,$sql1);
+
+      $message=2;
+
+      echo $message;
+    }
 
 
-   $image_dir1 = '../admin/assets/images/players/'.$_FILES['img']['name'];
+    
 
-   move_uploaded_file($_FILES['img']["tmp_name"],$image_dir1);
 
 }
 

@@ -139,22 +139,9 @@ else if($Page=="players")
 
 $ID= strip_tags($_POST['ID']);
 
-$query1=mysqli_query($conn,"SELECT  image  FROM players WHERE PlayerID   ='$ID'");
-
-$images=mysqli_fetch_assoc($query1);
 
 
-
-foreach ($images as $image)
-{
-
-    $image_dir1 = '../admin/assets/images/players/'.$image ;
-
-    unlink($image_dir1);
-}
-
-
-$query2= mysqli_query($conn,"DELETE FROM players WHERE PlayerID  ='$ID'");
+$query2= mysqli_query($conn,"DELETE FROM members_subscribtions WHERE memberid  ='$ID'");
 
 }
 
