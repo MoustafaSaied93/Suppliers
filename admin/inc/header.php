@@ -47,6 +47,8 @@
         <link href="assets/libs/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
         <link href="assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css">
 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
     </head>
 
     <body>
@@ -177,18 +179,22 @@
                             </li>
                             <li>
                                 <a href="javascript: void(0);">
-                                <i class="fas fa-football-ball"></i>
+                                <i class="fas fa-user"></i>
                                     <span>ادارة الصالة </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
                                     <li><a href="players.php">المشتركين</a></li>
-                                    <li><a href="players.php">اشتراكات الاعضاء</a></li>
-                                    <li><a href="technqalteam.php">حجوزات الكلاسات</a></li>
-                                    <li><a href="technqalteam.php"> الحسابات</a></li>
-                                    <li><a href="technqalteam.php"> ادارة المدفوعات</a></li>
-                                    <li><a href="technqalteam.php"> ادارة الفواتير</a></li>
+
+                                    <li><a href="membersubscriptions.php">اشتراكات الاعضاء</a></li>
+
+                                    <li><a href="technqalteam.php">المدربين</a></li>
+
+                                    <li><a href="vedio.php">حجوزات الكلاسات</a></li>
+                                    <li><a href="vedio.php"> الحسابات</a></li>
+                                    <li><a href="vedio.php"> ادارة المدفوعات</a></li>
+                                    <li><a href="vedio.php"> ادارة الفواتير</a></li>
 
                                                                     
                                 </ul>
@@ -196,7 +202,7 @@
 
                             <li>
                                 <a href="javascript: void(0);">
-                                <i class=" fa fa-trophy"></i>
+                                <i class=" icon-globe nav-icon"></i>
                                     <span> ادارة الموقع </span>
                                     <span class="menu-arrow"></span>
                                 </a>

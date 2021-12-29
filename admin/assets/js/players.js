@@ -134,6 +134,10 @@ $('#Saveplayer').on('click', function(event){
 
    var identity_number=$("#identity_number").val();
 
+   //saudia arabia regular expression
+    
+
+   var regex = new RegExp(/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/);
 
   var Page="players";
 
@@ -162,6 +166,15 @@ $('#Saveplayer').on('click', function(event){
 
       return false;
   }
+
+
+   if(!regex.test(mobile_number)){  
+    toastr.error("برجاء ادخال رقم الجوال الصحيح");  
+    $("#mobile_number").focus();
+    
+    return false;
+     
+    }
 
 
   if(identity_number=="")
@@ -272,6 +285,11 @@ $('#editplayer').on('click', function(event){
       var mobile_number=$("#mobile_numbere").val();
    
       var identity_number=$("#identity_numbere").val();
+
+      //saudia arabia regular expression
+    
+
+   var regex = new RegExp(/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/);
    
    
      var Page="players";
@@ -300,6 +318,14 @@ $('#editplayer').on('click', function(event){
    
          return false;
      }
+
+     if(!regex.test(mobile_number)){  
+      toastr.error("برجاء ادخال رقم الجوال الصحيح");  
+      $("#mobile_numbere").focus();
+      
+      return false;
+       
+      }
 
 
    
@@ -383,7 +409,7 @@ $('#editplayer').on('click', function(event){
           })
       }
 
-
+      
       function RefreshplayersTable() {
 
         $( "#datatable" ).load( "players.php #datatable" );

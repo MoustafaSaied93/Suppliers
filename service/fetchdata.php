@@ -5,25 +5,25 @@ include_once("config.php");
 $Page= strip_tags($_POST['page']);
 
 
-if($Page=="members")
+if($Page=="subscripe")
 {
 
 $ID=strip_tags($_POST['id']);
 
 
 
-
-$query= mysqli_query($conn,"SELECT * FROM teammember WHERE member_id ='$ID'");
+$query= mysqli_query($conn,"SELECT * FROM subscriptions WHERE subid  ='$ID'");
 
  while($row = mysqli_fetch_array($query))
  {
  
-  $data["member_name"] = $row["member_name"];
+  $data["name"] = $row["name"];
 
-  $data["title"] = $row["title"];
+  $data["startdate"] = $row["startdate"];
 
-  $data["image"] = $row["image"];
+  $data["enddate"] = $row["enddate"];
 
+  $data["price"] = $row["price"];
  
   }
 
@@ -39,17 +39,25 @@ $ID=strip_tags($_POST['id']);
 
 
 
-$query= mysqli_query($conn,"SELECT * FROM techniqal_team WHERE techniqal_teamID  ='$ID'");
+
+$query= mysqli_query($conn,"SELECT * FROM trainer WHERE trainer_id  ='$ID'");
 
  while($row = mysqli_fetch_array($query))
  {
  
-  $data["coach_name"] = $row["coach_name"];
+  $data["trainer_name_ar"] = $row["trainer_name_ar"];
+  $data["trainer_name_en"] = $row["trainer_name_en"];
 
-  $data["title"] = $row["title"];
+
+  $data["mobile_number"] = $row["mobile_number"];
+  $data["age"] = $row["age"];
+  $data["hieght"] = $row["hieght"];
+  $data["wieght"] = $row["wieght"];
 
   $data["image"] = $row["image"];
-  $data["Descriptions"] = $row["Descriptions"];
+
+  $data["descrip_ar"] = $row["descrip_ar"];
+  $data["descrip_en"] = $row["descrip_en"];
  
   }
 
@@ -161,36 +169,6 @@ $row=mysqli_fetch_assoc($query);
 
  echo json_encode($data) ;
  
-}
-
-else if($Page=="news")
-{
-
-$ID=strip_tags($_POST['id']);
-
-
-$query= mysqli_query($conn,"SELECT * FROM news_club WHERE news_club_ID  ='$ID'");
-
- while($row = mysqli_fetch_array($query))
- {
- 
-  $data["Tille"] = $row["Tille"];
-
-  $data["New"] = $row["New"];
-  $data["PublishDate"] = $row["PublishDate"];
-
-  $data["image1"] = $row["image1"];
-  $data["image2"] = $row["image2"];
-  $data["image3"] = $row["image3"];
-  $data["image4"] = $row["image4"];
-  $data["image5"] = $row["image5"];
-  $data["image6"] = $row["image6"];
-  $data["image7"] = $row["image7"];
-  $data["image8"] = $row["image8"];
-  
-  }
-
- echo json_encode($data) ;
 }
 
 

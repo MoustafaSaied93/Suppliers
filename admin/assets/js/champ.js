@@ -169,10 +169,7 @@ $('#Saveshampion').on('click', function(event){
 
 
 
-
-
-
-
+   
    function editchampss(ID){
 
     window.varshamps=ID;

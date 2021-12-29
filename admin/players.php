@@ -3,7 +3,7 @@
 
 
 ?>
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <!-- ============================================================== -->
 <!-- Start Page Content here -->
 <!-- ============================================================== -->
@@ -37,7 +37,7 @@
                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead class="thead_dark">
                     <tr>
-                        <th class="th_text"> رقم المشترك</th>
+                        <th class="th_text">  كود المشترك</th>
                         <th class="th_text">اسم المشترك</th>
 
                         <th class="th_text">رقم الجوال</th>
@@ -50,13 +50,13 @@
                 <tbody>
                     <?php
                  $result=mysqli_query($conn,"SELECT * FROM members_subscribtions");
-                 $num=1;
+                 
                   while($row=mysqli_fetch_assoc($result))
                       {
 
                     ?>
                     <tr>
-                        <td><?php echo $num  ?></td>
+                        <td><?php echo $row['code']  ?></td>
                         <td><?php echo $row['name']  ?></td>
 
                         <td><?php echo $row['mobile_number']  ?></td>
@@ -81,7 +81,7 @@
                     </tr>
 
                     <?php
-                $num=$num+1;
+                
 
                       }
 
@@ -226,3 +226,5 @@
 
 
             <?php include_once("inc/footer.php") ?>
+
+            

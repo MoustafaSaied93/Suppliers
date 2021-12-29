@@ -14,6 +14,8 @@ $(document).ready(function() {
     });
 
 
+
+
     $("#fileUploaderControltech").change(function () {
 
         var file = document.getElementById("fileUploaderControltech").files[0];
@@ -38,149 +40,306 @@ $(document).ready(function() {
             $('#imagePreviewtech1').attr('src', e.target.result).fadeIn();
     
         }
-
       
-    })
+    }) 
+
+
+
+
+    $('#trainer_name_ar').bind('keypress', function(e) {
+
+        var trainer_name_ar= $("#trainer_name_ar").val();
+    
+        
+        var key = e.keyCode;
+    
+        if (key === 32&&trainer_name_ar=="")  {
+            e.preventDefault();
+          return false;
+        }
 
     
-     var coach_name =  document.querySelector('#coach_name');
+    });
 
-     var coach_namee =  document.querySelector('#coach_namee');
+    $('#etrainer_name_ar').bind('keypress', function(e) {
 
-
-     var title =  document.querySelector('#title');
-
-     var titlee =  document.querySelector('#titlee');
-
-
-     var Descriptions =  document.querySelector('#Descriptions');
-
-     var Descriptionse =  document.querySelector('#Descriptionse');
-
-     coach_name.addEventListener("keypress",function(e){
-      var key = e.keyCode;
-
-
-      var validmember_name=$("#coach_name").val();
-
-     if(key === 32 && validmember_name==""){
-    e.preventDefault();
-     return false;
-     }
-     else if(validmember_name.length>30)
-     {
-
-        e.preventDefault();
-     return false;
-
-
-     }
-      })
-
-
-      coach_namee.addEventListener("keypress",function(e){
+        var etrainer_name_ar= $("#etrainer_name_ar").val();
+    
+        
         var key = e.keyCode;
-  
-        var validmember_namee=$("#coach_namee").val();
-  
-       if(key === 32 && validmember_namee==""){
-      e.preventDefault();
-       return false;
-       }
-       else if(validmember_namee.length>30)
-       {
-  
+    
+        if (key === 32&&etrainer_name_ar=="")  {
+            e.preventDefault();
+          return false;
+        }
+        
+    
+    });
+    
+    $('#trainer_name_en').bind('keypress', function(e) {
+    
+      var trainer_name_en= $("#trainer_name_en").val();
+    
+      
+      var key = e.keyCode;
+    
+      if (key === 32&&trainer_name_en=="")  {
           e.preventDefault();
-       return false;
-  
-  
-       }
-        })
+        return false;
+      }
+    
+    });
+
+    $('#etrainer_name_en').bind('keypress', function(e) {
+    
+        var etrainer_name_en= $("#etrainer_name_en").val();
+      
+        
+        var key = e.keyCode;
+      
+        if (key === 32&&etrainer_name_en=="")  {
+            e.preventDefault();
+          return false;
+        }
+      
+      });
 
 
-        title.addEventListener("keypress",function(e){
+      $('#mobile').bind('keypress', function(e) {
+    
+        var mobile= $("#mobile").val();
+      
+      
+        var key = e.keyCode;
+      
+        if (key === 32&&mobile=="")  {
+            e.preventDefault();
+          return false;
+        }
+      
+        if (key < 48 || key > 57 ) {
+          e.preventDefault(); 
+           }  
+      
+           
+      
+      });
+
+
+    
+    $('#emobile').bind('keypress', function(e) {
+    
+      var emobile= $("#emobile").val();
+    
+    
+      var key = e.keyCode;
+    
+      if (key === 32&&emobile=="")  {
+          e.preventDefault();
+        return false;
+      }
+    
+      if (key < 48 || key > 57 ) {
+        e.preventDefault(); 
+         }  
+    
+         
+    
+    });
+
+    $('#age').bind('keypress', function(e) {
+    
+        var age= $("#age").val();
+      
+      
+        var key = e.keyCode;
+      
+        if (key === 32&&age=="")  {
+            e.preventDefault();
+          return false;
+        }
+      
+        if (key < 48 || key > 57 ) {
+          e.preventDefault(); 
+          return false;
+           }  
+      
+           
+           
+           
+      
+      });
+      
+    
+
+    
+    $('#eage').bind('keypress', function(e) {
+    
+      var eage= $("#eage").val();
+    
+    
+      var key = e.keyCode;
+    
+      if (key === 32&&eage=="")  {
+          e.preventDefault();
+        return false;
+      }
+    
+      if (key < 48 || key > 57 ) {
+        e.preventDefault(); 
+        return false;
+         }  
+      
+    });
+    
+
+    $('#hieght').bind('keypress', function(e) {
+    
+        var hieght= $("#hieght").val();
+      
+      
+        var key = e.keyCode;
+      
+        if (key === 32&&hieght=="")  {
+            e.preventDefault();
+          return false;
+        }
+      
+        if (key < 48 || key > 57 ) {
+          e.preventDefault(); 
+           }   
+      
+      
+        });
+      
+
+
+    $('#ehieght').bind('keypress', function(e) {
+    
+      var ehieght= $("#ehieght").val();
+    
+    
+      var key = e.keyCode;
+    
+      if (key === 32&&ehieght=="")  {
+          e.preventDefault();
+        return false;
+      }
+    
+      if (key < 48 || key > 57 ) {
+        e.preventDefault(); 
+         }   
+    
+    
+      });
+
+      $('#wieght').bind('keypress', function(e) {
+    
+        var wieght= $("#wieght").val();
+      
+      
+        var key = e.keyCode;
+      
+        if (key === 32&&wieght=="")  {
+            e.preventDefault();
+          return false;
+        }
+      
+        if (key < 48 || key > 57 ) {
+          e.preventDefault(); 
+           } 
+    
+           
+      
+        });
+    
+    
+      $('#ewieght').bind('keypress', function(e) {
+    
+        var ewieght= $("#ewieght").val();
+      
+      
+        var key = e.keyCode;
+      
+        if (key === 32&&ewieght=="")  {
+            e.preventDefault();
+          return false;
+        }
+      
+        if (key < 48 || key > 57 ) {
+          e.preventDefault(); 
+           } 
+    
+           
+      
+        });
+
+        $('#descrip_ar').bind('keypress', function(e) {
+    
+            var descrip_ar= $("#descrip_ar").val();
+          
+          
             var key = e.keyCode;
-      
-            var titlevalid_name=$("#title").val();
-      
-           if(key === 32 && titlevalid_name==""){
-          e.preventDefault();
-           return false;
-           }
-           else if(titlevalid_name.length>30)
-           {
-      
-              e.preventDefault();
-           return false;
-      
-      
-           }
-            })
+          
+            if (key === 32&&descrip_ar=="")  {
+                e.preventDefault();
+              return false;
+            }
 
+        
+               
+          
+            });
 
-
-
-            titlee.addEventListener("keypress",function(e){
+            $('#descrip_en').bind('keypress', function(e) {
+    
+                var descrip_en= $("#descrip_en").val();
+              
+              
                 var key = e.keyCode;
-          
-                var titlevalid_name=$("#titlee").val();
-          
-               if(key === 32 && titlevalid_name==""){
-              e.preventDefault();
-               return false;
-               }
-               else if(titlevalid_name.length>30)
-               {
-          
-                  e.preventDefault();
-               return false;
-          
-          
-               }
-                })
-
-
-                Descriptions.addEventListener("keypress",function(e){
-                    var key = e.keyCode;
               
-                    var Descriptionsname=$("#Descriptions").val();
+                if (key === 32&&descrip_en=="")  {
+                    e.preventDefault();
+                  return false;
+                }
+    
+            
+                   
               
-                   if(key === 32 && Descriptionsname==""){
-                  e.preventDefault();
-                   return false;
-                   }
-                   else if(Descriptionsname.length>1000)
-                   {
-              
-                      e.preventDefault();
-                   return false;
-              
-              
-                   }
-                    })
+                });
 
 
+        $('#edescrip_ar').bind('keypress', function(e) {
+    
+            var edescrip_ar= $("#edescrip_ar").val();
+          
+          
+            var key = e.keyCode;
+          
+            if (key === 32&&edescrip_ar=="")  {
+                e.preventDefault();
+              return false;
+            }
 
-                    Descriptionse.addEventListener("keypress",function(e){
-                        var key = e.keyCode;
-                  
-                        var Descriptionsename=$("#Descriptionse").val();
-                  
-                       if(key === 32 && Descriptionsename==""){
-                      e.preventDefault();
-                       return false;
-                       }
-                       else if(Descriptionsename.length>500)
-                       {
-                  
-                          e.preventDefault();
-                       return false;
-                  
-                  
-                       }
-                        })
+        
+               
+          
+            });
 
-                    
+
+            $('#edescrip_en').bind('keypress', function(e) {
+    
+                var edescrip_en= $("#edescrip_en").val();
+              
+              
+                var key = e.keyCode;
+              
+                if (key === 32&&edescrip_en=="")  {
+                    e.preventDefault();
+                  return false;
+                }               
+              
+                });
 
 } );
 
@@ -189,15 +348,23 @@ $(document).ready(function() {
 function RefreshTable() {
     $( "#datatable" ).load( "technqalteam.php #datatable" );
 
-    $("#coach_name").val("");
+    $("#trainer_name_ar").val("");
 
+    $("#trainer_name_en").val("");
 
-     $("#title").val("");
+    $("#mobile").val("");
+
+    $("#age").val("");
+    $("#hieght").val("");
+    $("#wieght").val("");
+
 
      $("#imagePreviewtech").attr('src', 'assets/images/NoImage.jpg');
      $("#imagePreviewtech1").attr('src', 'assets/images/NoImage.jpg');
 
-     $("#Descriptions").val("");
+     $("#descrip_ar").val("");
+
+     $("#descrip_en").val("");
 
      document.getElementById("fileUploaderControltech").value = null;
 
@@ -205,42 +372,106 @@ function RefreshTable() {
 
 }
 
-$('#Savecoach').on('click', function(event){
+$('#Savetrainer').on('click', function(event){
 
 
     var formData = new FormData();
     event.preventDefault();
 
 
-    var coach_name=$("#coach_name").val();
+    var trainer_name_ar=$("#trainer_name_ar").val();
+    var trainer_name_en=$("#trainer_name_en").val();
 
-     var title=$("#title").val();
+     var mobile=$("#mobile").val();
+
+     var age=$("#age").val();
+     var hieght=$("#hieght").val();
+     var wieght=$("#wieght").val();
+
+
 
 
     var img=document.getElementById("fileUploaderControltech").files[0];
 
-    var Descriptions=$("#Descriptions").val();
+    var descrip_ar=$("#descrip_ar").val();
+
+    var descrip_en=$("#descrip_en").val();
+
+    var Page="trainer";
+
+    //saudia arabia regular expression
 
 
-    var Page="techniqal";
+    var regex = new RegExp(/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/);
 
 
-    if(coach_name=="")
+
+
+    if(trainer_name_ar=="")
     {
 
-    $('#coach_name').focus();
+    $('#trainer_name_ar').focus();
 
         return false;
     }
-else if(title=="")
+
+    if(trainer_name_en=="")
+    {
+
+    $('#trainer_name_en').focus();
+
+        return false;
+    }
+
+
+else if(mobile=="")
 
 {
-    $('#title').focus();
+    $('#mobile').focus();
 
     return false;
 
 
 }
+
+else if(!regex.test(mobile)){  
+    toastr.error("برجاء ادخال رقم الجوال الصحيح");  
+    $("#mobile").focus();
+    
+    return false;
+     
+    }
+
+else if(age=="")
+
+{
+    $('#age').focus();
+
+    return false;
+
+}
+
+
+else if(hieght=="")
+
+{
+    $('#hieght').focus();
+
+    return false;
+
+}
+
+else if(wieght=="")
+
+{
+    $('#wieght').focus();
+
+    return false;
+
+}
+
+
+
 
 
     else if(img===undefined)
@@ -254,11 +485,37 @@ else if(title=="")
     }
 
 
+    else if(descrip_ar=="")
 
- formData.append("coach_name", coach_name);
-formData.append("title", title);
+{
+    $('#descrip_ar').focus();
+
+    return false;
+
+}
+
+else if(descrip_en=="")
+
+{
+    $('#descrip_en').focus();
+
+    return false;
+}
+
+
+ formData.append("trainer_name_ar", trainer_name_ar);
+ formData.append("trainer_name_en", trainer_name_en);
+
+formData.append("mobile", mobile);
+formData.append("age", age);
+formData.append("hieght", hieght);
+
+formData.append("wieght", wieght);
+
 formData.append("img", img);
-formData.append("Descriptions", Descriptions);
+formData.append("descrip_ar", descrip_ar);
+formData.append("descrip_en", descrip_en);
+
 formData.append("Page", Page);
 
 $.ajax({
@@ -300,12 +557,19 @@ function edittechniqalteam(ID){
     dataType:"json",
     success:function(data){
 
-    $("#coach_namee").val(data.coach_name);
-    $("#titlee").val(data.title);
+    $("#etrainer_name_ar").val(data.trainer_name_ar);
+    $("#etrainer_name_en").val(data.trainer_name_en	);
 
-    $("#imagePreviewtech1").attr('src', 'assets/images/'+ data.image);
+    $("#emobile").val(data.mobile_number);
+    $("#eage").val(data.age);
+    $("#ehieght").val(data.hieght);
+    $("#ewieght").val(data.wieght);
 
-    $("#Descriptionse").val(data.Descriptions);
+
+    $("#imagePreviewtech1").attr('src', 'assets/images/coach/'+ data.image);
+
+    $("#edescrip_ar").val(data.descrip_ar);
+    $("#edescrip_en").val(data.descrip_en);
    
     
     }
@@ -314,82 +578,147 @@ function edittechniqalteam(ID){
 }
 
 
+  $('#edittrainer').on('click', function(event){
 
-
-
-
-  $('#editcoach').on('click', function(event){
-
-      
-        var formData = new FormData();
-        event.preventDefault();
+     var formData = new FormData();
+     event.preventDefault();
     
-        var techniqal_teamID   = window.tech
+    var trainer_id    = window.tech
+    
+     var trainer_name_ar=$("#etrainer_name_ar").val();
+    var trainer_name_en=$("#etrainer_name_en").val();
 
+     var mobile=$("#emobile").val();
 
-        var coach_name=$("#coach_namee").val();
-
-         var title=$("#titlee").val();
-
-
+     var age=$("#eage").val();
+     var hieght=$("#ehieght").val();
+     var wieght=$("#ewieght").val();
 
     var img=document.getElementById("fileUploaderControltech1").files[0];
 
+    var descrip_ar=$("#edescrip_ar").val();
 
-    var Descriptions=$("#Descriptionse").val();
+    var descrip_en=$("#edescrip_en").val();
 
-  
+    var Page="trainer";
 
-        if(coach_name=="")
-        {
+    //saudia arabia regular expression
+
+
+    var regex = new RegExp(/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/);
+
+
+
+
+    if(trainer_name_ar=="")
+    {
+
+    $('#etrainer_name_ar').focus();
+
+        return false;
+    }
+
+    if(trainer_name_en=="")
+    {
+
+    $('#etrainer_name_en').focus();
+
+        return false;
+    }
+
+
+else if(mobile=="")
+
+{
+    $('#emobile').focus();
+
+    return false;
+
+
+}
+
+else if(!regex.test(mobile)){  
+    toastr.error("برجاء ادخال رقم الجوال الصحيح");  
+    $("#emobile").focus();
     
-        $('#coach_namee').focus();
-    
-            return false;
-        }
+    return false;
+     
+    }
 
-        else if(title=="")
-        {
-            $('#titlee').focus();
+else if(age=="")
 
+{
+    $('#eage').focus();
 
-        }
-    
-         if(img===undefined)
-    
-        {
+    return false;
 
-            var Page="tech-nomage";
+}
 
 
-             formData.append("techniqal_teamID", techniqal_teamID);
-             formData.append("coach_name", coach_name);
-             formData.append("title", title); 
+else if(hieght=="")
+
+{
+    $('#ehieght').focus();
+
+    return false;
+
+}
+
+else if(wieght=="")
+
+{
+    $('#ewieght').focus();
+
+    return false;
+
+}
+
+
+
+
+    else if(descrip_ar=="")
+
+{
+    $('#edescrip_ar').focus();
+
+    return false;
+
+}
+
+else if(descrip_en=="")
+
+{
+    $('#edescrip_en').focus();
+
+    return false;
+}  
+
+if(img===undefined)
+
+{
+
+    img="";
+}
+
+
+formData.append("trainer_id", trainer_id);
+
+formData.append("trainer_name_ar", trainer_name_ar);
+
+ formData.append("trainer_name_en", trainer_name_en);
+
+ formData.append("mobile", mobile); 
+
+ formData.append("age", age); 
+ formData.append("hieght", hieght); 
+ formData.append("wieght", wieght); 
            
-            formData.append("Descriptions", Descriptions);   
+formData.append("descrip_ar", descrip_ar); 
+formData.append("descrip_en", descrip_en);   
+formData.append("img", img);        
+ formData.append("Page", Page);    
            
-            formData.append("Page", Page);    
-    
-        }
-
-        else
-        {
-
-            var Page="tech-img";
-
-
-            formData.append("techniqal_teamID", techniqal_teamID);
-            formData.append("coach_name", coach_name);
-           formData.append("title", title); 
-           
-           formData.append("Descriptions", Descriptions);   
-           
-           formData.append("Page", Page);    
-           
-           formData.append("img", img);
-
-        }
-    
+ 
     $.ajax({
       url:"../service/updatefunction.php",
       method:"POST",
@@ -415,14 +744,14 @@ function edittechniqalteam(ID){
     //delete function 
 
 
-    function Deletetechniqalfunction(id){
+    function Deletetrainerfunction(id){
 
      
         window.var1=id;
      
         
         }
-        var ConfirmDeleting = function () {
+        var ConfirtrainermDelete = function () {
             
             var ID = window.var1;
                  
@@ -435,7 +764,7 @@ function edittechniqalteam(ID){
         data:{ID:ID,page:page},
         success: function (result) {                                    
         toastr.error("تم الحذف بنجاح");
-        $("#DeleteConfirmations").modal("hide");
+        $("#Deletetrainerconfirmation").modal("hide");
  
             RefreshTable();
        

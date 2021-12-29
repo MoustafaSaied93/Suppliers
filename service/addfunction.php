@@ -10,28 +10,44 @@ $pages=strip_tags( $_POST['Page']);
 
 
 
-if($pages=="members"){
+if($pages=="trainer"){
 
 
-    $member_name= strip_tags( $_POST['member_name']);
+    $trainer_name_ar= strip_tags( $_POST['trainer_name_ar']);
+    $trainer_name_en= strip_tags( $_POST['trainer_name_en']);
+
    
-    $title = strip_tags($_POST['title']);
 
+    $mobile = strip_tags($_POST['mobile']);
+
+    $age = strip_tags($_POST['age']);
+
+    $hieght = strip_tags($_POST['hieght']);
+
+    $wieght = strip_tags($_POST['wieght']);
+
+    $descrip_ar = strip_tags($_POST['descrip_ar']);
+
+    $descrip_en = strip_tags($_POST['descrip_en']);
+
+
+
+    
 
     $up_file=$_FILES['img']['name'];
     
-    $image_dir = '../admin/assets/images/'.$up_file ;
+    $image_dir = '../admin/assets/images/coach/'.$up_file ;
     
    //$imagepath ="C:/xampp/htdocs/RestaurantSystem/images/".$image_name;
 
     move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
 
-    $sql2="INSERT INTO teammember (member_name,title,image)
+    $sql2="INSERT INTO trainer (trainer_name_ar,trainer_name_en,mobile_number,age,hieght,wieght,descrip_ar,descrip_en,image)
       
-    VALUES ('$member_name','$title','$up_file')";
+    VALUES ('$trainer_name_ar','$trainer_name_en','$mobile','$age','$hieght','$wieght','$descrip_ar','$descrip_en','$up_file')";
+
                                                  
     $query=  mysqli_query($conn,$sql2); 
-
 
 }
 
@@ -133,6 +149,9 @@ else if($pages=="players"){
 
   $query3=mysqli_query($conn,"SELECT identity_number FROM members_subscribtions WHERE identity_number='$identity_number' ");
 
+ 
+
+
     $CHECKVAL=mysqli_num_rows($query2);
 
     $CHECKVAL2=mysqli_num_rows($query3);
@@ -157,9 +176,30 @@ else if($pages=="players"){
     else
     {
 
-      $sql1="INSERT INTO members_subscribtions (name,identity_number,mobile_number)
+      $query4=mysqli_query($conn,"SELECT code FROM members_subscribtions  order by code DESC LIMIT 1 ");
+
+      $CODE=mysqli_fetch_assoc($query4);
+
+
+      $codes=$CODE['code'];
+
+      if($codes==null)
+  
+      {
+        $code=100;
+  
+      }
+  
+      else
+       {
+  
+        $code=$codes +1;
+  
+      }
+
+      $sql1="INSERT INTO members_subscribtions (name,identity_number,mobile_number,code)
     
-      VALUES ('$name','$identity_number','$mobile_number')";
+      VALUES ('$name','$identity_number','$mobile_number',$code)";
                                                    
       $query1=  mysqli_query($conn,$sql1);
 
@@ -175,147 +215,31 @@ else if($pages=="players"){
 }
 
 
-else if($pages=="vedios"){
 
 
-  $Vedio_Title = explode(",", $_POST['Vedio_Title']);
 
-  $Vedio_Link = explode(",", $_POST['Vedio_Link']);
+else if($pages=="membersubscription"){
 
+
+  $subscrname= strip_tags( $_POST['subscrname']);
  
-  for($count = 0; $count<count($Vedio_Title); $count++)
-  {
+  $startdate = strip_tags($_POST['startdate']);
 
-    $Vedio_Titlearr=$Vedio_Title[$count];
+  $enddate = strip_tags($_POST['enddate']);
 
-    $Vedio_Linkarr=$Vedio_Link[$count];
+  $price = strip_tags($_POST['price']);
 
+  
+
+
+  $sql2="INSERT INTO subscriptions (name,startdate,enddate,price)
     
-
-    $sql1="INSERT INTO vedios (Vedio_Title,Vedio_Link)
-    
-   VALUES ('$Vedio_Titlearr','$Vedio_Linkarr')";
-                                                
-   $query1=  mysqli_query($conn,$sql1); 
-  
-
-  }
-
-}
-
-
-else if($pages=="champs"){
-
-
-  $shampion_Name = explode(",", $_POST['shampion_Name']);
-
-
-  $files= $_FILES['img'];
-  
-  
-
-  for($count = 0; $count<count($shampion_Name); $count++)
-  {
-
-    $shamparr=$shampion_Name[$count];
-
-    $arrfile=$files['name'][$count];
-
-   
-
-    $sql1="INSERT INTO club_shampion (shampion_Name,image)
-    
-   VALUES ('$shamparr','$arrfile')";
-                                                
-   $query1=  mysqli_query($conn,$sql1);
-
-
-   if($files['name'][$count]!="")
-  
-    $image_dir1 = '../admin/assets/images/'.$files['name'][$count] ;
-
-    move_uploaded_file($files["tmp_name"][$count],$image_dir1);
-   
-  
-  
-
-  }
-
-}
-
-
-
-else if($pages=="matches"){
-
-
-  $First_Team= strip_tags( $_POST['First_Team']);
- 
-  $Second_Team = strip_tags($_POST['Second_Team']);
-
-  $MatchDate = strip_tags($_POST['MatchDate']);
-
-  $dayname = strip_tags($_POST['dayname']);
-
-  $timepicker2 = strip_tags($_POST['timepicker2']);
-
-
-  $sql2="INSERT INTO all_matches (First_Team,Second_Team,MatchDate,Day,Hour)
-    
-  VALUES ('$First_Team','$Second_Team','$MatchDate','$dayname','$timepicker2')";
+  VALUES ('$subscrname','$startdate','$enddate','$price')";
                                                
   $query=  mysqli_query($conn,$sql2); 
 
 
 }
-
-
-else if($pages=="news"){
-
-
-  $Tille= strip_tags( $_POST['Tille']);
- 
-  $PublishDate = strip_tags($_POST['PublishDate']);
-
-  $New = strip_tags($_POST['New']);
-
-  $myFiles=$_FILES['img'];
-
-  //image 1
-  $image_name=$myFiles['name'][0];      
-  $image_name1=$myFiles['name'][1]; 
-  $image_name2=$myFiles['name'][2];
-  $image_name3=$myFiles['name'][3];
-  $image_name4=$myFiles['name'][4];
-  $image_name5=$myFiles['name'][5];
-  $image_name6=$myFiles['name'][6];
-  $image_name7=$myFiles['name'][7];
-
-   for($i=0;$i<count($myFiles);$i+=1)
-   {
-     if($myFiles['name'][$i]!="")
-  
-    $image_dir1 = '../admin/assets/images/news/'.$myFiles['name'][$i] ;
-
-    move_uploaded_file($myFiles["tmp_name"][$i],$image_dir1);
-
-   }
-
-  $sql2="INSERT INTO news_club (Tille,New,PublishDate,image1,image2,image3,image4,image5,image6,image7,image8)
-    
-  VALUES ('$Tille','$New','$PublishDate','$image_name','$image_name1','$image_name2','$image_name3','$image_name4','$image_name5','$image_name6','$image_name7')";
-                                               
-  $query=  mysqli_query($conn,$sql2); 
-
-}
-
-
-
-  
-
-
-
-
-
 
 
 

@@ -32,6 +32,8 @@
 
         <script src="assets/js/players.js"></script>
 
+        <script src="assets/js/membersubscription.js"></script>
+
         
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
@@ -76,6 +78,16 @@
         <script src="assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
          <!-- Init js-->
          <script src="assets/js/pages/form-pickers.init.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+
+<script>
+
+$('.custom-select').select2();
+
+
+</script>
         
     </body>
 </html>
