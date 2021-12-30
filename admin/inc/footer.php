@@ -24,7 +24,8 @@
 
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/toastr.min.js"></script>
-        <script src="assets/js/memberteam.js"></script>
+
+        <script src="assets/js/class.js"></script>
 
         <script src="assets/js/techniqalteam.js"></script>
         

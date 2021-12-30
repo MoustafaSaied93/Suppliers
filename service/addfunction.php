@@ -53,6 +53,34 @@ if($pages=="trainer"){
 
 
 
+else if($pages=="class"){
+
+  $class_name_ar= strip_tags( $_POST['class_name_ar']);
+  $class_name_en= strip_tags( $_POST['class_name_en']);
+
+  $trainer_id = strip_tags($_POST['trainer_id']);
+
+  
+
+  $up_file=$_FILES['img']['name'];
+  
+  $image_dir = '../admin/assets/images/'.$up_file ;
+  
+ //$imagepath ="C:/xampp/htdocs/RestaurantSystem/images/".$image_name;
+
+  move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
+
+  $sql2="INSERT INTO classes (class_name_ar,class_name_en,trainer_id,image)
+    
+  VALUES ('$class_name_ar','$class_name_en','$trainer_id','$up_file')";
+
+                                               
+  $query=  mysqli_query($conn,$sql2); 
+
+}
+
+
+
 elseif($pages=="teams"){
 
 

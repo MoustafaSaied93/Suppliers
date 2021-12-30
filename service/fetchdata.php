@@ -66,46 +66,25 @@ $query= mysqli_query($conn,"SELECT * FROM trainer WHERE trainer_id  ='$ID'");
 
 
 
-else if($Page=="teams")
+
+else if($Page=="class")
 {
 
 $ID=strip_tags($_POST['id']);
 
 
-
-
-$query= mysqli_query($conn,"SELECT * FROM teams WHERE Team_ID  ='$ID'");
+$query= mysqli_query($conn,"SELECT * FROM classes WHERE class_id   ='$ID'");
 
  while($row = mysqli_fetch_array($query))
  {
  
-  $data["Team_Name"] = $row["Team_Name"];
+  $data["class_name_ar"] = $row["class_name_ar"];
 
+  $data["class_name_en"] = $row["class_name_en"];
 
-  $data["Team_Logo"] = $row["Team_Logo"];
+  $data["trainer_id"] = $row["trainer_id"];
   
-  }
-
- echo json_encode($data) ;
-}
-
-
-else if($Page=="matches")
-{
-
-$ID=strip_tags($_POST['id']);
-
-
-$query= mysqli_query($conn,"SELECT * FROM all_matches WHERE Match_ID   ='$ID'");
-
- while($row = mysqli_fetch_array($query))
- {
- 
-  $data["First_Team"] = $row["First_Team"];
-
-  $data["Second_Team"] = $row["Second_Team"];
-  $data["MatchDate"] = $row["MatchDate"];
-  $data["Hour"] = $row["Hour"];
+  $data["image"] = $row["image"];
   
   }
 
@@ -135,25 +114,7 @@ $query= mysqli_query($conn,"SELECT * FROM vedios WHERE VedioID   ='$ID'");
 }
 
 
-else if($Page=="champs")
-{
 
-$ID=strip_tags($_POST['id']);
-
-$query= mysqli_query($conn,"SELECT * FROM club_shampion WHERE club_shampion_id='$ID'");
-
- while($row = mysqli_fetch_array($query))
- {
- 
-  $data["shampion_Name"] = $row["shampion_Name"];
-
-  $data["image"] = $row["image"];
-  
-  
-  }
-
- echo json_encode($data) ;
-}
 else if($Page=="players")
 {
 

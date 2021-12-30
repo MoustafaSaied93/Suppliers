@@ -51,11 +51,6 @@ if($img!==""){
 //uplod img
 
 
-    
-   
-
-
-
   $query= mysqli_query($conn,"UPDATE trainer   SET trainer_name_ar='$trainer_name_ar', trainer_name_en='$trainer_name_en',mobile_number='$mobile',age='$age',hieght='$hieght',wieght='$wieght',
   descrip_ar='$descrip_ar',descrip_en='$descrip_en',
   image='$up_file'  where trainer_id ='$trainer_id'");
@@ -68,6 +63,53 @@ if($img!==""){
 
    move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
 }
+
+
+else if($Page=="class")
+{
+
+  $class_id= strip_tags($_POST['class_id']);
+$trainer_id= strip_tags($_POST['trainer_id']);
+
+$class_name_ar= strip_tags( $_POST['class_name_ar']);
+$class_name_en= strip_tags( $_POST['class_name_en']);
+
+
+$query2=mysqli_query($conn,"SELECT image FROM classes  WHERE 	class_id ='$class_id'");
+
+$image=mysqli_fetch_assoc($query2);
+
+$img=$_POST['img'];
+
+if($img=="")
+
+{
+  $up_file=$image['image'];
+
+
+}
+
+if($img!==""){
+
+  $up_file=$_FILES['img']['name'];
+
+}
+//uplod img
+
+
+  $query= mysqli_query($conn,"UPDATE classes   SET class_name_ar='$class_name_ar', class_name_en='$class_name_en',trainer_id='$trainer_id',
+ 
+  image='$up_file'  where class_id ='$class_id'");
+
+
+
+  $image_dir = '../admin/assets/images/'.$up_file ;
+    
+  //$imagepath ="C:/xampp/htdocs/RestaurantSystem/images/".$image_name;
+
+   move_uploaded_file($_FILES["img"]["tmp_name"],$image_dir);
+}
+
 
 
 

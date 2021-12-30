@@ -85,6 +85,14 @@
                                data-target="#DeletememberConfirmation"
                                onclick="Deletememberfunction(<?php echo $row['subid'];?>)" class="btn btn-danger">
                                <i class="fa fa-trash"></i> حذف</button>
+
+                               &nbsp; &nbsp;
+
+                               <button type="button" id="data-image-id" data-toggle="modal"
+                               data-target=".bd-example-emodal-lg" onclick="editsubscipe(<?php echo $row['subid'];?>)"
+                               class="btn btn-success"> <i class="fa fa-book"></i> انشاء فاتورة</button>
+
+
                        </td>
                 
                                        

@@ -96,7 +96,7 @@
                     &nbsp;  &nbsp;
 
 
-                  <a href="TrainerDetails.php?id=<?php echo $row['trainer_id']; ?>" class="btn btn-success"><i class="fa fa-info"></i>
+                  <a href="TrainerDetails.php?id=<?php echo $row['trainer_id']; ?>" class="btn btn-success"><i class="fas fa-book"></i>
 
                             تفاصيل</a>
 

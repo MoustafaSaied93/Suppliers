@@ -209,7 +209,10 @@
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
                                     <li><a href="slider.php">الاسليدر</a></li>
-                                    <li><a href="slider.php"> فصول التدريب</a></li>
+                                    <li><a href="classes.php"> فصول التدريب</a></li>
+                                    <li><a href="classtimetable.php"> جدول  مواعيد التمارين </a></li>
+                                    <li><a href="sitesetting.php"> اعدادات الموقع </a></li>
+                                    
                                                                 
                                 </ul>
                             </li>

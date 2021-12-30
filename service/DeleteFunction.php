@@ -48,6 +48,38 @@ $query= mysqli_query($conn,"DELETE FROM trainer WHERE trainer_id ='$ID'");
 }
 
 
+else if($Page=="class")
+
+{
+
+$ID= strip_tags($_POST['ID']);
+
+$query1=mysqli_query($conn,"SELECT  image  FROM classes WHERE class_id  ='$ID'");
+
+
+
+
+$images=mysqli_fetch_assoc($query1);
+
+
+$LOGO=$images['image'];
+
+
+
+    $image_dir1 = '../admin/assets/images/'.$LOGO;
+
+    unlink($image_dir1);
+
+
+$query= mysqli_query($conn,"DELETE FROM classes WHERE class_id ='$ID'");
+
+
+
+
+
+}
+
+
 
 
 
