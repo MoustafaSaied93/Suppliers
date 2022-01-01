@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2021 at 09:58 PM
+-- Generation Time: Jan 01, 2022 at 09:59 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -47,6 +47,30 @@ INSERT INTO `classes` (`class_id`, `class_name_ar`, `class_name_en`, `trainer_id
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `general_settings`
+--
+
+CREATE TABLE `general_settings` (
+  `setting_id` int(10) NOT NULL,
+  `company_name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone_number` varchar(30) NOT NULL,
+  `city` varchar(10) NOT NULL,
+  `vat_number` varchar(30) NOT NULL,
+  `tax` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `general_settings`
+--
+
+INSERT INTO `general_settings` (`setting_id`, `company_name`, `email`, `phone_number`, `city`, `vat_number`, `tax`) VALUES
+(0, 'almacenter', 'pag@hotmail.com', '966544036433', 'الطائف', '54476687737', '15'),
+(2, 'almacenter', 'page@gmail.com', '966544036433', 'taif', '54476687737', '10');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `members_subscribtions`
 --
 
@@ -77,15 +101,17 @@ CREATE TABLE `subscriptions` (
   `name` varchar(50) NOT NULL,
   `startdate` varchar(30) NOT NULL,
   `enddate` varchar(30) NOT NULL,
-  `price` varchar(10) NOT NULL
+  `price` varchar(10) NOT NULL,
+  `price_after_tax` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `subscriptions`
 --
 
-INSERT INTO `subscriptions` (`subid`, `name`, `startdate`, `enddate`, `price`) VALUES
-(2, 'محمد غريب', '12/20/2021', '01/31/2022', '400');
+INSERT INTO `subscriptions` (`subid`, `name`, `startdate`, `enddate`, `price`, `price_after_tax`) VALUES
+(2, 'محمد غريب', '12/20/2021', '01/31/2022', '400', '440'),
+(6, 'مصطفى', '01/01/2022', '01/31/2022', '500', '550');
 
 -- --------------------------------------------------------
 
@@ -162,7 +188,7 @@ ALTER TABLE `members_subscribtions`
 -- AUTO_INCREMENT for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
-  MODIFY `subid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `subid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `trainer`
