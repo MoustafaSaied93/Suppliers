@@ -112,11 +112,6 @@ if($img!==""){
 
 
 
-
-
-
-
-
 else if($Page=="subscripe")
 {
 
@@ -154,6 +149,31 @@ $identity_number = strip_tags($_POST['identity_number']);
 
   $query= mysqli_query($conn,"UPDATE members_subscribtions   SET  name='$name',mobile_number='$mobile_number',identity_number='$identity_number'
    where memberid ='$PlayerID'");
+
+}
+
+
+else if($Page=="generalsetting")
+{
+
+  
+$company_name= strip_tags($_POST['company_name']);
+
+$phone_number = strip_tags($_POST['phone_number']);
+
+
+$city = strip_tags($_POST['city']);
+
+$email = strip_tags($_POST['email']);
+
+
+$vat_number = strip_tags($_POST['vat_number']);
+
+$tax = strip_tags($_POST['tax']);
+
+
+  $query= mysqli_query($conn,"UPDATE general_settings   SET  company_name='$company_name',phone_number='$phone_number',city='$city',email='$email',vat_number='$vat_number',tax='$tax'
+   where setting_id ='2'");
 
 }
 

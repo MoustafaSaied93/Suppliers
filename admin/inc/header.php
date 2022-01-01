@@ -193,7 +193,8 @@
 
                                     <li><a href="vedio.php">حجوزات الكلاسات</a></li>
                                     <li><a href="vedio.php"> الحسابات</a></li>
-                                    <li><a href="vedio.php"> ادارة المدفوعات</a></li>
+                                    <li><a href="payment.php"> ادارة المدفوعات</a></li>
+
                                     <li><a href="vedio.php"> ادارة الفواتير</a></li>
 
                                                                     
@@ -211,8 +212,8 @@
                                     <li><a href="slider.php">الاسليدر</a></li>
                                     <li><a href="classes.php"> فصول التدريب</a></li>
                                     <li><a href="classtimetable.php"> جدول  مواعيد التمارين </a></li>
-                                    <li><a href="sitesetting.php"> اعدادات الموقع </a></li>
-                                    
+                                    <li><a href="#" data-toggle="modal" data-target=".editsetting"> اعدادات عامة </a></li>
+
                                                                 
                                 </ul>
                             </li>
@@ -236,5 +237,85 @@
             </div>
             <!-- Left Sidebar End -->
 
+            <?php
+
+            $querysett=mysqli_query($conn,"SELECT * FROM  general_settings where setting_id=2");
+
+
+            $data=mysqli_fetch_assoc($querysett);
+
+            ?>
+
+    <!-- edit popup -->
+
+    <div class="body">
+        <!-- larg modal -->
+        <div class="modal fade editsetting" tabindex="-1" role="dialog" aria-labelledby="orders_"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title h4" id="orders_"> الاعدادات العامة</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form>
+
+                        <div class="form-group">
+                                <label for="o1">اسم الشركة</label>
+                                <input type="text" class="form-control" id="company_name" value="<?php echo $data['company_name'] ?>"
+                                    maxlength=50 >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="o1">البريد الالكترونى</label>
+                                <input type="text" class="form-control" id="email" value="<?php echo $data['email'] ?>"
+                                    maxlength=50 >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="o1">رقم الجوال</label>
+                                <input type="text" class="form-control" id="phone_number"value="<?php echo $data['phone_number'] ?>"
+                                    maxlength=30 >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="o1">اسم المدينة او العنوان </label>
+                                <input type="text" class="form-control" id="city" value="<?php echo $data['city'] ?>"
+                                    maxlength=50 >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="o1">السجل التجارى</label>
+                                <input type="text" class="form-control" id="vat_number" value="<?php echo $data['vat_number'] ?>"
+                                    maxlength=30 >
+                            </div>
+                      
+
+                            <div class="form-group">
+                                <label for="o1">الضريبة المضافة</label>
+                                <input type="text" class="form-control" id="tax"value="<?php echo $data['tax'] ?>"
+                                    maxlength=10>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-success mb-2" id="editsetting"><i
+                                    class="fa fa-plus-square"></i> <span>تعديل</span></button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
          
+

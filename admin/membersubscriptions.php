@@ -47,6 +47,11 @@
 
                     <th class="th_text">سعر الاشتراك</th>
 
+                    <th class="th_text">سعر الاشتراك بعد الضريبة</th>
+
+                   
+
+
                     <th class="th_text">العمليات</th>
 
                    
@@ -72,6 +77,9 @@
 
                     <td><?php echo $row['price']  ?>  ريال</td>
 
+                    <td><?php echo $row['price_after_tax']  ?>  ريال</td>
+
+                    
                     <td>
                            
 
@@ -144,6 +152,12 @@
                              $firstteam=mysqli_query($conn," SELECT name FROM members_subscribtions");
 
 
+                             $tax=mysqli_query($conn," SELECT tax FROM general_settings where setting_id=2");
+
+
+                             $taxnumber=mysqli_fetch_assoc($tax);
+
+
                          while( $item = mysqli_fetch_assoc($firstteam))
                        {
 
@@ -170,16 +184,36 @@
                            <input type="text" class="form-control" id="enddate" value="<?php echo $date ?>" placeholder="<?php echo $date ?>" data-provide="datepicker" data-date-autoclose="true">
                            
                              </div><!-- input-group -->
-                                                                   
-                            
+                                            
 
-                           
-
-                            <div class="form-group">
+                             <div class="container">
+                                                                                                     
+                                 <div class="row">
+                                  <div class="col">
+                                                                                                   
+                               <div class="form-group">
                                 <label for="o1">سعر الاشتراك</label>
                                 <input type="text" class="form-control" id="price" placeholder="سعر الاشتراك"
                                     maxlength=10>
                             </div>
+                                                                                         
+                                 </div>
+                         <div class="col">
+                                                                                                   
+                         <div class="form-group">
+                                <label for="o1">ضريبة القيمة المضافة </label>
+                                <input type="text" class="form-control" id="tax" value="<?php echo $taxnumber['tax']  ?> %" disabled
+                                  > 
+                            </div>
+                                                                                                         
+                      </div>
+                                                                                                   
+                                                                                                   
+                      </div>
+                                                                                                   
+                      </div>
+
+                           
 
 
                             <button type="submit" class="btn btn-success mb-2" id="Savesubscripe"><i

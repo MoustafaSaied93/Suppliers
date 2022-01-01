@@ -27,6 +27,7 @@
 
         <script src="assets/js/class.js"></script>
 
+        <script src="assets/js/setting.js"></script>
         <script src="assets/js/techniqalteam.js"></script>
         
         <script src="assets/js/team.js"></script>

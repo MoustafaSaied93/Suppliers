@@ -65,6 +65,9 @@ $(document).ready(function(){
 
      var price=$("#price").val();
 
+    var tax=$("#tax").val();
+
+
     var Page="membersubscription";
 
     var date1 = new Date(startdate);
@@ -102,6 +105,8 @@ $(document).ready(function(){
   formData.append("enddate", enddate);
   
   formData.append("price", price);
+
+  formData.append("tax", tax);
   
   formData.append("Page", Page);
   

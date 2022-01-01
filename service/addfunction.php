@@ -257,12 +257,18 @@ else if($pages=="membersubscription"){
 
   $price = strip_tags($_POST['price']);
 
-  
+  $tax = strip_tags($_POST['tax']);
 
 
-  $sql2="INSERT INTO subscriptions (name,startdate,enddate,price)
+  $taxnubmer= $price*$tax/100;
+
+  $price_after_tax=$price+$taxnubmer;
+
+
+
+  $sql2="INSERT INTO subscriptions (name,startdate,enddate,price,price_after_tax)
     
-  VALUES ('$subscrname','$startdate','$enddate','$price')";
+  VALUES ('$subscrname','$startdate','$enddate','$price','$price_after_tax')";
                                                
   $query=  mysqli_query($conn,$sql2); 
 

@@ -1,6 +1,17 @@
 ﻿<?php include("inc/header.php"); 
 
 
+// عدد المشتركين
+$query2=mysqli_query($conn,"SELECT * FROM  members_subscribtions");
+
+$result=mysqli_num_rows($query2);
+
+
+
+// عدد المشتركين
+$query1=mysqli_query($conn,"SELECT * FROM  trainer");
+
+$result1=mysqli_num_rows($query1);
 
 ?>
 
@@ -29,8 +40,8 @@
                             <div class="col-md-6 col-xl-3">
                                 <div class="card-box tilebox-one">
                                     <i class="icon-layers float-right m-0 h2 text-muted"></i>
-                                    <h3 class="text-muted text-uppercase mt-0">طلبات المشتركين</h3>
-                                    <h3 class="my-3" data-plugin="counterup"><?php echo 1?> <i class="fas fa-repeat-1-alt"></i></h3>
+                                    <h3 class="text-muted text-uppercase mt-0">عدد المشتركين</h3>
+                                    <h3 class="my-3" data-plugin="counterup"><?php echo $result?> <i class="fas fa-repeat-1-alt"></i></h3>
                                    
                                 </div>
                             </div>
@@ -38,16 +49,16 @@
                             <div class="col-md-6 col-xl-3">
                                 <div class="card-box tilebox-one">
                                     <i class="icon-user float-right m-0 h2 text-muted"></i>
-                                    <h3 class="text-muted text-uppercase mt-0">حسابات العملاء</h3>
-                                    <h3 class="my-3"><span data-plugin="counterup"><?php echo 1 ?></span></h3>
+                                    <h3 class="text-muted text-uppercase mt-0">عدد المدربين</h3>
+                                    <h3 class="my-3"><span data-plugin="counterup"><?php echo $result1 ?></span></h3>
                                  
                                 </div>
                             </div>
 
                             <div class="col-md-6 col-xl-3">
                                 <div class="card-box tilebox-one">
-                                    <i class="icon-envelope  float-right m-0 h2 text-muted"></i>
-                                    <h3 class="text-muted text-uppercase mt-0">رسائل العملاء</h3>
+                                    <i class="icon-layers  float-right m-0 h2 text-muted"></i>
+                                    <h3 class="text-muted text-uppercase mt-0"> اجمالى المدفوعات</h3>
                                     <h3 class="my-3"><span data-plugin="counterup"><?php echo 1 ?></span></h3>
                                    
                                 </div>
