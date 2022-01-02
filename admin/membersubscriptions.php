@@ -129,7 +129,7 @@
 
     <div class="body">
         <!-- larg modal -->
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="orders_"
+        <div id="datat" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="orders_"
             aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -317,6 +317,4 @@
             </div>
 
 
-
 <?php include_once("inc/footer.php") ?>
-
