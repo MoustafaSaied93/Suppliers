@@ -8,11 +8,17 @@ $result=mysqli_num_rows($query2);
 
 
 
-// عدد المشتركين
+// عدد المدربين
 $query1=mysqli_query($conn,"SELECT * FROM  trainer");
 
 $result1=mysqli_num_rows($query1);
 
+
+// اجمالى المدفوعات
+
+$res = mysqli_query($conn,"SELECT sum(price_after_tax) FROM subscriptions");
+$row = mysqli_fetch_row($res);
+$sum = $row[0];
 ?>
 
             <!-- ============================================================== -->
@@ -59,7 +65,7 @@ $result1=mysqli_num_rows($query1);
                                 <div class="card-box tilebox-one">
                                     <i class="icon-layers  float-right m-0 h2 text-muted"></i>
                                     <h3 class="text-muted text-uppercase mt-0"> اجمالى المدفوعات</h3>
-                                    <h3 class="my-3"><span data-plugin="counterup"><?php echo 1 ?></span></h3>
+                                    <h3 class="my-3"><span data-plugin="counterup"><?php echo $sum ?></span></h3>
                                    
                                 </div>
                             </div>

@@ -279,6 +279,34 @@ else if($pages=="membersubscription"){
 
 
 
+else if($pages=="invoice"){
+
+
+  $subid= strip_tags( $_POST['subid']);
+ 
+  $inventory_number = strip_tags($_POST['inventory_number']);
+
+  $inventory_date = strip_tags($_POST['inventory_date']);
+
+  $name = strip_tags($_POST['name']);
+
+  $time = strip_tags($_POST['time']);
+
+  $sql2="INSERT INTO inventory (subid,inventory_number,inventory_date,name,time)
+    
+  VALUES ('$subid','$inventory_number','$inventory_date','$name','$time')";
+                                               
+  $query=  mysqli_query($conn,$sql2); 
+
+  $query2=  mysqli_query($conn,"UPDATE subscriptions SET active=1 WHERE subid ='$subid'"); 
+
+
+}
+
+
+
+
+
 
 
 

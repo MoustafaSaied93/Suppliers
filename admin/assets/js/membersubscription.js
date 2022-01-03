@@ -171,6 +171,9 @@ $(document).ready(function(){
         var enddate=$("#eenddate").val();
 
         var price=$("#eprice").val();
+
+
+        var tax=$("#etax").val();
      
      
        var Page="subscripe";
@@ -204,10 +207,12 @@ $(document).ready(function(){
        }
   
          formData.append("subid", subid);
-        
         formData.append("startdate", startdate);
         formData.append("enddate", enddate);        
         formData.append("price", price); 
+
+        formData.append("tax", tax); 
+
         formData.append("Page", Page);   
     
     $.ajax({

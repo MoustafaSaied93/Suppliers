@@ -15,11 +15,12 @@ $data=mysqli_fetch_assoc($querysett);
 $id = $_GET['id'];
 
 
-$subdata=mysqli_query($conn,"SELECT * FROM subscriptions where subid ='$id'
+$subdata=mysqli_query($conn,"SELECT * FROM inventory where inventory_number ='$id'
 
 ");
 
 $CHECKVAL=mysqli_num_rows($subdata);
+
 
 
 
@@ -34,6 +35,18 @@ if($CHECKVAL<1)
 
 $result=mysqli_fetch_assoc($subdata);
 
+
+$subid=$result['subid'];
+
+
+$subdata2=mysqli_query($conn,"SELECT * FROM subscriptions where subid  ='$subid'
+
+");
+
+$result3=mysqli_fetch_assoc($subdata2);
+
+
+
 date_default_timezone_set("Asia/kuwait"); 
 
 
@@ -41,31 +54,6 @@ $date = date('Y-m-d');
 
 
 $date2 = date('d-m-Y');
-
-
-$query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inventory_number DESC LIMIT 1 ");
-
-      $CODE=mysqli_fetch_assoc($query4);
-
-
-      $codes=$CODE['inventory_number'];
-
-      if($codes==null)
-  
-      {
-        $code=1;
-  
-      }
-  
-      else
-       {
-  
-        $code=$codes +1;
-  
-      }
-
-
-
 
 
 
@@ -95,21 +83,17 @@ $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inv
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);"><?php echo $data['company_name']   ?></a></li>
                                             
-                                            <li class="breadcrumb-item active">فاتورة</li>
+                                            <li class="breadcrumb-item active">تفاصيل الفاتورة</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">فاتورة</h4>
+                                    <h4 class="page-title">تفاصيل الفاتورة</h4>
                                 </div>
                             </div>
                         </div>     
 
 
-                        <input type ="hidden" id="subid" value="<?php echo $id  ?>">
-                        <input type ="hidden" id="inventory_number" value="<?php echo $code?>">
-                        <input type ="hidden" id="inventory_date" value="<?php echo $date2?>">
-                        <input type ="hidden" id="name" value="<?php echo $result['name'] ?>">
+                      
 
-                        <input type ="hidden" id="time" value="<?php echo date("h:i"); ?>">
 
                         <!-- end page title --> 
 
@@ -128,7 +112,7 @@ $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inv
                                                 <h5 class="text-uppercase mt-0"><?php echo $data['company_name'] ?>  </h5>
                                             </div>
                                             <div class="float-sm-right mt-4 mt-sm-0">
-                                                <h5>فاتورة #<?php echo $code ?> <br>
+                                                <h5>فاتورة #<?php echo $result['inventory_number']?> <br>
                                                     <small><?php echo $date2 ?></small>
                                                 </h5>
                                             </div>
@@ -147,11 +131,11 @@ $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inv
                                                 <div class="mt-4 text-sm-right">
                                                    
                                                 <address>
-                                                    <p><strong> رقم الطلب : </strong> <?php echo $code ?> </p>
+                                                    <p><strong> رقم الطلب : </strong> <?php echo $result['inventory_number'] ?> </p>
 
-                                                    <p><strong> التاريخ : </strong> <?php echo $date ?></p>
+                                                    <p><strong> التاريخ : </strong> <?php echo $result['inventory_date']  ?></p>
 
-                                                    <p><strong> الوقت : </strong> <?php echo date("h:i"); ?></p>
+                                                    <p><strong> الوقت : </strong> <?php echo $result['time'] ?></p>
                                                     </address>
                                                 </div>
                                             </div><!-- end col -->
@@ -173,12 +157,12 @@ $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inv
                                                         <tbody>
                                                         <tr>
                                                         <td>1</td>
-                                                            <td><?php echo $result['name'] ?></td>
-                                                            <td><?php echo $result['price'] ?>ريال</td>
+                                                            <td><?php echo $result3['name'] ?></td>
+                                                            <td><?php echo $result3['price'] ?>ريال</td>
                                                           
-                                                            <td><?php echo $result['startdate'] ?></td>
-                                                            <td><?php echo $result['enddate'] ?></td>
-                                                            <td><?php echo $result['price'] ?> ريال</td>
+                                                            <td><?php echo $result3['startdate'] ?></td>
+                                                            <td><?php echo $result3['enddate'] ?></td>
+                                                            <td><?php echo $result3['price'] ?> ريال</td>
                                                         </tr>
                                     
                                     
@@ -202,20 +186,18 @@ $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inv
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="text-right mt-4">
-                                                    <p><b>المجموع :</b> <?php echo $result['price'] ?> ريال</p>
+                                                    <p><b>المجموع :</b> <?php echo $result3['price'] ?> ريال</p>
                                                     
                                                     <p><b>الضريبة :</b> <?php echo $data['tax'] ?> %</p>
                                                     <hr>
-                                                    <h3>  <?php echo $result['price_after_tax'] ?> ريال  </h3>
+                                                    <h3>  <?php echo $result3['price_after_tax'] ?> ريال  </h3>
                                                 </div>
                                             </div>
                                         </div>
                                         <hr>
                                         <div class="d-print-none">
                                             <div class="float-left">
-                                            <a href="#" class="btn btn-primary waves-effect waves-light" id="saveinventory">حفظ الفاتورة</a>
-
-                                            &nbsp; &nbsp;
+                                          
                                                 <a href="#" class="btn btn-danger waves-effect waves-light" onclick="history.back()"> الغاء</a>
                                                 &nbsp; &nbsp;
                                                 <a href="javascript:window.print()" class="btn btn-dark waves-effect waves-light">طباعة</a>

@@ -12,6 +12,10 @@ $ID= strip_tags($_POST['ID']);
 
 $query= mysqli_query($conn,"DELETE FROM subscriptions WHERE subid   ='$ID'");
 
+$query3= mysqli_query($conn,"DELETE FROM inventory WHERE subid   ='$ID'");
+
+
+
 }
 
 
@@ -95,6 +99,19 @@ $ID= strip_tags($_POST['ID']);
 
 
 $query2= mysqli_query($conn,"DELETE FROM members_subscribtions WHERE memberid  ='$ID'");
+
+}
+
+
+else if($Page=="inventory")
+
+{
+
+$ID= strip_tags($_POST['ID']);
+
+
+
+$query2= mysqli_query($conn,"DELETE FROM inventory WHERE inventory_id   ='$ID'");
 
 }
 

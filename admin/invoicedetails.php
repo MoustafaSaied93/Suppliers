@@ -5,9 +5,9 @@
 
 
 
-$res = mysqli_query($conn,"SELECT sum(price_after_tax) FROM subscriptions");
-$row = mysqli_fetch_row($res);
-$sum = $row[0];
+$query2=mysqli_query($conn,"SELECT * FROM  inventory");
+
+$results=mysqli_num_rows($query2);
 
 
 
@@ -31,7 +31,7 @@ $sum = $row[0];
                             <div class="col-12">
                                 <div class="page-title-box">
                                     
-                                    <h4 class="page-title"> ادارة المدفوعات</h4>
+                                    <h4 class="page-title"> ادارة الفواتير</h4>
                                 </div>
                             </div>
                         </div>     
@@ -43,8 +43,8 @@ $sum = $row[0];
                             <div class="col-md-6 col-xl-3">
                                 <div class="card-box tilebox-one">
                                     <i class="icon-layers float-right m-0 h2 text-muted"></i>
-                                    <h3 class="text-muted text-uppercase mt-0">اجمالي المدفوعات</h3>
-                                    <h3 class="my-3" data-plugin="counterup"><?php echo $sum ?>  <i class="fas fa-repeat-1-alt"></i></h3>
+                                    <h3 class="text-muted text-uppercase mt-0">اجمالي الفواتير</h3>
+                                    <h3 class="my-3" data-plugin="counterup"><?php echo $results ?> <i class="fas fa-repeat-1-alt"></i></h3>
                                    
                                 </div>
                             </div>
@@ -57,16 +57,19 @@ $sum = $row[0];
             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
             <thead class="thead_dark">
                 <tr>
-                <th class="th_text">اسم المشترك </th>
-                    <th cl ass="th_text">تاريخ دفع الاشتراك </th>
+                <th class="th_text">رقم الفاتورة </th>
+
+                    <th cl ass="th_text">اسم  المشترك </th>
+
+                    <th cl ass="th_text">تاريخ انشاء الفاتورة </th>
                    
-                    <th class="th_text">المبلغ</th>
+                    <th class="th_text">العمليات</th>
 
                 </tr>
             </thead>
             <tbody>
                 <?php
-                 $result=mysqli_query($conn,"SELECT * FROM subscriptions");
+                 $result=mysqli_query($conn,"SELECT * FROM inventory");
                  
                   while($row=mysqli_fetch_assoc($result))
                       {
@@ -75,11 +78,23 @@ $sum = $row[0];
                     ?>
                 <tr>
                 
-                    <td><?php echo $row['name']  ?></td>
+                    <td><?php echo $row['inventory_number']  ?></td>
 
-                    <td><?php echo $row['startdate']  ?></td>
+                    <td><?php echo $row['name']  ?></td>
                    
-                    <td><?php echo $row['price_after_tax']  ?></td>
+                    <td><?php echo $row['inventory_date']  ?></td>
+
+                    <td>                       
+
+                    <a href="invoice2.php?id=<?php echo $row['inventory_number'];?>"class="btn btn-primary"><i class="fas fa-book"></i>
+                     تفاصيل الفاتورة</a>
+                           &nbsp; &nbsp;
+
+                           <button type="button" id="data-image-id" data-toggle="modal"
+                               data-target="#DeleteinventortyConfirmation"
+                               onclick="Deleteinventoryfunction(<?php echo $row['inventory_id'];?>)" class="btn btn-danger">
+                               <i class="fa fa-trash"></i> حذف</button>
+                       </td>
             
                   
                 </tr>
@@ -103,11 +118,10 @@ $sum = $row[0];
 
 
 
-
  <!--  delete popup -->
 
  
- <div class="modal fade" id="DeleteConfirmationvedio">
+ <div class="modal fade" id="DeleteinventortyConfirmation">
     <div class="modal-dialog">
 
         <div class="modal-content">
@@ -121,7 +135,7 @@ $sum = $row[0];
             </div>
             <div class="modal-footer" style="padding-left:220px">
 
-                <a href="#" class="btn btn-danger" onclick="ConfirmDeletevedio()">تاكيد</a>
+                <a href="#" class="btn btn-danger" onclick="ConfirmDeleteinventorty()">تاكيد</a>
                 <a href="#" class="btn btn-primary" data-dismiss="modal" id="r">الغاء</a>
             </div>
         </div>

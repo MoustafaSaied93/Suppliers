@@ -1,8 +1,18 @@
 <?php 
 
 
+
  include_once("../service/config.php");
 
+
+ session_start();
+
+if(!isset ($_SESSION ['id']))
+{
+
+    header("location: adminlogin.php");
+
+}
 
 
 ?>
@@ -78,7 +88,7 @@
                           
 
                             <!-- item-->
-                            <a href="#" class="dropdown-item notify-item" data-toggle="modal" data-target="#UserSetting">
+                            <a href="#" class="dropdown-item notify-item" data-toggle="modal" data-target=".UserSetting">
                                 <i class="mdi mdi-settings-outline"></i>
                                 <span>الاعدادات</span>
                             </a>
@@ -106,23 +116,23 @@
                 <div class="logo-box">
                     <a href="index.php" class="logo text-center logo-dark">
                         <span class="logo-lg">
-                            <img src="assets/images/logo.png" alt="" height="22">
+                            <img src="../img/logo.png"  height="30px" width="100px" alt>
                             <!-- <span class="logo-lg-text-dark">Uplon</span> -->
                         </span>
                         <span class="logo-sm">
                             <!-- <span class="logo-lg-text-dark">U</span> -->
-                            <img src="assets/images/logo-sm.png" alt="" height="24">
+                            <img src="../img/logo.png"  height="30px" width="100px" alt>
                         </span>
                     </a>
 
-                    <a href="index.html" class="logo text-center logo-light">
+                    <a href="index.php" class="logo text-center logo-light">
                         <span class="logo-lg">
-                            <img src="assets/images/logo-light.png" alt="" height="22">
+                            <img src="../img/logo.svg" alt="" height="40px" width="180px">
                             <!-- <span class="logo-lg-text-dark">Uplon</span> -->
                         </span>
                         <span class="logo-sm">
                             <!-- <span class="logo-lg-text-dark">U</span> -->
-                            <img src="assets/images/logo-sm-light.png" alt="" height="24">
+                            <img src="../img/logo.svg" alt="" height="40px" width="180px">
                         </span>
                     </a>
                 </div>
@@ -191,11 +201,11 @@
 
                                     <li><a href="technqalteam.php">المدربين</a></li>
 
-                                    <li><a href="vedio.php">حجوزات الكلاسات</a></li>
-                                    <li><a href="vedio.php"> الحسابات</a></li>
+                                    <li><a href="#">حجوزات الكلاسات</a></li>
+                                    <li><a href="#"> الحسابات وسجلات الحضور</a></li>
                                     <li><a href="payment.php"> ادارة المدفوعات</a></li>
 
-                                    <li><a href="vedio.php"> ادارة الفواتير</a></li>
+                                    <li><a href="invoicedetails.php"> ادارة الفواتير</a></li>
 
                                                                     
                                 </ul>
@@ -209,9 +219,9 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
-                                    <li><a href="slider.php">الاسليدر</a></li>
+                                    <li><a href="#">الاسليدر</a></li>
                                     <li><a href="classes.php"> فصول التدريب</a></li>
-                                    <li><a href="classtimetable.php"> جدول  مواعيد التمارين </a></li>
+                                    <li><a href="#"> جدول  مواعيد التمارين </a></li>
                                     <li><a href="#" data-toggle="modal" data-target=".editsetting"> اعدادات عامة </a></li>
 
                                                                 
@@ -241,10 +251,16 @@
 
             $querysett=mysqli_query($conn,"SELECT * FROM  general_settings where setting_id=2");
 
+            $querysett2=mysqli_query($conn,"SELECT * FROM  users where userid=1");
+
 
             $data=mysqli_fetch_assoc($querysett);
 
+            $data2=mysqli_fetch_assoc($querysett2);
+
             ?>
+
+
 
     <!-- edit popup -->
 
@@ -307,6 +323,52 @@
 
 
                             <button type="submit" class="btn btn-success mb-2" id="editsetting"><i
+                                    class="fa fa-plus-square"></i> <span>تعديل</span></button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+         <!-- edit popup -->
+
+    <div class="body">
+        <!-- larg modal -->
+        <div class="modal fade UserSetting" tabindex="-1" role="dialog" aria-labelledby="orders_"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title h4" id="orders_"> اعدادات الحساب</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form>
+
+                        <div class="form-group">
+                                <label for="o1">اسم المستخدم</label>
+                                <input type="text" class="form-control" id="UserName" value="<?php echo $data2['UserName'] ?>"
+                                    maxlength=50 >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="o1">كلمة المرور </label>
+                                <input type="password" class="form-control" id="Password" value="<?php echo $data2['Password'] ?>"
+                                    maxlength=50 >
+                            </div>
+
+
+                           
+
+                            <button type="submit" class="btn btn-success mb-2" id="editusersetting"><i
                                     class="fa fa-plus-square"></i> <span>تعديل</span></button>
 
                         </form>

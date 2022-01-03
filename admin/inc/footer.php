@@ -35,7 +35,7 @@
         <script src="assets/js/players.js"></script>
 
         <script src="assets/js/membersubscription.js"></script>
-
+        <script src="assets/js/invoice.js"></script>
         
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>

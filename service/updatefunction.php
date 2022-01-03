@@ -111,12 +111,9 @@ if($img!==""){
 }
 
 
-
 else if($Page=="subscripe")
 {
-
-
-  
+ 
 $subid= strip_tags($_POST['subid']);
 
 $startdate = strip_tags($_POST['startdate']);
@@ -125,11 +122,16 @@ $enddate = strip_tags($_POST['enddate']);
 
 $price = strip_tags($_POST['price']);
 
+$tax = strip_tags($_POST['tax']);
+
+$taxnubmer= $price*$tax/100;
+
+$price_after_tax=$price+$taxnubmer;
 
 
   $query= mysqli_query($conn,"UPDATE subscriptions   SET  startdate='$startdate',enddate='$enddate',
 
-  price='$price' where subid ='$subid'");
+  price='$price',price_after_tax='$price_after_tax' where subid ='$subid'");
 
 }
 
@@ -174,6 +176,23 @@ $tax = strip_tags($_POST['tax']);
 
   $query= mysqli_query($conn,"UPDATE general_settings   SET  company_name='$company_name',phone_number='$phone_number',city='$city',email='$email',vat_number='$vat_number',tax='$tax'
    where setting_id ='2'");
+
+}
+
+
+
+else if($Page=="usersetting")
+{
+
+  
+$UserName= strip_tags($_POST['UserName']);
+
+$Password = strip_tags($_POST['Password']);
+
+
+
+  $query= mysqli_query($conn,"UPDATE users   SET  UserName='$UserName',Password='$Password'
+   where userid  ='1'");
 
 }
 

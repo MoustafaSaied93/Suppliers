@@ -2,7 +2,10 @@
 
 
 
+// عدد المشتركين
+$query2=mysqli_query($conn,"SELECT * FROM  members_subscribtions");
 
+$result2=mysqli_num_rows($query2);
 
 ?>
            <!-- ============================================================== -->
@@ -28,6 +31,9 @@
                             </div>
                         </div>     
                         <!-- end page title --> 
+
+
+                        
 
                         <button  class="btn btn-success m-b-15" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
                                 <i class="fa fa-plus-square" aria-hidden="true"></i> اضافة اشتراك
@@ -81,13 +87,42 @@
 
                     
                     <td>
+
+                    <?php
+                               if($row['active']==0)
+                               {
+
+                                echo'
                            
 
                            <button type="button" id="data-image-id" data-toggle="modal"
-                               data-target=".bd-example-emodal-lg" onclick="editsubscipe(<?php echo $row['subid'];?>)"
-                               class="btn btn-primary"> <i class="fa fa-pen"></i> تعديل</button>
+                               data-target=".bd-example-emodal-lg" onclick="editsubscipe('.$row['subid'].')"
+                               class="btn btn-primary"> <i class="fa fa-pen"></i> تعديل</button>';
+
+
+                               }
+
+
+                               if($row['active']==1)
+
+                               {
+                                echo'
+
+                                <button type="button"  id="data-image-id" data-toggle="modal"
+                                data-target=".bd-example-emodal-lg" onclick="editsubscipe('.$row['subid'].')"
+                                class="btn btn-primary" style=" pointer-events: none;"> <i class="fa fa-pen"></i> تعديل</button>';
+ 
+
+
+                               }
+
+
+
+                               ?>
 
                            &nbsp; &nbsp;
+
+
 
                            <button type="button" id="data-image-id" data-toggle="modal"
                                data-target="#DeletememberConfirmation"
@@ -96,9 +131,41 @@
 
                                &nbsp; &nbsp;
 
-                               <button type="button" id="data-image-id" data-toggle="modal"
-                               data-target=".bd-example-emodal-lg" onclick="editsubscipe(<?php echo $row['subid'];?>)"
-                               class="btn btn-success"> <i class="fa fa-book"></i> انشاء فاتورة</button>
+
+
+                                
+                               <?php
+                               if($row['active']==0)
+                               {
+
+                                echo'
+                                                            
+                              
+                               <a href="invoice.php?id='.$row['subid'].'"class="btn btn-success"><i class="fas fa-book"></i>
+
+                               انشاء فاتورة</a>';
+
+                               }
+
+                               if($row['active']==1)
+
+                               {
+
+                                echo'
+                                                            
+                              
+                                <a href="invoice.php?id='.$row['subid'].'"class="btn btn-warning" style=" pointer-events: none;"><i class="fas fa-book"></i>
+ 
+                                تمت الفوترة</a>';
+
+
+                               }
+
+
+                            ?>
+                            
+
+                             
 
 
                        </td>
@@ -272,11 +339,33 @@
 
                            
 
-                            <div class="form-group">
+                           
+                            <div class="container">
+                                                                                                     
+                                 <div class="row">
+                                  <div class="col">
+                                                                                                   
+                               <div class="form-group">
                                 <label for="o1">سعر الاشتراك</label>
                                 <input type="text" class="form-control" id="eprice" placeholder="سعر الاشتراك"
                                     maxlength=10>
                             </div>
+                                                                                         
+                                 </div>
+                         <div class="col">
+                                                                                                   
+                         <div class="form-group">
+                                <label for="o1">ضريبة القيمة المضافة </label>
+                                <input type="text" class="form-control" id="etax" value="<?php echo $taxnumber['tax']  ?> %" disabled
+                                  > 
+                            </div>
+                                                                                                         
+                      </div>
+                                                                                                   
+                                                                                                   
+                      </div>
+                                                                                                   
+                      </div>
 
 
                             <button type="submit" class="btn btn-success mb-2" id="Editsubscripe"><i

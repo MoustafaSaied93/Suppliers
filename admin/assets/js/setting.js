@@ -5,6 +5,38 @@ $(document).ready(function() {
 
   
 
+  $('#UserName').bind('keypress', function(e) {
+
+    var UserName= $("#UserName").val();
+
+    
+    var key = e.keyCode;
+
+    if (key === 32&&UserName=="")  {
+        e.preventDefault();
+      return false;
+    }
+
+
+});
+
+
+
+('#Password').bind('keypress', function(e) {
+
+  var Password= $("#Password").val();
+
+  
+  var key = e.keyCode;
+
+  if (key === 32&&Password=="")  {
+      e.preventDefault();
+    return false;
+  }
+
+
+});
+
 
 
     $('#company_name').bind('keypress', function(e) {
@@ -263,5 +295,76 @@ formData.append("company_name", company_name);
     });
     });
 
+
+
+    $('#editusersetting').on('click', function(event){
+
+     
+
+      var formData = new FormData();
+      event.preventDefault();
+     
+      var UserName=$("#UserName").val();
+ 
+     var Password=$("#Password").val();
+ 
+     
+ 
+     var Page="usersetting";
+ 
+     //saudia arabia regular expression
+ 
+
+ 
+     if(UserName=="")
+     {
+ 
+     $('#UserName').focus();
+ 
+         return false;
+     }
+ 
+     if(Password=="")
+     {
+ 
+     $('#Password').focus();
+ 
+         return false;
+     }
+ 
+ 
+ 
+ 
+ formData.append("UserName", UserName);
+ 
+  formData.append("Password", Password);
+ 
+ 
+            
+ 
+ 
+  formData.append("Page", Page);    
+            
+  
+     $.ajax({
+       url:"../service/updatefunction.php",
+       method:"POST",
+        data: formData,
+       processData: false,
+       contentType: false,
+       success:function(data){ 
+       
+         toastr.success(" تم تخديث بياناتك بنجاح");
+         $(".UserSetting").modal("hide");
+ 
+      
+    
+             }
+          
+        
+        
+     
+     });
+     });
 
     
