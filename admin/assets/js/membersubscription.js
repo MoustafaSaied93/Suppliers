@@ -3,48 +3,37 @@
 
 $(document).ready(function(){
   
+  var price=$("#price").val();
+
+  
+
+  $('#month').on('change', function () {
+
+    $("#price").val("");
+    
+    var month =$("#month").val();
+
+    var total=month*price;
+
+    $("#price").val(total);
+
+
+});
+
+$('#emonth').on('change', function () {
+
+
+  var emonth =$("#emonth").val();
+
+  var etotal=emonth*price;
+
+  $("#eprice").val(etotal);
+
+
+});
 
 
 
-  $('#price').bind('keypress', function(e) {
-  
-    var price= $("#price").val();
-  
-  
-    var key = e.keyCode;
-  
-    if (key === 32&&price=="")  {
-        e.preventDefault();
-      return false;
-    }
-  
-    if (key < 48 || key > 57 ) {
-      e.preventDefault(); 
-       }  
-  
-       
-  
-  });
-  
-  
-  $('#eprice').bind('keypress', function(e) {
-  
-    var eprice= $("#eprice").val();
-  
-  
-    var key = e.keyCode;
-  
-    if (key === 32&&eprice=="")  {
-        e.preventDefault();
-      return false;
-    }
-  
-    if (key < 48 || key > 57 ) {
-      e.preventDefault(); 
-      return false;
-       }   
-  });
-   
   });
 
 
@@ -67,12 +56,26 @@ $(document).ready(function(){
 
     var tax=$("#tax").val();
 
+    var month=$("#month").val();
+
 
     var Page="membersubscription";
 
     var date1 = new Date(startdate);
 
     var date2 = new Date(enddate);
+
+   var month1 = date1.getMonth() + 1; 
+
+   var month2 = date2.getMonth() + 1; 
+
+   var day1  = date1.getDate();
+
+   var day2  = date2.getDate();
+
+ 
+
+var submonth=month2-month1;
 
 
     if(date1>=date2)
@@ -86,25 +89,40 @@ $(document).ready(function(){
         return false;
 
     }
-  
-   
-    
 
+    if(month!=submonth)
 
-    if(price=="")
     {
-  
-    $('#price').focus();
+
+        toastr.error("  من فضلك ادخل تواريخ صحيحة    ");
+
+        $('#startdate').focus();
   
         return false;
+
     }
 
+
+    if(day1!=day2)
+
+    {
+
+        toastr.error("  من فضلك ادخل تواريخ صحيحة    ");
+
+        $('#startdate').focus();
+  
+        return false;
+
+    }
 
   formData.append("subscrname", subscrname);
   formData.append("startdate", startdate);
   formData.append("enddate", enddate);
   
+  formData.append("month", month);
+
   formData.append("price", price);
+
 
   formData.append("tax", tax);
   
@@ -152,6 +170,8 @@ $(document).ready(function(){
     $("#eenddate").val(data.enddate);
 
     $("#eprice").val(data.price);
+
+    $("#emonth").val(data.month);
   
     }
     });
@@ -174,37 +194,68 @@ $(document).ready(function(){
 
 
         var tax=$("#etax").val();
+
+        var month=$("#emonth").val();
      
      
        var Page="subscripe";
      
-
        var date1 = new Date(startdate);
 
        var date2 = new Date(enddate);
-   
-   
-       if(date1>=date2)
-   
-       {
-   
-           toastr.error(" عذرا تاريخ بداية الاشتراك اكبر من او يساوي تاريخ النهاية ");
-   
-           $('#estartdate').focus();
+
+       var month1 = date1.getMonth() + 1; 
+
+       var month2 = date2.getMonth() + 1; 
+    
+       var day1  = date1.getDate();
+    
+       var day2  = date2.getDate();
+    
      
-           return false;
-   
-       }
-       
+    
+    var submonth=month2-month1;
+    
+    
+        if(date1>=date2)
+    
+        {
+    
+            toastr.error(" عذرا تاريخ بداية الاشتراك اكبر من او يساوي تاريخ النهاية ");
+    
+            $('#estartdate').focus();
+      
+            return false;
+    
+        }
+    
+        if(month!=submonth)
+    
+        {
+    
+            toastr.error("  من فضلك ادخل تواريخ صحيحة    ");
+    
+            $('#estartdate').focus();
+      
+            return false;
+    
+        }
+    
+    
+        if(day1!=day2)
+    
+        {
+    
+            toastr.error("  من فضلك ادخل تواريخ صحيحة    ");
+    
+            $('#estartdate').focus();
+      
+            return false;
+    
+        }
 
        
-       if(price=="")
-       {
-     
-       $('#eprice').focus();
-     
-           return false;
-       }
+      
   
          formData.append("subid", subid);
         formData.append("startdate", startdate);
@@ -212,6 +263,8 @@ $(document).ready(function(){
         formData.append("price", price); 
 
         formData.append("tax", tax); 
+
+        formData.append("month", month); 
 
         formData.append("Page", Page);   
     
@@ -274,8 +327,12 @@ $(document).ready(function(){
         function RefreshmemberTable() {
   
           $( "#datatable" ).load( "membersubscriptions.php #datatable" );
-  
-          $("#price").val("");
+
+
+          $("#month").val("");
+          $("#startdate").val("");
+          $("#enddate").val("");
+
          
       }
       

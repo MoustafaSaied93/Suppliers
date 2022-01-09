@@ -42,6 +42,8 @@
 
                         <th class="th_text">رقم الجوال</th>
 
+                        <th class="th_text"> البريد الالكترونى</th>
+
                         <th class="th_text">رقم الهوية</th>
 
                         <th class="th_text">العمليات</th>
@@ -60,6 +62,8 @@
                         <td><?php echo $row['name']  ?></td>
 
                         <td><?php echo $row['mobile_number']  ?></td>
+
+                        <td><?php echo $row['email']  ?></td>
 
                         <td><?php echo $row['identity_number']  ?></td>
 
@@ -117,16 +121,23 @@
                         <form>
 
                             <div class="form-group">
-                                <label for="o1">اسم المشترك</label>
+                                <label for="o1">اسم المشترك</label> <span class="red"> *</span>
                                 <input type="text" class="form-control" id="name" placeholder="اسم المشترك"
                                     maxlength=50>
                             </div>
 
 
                             <div class="form-group">
-                                <label for="o1">رقم الهاتف</label>
+                                <label for="o1">رقم الهاتف</label> <span class="red"> *</span>
                                 <input type="text" class="form-control" id="mobile_number" placeholder="رقم الهاتف"
                                     maxlength=20>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="o1">البريد الالكترونى </label> <span class="red"> *</span>
+                                <input type="text" class="form-control" id="emailsub" placeholder=" البريد الالكترونى"
+                                    maxlength=50>
                             </div>
 
                             <div class="form-group">
@@ -164,21 +175,27 @@
                             </button>
                         </div>
                         <div class="modal-body">
-
                         <form>
 
 <div class="form-group">
-    <label for="o1">اسم المشترك</label>
+    <label for="o1">اسم المشترك</label> <span class="red"> *</span>
     <input type="text" class="form-control" id="namee" placeholder="اسم المشترك"
         maxlength=50>
 </div>
 
 
 <div class="form-group">
-    <label for="o1">رقم الهاتف</label>
+    <label for="o1">رقم الهاتف</label>  <span class="red"> *</span>
     <input type="text" class="form-control" id="mobile_numbere" placeholder="رقم الهاتف"
         maxlength=20>
 </div>
+
+<div class="form-group">
+ <label for="o1">البريد الالكترونى </label> <span class="red"> *</span>
+  <input type="text" class="form-control" id="emailsube" placeholder=" البريد الالكترونى"
+  maxlength=50>
+     </div>
+
 
 <div class="form-group">
     <label for="o1">رقم الهوية</label>

@@ -19,6 +19,8 @@ $subdata=mysqli_query($conn,"SELECT * FROM subscriptions where subid ='$id'
 
 ");
 
+
+
 $CHECKVAL=mysqli_num_rows($subdata);
 
 
@@ -34,6 +36,14 @@ if($CHECKVAL<1)
 
 $result=mysqli_fetch_assoc($subdata);
 
+$namesub=$result['name'];
+
+$subdata2=mysqli_query($conn,"SELECT * FROM members_subscribtions where name ='$namesub'
+
+");
+
+
+$result2=mysqli_fetch_assoc($subdata2);
 date_default_timezone_set("Asia/kuwait"); 
 
 
@@ -45,12 +55,14 @@ $date2 = date('d-m-Y');
 
 $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inventory_number DESC LIMIT 1 ");
 
-      $CODE=mysqli_fetch_assoc($query4);
+     $CODE=mysqli_fetch_assoc($query4);
 
 
-      $codes=$CODE['inventory_number'];
+      $codes=mysqli_num_rows($query4);
 
-      if($codes==null)
+
+
+      if($codes==0)
   
       {
         $code=1;
@@ -60,7 +72,7 @@ $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inv
       else
        {
   
-        $code=$codes +1;
+        $code=$codes['inventory_number'] +1;
   
       }
 
@@ -109,6 +121,9 @@ $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inv
                         <input type ="hidden" id="inventory_date" value="<?php echo $date2?>">
                         <input type ="hidden" id="name" value="<?php echo $result['name'] ?>">
 
+                        <input type ="hidden" id="priceaftax" value="<?php echo $result['price_after_tax'] ?>">
+
+                <input type ="hidden" id="taxamount" value="<?php echo $data['tax'] ?>">
                         <input type ="hidden" id="time" value="<?php echo date("h:i"); ?>">
 
                         <!-- end page title --> 
@@ -125,33 +140,39 @@ $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inv
                                     <div class="panel-body">
                                         <div class="clearfix">
                                             <div class="float-sm-left">
-                                                <h5 class="text-uppercase mt-0"><?php echo $data['company_name'] ?>  </h5>
+                                                <h5 class="text-uppercase mt-0">فاتورة تفصيلية الى <?php echo $result['name'] ?>  </h5> 
+                                                <h6> <?php echo $code ?>#  
+                                                   <small> <i class="fa fa-calendar" aria-hidden="true"></i> <?php echo date("h:i"); ?>   <?php echo $date2 ?>  </small>  
+                                                </h6>
+
+                                               
+
                                             </div>
-                                            <div class="float-sm-right mt-4 mt-sm-0">
-                                                <h5>فاتورة #<?php echo $code ?> <br>
-                                                    <small><?php echo $date2 ?></small>
-                                                </h5>
-                                            </div>
+                                           
                                         </div>
                                         <hr>
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="float-sm-left mt-4">
+                                                    <h6> من :</h6>
                                                     <address>
-                                                    <p><strong> العنوان : </strong> <?php echo $data['city'] ?></p>
-                                                     
-                                                    <p><strong>رقم الجوال : </strong> <?php echo $data['phone_number'] ?></p>
+                                                    <p>  <i class="fas fa-shopping-bag"></i><strong> <?php echo $data['company_name'] ?> </strong></p>
+                                                    <p>  <i class="fa fa-envelope" aria-hidden="true"></i><strong>  <?php echo $data['email'] ?> </strong></p>
+
+                                                    <p>  <i class="fa fa-phone" aria-hidden="true"></i><strong> <?php echo $data['phone_number'] ?> </strong></p>
+                                                    <p>  <i class="fa fa-map-marker" aria-hidden="true"></i><strong> <?php echo $data['city'] ?> </strong></p>
+                                                   
                                                     
                                                     </address>
                                                 </div>
                                                 <div class="mt-4 text-sm-right">
-                                                   
+                                                
                                                 <address>
-                                                    <p><strong> رقم الطلب : </strong> <?php echo $code ?> </p>
+                                                <h6>  الى : </h6>
+                                                <p>  <i class="fas fa-user"></i><strong> <?php echo $result['name'] ?> </strong></p>
+                                                    <p>  <i class="fa fa-envelope" aria-hidden="true"></i><strong>  <?php echo $result2['email']?> </strong></p>
 
-                                                    <p><strong> التاريخ : </strong> <?php echo $date ?></p>
-
-                                                    <p><strong> الوقت : </strong> <?php echo date("h:i"); ?></p>
+                                                    <p>  <i class="fa fa-phone" aria-hidden="true"></i><strong> <?php echo $result2['mobile_number']?> </strong></p>
                                                     </address>
                                                 </div>
                                             </div><!-- end col -->
@@ -163,22 +184,28 @@ $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inv
                                                 <div class="table-responsive">
                                                     <table class="table table-nowrap">
                                                         <thead>
-                                                        <tr><th>#</th>
-                                                            <th>اسم المشترك</th>
-                                                            <th>سعر الاشتراك</th>
+                                                        <tr>
+                                                          
+                                                            
                                                             <th>بداية الاشتراك</th>
                                                             <th>نهاية الاشتراك</th>
-                                                            <th>الاجمالي</th>
+
+                                                            <th> الكمية</th>
+
+
+                                                            <th>السعر </th>
+                                                            
                                                         </tr></thead>
                                                         <tbody>
                                                         <tr>
-                                                        <td>1</td>
-                                                            <td><?php echo $result['name'] ?></td>
-                                                            <td><?php echo $result['price'] ?>ريال</td>
+                                                       
+                                                            
+                                                           
                                                           
                                                             <td><?php echo $result['startdate'] ?></td>
                                                             <td><?php echo $result['enddate'] ?></td>
-                                                            <td><?php echo $result['price'] ?> ريال</td>
+                                                            <td><?php echo $result['month'] ?> </td>
+                                                            <td><?php echo $data['price']*$data['tax']/100+$data['price'] ?> ريال</td>
                                                         </tr>
                                     
                                     
@@ -195,21 +222,48 @@ $query4=mysqli_query($conn,"SELECT inventory_number FROM inventory  order by inv
                                                     <h5 class="small"><b>الشروط والسياسات</b></h5>
 
                                                     <small class="text-muted">
-                                                    شروط الدفع والسياسات
-يجب دفع جميع الحسابات في غضون 7 أيام من استلام الفاتورة. يتم الدفع بشيك أو ببطاقة ائتمان أو الدفع المباشر عبر الإنترنت. إذا لم يتم دفع الحساب في غضون 7 أيام ، فسيتم تحصيل الرسوم المحددة المتفق عليها المذكورة أعلاه على تفاصيل الائتمانات المقدمة كتأكيد للعمل المنجز.
+                                                   
+                                               <h6> 1-لا يحق للمشترك سحب الاشتراك بعد اول يوم تدريب</h6>
+                                               <h6> 2-يمنع اصطحاب اشخاص غير مشتركين للصالة</h6>
+                                               <h6> 3-الالتزام بالنظافة وارتداء الكمامات والملابس الرياضية اثناء التدريب</h6>
+                                               <h6> 4-الاتزام بمواعيد الكلاسات التدريبية</h6>
+                                               <h6> 5-يمنع التدخين واصطحاب مشروبات او منشطات داخل الصالة</h6>
+                                               <h6> 6-الادارة غير مسؤولة عن فقدان الجولات والاغراض الشخصية</h6>
+                                               <h6> 7-اعادة الاوزان والمعدات  الى اماكنها بعد استخدامها</h6>
+                                               <h6> 8-المحافظة علي النظام والنظافة داخل الصالة</h6>
+                                               <h6> 9-يحق للادارة سحب اشتراك اى مشتركة اذا بدر منها ازعاج </h6>
+                                               <h6> 10-لقد قرات الشروط الخاصة بطلب الاشتراك فى مركز الما النسائى الرياضي واتعهد الالتزام بذلك</h6>
+                                              
+                                              
+
                                                     </small>
+
+                                                    <hr>
+
+                                                    <div class="float-sm-right mt-4 mt-sm-0">
+                                                    <img id="qrcode" />
+                                               
+                                                    </div>
+
+
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="text-right mt-4">
-                                                    <p><b>المجموع :</b> <?php echo $result['price'] ?> ريال</p>
+                                                    <h3><b>المجموع :</b>   <?php echo $result['price_after_tax'] ?> ريال</h3>
                                                     
-                                                    <p><b>الضريبة :</b> <?php echo $data['tax'] ?> %</p>
+                                                  
                                                     <hr>
-                                                    <h3>  <?php echo $result['price_after_tax'] ?> ريال  </h3>
+                                                    
+                                                    <div class="float-sm-right mt-4 mt-sm-0">
+                                                    <img id="qrcode" />
+                                               
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+
+                                       
                                         <hr>
                                         <div class="d-print-none">
                                             <div class="float-left">

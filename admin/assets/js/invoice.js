@@ -1,5 +1,37 @@
 
 
+
+$(document).ready(function(){
+  
+  var totalamount=$("#priceaftax").val();
+  var taxAmount=$("#taxamount").val();
+
+  $.ajax({
+    type: "POST",
+    url: "https://dev.evnta.co/api/qrcode/sa",
+    data: { sellerName:"مركز الما النسائى ", taxId:"301121666300003", totalAmount:totalamount, taxAmount:taxAmount} ,
+    dataType: 'json',
+    success: function (data){
+     
+  var value = data.value;
+
+  $("#qrcode").attr("src", "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl="+value+"&choe=UTF-8");
+
+  window.varscc="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl="+value+"&choe=UTF-8";
+
+  },
+
+  });
+
+});
+
+
+
+
+
+
+
+
 $('#saveinventory').on('click', function(event){
 
 
@@ -15,10 +47,10 @@ $('#saveinventory').on('click', function(event){
 
      var name=$("#name").val();
 
-
      var time=$("#time").val();
-  
 
+     var qrcode=window.varscc;
+  
      //saudia arabia regular expression
       
   var Page="invoice";
@@ -29,6 +61,8 @@ $('#saveinventory').on('click', function(event){
   formData.append("name", name);
   
   formData.append("time", time);
+
+  formData.append("qrcode", qrcode);
 
   formData.append("Page", Page);
   

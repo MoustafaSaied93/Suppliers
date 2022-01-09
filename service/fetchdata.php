@@ -24,6 +24,8 @@ $query= mysqli_query($conn,"SELECT * FROM subscriptions WHERE subid  ='$ID'");
   $data["enddate"] = $row["enddate"];
 
   $data["price"] = $row["price"];
+
+  $data["month"] = $row["month"];
  
   }
 
@@ -127,6 +129,8 @@ $row=mysqli_fetch_assoc($query);
   $data["name"] = $row["name"];
   $data["identity_number"] = $row["identity_number"];
   $data["mobile_number"] = $row["mobile_number"];
+
+  $data["email"] = $row["email"];
 
  echo json_encode($data) ;
  

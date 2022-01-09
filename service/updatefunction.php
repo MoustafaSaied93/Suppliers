@@ -124,6 +124,8 @@ $price = strip_tags($_POST['price']);
 
 $tax = strip_tags($_POST['tax']);
 
+$month = strip_tags($_POST['month']);
+
 $taxnubmer= $price*$tax/100;
 
 $price_after_tax=$price+$taxnubmer;
@@ -131,7 +133,7 @@ $price_after_tax=$price+$taxnubmer;
 
   $query= mysqli_query($conn,"UPDATE subscriptions   SET  startdate='$startdate',enddate='$enddate',
 
-  price='$price',price_after_tax='$price_after_tax' where subid ='$subid'");
+  price='$price',price_after_tax='$price_after_tax', month='$month' where subid ='$subid'");
 
 }
 
@@ -140,8 +142,7 @@ $price_after_tax=$price+$taxnubmer;
 
 else if($Page=="players")
 {
-
-  
+   
 $PlayerID= strip_tags($_POST['PlayerID']);
 
 $name = strip_tags($_POST['name']);
@@ -149,8 +150,11 @@ $mobile_number = strip_tags($_POST['mobile_number']);
 
 $identity_number = strip_tags($_POST['identity_number']);
 
-  $query= mysqli_query($conn,"UPDATE members_subscribtions   SET  name='$name',mobile_number='$mobile_number',identity_number='$identity_number'
-   where memberid ='$PlayerID'");
+$email = strip_tags($_POST['email']);
+
+  $query= mysqli_query($conn,"UPDATE members_subscribtions   SET  name='$name',mobile_number='$mobile_number',identity_number='$identity_number',
+
+ email='$email'  where memberid ='$PlayerID'");
 
 }
 
@@ -173,9 +177,12 @@ $vat_number = strip_tags($_POST['vat_number']);
 
 $tax = strip_tags($_POST['tax']);
 
+$subprice = strip_tags($_POST['subprice']);
 
-  $query= mysqli_query($conn,"UPDATE general_settings   SET  company_name='$company_name',phone_number='$phone_number',city='$city',email='$email',vat_number='$vat_number',tax='$tax'
-   where setting_id ='2'");
+
+  $query= mysqli_query($conn,"UPDATE general_settings   SET  company_name='$company_name',phone_number='$phone_number',city='$city',email='$email',vat_number='$vat_number',tax='$tax',
+
+price='$subprice'  where setting_id ='2'");
 
 }
 

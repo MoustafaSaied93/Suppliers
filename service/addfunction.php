@@ -2,6 +2,8 @@
 
 
 
+
+
 include('config.php');
 
 $pages=strip_tags( $_POST['Page']);
@@ -32,8 +34,6 @@ if($pages=="trainer"){
 
 
 
-    
-
     $up_file=$_FILES['img']['name'];
     
     $image_dir = '../admin/assets/images/coach/'.$up_file ;
@@ -50,7 +50,6 @@ if($pages=="trainer"){
     $query=  mysqli_query($conn,$sql2); 
 
 }
-
 
 
 else if($pages=="class"){
@@ -172,13 +171,14 @@ else if($pages=="players"){
 
   $identity_number =  $_POST['identity_number'];
 
+  $email =  $_POST['email'];
+
 
   $query2=mysqli_query($conn,"SELECT mobile_number FROM members_subscribtions WHERE mobile_number='$mobile_number' ");
 
-  $query3=mysqli_query($conn,"SELECT identity_number FROM members_subscribtions WHERE identity_number='$identity_number' ");
+  $query3=mysqli_query($conn,"SELECT email FROM members_subscribtions WHERE email='$email'");
 
  
-
 
     $CHECKVAL=mysqli_num_rows($query2);
 
@@ -225,9 +225,9 @@ else if($pages=="players"){
   
       }
 
-      $sql1="INSERT INTO members_subscribtions (name,identity_number,mobile_number,code)
+      $sql1="INSERT INTO members_subscribtions (name,identity_number,mobile_number,email,code)
     
-      VALUES ('$name','$identity_number','$mobile_number',$code)";
+      VALUES ('$name','$identity_number','$mobile_number','$email','$code')";
                                                    
       $query1=  mysqli_query($conn,$sql1);
 
@@ -258,17 +258,20 @@ else if($pages=="membersubscription"){
   $price = strip_tags($_POST['price']);
 
   $tax = strip_tags($_POST['tax']);
-
+  $month = strip_tags($_POST['month']);
 
   $taxnubmer= $price*$tax/100;
 
   $price_after_tax=$price+$taxnubmer;
 
+  $date = date('Y-m-d');
 
 
-  $sql2="INSERT INTO subscriptions (name,startdate,enddate,price,price_after_tax)
+
+
+  $sql2="INSERT INTO subscriptions (name,startdate,enddate,price,price_after_tax,month)
     
-  VALUES ('$subscrname','$startdate','$enddate','$price','$price_after_tax')";
+  VALUES ('$subscrname','$startdate','$enddate','$price','$price_after_tax','$month')";
                                                
   $query=  mysqli_query($conn,$sql2); 
 
@@ -292,9 +295,11 @@ else if($pages=="invoice"){
 
   $time = strip_tags($_POST['time']);
 
-  $sql2="INSERT INTO inventory (subid,inventory_number,inventory_date,name,time)
+  $qrcode = strip_tags($_POST['qrcode']);
+
+  $sql2="INSERT INTO inventory (subid,inventory_number,inventory_date,name,time,qrcode)
     
-  VALUES ('$subid','$inventory_number','$inventory_date','$name','$time')";
+  VALUES ('$subid','$inventory_number','$inventory_date','$name','$time','$qrcode')";
                                                
   $query=  mysqli_query($conn,$sql2); 
 

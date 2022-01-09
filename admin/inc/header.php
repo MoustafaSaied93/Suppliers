@@ -59,6 +59,15 @@ if(!isset ($_SESSION ['id']))
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
+
+        <style>
+
+.red{
+
+    color:red;
+}
+
+       </style>
     </head>
 
     <body>
@@ -71,9 +80,7 @@ if(!isset ($_SESSION ['id']))
             <div class="navbar-custom">
                 <ul class="list-unstyled topnav-menu float-right mb-0">
 
-               
-
-                 
+                             
 
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -202,7 +209,7 @@ if(!isset ($_SESSION ['id']))
                                     <li><a href="technqalteam.php">المدربين</a></li>
 
                                     <li><a href="#">حجوزات الكلاسات</a></li>
-                                    <li><a href="#"> الحسابات وسجلات الحضور</a></li>
+                                    <li><a href="#">    سجلات الحضور والانصراف</a></li>
                                     <li><a href="payment.php"> ادارة المدفوعات</a></li>
 
                                     <li><a href="invoicedetails.php"> ادارة الفواتير</a></li>
@@ -309,11 +316,17 @@ if(!isset ($_SESSION ['id']))
 
 
                             <div class="form-group">
-                                <label for="o1">السجل التجارى</label>
+                                <label for="o1">الرقم الضريبى </label>
                                 <input type="text" class="form-control" id="vat_number" value="<?php echo $data['vat_number'] ?>"
                                     maxlength=30 >
                             </div>
                       
+
+                            <div class="form-group">
+                                <label for="o1">سعر الاشتراك الشهرى </label>
+                                <input type="text" class="form-control" id="subprice"value="<?php echo $data['price'] ?>"
+                                    maxlength=10>
+                            </div>
 
                             <div class="form-group">
                                 <label for="o1">الضريبة المضافة</label>

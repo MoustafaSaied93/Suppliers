@@ -31,6 +31,39 @@ $('#namee').bind('keypress', function(e) {
 
 });
 
+
+$('#email').bind('keypress', function(e) {
+
+  var email= $("#email").val();
+
+  
+  var key = e.keyCode;
+
+  if (key === 32&&email=="")  {
+      e.preventDefault();
+    return false;
+  }
+
+
+});
+
+$('#emaile').bind('keypress', function(e) {
+
+var emaile= $("#emaile").val();
+
+
+var key = e.keyCode;
+
+if (key === 32&&emaile=="")  {
+    e.preventDefault();
+  return false;
+}
+
+});
+
+
+
+
 $('#mobile_number').bind('keypress', function(e) {
 
   var mobile_number= $("#mobile_number").val();
@@ -134,10 +167,15 @@ $('#Saveplayer').on('click', function(event){
 
    var identity_number=$("#identity_number").val();
 
+
+   var email=$("#emailsub").val();
+
    //saudia arabia regular expression
     
 
    var regex = new RegExp(/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/);
+
+   var regex1 = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
 
   var Page="players";
 
@@ -176,30 +214,30 @@ $('#Saveplayer').on('click', function(event){
      
     }
 
-
-  if(identity_number=="")
+  if(email=="")
   {
 
-  $('#identity_number').focus();
+  $('#emailsub').focus();
 
       return false;
   }
 
 
-  if(identity_number.length <10)
-  {
+  if(!regex1.test(email)){  
+    toastr.error("برجاء ادخال  بريد الكترونى الصحيح");  
+    $("#emailsub").focus();
+    
+    return false;
+     
+    }
 
-  $('#identity_number').focus();
 
-      return false;
-  }
-
-
-
+    
 formData.append("name", name);
 formData.append("mobile_number", mobile_number);
 formData.append("identity_number", identity_number);
 
+formData.append("email", email);
 
 formData.append("Page", Page);
 
@@ -225,7 +263,7 @@ success:function(data){
 
   {
 
-    toastr.error("رقم الهوية مستخدم من قبل");
+    toastr.error(" البريد الالكترونى مستخدم من قبل");
 
     return false;
   }
@@ -268,6 +306,8 @@ function editplayer(ID){
   $("#mobile_numbere").val(data.mobile_number);
   $("#identity_numbere").val(data.identity_number);
 
+  $("#emailsube").val(data.email);
+
   }
   });
 
@@ -283,13 +323,17 @@ $('#editplayer').on('click', function(event){
       var name=$("#namee").val();
 
       var mobile_number=$("#mobile_numbere").val();
-   
+
       var identity_number=$("#identity_numbere").val();
+   
+      var email=$("#emailsube").val();
 
       //saudia arabia regular expression
     
 
    var regex = new RegExp(/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/);
+
+   var regex1 = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
    
    
      var Page="players";
@@ -328,27 +372,30 @@ $('#editplayer').on('click', function(event){
       }
 
 
-   
-     if(identity_number=="")
-     {
-   
-     $('#identity_numbere').focus();
-   
-         return false;
-     }
-
-     if(identity_number.length <10)
-     {
-   
-     $('#identity_numbere').focus();
-   
-         return false;
-     }
+      if(email=="")
+      {
+    
+      $('#emailsube').focus();
+    
+          return false;
+      }
+    
+    
+      if(!regex1.test(email)){  
+        toastr.error("برجاء ادخال  بريد الكترونى الصحيح");  
+        $("#emailsube").focus();
+        
+        return false;
+         
+        }
+    
 
        formData.append("PlayerID", PlayerID);
        formData.append("name", name);
       formData.append("mobile_number", mobile_number);
-      formData.append("identity_number", identity_number);        
+      formData.append("identity_number", identity_number);   
+      
+      formData.append("email", email);  
 
       formData.append("Page", Page);   
   
@@ -417,7 +464,7 @@ $('#editplayer').on('click', function(event){
         $("#name").val("");
         $("#mobile_number").val("");
         $("#identity_number").val("");
-  
+        $("#email").val("");
     
     }
     

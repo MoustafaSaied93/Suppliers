@@ -145,6 +145,27 @@ $(document).ready(function() {
             
       
       }); 
+
+
+      $('#subprice').bind('keypress', function(e) {
+    
+        var subprice= $("#subprice").val();
+      
+      
+        var key = e.keyCode;
+      
+        if (key === 32&&subprice=="")  {
+            e.preventDefault();
+          return false;
+        }
+      
+        if (key < 48 || key > 57 ) {
+          e.preventDefault(); 
+          return false;
+           }  
+            
+      
+      }); 
       
 } );
 
@@ -165,7 +186,7 @@ $(document).ready(function() {
      var vat_number=$("#vat_number").val();
      var tax=$("#tax").val();
 
-  
+     var subprice=$("#subprice").val();
 
     var Page="generalsetting";
 
@@ -177,10 +198,6 @@ $(document).ready(function() {
 
     var regex1 = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
 
-
-
-
-  
 
     if(company_name=="")
     {
@@ -247,6 +264,17 @@ else if(vat_number=="")
 
 }
 
+
+else if(subprice=="")
+
+{
+    $('#subprice').focus();
+
+    return false;
+
+}
+
+
 else if(tax=="")
 
 {
@@ -269,7 +297,7 @@ formData.append("company_name", company_name);
 
  formData.append("tax", tax); 
            
-
+ formData.append("subprice", subprice); 
 
  formData.append("Page", Page);    
            

@@ -51,9 +51,9 @@ $result2=mysqli_num_rows($query2);
                    
                     <th class="th_text"> نهاية الاشتراك</th>
 
-                    <th class="th_text">سعر الاشتراك</th>
+                    <th class="th_text">عدد الشهور </th>
 
-                    <th class="th_text">سعر الاشتراك بعد الضريبة</th>
+                    <th class="th_text">سعر الاشتراك  </th>
 
                    
 
@@ -81,7 +81,7 @@ $result2=mysqli_num_rows($query2);
 
                     <td><?php echo $row['enddate']  ?></td>
 
-                    <td><?php echo $row['price']  ?>  ريال</td>
+                    <td><?php echo $row['month']  ?> شهر</td>
 
                     <td><?php echo $row['price_after_tax']  ?>  ريال</td>
 
@@ -219,7 +219,8 @@ $result2=mysqli_num_rows($query2);
                              $firstteam=mysqli_query($conn," SELECT name FROM members_subscribtions");
 
 
-                             $tax=mysqli_query($conn," SELECT tax FROM general_settings where setting_id=2");
+                             $tax=mysqli_query($conn," SELECT tax, price FROM general_settings where setting_id=2");
+                             
 
 
                              $taxnumber=mysqli_fetch_assoc($tax);
@@ -239,6 +240,53 @@ $result2=mysqli_num_rows($query2);
                             </div>
 
                             <div class="form-group">
+                        <label for="o1">عدد شهور الاشتراك </label>
+                      <select class="form-control" id="month">
+
+                      <option value="1">  1</option>
+                      <option value="2">  2</option>
+                      <option value="3">  3</option>
+                      <option value="4">  4</option>
+                      <option value="5">  5</option>
+                      <option value="6">  6</option>
+                      <option value="7">  7</option>
+                      <option value="8">  8</option>
+                      <option value="9">  9</option>
+                      <option value="10">  10</option>
+                      <option value="11">  11</option>
+                      <option value="12">  12</option>
+ 
+                 </select>
+               </div>
+                            <div class="container">
+                                                                                                     
+                             <div class="row">
+                                 <div class="col">
+                                                                                                                                                                       
+                             <div class="form-group">
+                          <label for="o1">سعر الاشتراك</label>
+                        <input type="text" class="form-control" name="price" id="price" value="<?php echo $taxnumber['price']  ?>" disabled  
+                            maxlength=10>
+                            </div>
+                                                                                                                                                             
+                             </div>
+                            <div class="col">
+                                                                                                                                                                       
+                              <div class="form-group">
+                          <label for="o1">ضريبة القيمة المضافة </label>
+                          <input type="text" class="form-control" id="tax" value="<?php echo $taxnumber['tax']  ?> %" disabled
+                              > 
+                          </div>
+                                                                                                                                                                             
+                             </div>
+                                                                                                                                                                       
+                                                                                                                                                                       
+                            </div>
+                                                                                                                                                                       
+                             </div>
+                                                                    
+
+                            <div class="form-group">
                             <label for="o1">تاريخ بداية الاشتراك </label>
                            <input type="text" class="form-control" id="startdate" value="<?php echo $date ?>" placeholder="<?php echo $date ?>" data-provide="datepicker" data-date-autoclose="true">
                            
@@ -253,33 +301,7 @@ $result2=mysqli_num_rows($query2);
                              </div><!-- input-group -->
                                             
 
-                             <div class="container">
-                                                                                                     
-                                 <div class="row">
-                                  <div class="col">
-                                                                                                   
-                               <div class="form-group">
-                                <label for="o1">سعر الاشتراك</label>
-                                <input type="text" class="form-control" id="price" placeholder="سعر الاشتراك"
-                                    maxlength=10>
-                            </div>
-                                                                                         
-                                 </div>
-                         <div class="col">
-                                                                                                   
-                         <div class="form-group">
-                                <label for="o1">ضريبة القيمة المضافة </label>
-                                <input type="text" class="form-control" id="tax" value="<?php echo $taxnumber['tax']  ?> %" disabled
-                                  > 
-                            </div>
-                                                                                                         
-                      </div>
-                                                                                                   
-                                                                                                   
-                      </div>
-                                                                                                   
-                      </div>
-
+                           
                            
 
 
@@ -321,6 +343,54 @@ $result2=mysqli_num_rows($query2);
                             </div>
 
 
+                       <div class="form-group">
+                        <label for="o1">عدد شهور الاشتراك </label>
+                      <select class="form-control" id="emonth">
+
+                      <option value="1">  1</option>
+                      <option value="2">  2</option>
+                      <option value="3">  3</option>
+                      <option value="4">  4</option>
+                      <option value="5">  5</option>
+                      <option value="6">  6</option>
+                      <option value="7">  7</option>
+                      <option value="8">  8</option>
+                      <option value="9">  9</option>
+                      <option value="10">  10</option>
+                      <option value="11">  11</option>
+                      <option value="12">  12</option>
+ 
+                 </select>
+               </div>
+
+               <div class="container">
+                                                                                                     
+              <div class="row">
+              <div class="col">
+                                                                                                                                                                       
+             <div class="form-group">
+              <label for="o1">سعر الاشتراك</label>
+          <input type="text" class="form-control" id="eprice" disabled>
+                                                                                                    
+             </div>
+                                                                                                                                                             
+          </div>
+          <div class="col">
+                                                                                                                                                                       
+              <div class="form-group">
+         <label for="o1">ضريبة القيمة المضافة </label>
+        <input type="text" class="form-control" id="etax" value="<?php echo $taxnumber['tax']  ?> %" disabled
+         > 
+        </div>
+                                                                                                                                                                             
+     </div>
+                                                                                                                                                                       
+                                                                                                                                                                       
+     </div>
+                                                                                                                                                                       
+     </div>
+
+
                             <div class="form-group">
                             <label for="o1">تاريخ بداية الاشتراك </label>
                            <input type="text" class="form-control" id="estartdate"  placeholder="<?php echo $date ?>" data-provide="datepicker" data-date-autoclose="true">
@@ -334,38 +404,7 @@ $result2=mysqli_num_rows($query2);
                            <input type="text" class="form-control" id="eenddate"  placeholder="<?php echo $date ?>" data-provide="datepicker" data-date-autoclose="true">
                            
                              </div><!-- input-group -->
-                                                                   
-                            
-
-                           
-
-                           
-                            <div class="container">
-                                                                                                     
-                                 <div class="row">
-                                  <div class="col">
-                                                                                                   
-                               <div class="form-group">
-                                <label for="o1">سعر الاشتراك</label>
-                                <input type="text" class="form-control" id="eprice" placeholder="سعر الاشتراك"
-                                    maxlength=10>
-                            </div>
-                                                                                         
-                                 </div>
-                         <div class="col">
-                                                                                                   
-                         <div class="form-group">
-                                <label for="o1">ضريبة القيمة المضافة </label>
-                                <input type="text" class="form-control" id="etax" value="<?php echo $taxnumber['tax']  ?> %" disabled
-                                  > 
-                            </div>
-                                                                                                         
-                      </div>
-                                                                                                   
-                                                                                                   
-                      </div>
-                                                                                                   
-                      </div>
+                                                                                            
 
 
                             <button type="submit" class="btn btn-success mb-2" id="Editsubscripe"><i
